@@ -5,6 +5,7 @@ const playground = document.querySelector(".playground > ul");
 const gameText = document.querySelector(".game_text");
 const gemeScore = document.querySelector(".score");
 const restartBut = document.querySelector(".game_text .restart");
+const stopBtn = document.querySelector(".game_text .stop");
 
 // Setting
 const GAME_ROWS = 20;
@@ -213,9 +214,20 @@ document.addEventListener("keydown", e => {
     }
 })
 
+function scoreFinal() {
+    var scoreFinal = gemeScore.outerHTML;
+    console.log(scoreFinal);
+}
+
 restartBut.addEventListener("click", () => {
     playground.innerHTML = "";
     gameText.style.display = "none";
+    scoreFinal();
     gemeScore.innerHTML = 0;
     init();
+})
+
+stopBtn.addEventListener("click", () => {
+    scoreFinal();
+
 })

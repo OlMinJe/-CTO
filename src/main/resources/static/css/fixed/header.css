@@ -8,6 +8,8 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 .m_right ul li { margin-bottom: 10px; }
 .m_right ul li:last-child { margin-bottom: 0; }
 .m_right ul li a, .m_right .user_name, .m_right .user_name span { font-size: 22px; line-height: 28px; font-width: 400; }
+.m_right .weatherIcon01 { width: 50px; }
+/*.m_right .weatherInfo br { display: none; }*/
 .m_right .user_name { margin-bottom: 15px; }
 /**/
 
@@ -17,7 +19,7 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 .header_logo .logo { display: inline-block; }
 .header_logo .logo img  { width: 60px; }
 .header_wrap .nav_mian { display: none; }
-.header_wrap .nav_title { display: inline-block;  padding-left: 3px; padding-right: 3px; transition: 0.3s; border-top-left-radius: 4px; border-top-right-radius: 4px; cursor: pointer; }
+.header_wrap .nav_title { display: inline-block; margin-left: 5px; margin-right: 5px; padding-left: 3px; padding-right: 3px; transition: 0.3s; border-top-left-radius: 4px; border-top-right-radius: 4px; cursor: pointer; font-size: 17px; line-height: 23px; }
 .header_wrap .weather { display: none; text-align: center; color: #007bff; }
 .header_wrap .w_right { display: none; text-align: right; }
 .header_wrap #burgerbtn { display: block; position: absolute; top: 25px; right: 10px; width: 30px; height: 30px; cursor: pointer; }

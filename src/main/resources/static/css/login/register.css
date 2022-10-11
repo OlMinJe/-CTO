@@ -17,7 +17,8 @@ form { margin-bottom: 50px; text-align: center; }
 /* 폼 디테일 */
 .register input { padding: 7px 15px; border: 1px solid; border-radius: 10px; line-height: 29px; }
 .register input[name="file"] { display: none; }
-.register label.input_file { width: 200px; padding: 70px 10px; border-radius: 30px; border: 1px solid #212121; }
+.register label.input_file { width: 200px; height: 200px; border-radius: 30px; border: 1px solid #212121; }
+.register label.input_file img { width: 198px; height: 198px; border-radius: 30px;}
 .register input[type="text"], .register input[type="password"] { width: 40%; }
 .register button { margin-left: 10px; padding: 7px 15px; border: none; font-size: 13px; line-height: 27px; }
 .register button:hover { border: none; }

@@ -242,7 +242,7 @@
 		<div class="title_02">정보입력</div>
 		<form action='<c:url value='/register'/>' method="post" enctype="multipart/form-data">
 			<div class="col-12" style="margin-bottom: 50px;">
-				<input type="file" class="col-12" name="file" id="mb_img">
+				<input type="file" class="col-12" name="file" id="mb_img" onchange="readURL(this);">
 				<label class="input_file" for="mb_img">프로필 선택</label>
 			</div>
 			<ul class="col-12 col-sm-11 col-md-10 col-lg-9">

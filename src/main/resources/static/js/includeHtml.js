@@ -155,6 +155,8 @@ function handleError() {
 function getWeather(lat, lon) {
     const weatherInfo = document.querySelector('.weatherInfo');
     const weatherIconImg = document.querySelector(".weatherIcon");
+    const weatherInfo01 = document.querySelector('.weatherInfo01');
+    const weatherIconImg01 = document.querySelector(".weatherIcon01");
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`).then(function(response) {
         return response.json();
     })
@@ -169,7 +171,9 @@ function getWeather(lat, lon) {
         //받아온 정보들을 표현한다.
         //weatherInfo.innerText = temperature + "°C/ @" + place + " / " + weatherDescription;
         weatherInfo.innerText = temperature + "°C\n" + place;
+        weatherInfo01.innerText = temperature + "°C " + place;
         weatherIconImg.setAttribute('src', weatherIconAdrs);
+        weatherIconImg01.setAttribute('src', weatherIconAdrs);
     })
     .catch((error) => console.log("error:", error));
 }

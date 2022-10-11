@@ -1,12 +1,12 @@
-<%@ page import="com.project.vo.MemberVO"%>
-<%@ page import="com.project.vo.BoardVO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="com.project.vo.MemberVO" %>
+<%@ page import="com.project.vo.BoardVO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"> <!-- 추가 필수 -->
+    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8"> <!-- 추가 필수 -->
     <title>Main</title>
     <!--추가-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- 부트스트랩 -->
@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 스와이퍼 -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="/js/includeHtml.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/main/main.css">
 </head>
@@ -23,7 +24,18 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <div class="col-12 main">
-    <div class="col-12 search-wrap mb">
+    <div class="col-12 search_wrap mb">
+        <!--221005-->
+        <form id="search_input">
+            <input type="text" id="search" class="box_eft_01">
+            <button id="search_btn" class="box_eft_02">검색하기</button>
+        </form>
+        <!-- 실시간 검색어 -->
+        <div class="realtime_word">
+            실시간 검색어 공간
+        </div>
+    </div>
+    <%--    <div class="col-12 search-wrap mb">
         <div class="board-content-search">
             <div class="selectbox">
                 <button type="button" class="bt-select">
@@ -39,7 +51,7 @@
                 <button class="bt-submit"></button>
             </div>
         </div>
-    </div>
+    </div>--%>
     <div class="col-12 second_row_wrap mb">
         <div class="col-12 col-md-6 location_wrap">
             <div id="map" style="width:100%;height:346px;"></div>
@@ -76,17 +88,20 @@
                         </li>
                         <li class="col-4 user_home_01">
                             <span>
-                                <%if(session.getAttribute("member")==null){
-                                    out.println("<a href='/'로그인</a>");
-                                }else{
-                                    MemberVO vo=(MemberVO)session.getAttribute("member");
-                                    out.println(vo.getMb_id()+"님 반갑습니다.<br>");
-                                }%>
+                                <%
+                                    if (session.getAttribute("member") == null) {
+                                        out.println("<a href='/'로그인</a>");
+                                    } else {
+                                        MemberVO vo = (MemberVO) session.getAttribute("member");
+                                        out.println(vo.getMb_id() + "님 반갑습니다.<br>");
+                                    }
+                                %>
                             </span>
                             <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
                             <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
                             <c:if test="${stateCode == '1'}">
-                                <a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                <a class="box_eft_02"
+                                   onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                             </c:if>
                             <%--<c:if test="${stateCode == null}">
                                 <a class="box_eft_02" onclick="location.href='/login/login.jsp'">마이페이지</a>
@@ -95,9 +110,12 @@
                         </li>
                         <li class="col-5 user_home_02">
                             <span>300P</span>
-                            <a class="logout" onclick="location.href='/login/logout.jsp'" title="Logout icons created by Pixel perfect - Flaticon"></a>
+                            <a class="logout" onclick="location.href='/login/logout.jsp'"
+                               title="Logout icons created by Pixel perfect - Flaticon"></a>
                             <c:if test="${stateCode == '0'}">
-                                <button type="button" class="admin_page_btn box_eft_02" onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기</button>
+                                <button type="button" class="admin_page_btn box_eft_02"
+                                        onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기
+                                </button>
                             </c:if>
                             <%--<button type="button" class="admin_page_btn box_eft_02" onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기</button>--%>
                             <%--<c:if test="${stateCode == '0'}"> <!--적용 안됨;;;-->
@@ -107,31 +125,43 @@
                     </ul>
                 </div>
                 <div class="col-12 user_login_bottom">
+                    <!--
+                    TODOLIST: 사용설명서
+                    1. 체크 박스를 누르면 할 일 완료
+                    2. 할 일을 더블클릭하면
+                    2. 할 일을 클릭하면 완료
+                    3. x 버튼 누르면 삭제
+                    -->
                     <div class="col-12 title">TODOLIST</div>
-                    <div class="container">
-                        <div class="col-12">
-                            <input class="col-10 box_eft_01" id="inputField" type="text">   <!--text 입력창(할일 입력창) 만들기-->
-                            <button id="addToDo"> + </button>     <!-- + 버튼 만들기 -->
-                        </div>
-                        <div class="to-dos" id="toDoList"> </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
+                    <div class="col-12">
+                        <input class="col-10 box_eft_01" id="inputField" type="text">   <!--text 입력창(할일 입력창) 만들기-->
+                        <button id="addToDo">등록</button>     <!-- + 버튼 만들기 -->
                     </div>
+                    <div class="to-dos" id="toDoList">
+                        <form id="A17-todo" style="margin-bottom: 10px;">
+                            <input type="text" class="box_eft_01" placeholder="할 일 작성하기" required/>
+                            <input type="submit" value="추가" class="box_eft_02"/>
+                        </form>
+                        <ol id="A17-todo-list"></ol>
+                    </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-12 mainvisual_wrap">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
-                    <span>공지사항(ver.22/12/31)</span>
-                </div>
-                <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
-                <div class="swiper-slide slide03">Slide 3</div>
-                <div class="swiper-slide slide04">Slide 4</div>
+</div>
+<div class="col-12 mainvisual_wrap">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
+                <span>공지사항(ver.22/12/31)</span>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
+            <div class="swiper-slide slide03">Slide 3</div>
+            <div class="swiper-slide slide04">Slide 4</div>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
+</div>
 </div>
 <section class="col-12 sub_swiper_wrap mb">
     <canvas id="nigthSky"></canvas>
@@ -141,12 +171,14 @@
                 <div class="swiper-wrapper">
                     <!-- 이미지로 넣으면 x -->
                     <div class="swiper-slide slide01">
-                        <div class="col-12 swiper_title" onclick="location.href='https://www.youtube.com/watch?v=VyEJs-u3Wyk';">
+                        <div class="col-12 swiper_title"
+                             onclick="location.href='https://www.youtube.com/watch?v=VyEJs-u3Wyk';">
                             오늘 하루 <br class="br_hidden"><span class="music">추천곡</span>을<br>들으면서 시작해보면 어떨까요?
                         </div>
                     </div>
                     <div class="swiper-slide slide02">
-                        <div class="col-12 swiper_title" onclick="location.href='https://www.youtube.com/watch?v=yiS5jtvH0zU';">
+                        <div class="col-12 swiper_title"
+                             onclick="location.href='https://www.youtube.com/watch?v=yiS5jtvH0zU';">
                             요즘은 <span class="dog">OOO</span>를<br>보고 <i>"힐링"</i>한다구!
                         </div>
                     </div>
@@ -200,17 +232,7 @@
         <div class="col-12 col-lg-5 pl">
             <div class="col-12 community_editor box_eft_00">
                 <div class="col-12 community_menu" id="community_menu_02">에디터 칼럼</div>
-                <div class="content_table">
-                    <table class="table table-hover table-bordered">
-                        <thead>
-                        <tr>
-                            <th style="width: auto;">제목</th>
-                            <th style="width: 10%;">댓글수</th>
-                        </tr>
-                        </thead>
-                        <tbody id="main_editor_table"></tbody>
-                    </table>
-                </div>
+                <div class="content_table" id="main_editor_table">
             </div>
         </div>
     </div>
@@ -230,7 +252,8 @@
 </div>
 <div class="col-12 fixed" id="fixed">
     <div class="comment" id="fixed_comment">
-        <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러 가기(클릭)</a>
+        <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러
+            가기(클릭)</a>
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>

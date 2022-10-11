@@ -24,7 +24,7 @@
             GAME OVER
             <div>
                 <button class="restart" style="margin-right: 5px;">다시시작</button>
-                <button style="margin-left: 5px;" onclick="location.href='/Entertainment/Entertainment.jsp'">그만하기</button>
+                <button class="stop" style="margin-left: 5px;" onclick="location.href='/Entertainment/Entertainment.html'">그만하기</button>
             </div>
         </div>
         <div class="col-12 score">0</div>

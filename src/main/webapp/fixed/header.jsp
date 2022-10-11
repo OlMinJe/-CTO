@@ -20,7 +20,8 @@
             <li class="m_nav_title m_right">
                 <ul>
                     <li>
-                        <div class="col-12 weather">날씨 api 연결 필요</div>
+                        <img class="weatherIcon01">
+                        <span class="weatherInfo01"></span>
                     </li>
                     <li id="m_visitor">
                         <a onclick="location.href='/login/login.jsp'">로그인</a>&nbsp;

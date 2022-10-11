@@ -74,6 +74,21 @@
                 })
             }
         }
+
+        /* 프로필 미리보기 */
+        function readURL(input) {
+            var previewInner = document.querySelector('.input_file');
+            previewInner.innerHTML = '<img id="preview" style="width: 100%;"/>';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                document.getElementById('preview').src = "";
+            }
+        }
     </script>
 </head>
 <body>
@@ -123,8 +138,8 @@
                             </li>
                             <li>
                                 <span class="col-12 col-md-3">프로필 사진 선택</span>
-                                <input type="file" name="file" id="mb_img" class="box_eft_01" style="display: none;">
-                                <label for="mb_img" class="col-12 col-md-7 box_eft_01">프로필 사진 선택하기</label>
+                                <input type="file" name="file" id="mb_img" class="box_eft_01" style="display: none;" onchange="readURL(this);">
+                                <label for="mb_img" class="col-12 col-md-7 box_eft_01 input_file">프로필 사진 선택하기</label>
                             </li>
                         </ul>
                     </form>

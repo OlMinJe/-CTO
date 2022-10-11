@@ -3,7 +3,7 @@
 
 /* ul li 스타일 x */
 ul { padding-inline-start: 0;}
-dl, ol, ul { margin: 0; }
+dl, ol, ul { margin: 0; padding: 0; }
 body li { list-style: none; }
 
 /* 부트스트랩 덮어씌우기 */

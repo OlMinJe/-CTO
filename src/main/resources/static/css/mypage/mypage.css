@@ -138,15 +138,15 @@
 .content_box#tab_8_content label { padding: 10px; text-align: left; }
 .content_box#tab_8_content button { padding: 7px 15px; }
 
+.no_user { padding: 30px 0; }
+.no_user .no_user_title { margin-bottom: 30px; font-size: 30px; line-height: 36px; }
+.no_user form ul { text-align: left; }
+.no_user form ul li { display: flex; margin-bottom: 10px; font-size: 20px; line-height: 26px; }
+.no_user form ul li:last-child { margin-bottom: 0; }
+.no_user form ul li input { margin-right: 10px; }
+.no_user form ul .flex__ { flex-direction: column; }
+.no_user form ul .float__ { float: right; }
 
-.content_box#tab_8_content .no_user { padding: 30px 0; }
-.content_box#tab_8_content .no_user .no_user_title { margin-bottom: 30px; font-size: 30px; line-height: 36px; }
-.content_box#tab_8_content .no_user form ul { text-align: left; }
-.content_box#tab_8_content .no_user form ul li { display: flex; margin-bottom: 10px; font-size: 20px; line-height: 26px; }
-.content_box#tab_8_content .no_user form ul li:last-child { margin-bottom: 0; }
-.content_box#tab_8_content .no_user form ul li input { margin-right: 10px; }
-.content_box#tab_8_content .no_user form ul .flex__ { flex-direction: column; }
-.content_box#tab_8_content .no_user form ul .float__ { float: right; }
 
 
 /* 반응형 */

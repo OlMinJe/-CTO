@@ -55,6 +55,7 @@
                             "message:" + request.responseText + "\n" + "error:" + error);
                     }
                 })
+                location.href='/mypage/mypage_08_1.html';
             } else {
                 alert("비밀번호를 제대로 입력해주세요.");
             }
