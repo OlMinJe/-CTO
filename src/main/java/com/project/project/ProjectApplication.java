@@ -16,4 +16,7 @@ public class ProjectApplication {
 	public String HelloWorld(){
 		return "Welcome to my playground!!!";
 	}
+	public String HelloWorld2(){
+		return "!!!Welcome!!!";
+	}
 }
