@@ -64,11 +64,15 @@
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-<%--<h2>[회원탈퇴]</h2>
-        <form action='<c:url value='/register'/>' method="post">
-            <div>아이디<input type="text" name="mb_id" id="mb_id" value="${modifyId}" readonly="readonly"></div>
-            <div>비밀번호<input type="password" name="pw" id="pw"></div>
-        </form>--%>
+<%--
+<h2>[회원탈퇴]</h2>
+<form action='<c:url value='/register'/>' method="post">
+    <div>아이디<input type="text" name="mb_id" id="mb_id" value="${modifyId}" readonly="readonly"></div>
+    <div>비밀번호<input type="password" name="pw" id="pw"></div>
+</form>
+<button type="button" onclick="deleteMember()">회원탈퇴</button>
+<button type="button" onclick="location.href='/boardList?stateCode=${stateCode}'">처음으로</button>
+--%>
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
         <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.html'">내정보</a>
@@ -95,8 +99,6 @@
                 </div>
             </div>
         </div>
-        <button type="button" onclick="deleteMember()">회원탈퇴</button>
-        <button type="button" onclick="location.href='/boardList?stateCode=${stateCode}'">처음으로</button>
         <div class="col-12 col-lg-9 content">
             <div class="col-12 content_box" id="tab_8_content">
                 <div class="col-12" id="sub_title">회원 탈퇴</div>
