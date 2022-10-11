@@ -19,7 +19,6 @@
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
         <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.jsp'">내정보</a>

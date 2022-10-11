@@ -1,4 +1,3 @@
-/* TODO: 화면 사이즈 변동시에 바로 새로고침 해줌 - 유지할지 말지 고민 */
 /*window.onresize = function(){
     document.location.reload();
 };*/

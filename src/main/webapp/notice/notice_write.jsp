@@ -32,7 +32,6 @@
         });
     </script>
 </head>
-
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 board_wrap">

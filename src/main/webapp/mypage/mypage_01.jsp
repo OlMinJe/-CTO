@@ -21,7 +21,6 @@
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
         <a class="col-12" id="tab_0" onclick="location.href='/mypage/mypage.jsp'">내정보</a>
@@ -101,7 +100,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>

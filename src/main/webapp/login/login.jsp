@@ -21,7 +21,7 @@
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-	<div class="col-12 login">
+<div class="col-12 login">
 		<div class="title">로그인</div>
 		<form action='<c:url value='/userCheck'/>' method="get" class="col-11 col-sm-8 col-md-6 col-lg-5"> <!--method="post" 안되서 get으로 바꿈-->
 			<input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">

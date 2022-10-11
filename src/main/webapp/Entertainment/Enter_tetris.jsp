@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Enter_tetris.css">
 </head>
 <body>
-<!--<header data-include-path="/fixed/header/header.html"></header>-->
 <div class="col-12" style="background-color: #ccc;">
     <div class="wrapper">
         <div class="game_text">
@@ -36,7 +35,6 @@
         </div>
     </div>
 </div>
-<!--<footer data-include-path="/fixed/footer/footer.html"></footer>-->
 <script src="/js/tetris.js" type="module"></script>
 </body>
 </html>

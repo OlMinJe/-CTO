@@ -27,6 +27,7 @@
     <title>비밀번호 찾기</title>
 </head>
 <body>
+<jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="w3-content w3-container w3-margin-top">
     <div class="w3-container w3-card-4">
         <div class="w3-center w3-large w3-margin-top">
@@ -48,5 +49,6 @@
         </div>
     </div>
 </div>
+<jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>

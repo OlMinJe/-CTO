@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ page import="com.helloproject.vo.MemberVO" %>
+<%@ page import="com.project.vo.MemberVO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     pageEncoding="UTF-8"%>
@@ -64,13 +64,62 @@
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-<h2>[회원탈퇴]</h2>
-<form action='<c:url value='/register'/>' method="post">
-    <div>아이디<input type="text" name="mb_id" id="mb_id" value="${modifyId}" readonly="readonly"></div>
-    <div>비밀번호<input type="password" name="pw" id="pw"></div>
-</form>
-<button type="button" onclick="deleteMember()">회원탈퇴</button>
-<button type="button" onclick="location.href='/boardList?stateCode=${stateCode}'">처음으로</button>
+<%--<h2>[회원탈퇴]</h2>
+        <form action='<c:url value='/register'/>' method="post">
+            <div>아이디<input type="text" name="mb_id" id="mb_id" value="${modifyId}" readonly="readonly"></div>
+            <div>비밀번호<input type="password" name="pw" id="pw"></div>
+        </form>--%>
+<div class="col-12 mypage">
+    <div class="col-12 title" style="float: left">
+        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.html'">내정보</a>
+    </div>
+    <div class="col-12 mypage_con">
+        <!--왼쪽 메뉴 -->
+        <div class="col-12 col-lg-3 mypage_menu">
+            <div class="col-0 menu_list mt">
+                <div class="col-12 menu_title">활동내역</div>
+                <ul class="col-12" id="menu_list_01">
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01.html'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02.html'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03.html'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_04.html'">테스트 결과 내역</li>
+                </ul>
+                <div class="col-12 col-lg-12 menu_list" id="menu_list_02">
+                    <div class="menu_title mt">정보변경</div>
+                    <ul>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_05.html'">비밀번호 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_06.html'">닉네임 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_07.html'">프로필 사진 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_08.html'">회원탈퇴</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="deleteMember()">회원탈퇴</button>
+        <button type="button" onclick="location.href='/boardList?stateCode=${stateCode}'">처음으로</button>
+        <div class="col-12 col-lg-9 content">
+            <div class="col-12 content_box" id="tab_8_content">
+                <div class="col-12" id="sub_title">회원 탈퇴</div>
+                <div class="col-12 col-md-8 col-lg-6" style="text-align: center;margin-left: auto; margin-right: auto;padding-top: 70px;">
+                    <form action='<c:url value='/register'/>' method="post">
+                        <ul>
+                            <li>
+                                <span class="col-12 col-md-3">아이디</span>
+                                <input type="text" name="mb_id" id="mb_id" class="box_eft_01"  value="${modifyId}" readonly="readonly">
+                            </li>
+                            <li>
+                                <span class="col-12 col-md-3">비밀번호</span>
+                                <input type="password" name="pw" id="pw" class="box_eft_01">
+                            </li>
+                        </ul>
+                    </form>
+                    <button type="button" class="box_eft_02" onclick="deleteMember()">회원탈퇴</button>
+                    <button type="button" class="box_eft_02" onclick="location.href='/'">처음으로</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>

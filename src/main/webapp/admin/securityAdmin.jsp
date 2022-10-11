@@ -74,6 +74,7 @@
 	</c:forEach>
 	</tbody>
 	</table>
+</div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>

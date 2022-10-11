@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="/css/notice/notice.css">
     <script type="text/javascript" src="/js/includeHtml.js"></script>
 </head>
-
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 view_wrap">
