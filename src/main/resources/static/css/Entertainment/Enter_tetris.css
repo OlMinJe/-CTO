@@ -1,0 +1,21 @@
+body > div.col-12 { padding-top: 50px; padding-bottom: 50px;}
+/*body { height: 100%; overflow: hidden; }*/
+.game_text { display: none;  z-index: 1000; justify-content: center; align-items: center; flex-direction: column; position: fixed; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); left: 0; top: 0; color: #fff; font-size: 50px; line-height: 56px; }
+button { padding: 0.5rem 1rem; color: #fff; background: salmon; border: none; border-radius: 10px; cursor: pointer; font-size: 20px; line-height: 26px; }
+.score { text-align: center; font-size: 36px; line-height: 42px; margin-bottom: 2rem; }
+.playground { margin-bottom: 20px; }
+.playground > ul { margin: 0 auto; border: 1px solid #212121; border-radius: 10px; background-color: #fff; }
+.playground > ul > li { width: 100%; height: 30px; }
+.playground > ul > li > ul { display: flex; }
+.playground > ul > li > ul > li { width: 10%; height: 30px; border: 1px solid #212121; }
+.playground > ul:first-child > li:first-child > ul > li:first-child { border-top-left-radius: 9px; }
+.playground > ul:first-child > li:first-child > ul > li:last-child { border-top-right-radius: 9px; }
+.playground > ul:last-child > li:last-child > ul > li:first-child { border-bottom-left-radius: 9px; }
+.playground > ul:last-child > li:last-child > ul > li:last-child { border-bottom-right-radius: 9px; }
+
+.tree { background: #67C23A; }
+.bar { background: salmon; }
+.zee { background: #E6A23C; }
+.elLeft { background: #8E44AD; }
+.elRight { background: #16A085;}
+.square { background: skyblue;}

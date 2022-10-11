@@ -1,0 +1,247 @@
+/* ----------- 공통 ----------- */
+.report_main, .view_wrap, .board_wrap { text-align: center; }
+.report_main .menu, .report_main .content, .view_con, .board_con { display: inline-block; margin-bottom: 50px; text-align: initial; }
+.btn_wrap { text-align: center; }
+.btn_wrap a { display: inline-block; min-width: 80px; padding: 10px 30px; font-size: 1.0rem; line-height: 1.6rem; }
+
+
+/* ----------- tab menu css(메뉴 속성) -----------*/
+.menu input[type=radio] { display: none; }
+.menu .tab { display: flex; flex-direction: column; }
+
+.menu label { cursor: pointer; float: left; padding: 10px 0; border-radius: 0; border-bottom: 0; text-align: center; text-transform: uppercase; white-space: nowrap; font-size: 16px; line-height: 22px; font-weight: 600; letter-spacing: 2px; user-select: none; -webkit-user-select: none; }
+.menu label:first-child { border-radius: 10px 10px 0 0; }
+.menu label:last-child { border-bottom: 1px solid #dcc5df; border-radius: 0 0 10px 10px; }
+#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }
+/* TODO: 스크립트로 수정 필요
+#tab-1:checked ~ .report_content div:nth-child(1), #tab-2:checked ~ .report_content div:nth-child(2), #tab-3:checked ~ .report_content div:nth-child(3), #tab-4:checked ~ .report_content div:nth-child(4), #tab-5:checked ~ .report_content div:nth-child(5)  { display: block; }*/
+
+
+/* ----------- report list - 검색바 -----------*/
+.form-control { margin-right: 10px; }
+.btn-outline-success { border-color: #fff; }
+
+
+/* ----------- report list - 테이블 ----------- */
+.content form { margin-bottom: 20px; margin-left: auto; margin-right: auto; }
+.content-table table { margin-bottom: 2rem; }
+.content-table thead { text-align: center; }
+.content-table table th { font-weight: 600; }
+.content-table table td.title { text-align: initial; }
+/*.report_content > div { display: none; line-height: 2.3; font-size: 17px; }
+.content { background-color: rgba(255, 255, 255, 0.2); min-height: 250px; }
+.report_content > div{ padding: 30px; line-height: 1.5; font-size: 17px; }*/
+
+
+/* ----------- report list - pagination ----------- */
+.pagination { justify-content: center; }
+.page-item .page-link { border: 1px solid #dcc5df; color: #dcc5df; border-radius: 0; }
+.page-item.disabled .page-link { border: 1px solid #dcc5df; color: #dcc5df; }
+.page-item.active .page-link { background-color: #dcc5df; color: #fff; border-color: #dcc5df; }
+.page-item.active .page-link { border-color: #f7cc6d; }
+
+
+/* ----------- view.css (상세 페이지) ----------- */
+.view_con .category_title { text-align: initial; color: #dcc5df; font-weight: 500; }
+.view_list { margin-bottom: 30px; text-align: initial; }
+.view_list .board_view_title { margin-bottom: 25px; font-size: 25px; line-height: 31px; font-weight: 600; }
+.view_list .board_view_info { border-bottom: 2px solid #dcc5df; padding-bottom: 15px; font-weight: 500; }
+.view_list .board_view_info dl { position: relative; display: inline-block; padding: 0 14px; }
+.view_list .board_view_info dl:first-child { padding-left: 0; }
+.view_list .board_view_info dl:last-child { padding-right: 0; }
+.view_list .board_view_info dl::before { content: ''; position: absolute; top: 6px; left: 0; height: 13px; border-right: 1px solid #ddd; }
+.view_list .board_view_info dl:first-child::before { content: none; }
+.view_list .board_view_info dl dt { display: inline-block; margin-right: 10px; font-weight: 400; color: #dcc5df; }
+.view_list .board_view_info dl dd { float: right; }
+.view_list .board_view_content { padding: 30px 15px; border-bottom: 2px solid #dcc5df; min-height: 300px; }
+.view_wrap .btn_wrap { margin-bottom: 40px; }
+.comment_num { padding-bottom: 10px; margin-bottom: 20px; border-bottom: 2px solid #dcc5df; text-align: left; font-weight: 400; }
+.comment_num span { margin-left: 5px; font-size: 20px; line-height: 26px; font-weight: 600; color: #dcc5df; }
+.input_box { display: flex; justify-content: space-between; }
+.input_box textarea { width: calc(100% - 115px);  padding: 5px 10px; }
+.input_box button { padding: 20px; }
+
+
+/* ----------- write.css (작성 페이지) ----------- */
+.board_con { display: inline-block; text-align: initial; }
+.board_title { margin-right: 10px; margin-bottom: 10px;  font-size: 20px; line-height: 26px; font-weight: 600; color: #dcc5df; }
+.board_list { text-align: initial; }
+.board_list dl dt, .board_list dl dd { display: inline-block; }
+.board_list dl dt { float: left; }
+.board_list .write_title, .board_list .write_info { margin-bottom: 15px; }
+.board_list .write_title dl dt, .board_list .write_info dl dt { padding: 10px 0; position: relative; }
+.board_list .write_title dl dd input, .board_list .write_info dl dd select { padding: 10px; width: 100%; }
+.board_list .write_info { border-bottom: 2px solid #dcc5df; padding: 0 0 20px; }
+.board_list .write_content { margin-bottom: 30px; padding: 30px 15px 0 15px; }
+.board_list .write_content textarea { width: 100%; min-height: 300px; }
+.board_list form[name="file"] { margin-bottom: 30px; padding: 0 15px 30px; border-bottom: 2px solid #dcc5df;}
+.filebox label { display: inline-block; padding: 10px 20px; vertical-align: middle; cursor: pointer; height: 40px; margin-right: 10px; }
+.filebox .upload-name { display: inline-block; height: 40px; padding: 0 10px; vertical-align: middle; width: calc(100% - 115px); color: #999; }
+.filebox input[type="file"] { position: absolute; width: 0; height: 0; padding: 0; overflow: hidden; border: 0; }
+
+
+
+@media all and (min-width: 768px){
+    .report_main .tab { flex-direction: row; }
+    .report_main .tab label { width: 20%; }
+
+    .menu label { border-bottom: 1px solid #dcc5df; border-right: 0; }
+    .menu label:first-child { border-radius: 10px 0 0 10px; }
+    .menu label:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }
+
+    .report_content, .report_notice { padding-left: 30px; padding-right: 30px; }
+
+    .board_list .write_info dl dd select { width: 50%; }
+    .board_list .write_title dl dd input, .board_list .write_info dl dd select { width: 90%; }
+}
+
+@media all and (min-width: 992px){
+    .content form { width: 50%; }
+}
+
+
+
+/* ----------- 반응형 X ----------- */
+/*@media (max-width: 1000px) {
+    .report_board_wrap { width: 100%; min-width: 320px; padding: 0 30px; box-sizing: border-box; }
+    .report_board_list .num,
+    .report_board_list .writer,
+    .report_board_list .count { display: none; }
+    .report_board_list .date {  width: 40%; }
+    .report_board_list .title { text-indent: 10px; }
+    .report_board_list .top .title { text-indent: 0; }
+
+    .report_board_page a { width: 26px; height: 26px; }
+    .report_board_page a.bt { padding-top: 7px; }
+    .report_board_page a.num { padding-top: 6px; }
+
+    .report_board_view .report_view_info dl { width: 50%; padding: 0; }
+    .report_board_view .report_view_info dl:nth-child(-n+2) { margin-bottom: 5px; }
+    .report_board_view .report_view_info dl::before { display: none; }
+    .report_board_view .report_view_info dl dt,
+    .report_board_view .report_view_info dl dd { font-size: 1.2rem; }
+    .report_board_view .report_view_info dl { width: 49%; }
+    .report_board_view .report_view_info dl:first-child { margin-right: 2%; }
+    .report_board_view .report_view_title dt,
+    .report_board_view .report_view_info dt { display: none; }
+    .report_board_view .report_view_title dd,
+    .report_board_view .report_view_info dd { width: 100%; }
+    .report_board_view .report_view_title input[type="text"],
+    .report_board_view .report_view_info input[type="text"],
+    .report_board_view .report_view_info input[type="password"] { width: 100%; }
+}*/
+
+/* ----------- report board page css 목록 페이지 ----------- */
+/*
+table { border-collapse: collapse; border-spacing: 0; }
+section.report_notice { padding: 80px 0; }
+
+1. 목록 페이지 타이틀
+.report_page_title { margin-bottom: 60px; }
+.report_page_title h3 { font-size: 28px; color: #333333; font-weight: 400; text-align: center; }
+
+2. 목록 페이지 검색바
+.report_board_search .report_search_window { padding: 15px 0; background-color: #f9f7f9; }
+.report_board_search .report_search_window .search-wrap { position: relative; margin: 0 auto; width: 80%;  max-width: 564px; }
+.report_board_search .report_search_window .search-wrap input { height: 40px; width: 100%; font-size: 14px; padding: 7px 14px; border: 1px solid #ccc; }
+.report_board_search .report_search_window .search-wrap input:focus { border-color: #333; outline: 0; border-width: 1px; }
+.report_board_search .report_search_window .search-wrap .btn { position: absolute; right: 0; top: 0; bottom: 0; width: 108px; padding: 0; font-size: 16px; }
+
+3 목록 페이지 테이블(1)
+.board_list { width: 100%; border-top: 2px solid #000; }
+.board_list > div { border-bottom: 1px solid #ddd; font-size: 0;}
+.board_list > div.top { border-bottom: 1px solid #999; }
+.board_list > div:last-child { border-bottom: 1px solid #000; }
+.board_list > div > div { display: inline-block; padding: 15px 0; text-align: center; font-size: 1.4rem; }
+.board_list > div.top > div { font-weight: 600; }
+.board_list .num { width: 10%; }
+.board_list .title { width: 60%; text-align: left; }
+.board_list .top .title { text-align: center; }
+.board_list .writer { width: 10%; }
+.board_list .date { width: 10%; }
+.board_list .count { width: 10%; }
+
+4 목록 페이지 테이블(2)
+.report_board_table { font-size: 13px; width: 100%; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.report_board_table a { color: #333; display: inline-block; line-height: 1.4; word-break: break-all; vertical-align: middle; }
+.report_board_table a:hover { text-decoration: underline; }
+.report_board_table th { text-align: center; }
+.report_board_table .th-num { width: 100px; text-align: center; }
+.report_board_table .th-date { width: 200px;}
+.report_board_table th, .report_board_table td {  padding: 14px 0; }
+.report_board_table tbody td { border-top: 1px solid #e7e7e7; text-align: center; }
+.report_board_table tbody th { padding-left: 28px; padding-right: 14px;  border-top: 1px solid #e7e7e7; text-align: left; }
+.report_board_table tbody th p{ display: none; }
+
+5 목록 페이지 버튼
+.btn { display: inline-block; padding: 0 30px; font-size: 15px; font-weight: 400; background: transparent; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; border: 1px solid transparent; text-transform: uppercase; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+.btn-dark { background: #555; color: #fff; }
+.btn-dark:hover, .btn-dark:focus { background: #373737; border-color: #373737; color: #fff; }
+.btn-dark { background: #555; color: #fff; }
+.btn-dark:hover, .btn-dark:focus { background: #373737; border-color: #373737; color: #fff; }
+ */
+
+/* ----------- 글 상세 페이지 ----------- */
+/*
+.report_board_wrap { width: 1000px; margin: 100px auto;}
+.report_board_title { margin-bottom: 30px; }
+.report_board_title strong { font-size: 3rem; }
+.report_board_title p { margin-top: 5px; font-size: 1.4rem;}
+
+.report_bt_wrap { margin-top: 30px; text-align: center; font-size: 0;}
+.report_bt_wrap a { display: inline-block; margin-left: 10px; padding: 10px; border: 1px solid #000; border-radius: 2px; font-size: 1.4rem; }
+.report_bt_wrap a:first-child { margin-left: 0; }
+.report_bt_wrap a.on { background: #000; color: #fff; }
+
+.report_board_list { margin-bottom: 30px; }
+.report_board_page {!* margin-top: 30px;*! margin-bottom: 30px; text-align: center; font-size: 0; }
+.report_board_page a { display: inline-block; width: 32px; height: 32px; box-sizing: border-box; vertical-align: middle; border: 1px solid #ddd; border-left: 0; line-height: 100%; }
+.report_board_page a.bt { padding-top: 10px; font-size: 1.2rem; letter-spacing: -1px; }
+.report_board_page a.num { padding-top: 9px; font-size: 1.4rem; }
+.report_board_page a.num.on { border-color: #000; background: #000; color: #fff;}
+.report_board_page a:first-child { border-left: 1px solid #ddd; }
+
+.report_board_view { width: 100%; border-top: 2px solid #000; margin-bottom: 30px; }
+.report_board_view .report_view_title { padding: 20px 15px; border-bottom: 1px dashed #ddd; font-size: 2rem; }
+.report_board_view .report_view_info { padding: 15px; border-bottom: 1px solid #999; font-size: 0; }
+.report_board_view .report_view_info dl { position: relative; display: inline-block; padding: 0 20px; }
+.report_board_view .report_view_info dl:first-child { padding-left: 0; }
+.report_board_view .report_view_info dl:last-child { padding-right: 0; }
+.report_board_view .report_view_info dl::before { content: ""; position: absolute; top: 1px; left: 0; display: block; width: 1px; height: 13px; background: #ddd; }
+.report_board_view .report_view_info dl:first-child::before { display: none; }
+.report_board_view .report_view_info dl dt,
+.report_board_view .report_view_info dl dd { display: inline-block; font-size: 1.4rem; }
+.report_board_view .report_view_info dl dd { margin-left: 10px; color: #777; }
+.report_board_view .report_view_content { padding: 15px; border-bottom: 1px solid #000; line-height: 160%; font-size: 1.4rem; }
+*/
+
+/* ----------- write page css 글 작성 페이지 ----------- */
+/*
+.board_write_wrap { border-top: 2px solid #000; }
+.report_board_write { border-top: 2px solid #000; }
+.report_board_write .report_write_title,
+.report_board_write .report_write_info { padding: 15px; }
+.report_board_write .report_write_info { border-top: 1px dashed #ddd; border-bottom: 1px solid #000; font-size: 0; }
+.report_board_write .report_write_title dl { font-size: 0; }
+.report_board_write .report_write_info dl { display: inline-block; !*width: 50%;*! vertical-align: middle; }
+.report_board_write .report_write_title dt,
+.report_board_write .report_write_title dd,
+.report_board_write .report_write_info dt,
+.report_board_write .report_write_info dd { display: inline-block; vertical-align: middle; font-size: 1.4rem; }
+.report_board_write .report_write_title dt,
+.report_board_write .report_write_info dt { width: 100px; }
+.report_board_write .report_write_title dd { width: calc(100% - 100px);}
+.report_board_write .report_write_title input[type="text"],
+.report_board_write .report_write_info input[type="text"],
+.report_board_write .report_write_info input[type="password"] { padding: 10px; box-sizing: border-box; }
+.report_board_write .report_write_title input[type="text"] { width: 80%; }
+.report_board_write .report_write_content { border-bottom: 1px solid #000; }
+.report_board_write .report_write_content textarea {  display: block; width: 100%; height: 300px; padding: 15px; box-sizing: border-box; border: 0; resize: vertical; }
+*/
+
+/* reset */
+/** { list-style: none; text-decoration: none; padding: 0; margin: 0; box-sizing: border-box; }
+.clearfix:after { content: ''; display: block; clear: both; }
+.container { width: 1100px; margin: 0 auto; }
+.blind { position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px; }*/
+

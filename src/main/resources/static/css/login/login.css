@@ -1,0 +1,15 @@
+.title { margin-bottom: 40px; text-align: center; font-size: 30px; line-height: 30px; font-weight: 500; }
+
+.login > form { display: flex; flex-direction: column; margin-left: auto; margin-right: auto; }
+input { border: none; background: initial; }
+.login input[name="mb_id"], .login input[name="mb_pw"] { border: 1px solid #ccc; padding: 20px 10px; color: #212121; }
+.login input[name="mb_id"] { border-radius: 10px 10px 0 0; }
+.login input[name="mb_pw"] { border-top: none; border-radius: 0 0 10px 10px; margin-bottom: 10px; }
+.login button { padding: 15px 10px; margin-bottom: 10px; font-size: 16px; line-height: 22px; font-weight: 600; }
+
+.login .user_id_pass { display: inline-block; float: left; }
+.login .user_id_pass input { font-size: 13px; line-height: 19px; font-weight: 400; }
+.login .user_id_pass input:hover { color: #f7cc6d; }
+.login .user_id_pass input:first-child { display: inline-block; margin-right: 5px; padding-left: 0; padding-right: 0; }
+.login .new_user { display: inline-block; text-align: right; }
+.login .new_user input { padding: 0; margin-bottom: 0; font-size: 13px; line-height: 19px; font-weight: 400; color: #212121; }

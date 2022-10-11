@@ -1,0 +1,8 @@
+.title { margin-bottom: 30px; text-align: center; font-size: 30px; line-height: 36px; font-weight: 500; }
+.table { text-align: center; margin-left: auto; margin-right: auto; }
+button { background-color: red; color: #fff; border: 10px;}
+
+
+.warning { position: relative; text-align: center; font-size: 40px; line-height: 46px; margin-top: 100px; margin-bottom: 200px; font-width: 500; }
+/* https://www.flaticon.com/kr/download/icon/landing/2001386?format=png&size=512&type=standard */
+.warning::before { content: ''; top: -74px; left: 40%; width: 200px; height: 200px; z-index: -1; position: absolute; background-image: url("/img/warning_icon.png"); background-size: 200px; background-repeat: no-repeat; }

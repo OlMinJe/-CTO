@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOGS_ABSOLUTE_PATH" value="./logs" />
+    <!-- 해당 설정파일에서 사용될 값을 정의. LOGS_ABSOLUTE_PATH(절대 경로)-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_ABSOLUTE_PATH}/logback.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_ABSOLUTE_PATH}/logback.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.springframework.web" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+    
+    
+    <!-- 로그 용어 정리 -->
+<!-- 	*appender : 어디에, 어떻게 로그를 찍을 것인지에 대한 설정
+	
+	-appender의 class 종류
+	ConsoleAppender : 콘솔에 로그를 찍는 방법
+	FileAppender : 파일에 로그를 찍는 방법
+	RollingFileAppender : 여러개의 파일을 순회하면서 로그를 찍는 방법(설정할 게 많음.)
+	SMTPAppender : 로그를 메일에 찍어 보내는 방법
+	DBAppender : 데이터베이스에 로그를 찍는 방법
+	
+	-appender의 Pattern 종류
+	1. %Logger{length} - Logger name을 축약할 수 있다. {length}는 최대 자리 수
+	2. %thread - 현재 Thread 이름
+	3. %-5level - 로그 레벨, -5는 출력의 고정폭 값
+	4. %msg - 로그 메시지 (=%message)
+	5. %n - new line
+	6. ${PID:-}- 프로세스 아이디
+	
+	%d : 로그 기록시간
+	%p : 로깅 레벨
+	%F : 로깅이 발생한 프로그램 파일명
+	%M : 로깅일 발생한 메소드의 이름
+	%l : 로깅이 발생한 호출지의 정보
+	%L : 로깅이 발생한 호출지의 라인 수
+	%t : 쓰레드 명
+	%c : 로깅이 발생한 카테고리
+	%C : 로깅이 발생한 클래스 명
+	%m : 로그 메시지
+	%r : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간
+	
+	*logger : 해당 appender를 참조하여 해당 로거가 사용될 패키지와 로그레벨을 설정
+	
+	-log level의 종류
+	ERROR < WARN < INFO < DEBUG < TRACE
+	
+	해당 레벨 이하의 것은 다 찍는다.
+	즉, INFO 레벨로 지정하면 INFO, WARN, ERROR 로그가 찍히고, 
+	WARN 레벨로 지정하면 WARN, ERROR 로그가 찍힌다.
+	TRACE, DEBUG 레벨로 찍을 경우 로그가 상당히 많이 찍히므로 주의해야한다.
+ -->
+    
+</configuration>

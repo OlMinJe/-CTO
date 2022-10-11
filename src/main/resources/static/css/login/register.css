@@ -1,0 +1,66 @@
+::placeholder { font-size: 13px; }
+:-ms-input-placeholder { font-size: 13px; }
+::-ms-input-placeholder { font-size: 13px; }
+
+.register { margin-left: auto; margin-right: auto }
+.title_01 { margin-bottom: 40px; padding: 10px 0 10px 10px; border-top: 3px solid #dcc5df; border-bottom: 3px solid #dcc5df; font-size: 25px; line-height: 31px; font-weight: 600; color: #dcc5df; }
+.title_02 { margin-bottom: 30px; text-align: center; font-size: 30px; line-height: 36px; font-weight: 600; }
+
+form { margin-bottom: 50px; text-align: center; }
+.register ul { display: inline-block; text-align: left; }
+.register ul li { display: flex; margin-bottom: 40px; }
+.register .sub_title { font-size: 13px; line-height: 36px; font-weight: 500; }
+
+/* 프로필 사진 */
+.photo_select { padding: 7px 15px; text-align: center; }
+
+/* 폼 디테일 */
+.register input { padding: 7px 15px; border: 1px solid; border-radius: 10px; line-height: 29px; }
+.register input[name="file"] { display: none; }
+.register label.input_file { width: 200px; padding: 70px 10px; border-radius: 30px; border: 1px solid #212121; }
+.register input[type="text"], .register input[type="password"] { width: 40%; }
+.register button { margin-left: 10px; padding: 7px 15px; border: none; font-size: 13px; line-height: 27px; }
+.register button:hover { border: none; }
+.register button:focus-visible { border: none; }
+.register button[id="email_auth_btn"] { margin-left: 0; margin-top: 10px; }
+
+.register .password { align-items: center; }
+.register .password .sub_title { line-height: 22px; }
+
+.register section { display: inline-block; }
+.register section:first-child { margin-bottom: 10px; }
+.register section input[name="mb_email"] { width: 100%; }
+
+.address { margin-bottom: 35px; }
+.address .sub_title { float: left; margin-bottom: 10px; }
+.address input { margin-bottom: 10px; }
+.address input[id="mb_addr"], .address input[id="addr3"] { width: 100%; }
+.register .address section input[type="text"]:last-child { margin-bottom: 0; }
+
+.gender { padding: 15px 10px; }
+.gender input[type=radio]{ display: none; }
+.gender input[type=radio]+label { display: inline-block; cursor: pointer; height: 35px; width: 90px; margin-left: -5px; border: 1px solid #333; border-radius: 10px; line-height: 35px; text-align: center; font-weight:bold; font-size:13px; background-color: #fff; }
+.gender input[type=radio]:checked+label{ background-color: #f7cc6d; }
+
+.register .doctor .sub_title { display: inline-block; margin-bottom: 10px; }
+.doctor { padding: 15px 10px; }
+.doctor input[type=radio]{ display: none; }
+.doctor input[type=radio]+label { display: inline-block; cursor: pointer; height: 35px; width: 90px; margin-left: -5px; margin-right: 10px; border: 1px solid #333; border-radius: 10px; line-height: 35px; text-align: center; font-weight:bold; font-size:13px; background-color: #fff; color: #212121; }
+.doctor input[type=radio]:checked+label{ background-color: #f7cc6d; }
+
+/* 가입하기 버튼 */
+button[id="submit"] { margin-left:0; text-align: center; font-weight: 600; }
+
+
+@media all and (min-width: 768px) {
+    ::placeholder { font-size: 15px; }
+    :-ms-input-placeholder { font-size: 15px; }
+    ::-ms-input-placeholder { font-size: 15px; }
+
+    .register .sub_title, .register .password .sub_title { font-size: 16px; line-height: 39px; }
+    .register button { font-size: 15px; line-height: 29px; }
+    .register button[id="email_auth_btn"] { margin-left: 10px; margin-top: 0; }
+    .register section input[name="mb_email"] { width: 69%; }
+    .doctor { flex-direction: row; }
+    button[id="submit"] { font-size: 24px; line-height: 30px;  }
+}

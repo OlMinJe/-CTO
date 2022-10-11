@@ -1,0 +1,31 @@
+/* 공통 */
+.title { margin-bottom: 40px; text-align: center; font-size: 25px; line-height: 31px; }
+.comment { margin-right: 5px; margin-bottom: 10px; font-size: 17px; line-height: 23px; font-weight: 400; }
+button { padding: 7px 10px; }
+
+
+/* find_id_form_ */
+.id_form_wrap { display: flex; flex-direction: column; margin-left: auto; margin-right: auto; }
+.id_form_wrap input { padding: 7px 10px; width: 100%; }
+
+/* find_id , find_pw */
+.result_wrap { margin-left: auto; margin-right: auto; text-align: center; }
+.result_wrap tbody { margin-bottom: 30px; }
+.result_wrap span { margin-bottom: 10px; font-size: 17px; line-height: 23px; font-weight: 400; }
+.result_wrap td { font-size: 22px; line-height: 28px; color: red; font-weight: 500; }
+
+/* find_pw_from */
+.pw_form_wrap { margin-left: auto; margin-right: auto; text-align: center; }
+.pw_form_wrap i.title { margin-bottom: 10px; }
+.pw_form_wrap .p_id { margin-top: 15px; margin-bottom: 10px; }
+.pw_form_wrap .p_pw { margin-bottom: 30px; }
+.pw_form_wrap p .comment { margin-bottom: 0; }
+.pw_form_wrap p input { padding: 7px 10px; width: 80%; }
+
+/* find_pw */
+
+
+
+@media all and (min-width: 768px) {
+    .pw_form_wrap p input { width: 50%; }
+}

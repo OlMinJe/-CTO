@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.MainMapper">
+	<select id="now" resultType="string">
+		SELECT NOW() FROM DUAL;
+	</select>	
+		
+	<!-- <select id="memberLogin" resultType="MemberVO">
+		SELECT memberId, memberPass
+		FROM hello_member
+		WHERE memberId = #{memberId}
+		AND memberPass = #{memberPass}
+	</select> -->
+
+
+	<!-- 관리자페이지 리스트보기-->
+	<select id="dispAdmin" resultType="MemberVO">
+		SELECT *
+		FROM hello_member
+	</select>
+
+	<!-- 회원 드롭-->
+	<update id="dropUser">
+		delete from hello_member
+		where mb_id= #{mb_id}
+	</update>
+
+	<delete id="memberOut" parameterType="MemberVO">
+		delete from hello_member
+		where mb_id= #{mb_id}
+	</delete>
+	<!-- 아이디 찾기 -->
+	<select id="find_id" parameterType="String" resultType="String">
+		select mb_id from hello_member where mb_email = #{mb_email}
+	</select>
+
+	<!-- 비밀번호 변경 -->
+	<update id="update_pw" parameterType="memberVO">
+		update hello_member set mb_pw = #{mb_pw} where mb_id = #{mb_id}
+	</update>
+
+	<select id="userCheck" resultType="MemberVO">
+		SELECT mb_id, mb_pw
+		FROM hello_member
+		WHERE mb_id = #{mb_id}
+	</select>
+	
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		SELECT count(*)
+		FROM hello_member
+		WHERE mb_id = #{mb_id}
+	</select>
+
+	<insert id="memberRegister">
+		INSERT into hello_member(mb_name, mb_id, mb_pw, mb_nick, mb_email, mb_addr, mb_sex, mb_doctor, mb_img)
+		VALUES (#{mb_name}, #{mb_id}, #{mb_pw}, #{mb_nick}, #{mb_email}, #{mb_addr}, #{mb_sex}, #{mb_doctor}, #{mb_img})
+	</insert>
+
+	<select id="memberModifyGET" resultType="MemberVO" parameterType="String">
+		SELECT *
+		FROM hello_member
+		WHERE mb_id = #{mb_id}
+	</select>
+	
+	<update id="memberModifyPOST" parameterType="MemberVO">
+		UPDATE hello_member
+		SET mb_pw = #{mb_pw}
+		WHERE mb_id = #{mb_id}
+	</update>
+	
+	<delete id="memberDelete" parameterType="MemberVO">
+		DELETE from hello_member
+		WHERE mb_id = #{mb_id}
+	</delete>
+
+	<update id="nickModifyPOST" parameterType="MemberVO">
+		update hello_member
+		set mb_nick=#{mb_nick}
+		where mb_id = #{mb_id}
+	</update>
+
+	<select id="nickCheck" parameterType="String" resultType="Integer">
+		SELECT count(*)
+		FROM hello_member
+		WHERE mb_nick = #{mb_nick}
+	</select>
+
+	<update id="proModifyPOST" parameterType="MemberVO">
+		update hello_member
+		set mb_img=#{mb_img}
+		where mb_id=#{mb_id}
+	</update>
+
+	<insert id="boardWrite">
+		INSERT INTO hello_board (com_title, com_content, mb_seq,com_category,com_hit,mb_doctor,mb_nick,com_photo)
+		VALUES (#{com_title}, #{com_content}, #{mb_seq}, #{com_category}, #{com_hit}, #{mb_doctor},#{mb_nick},#{com_photo} )
+	</insert>
+
+	<select id="boardList2" resultType="BoardVO">
+		select *
+        from hello_board
+	</select>
+	<select id="boardList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+			SELECT *
+			FROM hello_board
+			ORDER BY com_num DESC
+			LIMIT #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	<select id="boardListDetail" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM hello_board
+		where com_category = #{category}
+		ORDER BY com_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+	<select id="boardListCnt" resultType="int">
+		SELECT count(*)
+		FROM hello_board
+	</select>
+	<select id="boardListCntDetail" resultType="int">
+		SELECT count(*)
+		FROM hello_board
+		where com_category = #{category}
+	</select>
+
+	<select id="boardRead" resultType="BoardVO">
+		SELECT com_num, com_title, com_category,com_content, mb_nick,com_hit,com_photo,mb_seq,mb_doctor,com_like
+		FROM hello_board
+		WHERE com_num = #{com_num}
+	</select>
+	<update id="increaseComhit">
+		update hello_board set com_hit = com_hit+1
+		where com_num=#{com_num}
+	</update>
+	<update id="boardModify" parameterType="com.project.vo.BoardVO"><!--parameterType="com.helloproject.vo.BoardVO"-->
+		UPDATE hello_board b, hello_member m
+		SET b.com_title = #{com_title},
+			b.com_content = #{com_content},
+			b.com_date = now(),
+			b.com_photo = #{com_photo}
+		WHERE com_num = #{com_num}
+		and b.mb_nick in (
+			select mb_nick from hello_member
+			where mb_nick = #{mb_nick}
+		)		
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM hello_board
+		WHERE com_num = #{com_num}
+	</delete>
+
+	<!-- 댓글부분 -->
+	<select id="commentList" parameterType="int" resultType="CommentVO">
+		SELECT *
+		FROM tb_comment
+		where com_num=#{com_num}
+		</select>
+	<insert id="commentInsert" parameterType="CommentVO">
+        INSERT INTO tb_comment(com_num,comment_content,mb_nick,mb_seq,mb_doctor)
+        VALUES(#{com_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor})
+        </insert>
+	<update id="commentUpdate" parameterType="CommentVO">
+		UPDATE tb_comment
+		SET comment_content=#{comment_content},
+			comment_date=now()
+		WHERE comment_seq=#{comment_seq}
+		</update>
+	<delete id="commentDelete" parameterType="int">
+        DELETE
+        FROM tb_comment
+        WHERE comment_seq=#{comment_seq}
+        </delete>
+	<!-- 댓글 카운트 관련-->
+	<update id="updateReplyCount" parameterType="int">
+		update hello_board b
+		set b.com_comment = (select count(comment_seq) from tb_comment where com_num = #{com_num})
+		where b.com_num = #{com_num}
+	</update>
+
+	<!-- 좋아요 기능-->
+	<select id="likecount" resultType="Integer" parameterType="LikeVO">
+		select count(like_check) from tb_like where mb_nick=#{mb_nick} and com_num=#{com_num}
+	</select>
+
+	<insert id="likeinsert" parameterType="LikeVO">
+		insert into tb_like(mb_nick,com_num)
+		values (#{mb_nick},#{com_num})
+	</insert>
+
+	<select id="likegetinfo" resultType="Integer" parameterType="LikeVO">
+		select like_check from tb_like where mb_nick=#{mb_nick} and com_num=#{com_num}
+	</select>
+
+	<update id="likeupdate" parameterType="LikeVO">
+		update tb_like
+		set <include refid="cal"></include>
+		where mb_nick=#{mb_nick} and com_num=#{com_num}
+	</update>
+
+	<sql id="cal">
+		<if test="count == 1">
+			like_check = 0
+		</if>
+
+		<if test="count == 0">
+			like_check = like_check + 1
+		</if>
+	</sql>
+
+	<!-- 카운트한 값을 커뮤니티 DB의 com_like에 넣기-->
+	<update id="updatecomlike" parameterType="int">
+		update hello_board b
+		set b.com_like = (select count(com_num) from tb_like where com_num = #{com_num} and like_check=1)
+		where b.com_num = #{com_num}
+	</update>
+</mapper>
