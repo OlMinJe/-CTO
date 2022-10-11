@@ -14,6 +14,6 @@ public class ProjectApplication {
 	}
 	@GetMapping
 	public String HelloWorld(){
-		return "Hello World";
+		return "Welcome to my playground!";
 	}
 }
