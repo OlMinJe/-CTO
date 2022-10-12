@@ -7,7 +7,7 @@ body > div.col-12 { padding-top: 0; }
 
 .result { display: none; }
 .share { margin: 0 auto; }
-.Enter_page { margin-bottom: 10px;}
+#Enter_page { padding: 30px; }
 .result #img { width: 50%; }
 #explain_title { font-size: 1.3rem; text-align: justify; line-height: 30px; margin: 20px 350px 0px 350px; }
 #explain { font-size: medium; text-align: justify; line-height: 30px; margin: 0px 350px 20px 350px; }

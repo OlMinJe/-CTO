@@ -30,10 +30,6 @@
                 <input type="text" id="search" class="box_eft_01">
                 <button id="search_btn" class="box_eft_02">검색하기</button>
             </form>
-            <!-- 실시간 검색어 -->
-            <div class="realtime_word">
-                실시간 검색어 공간
-            </div>
         </div>
         <%--    <div class="col-12 search-wrap mb">
             <div class="board-content-search">

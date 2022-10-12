@@ -71,7 +71,7 @@
             </div>
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <div class="mb-5 share addthis_inline_share_toolbox text-center"></div>
-            <button id="Enter_page" type="button" class="btn btn-light text-center mb-5" style="height: 60px; margin-bottom: 30px;" onclick="location.href='/Entertainment/Entertainment.jsp'">다른 테스트 하러 가기!</button>
+            <button id="Enter_page" type="button" class="btn btn-light text-center col-12" onclick="location.href='/Entertainment/Entertainment.jsp'">다른 테스트 하러 가기!</button>
         </div>
     </article>
 

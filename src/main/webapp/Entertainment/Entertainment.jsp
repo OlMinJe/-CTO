@@ -117,9 +117,9 @@
                                 <div class="col-12 Enter_item_border">
                                     <div class="Enter_image"> 사진</div>
                                     <div class="Enter_content">
-                                        <strong>테스트 제목</strong>
-                                        <p>테스트 내용 소개</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>해리포터 속으로 들어간다면?</strong>
+                                        <p>호그와트 미리 체험하기</p>
+                                        <a href="/Entertainment/Enter_test_potter.jsp">바로가기</a>
                                     </div>
                                 </div>
                             </li>
