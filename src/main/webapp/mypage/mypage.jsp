@@ -19,7 +19,7 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
-        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.jsp'">내정보</a>
+        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.html'">내정보</a>
     </div>
     <div class="col-12 mypage_con">
         <!--왼쪽 메뉴 -->
@@ -27,18 +27,18 @@
             <div class="col-0 menu_list mt">
                 <div class="col-12 menu_title" onclick="mobile_menu();">활동내역</div>
                 <ul class="col-12" id="menu_list_01">
-                    <li class="col-12" onclick="location.href='/mypage/mypage_01.jsp'">이벤트 참여내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_02.jsp'">커뮤니티 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_03.jsp'">위치기반 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_04.jsp'">테스트 결과 내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01.html'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02.html'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03.html'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_04.html'">테스트 결과 내역</li>
                 </ul>
                 <div class="col-12 col-lg-0 menu_list" id="menu_list_02">
                     <div class="menu_title">정보변경</div>
                     <ul style="padding-top: 10px;">
-                        <li class="col-12" onclick="location.href='/mypage/mypage_05.jsp'">비밀번호 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">닉네임 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_07.jsp'">프로필 사진 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_08.jsp'">회원탈퇴</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_05.html'">비밀번호 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_06.html'">닉네임 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_07.html'">프로필 사진 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_08.html'">회원탈퇴</li>
                     </ul>
                 </div>
             </div>
@@ -48,17 +48,17 @@
         <div class="col-12 col-lg-9 content">
             <!-- 0. 내정보 [main] -->
             <div class="col-12 content_box" id="tab_0_content"> <!--id="tab_1_content"-->
-                <article class="col-12 col-lg-7 content_left">
-                    <section class="top">
-                        <!-- TODO: 프로필 사진 변경 문구의 경우 프로필 사진이 없는 경우에만 출력
-                        / https://doolyit.tistory.com/204
-                        / 근데 닉네임 변경 페이지가 있는데 굳이 이 부분이 필요할까? -->
-                        <div class="col-4 photo">프로필 사진<br/>(변경 기능 없음)</div>
-                        <ul>
-                            <li>닉네임</li>
-                            <li><span>300</span>P</li>
-                        </ul>
-                    </section>
+                <article class="col-12 content_left"><!--col-lg-7 -->
+                    <!--                    <section class="top">-->
+                    <!--                        &lt;!&ndash; TODO: 프로필 사진 변경 문구의 경우 프로필 사진이 없는 경우에만 출력-->
+                    <!--                        / https://doolyit.tistory.com/204-->
+                    <!--                        / 근데 닉네임 변경 페이지가 있는데 굳이 이 부분이 필요할까? &ndash;&gt;-->
+                    <!--                        <div class="col-4 photo">프로필 사진<br/>(변경 기능 없음)</div>-->
+                    <!--                        <ul>-->
+                    <!--                            <li>닉네임</li>-->
+                    <!--                            <li><span>300</span>P</li>-->
+                    <!--                        </ul>-->
+                    <!--                    </section>-->
                     <section class="col-12 calender">
                         <div class="col-12 sub_title">출석체크 현황</div>
                         <div class="col-12 calender_top">
@@ -85,28 +85,28 @@
                         </div>
                     </section>
                 </article>
-                <article class="col-12 col-lg-5 content_right">
-                    <div class="col-12" style="padding-top: 20px; background-color: aliceblue;">
-                        <div class="col-12 sub_title">오늘의 날씨</div>
-                        <div class="col-12 weather_wrap">
-                            <section class="col-12 weather_api">날씨 api 이미지</section>
-                            <section class="col-12 weather_con">
-                                <ul class="col-4 weather_list">
-                                    <li>강수확률<span>값</span></li>
-                                    <li>북서풍<span>값</span></li>
-                                    <li>미세<span>값</span></li>
-                                    <li>일몰<span>값</span></li>
-                                </ul>
-                                <ul class="col-4 weather_list">
-                                    <li>체감<span>값</span></li>
-                                    <li>습도<span>값</span></li>
-                                    <li>초미세<span>값</span></li>
-                                    <li>체감<span>값</span></li>
-                                </ul>
-                            </section>
-                        </div>
-                    </div>
-                </article>
+                <!--                <article class="col-12 col-lg-5 content_right">-->
+                <!--                    <div class="col-12" style="padding-top: 20px; background-color: aliceblue;">-->
+                <!--                        <div class="col-12 sub_title">오늘의 날씨</div>-->
+                <!--                        <div class="col-12 weather_wrap">-->
+                <!--                            <section class="col-12 weather_api">날씨 api 이미지</section>-->
+                <!--                            <section class="col-12 weather_con">-->
+                <!--                                <ul class="col-4 weather_list">-->
+                <!--                                    <li>강수확률<span>값</span></li>-->
+                <!--                                    <li>북서풍<span>값</span></li>-->
+                <!--                                    <li>미세<span>값</span></li>-->
+                <!--                                    <li>일몰<span>값</span></li>-->
+                <!--                                </ul>-->
+                <!--                                <ul class="col-4 weather_list">-->
+                <!--                                    <li>체감<span>값</span></li>-->
+                <!--                                    <li>습도<span>값</span></li>-->
+                <!--                                    <li>초미세<span>값</span></li>-->
+                <!--                                    <li>체감<span>값</span></li>-->
+                <!--                                </ul>-->
+                <!--                            </section>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </article>-->
             </div>
         </div>
     </div>
