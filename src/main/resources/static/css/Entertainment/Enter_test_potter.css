@@ -1,0 +1,13 @@
+body > div.col-12 { padding-top: 0; }
+.potter .title { font-size: 1.5em; line-height: 2.1em; text-align: center; border-bottom: 1px solid #ddd; }
+.potter .Enter_image { width: 100%; }
+
+#trip_title { padding-top: 120px; padding-bottom: 120px; text-align: center; font-size: 1.7em; line-height: 2.3em; line-height: 30px; }
+.trip_question { display: none; }
+
+.result { display: none; }
+.share { margin: 0 auto; }
+.Enter_page { margin-bottom: 10px;}
+.result #img { width: 50%; }
+#explain_title { font-size: 1.3rem; text-align: justify; line-height: 30px; margin: 20px 350px 0px 350px; }
+#explain { font-size: medium; text-align: justify; line-height: 30px; margin: 0px 350px 20px 350px; }
