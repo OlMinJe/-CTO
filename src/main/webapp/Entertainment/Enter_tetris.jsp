@@ -12,8 +12,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script type="text/javascript" src="/js/includeHtml.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
-    <link rel="stylesheet" type="text/css" href="/css/fixed/header.css"> <!-- 헤더 -->
-    <link rel="stylesheet" type="text/css" href="/css/fixed/footer.css"> <!--푸터-->
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Enter_tetris.css">
 </head>
 <body>

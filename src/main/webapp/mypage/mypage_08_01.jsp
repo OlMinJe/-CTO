@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.helloproject.vo.MemberVO"%>
+<%@ page import="com.project.vo.MemberVO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,8 +10,6 @@
 <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
-<link rel="stylesheet" type="text/css" href="/css/fixed/header.css"> <!-- 헤더 -->
-<link rel="stylesheet" type="text/css" href="/css/fixed/footer.css"> <!--푸터-->
 <link rel="stylesheet" type="text/css" href="/css/mypage/mypage.css">
 <script type="text/javascript" src="/js/includeHtml.js"></script>
 <script type="text/javascript" src="/js/mypage.js"></script>
