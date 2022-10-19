@@ -4,9 +4,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8"> <!-- 추가 필수 -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"> <!-- 추가 필수 -->
     <title>Main</title>
     <!--추가-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- 부트스트랩 -->

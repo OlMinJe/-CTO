@@ -1,3 +1,10 @@
+$(document).ready(function (){
+    askForCoords();
+});
+
+document.cookie = "safeCookie1=foo; SameSite=Lax";
+document.cookie = "crossCookie=bar; SameSite=None; Secure";
+
 // footer popup script
 function onClickEvent01() {
     document.querySelector('#modal01').style.display = 'block';
