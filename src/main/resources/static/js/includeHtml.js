@@ -1,6 +1,3 @@
-$(document).ready(function (){
-    askForCoords();
-});
 
 document.cookie = "safeCookie1=foo; SameSite=Lax";
 document.cookie = "crossCookie=bar; SameSite=None; Secure";
@@ -103,6 +100,10 @@ if(matchMedia("screen and (min-width: 772px)").matches){
 const WAPI_KEYS = "079aa2ca018001daee6e82cb90f282c0"; //add your API KEY
 const COORDS = 'coords'; //좌표를 받을 변수
 
+function init() {
+    askForCoords();
+}
+
 //좌표를 물어보는 함수
 function askForCoords() {
     navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
@@ -150,4 +151,4 @@ function getWeather(lat, lon) {
     .catch((error) => console.log("error:", error));
 }
 
-// init();
+init();
