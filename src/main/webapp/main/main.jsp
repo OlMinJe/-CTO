@@ -139,18 +139,18 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-12 mainvisual_wrap">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
-                    <span>공지사항(ver.22/12/31)</span>
+        <div class="col-12 mainvisual_wrap">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
+                        <span>공지사항(ver.22/12/31)</span>
+                    </div>
+                    <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
+                    <div class="swiper-slide slide03">Slide 3</div>
+                    <div class="swiper-slide slide04">Slide 4</div>
                 </div>
-                <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
-                <div class="swiper-slide slide03">Slide 3</div>
-                <div class="swiper-slide slide04">Slide 4</div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </div>
     <section class="col-12 sub_swiper_wrap mb">
