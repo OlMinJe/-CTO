@@ -57,28 +57,28 @@
             <li class="nav_title" onclick="location.href='/event/event_detail.jsp'">이벤트</li>
             <li class="nav_title" onclick="location.href='/report/report.jsp'">신고</li>
         </ul>
-        <div class="col-3 col-md-2 container">
+        <div class="col-2 container">
             <img class="weatherIcon">
             <span class="weatherInfo"></span>
         </div>
-        <!--    <div class="col-2 w_right">-->
-        <!--        <ul>-->
-        <!--            <li id="w_visitor">-->
-        <!--                <a onclick="location.href='/login/login.html'">로그인</a>&nbsp;-->
-        <!--                <a onclick="location.href='/login/register.html'">회원가입</a>-->
-        <!--            </li>-->
-        <!--            <li id="w_user">-->
-        <!--                <div class="user_name">-->
-        <!--                    <span th:text="${session.id}">님, 환영합니다.</span> &lt;!&ndash;header에 사용자 아이디 출력 안됨.&ndash;&gt;-->
-        <!--                </div>-->
-        <!--                <a onclick="location.href='/mypage/mypage.html'">마이페이지</a>-->
-        <!--                <a onclick="location.href='/login/logout.html'">로그아웃</a>-->
-        <!--                &lt;!&ndash;<a th:href="@{/login/logout.html}">로그아웃</a>&ndash;&gt;-->
-        <!--                &lt;!&ndash;<a onclick="logout()">로그아웃</a>&ndash;&gt;-->
-        <!--            </li>-->
-        <!--            <li id="w_admin"><a onclick="location.href='/admin/admin.html'">관리자 페이지로 넘어가기.</a></li>-->
-        <!--        </ul>-->
-        <!--    </div>-->
+        <div class="col-2 w_right">
+            <ul>
+                <li id="w_visitor">
+                    <a onclick="location.href='/login/login.html'">로그인</a>
+                    <a onclick="location.href='/login/register.html'">회원가입</a>
+                </li>
+                <li id="w_user">
+                    <div class="user_name">
+                        <span th:text="${session.id}">님, 환영합니다.</span>
+                    </div>
+                    <a onclick="location.href='/mypage/mypage.html'">마이페이지</a>
+                    <a onclick="location.href='/login/logout.html'">로그아웃</a>
+                    <a th:href="@{/login/logout.html}">로그아웃</a>
+                    <a onclick="logout()">로그아웃</a>
+                </li>
+                <li id="w_admin"><a onclick="location.href='/admin/admin.html'">관리자 페이지로 넘어가기.</a></li>
+            </ul>
+        </div>
     <div id="burgerbtn" onclick="headerAction();"><img style="wdith: 100%; height: 100%;"
                                                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yNCAxOHYxaC0yNHYtMWgyNHptMC02djFoLTI0di0xaDI0em0wLTZ2MWgtMjR2LTFoMjR6IiBmaWxsPSIjMTA0MGUyIi8+PHBhdGggZD0iTTI0IDE5aC0yNHYtMWgyNHYxem0wLTZoLTI0di0xaDI0djF6bTAtNmgtMjR2LTFoMjR2MXoiLz48L3N2Zz4=">
     </div>
