@@ -11,7 +11,6 @@
     <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Enter_test_potter.css">
 </head>
@@ -27,6 +26,7 @@
             <img class="mb-5 Enter_image" src="/img/Enter_trip_test/Enter_trip_test_title.jpg">
             <h1 class="mb-4 text-center">헤리포터 테스트</h1>
             <h5 class="mb-5 text-center">"Sorting hat"가 선택해주는 당신의 기숙사를 알아보러 가보자고</h5>
+            <%-- TODO: 이 테스트는 전문적인 그런거 아니라고 설명 필요--%>
             <%-- 버튼 지정해서 css 입히기--%>
             <div class="col-12 mb-5 text-center">
                 <button type="button" class="btn btn-outline-secondary col-12 mb-5" style="padding-top:25px; padding-bottom:25px; font-size: large;" onclick="Enter_start();">테스트 시작하기</button>

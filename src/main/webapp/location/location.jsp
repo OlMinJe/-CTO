@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/location/location.css">
     <script type="module" src="/js/map.js"></script>

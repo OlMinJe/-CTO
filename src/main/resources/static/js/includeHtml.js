@@ -93,7 +93,7 @@ if(matchMedia("screen and (min-width: 772px)").matches){
 }
 
 // 헤더 날씨
-const API_KEY = "079aa2ca018001daee6e82cb90f282c0"; //add your API KEY
+const WAPI_KEYS = "079aa2ca018001daee6e82cb90f282c0"; //add your API KEY
 const COORDS = 'coords'; //좌표를 받을 변수
 
 //좌표를 물어보는 함수
@@ -122,7 +122,7 @@ function getWeather(lat, lon) {
     const weatherIconImg = document.querySelector(".weatherIcon");
     const weatherInfo01 = document.querySelector('.weatherInfo01');
     const weatherIconImg01 = document.querySelector(".weatherIcon01");
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`).then(function(response) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WAPI_KEYS}&units=metric&lang=kr`).then(function(response) {
         return response.json();
     })
     .then(function(json) {

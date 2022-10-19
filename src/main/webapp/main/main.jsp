@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- 스와이퍼 -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
     <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->

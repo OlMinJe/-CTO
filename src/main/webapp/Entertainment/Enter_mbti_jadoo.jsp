@@ -11,7 +11,6 @@
     <title>jadoo_MBTI_test</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  <!-- 부트스트랩 4.5 -->
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Enter_test.css">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
 </head>
 
 <body class="container">   <!-- container 적절히 간격을 띄우는 -->

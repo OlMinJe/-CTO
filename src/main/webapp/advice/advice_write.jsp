@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/advice/advice.css">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
     <!--써머노트-->
     <script src="/SummerNote/summernote-lite.js"></script>
     <script src="/SummerNote/lang/summernote-ko-KR.js"></script>

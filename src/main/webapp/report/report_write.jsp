@@ -12,7 +12,6 @@
     <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/report/report.css">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
 </head>
 
 <body>

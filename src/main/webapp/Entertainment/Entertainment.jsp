@@ -12,8 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Entertainment.css">
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
-
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>

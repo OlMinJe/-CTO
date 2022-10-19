@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/event/event_detail.css">
     <script type="text/javascript" src="/js/event.js"></script>
-    <script type="text/javascript" src="/js/includeHtml.js"></script>
 </head>
 
 <body>

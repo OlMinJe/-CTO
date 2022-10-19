@@ -2,7 +2,6 @@
 <!-- TODO: 링크 연결 onclick 이벤트로 바꾸기 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/css/fixed/footer.css">
-<script type="text/javascript" src="/js/includeHtml.js"></script>
 <footer>
     <div class="col-12 footer">
         <div class="col-12 footer_top">
