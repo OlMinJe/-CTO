@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" type="text/css" href="/css/fixed/header.css">
 <script type="text/javascript" src="/js/includeHtml.js"></script>
 <header>
     <!-- 고정 헤더-->
     <div class="col-12 fixed_header" style="position:fixed; display: none; justify-content: space-between; align-items: center;">
         <div class="col-1 header_logo">
-            <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            <c:if test="${sessionScope.stateCode == 1}">
+                <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
+            <c:if test="${sessionScope.stateCode ne 1}">
+                <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
         </div>
-        <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp'">마이페이지</div>
+        <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</div>
     </div>
     <!-- 모바일 메뉴 -->
     <div id="slide_menu">
@@ -37,25 +43,30 @@
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community.jsp?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="m_nav_title" onclick="location.href='/advice/advice.jsp'">상담</li>
-            <li class="m_nav_title" onclick="location.href='/location/location.jsp'">위치기반</li>
-            <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp'">ENT</li>
-            <li class="m_nav_title" onclick="location.href='/event/event_detail.jsp'">이벤트</li>
-            <li class="m_nav_title" onclick="location.href='/report/report.jsp'">신고</li>
+            <li class="m_nav_title" onclick="location.href='/advice/advice.jsp?stateCode=${stateCode}'">상담</li>
+            <li class="m_nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
+            <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
+            <li class="m_nav_title" onclick="location.href='/event/event_detail.jsp?stateCode=${stateCode}'">이벤트</li>
+            <li class="m_nav_title" onclick="location.href='/report/report.jsp?stateCode=${stateCode}'">신고</li>
         </ul>
     </div>
     <!-- 기본 헤더 -->
     <div class="col-12 header_wrap" id="header">
         <div class="col-1 col-md-2 header_logo">
-            <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            <c:if test="${sessionScope.stateCode == 1}">
+                <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
+            <c:if test="${sessionScope.stateCode ne 1}">
+                <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
         </div>
         <ul class="col-6 nav_mian">
             <li class="nav_title" onclick="location.href='/community/community.jsp?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="nav_title" onclick="location.href='/advice/advice.jsp'">상담</li>
-            <li class="nav_title" onclick="location.href='/location/location.jsp'">위치기반</li>
-            <li class="nav_title" onclick="location.href='/Entertainment/Entertainment.jsp'">ENT</li>
-            <li class="nav_title" onclick="location.href='/event/event_detail.jsp'">이벤트</li>
-            <li class="nav_title" onclick="location.href='/report/report.jsp'">신고</li>
+            <li class="nav_title" onclick="location.href='/advice/advice.jsp?stateCode=${stateCode}'">상담</li>
+            <li class="nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
+            <li class="nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
+            <li class="nav_title" onclick="location.href='/event/event_detail.jsp?stateCode=${stateCode}'">이벤트</li>
+            <li class="nav_title" onclick="location.href='/report/report.jsp?stateCode=${stateCode}'">신고</li>
         </ul>
         <div class="col-2 container">
             <img class="weatherIcon">
@@ -64,19 +75,19 @@
         <div class="col-2 w_right">
             <ul>
                 <li id="w_visitor">
-                    <a onclick="location.href='/login/login.html'">로그인</a>
-                    <a onclick="location.href='/login/register.html'">회원가입</a>
+                    <a onclick="location.href='/login/login.jsp'">로그인</a>
+                    <a onclick="location.href='/login/register.jsp'">회원가입</a>
                 </li>
                 <li id="w_user">
                     <div class="user_name">
                         <span th:text="${session.id}">님, 환영합니다.</span>
                     </div>
-                    <a onclick="location.href='/mypage/mypage.html'">마이페이지</a>
-                    <a onclick="location.href='/login/logout.html'">로그아웃</a>
+                    <a onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                    <a onclick="location.href='/login/logout.jsp'">로그아웃</a>
                     <a th:href="@{/login/logout.html}">로그아웃</a>
                     <a onclick="logout()">로그아웃</a>
                 </li>
-                <li id="w_admin"><a onclick="location.href='/admin/admin.html'">관리자 페이지로 넘어가기.</a></li>
+                <li id="w_admin"><a onclick="location.href='/admin/admin.jsp'">관리자 페이지로 넘어가기.</a></li>
             </ul>
         </div>
     <div id="burgerbtn" onclick="headerAction();"><img style="wdith: 100%; height: 100%;"

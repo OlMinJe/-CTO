@@ -144,21 +144,13 @@
             </div>
         </div>-->
 
-        <!--
-        <tbody>
-        <tr th:each="id : ${id}">
-            <span>회원님의 아이디는</span><br>
-            <td th:text="${id}"></td>
-        </tr>
-        </tbody>-->
-
         <div class="col-12 col-lg-9 content">
             <div class="col-12 content_box" id="tab_5_content">
                 <div class="col-12" id="sub_title">비밀번호 변경</div>
                 <div class="col-12" style="text-align: center; padding-top: 40px;">
                     <form action='/register' method="post" class="col-12 col-md-10 col-lg-8">
                         <ul>
-                            <li>
+                            <%--<li>
                                 <!--이름<input type="text" name="memberName" id="mb_name" th:value="${modifyName}" readonly="readonly">-->
                                 <span class="col-12 col-md-4">이름</span>
                                 <input type="text" name="memberName" class="col-12 col-md-8 box_eft_01" id="mb_name" th:text="${modifyName}" readonly="readonly">
@@ -166,9 +158,10 @@
                             <li>
                                 <span class="col-12 col-md-4">아이디</span>
                                 <input type="text" name="memberId" class="col-12 col-md-8 box_eft_01" id="mb_id" th:value="${modifyId}" readonly="readonly">
-                            </li>
+
+                            </li>--%>
                             <li>
-                                <input type="hidden" name="modifyPw" id="modifyPw" th:value="${modifyPw}"/>
+                                <input type="hidden" name="modifyPw" id="modifyPw" value="${modifyPw}"/>
                                 <span class="col-12 col-md-4">기존 비밀번호를 입력해주세요.</span>
                                 <div class="col-12 col-md-8">
                                     <input type="password" name="pw" id="pw" class="col-11 box_eft_01" placeholder="기존 비밀번호 입력">

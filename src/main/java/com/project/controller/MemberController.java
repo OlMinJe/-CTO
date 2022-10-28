@@ -164,11 +164,6 @@ public class MemberController {
     public ModelAndView userCheck(@RequestParam(required = false) String code, MemberVO memberVO,
                                   HttpServletRequest req, RedirectAttributes redirect, Model model, HttpSession httpSession) throws Exception {
 
-     /*   //로그인 시 사용자 아이디가 보이도록 함.
-        String id = req.getParameter("id");
-        httpSession.setAttribute("id", memberVO.getMb_id()); // 세션에 값을 셋팅하는 방법
-        String sessionId = (String) httpSession.getAttribute("id");// 세션에서 값을 가져오는 방법*/
-
         ModelAndView mav = new ModelAndView();
 
         //로그인 처리
@@ -186,10 +181,12 @@ public class MemberController {
                     //추가
                     if(member.getMb_id().equals("master")) {
                         redirect.addAttribute("stateCode", 0);
-                        mav.setViewName("redirect:/");
+                        session.setAttribute("stateCode", 0); //추가
+                        mav.setViewName("redirect:/main");
                     } else {
                         redirect.addAttribute("stateCode", 1); // redirect하면서 code를 넣어주는 방법
-                        mav.setViewName("redirect:/");
+                        session.setAttribute("stateCode", 1); //추가
+                        mav.setViewName("redirect:/main");
                     }
 
                 } else { // 암호를 잘못 입력한 경우

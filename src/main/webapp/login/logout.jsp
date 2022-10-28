@@ -3,6 +3,7 @@
 <body>
 <%
 	session.removeAttribute("member");
+	session.removeAttribute("stateCode");
 	response.sendRedirect("/");
 %>
 </body>

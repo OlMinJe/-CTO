@@ -93,15 +93,12 @@
                                     %>
                                 </span>
                                 <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
-                                <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
-                                <c:if test="${stateCode == '1'}">
+                                <c:if test="${sessionScope.stateCode == 1}">
                                     <a class="box_eft_02"
                                        onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                                 </c:if>
-                                <%--<c:if test="${stateCode == null}">
-                                    <a class="box_eft_02" onclick="location.href='/login/login.jsp'">마이페이지</a>
-                                </c:if>--%>
-                                <a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp'">마이페이지</a>
+                                <!--삭제 예정-->
+                                <a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                             </li>
                             <li class="col-5 user_home_02">
                                 <span>300P</span>
