@@ -102,7 +102,7 @@ public class BoardController {
 		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
 
 		int seq = modifyMember.getMb_seq();
-		String doctor = modifyMember.getMb_doctor();
+		Integer doctor = modifyMember.getMb_doctor();
 		boardVO.setMb_seq(seq);
 		boardVO.setMb_doctor(doctor);
 

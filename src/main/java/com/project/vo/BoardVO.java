@@ -20,6 +20,6 @@ public class BoardVO {
 	private Date com_date;
 	private int com_hit;
 	private int com_comment; //댓글 수 카운트를 위해 int로 변경
-	private String mb_doctor;
+	private Integer mb_doctor;
 	private String mb_nick;
 }
