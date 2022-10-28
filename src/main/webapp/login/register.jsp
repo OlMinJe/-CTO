@@ -139,6 +139,7 @@
 
 		$(document).ready(function(){
 			$("#submit").on("click", function(){
+				alert("회원가입이 완료되었습니다. 감사합니다.");
 				var form = $("form#form");
 				form.submit();
 			});
@@ -257,84 +258,6 @@
 	</head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
-<%--<form action='<c:url value='/register'/>' method="post" enctype="multipart/form-data" id="form">
-	<div class="col-12" style="margin-bottom: 50px;">
-		<input type="file" class="col-12" name="file" id="mb_img" onchange="readURL(this);">
-		<label class="input_file" for="mb_img">프로필 선택</label>
-	</div>
-	<ul class="col-12 col-sm-11 col-md-10 col-lg-9">
-		<li>
-			<div class="col-3 sub_title">닉네임</div>
-			<input type="text" name="mb_nick" id="mb_nick" placeholder="닉네임">
-			<button type="button" class="box_eft_02" onclick="nickCheck()">중복확인</button> <!--08.23.error!-->
-		</li>
-		<li>
-			<div class="col-3 sub_title">아이디</div>
-			<input type="text" name="mb_id" id="mb_id" placeholder="아이디">
-			<button type="button" class="box_eft_02" onclick="idCheck()">중복확인</button>
-		</li> <!--08.23.error!-->
-		<li>
-			<div class="col-3 sub_title">비밀번호</div>
-			<input type="password" name="mb_pw" id="mb_pw" placeholder="비밀번호">
-		</li>
-		<li class="password">
-			<div class="col-3 sub_title">비밀번호 확인</div>
-			<input type="password" placeholder="비밀번호 확인" id="pw_check">
-		</li>
-		<li>
-			<div class="col-3 sub_title">이름</div>
-			<input type="text" name="mb_name" id="mb_name" placeholder="이름">
-		</li>
-		<li class="email_auth">
-			<div class="col-3 sub_title">이메일</div>
-			<div class="col-9" style="display: flex; flex-direction: column;">
-				<section>
-					<input type="text" placeholder="이메일" name="mb_email" id="mb_email" class="email">
-					<button type="button" id="email_auth_btn" class="box_eft_02 email_auth_btn">인증번호 받기</button>
-				</section>
-				<section>
-					<input type="text" placeholder="인증번호" id="email_auth_key">
-					<button type="button" class="box_eft_02" id="check_mail">인증번호 확인</button>
-				</section>
-			</div>
-		</li>
-		<li class="address">
-			<div class="col-3 sub_title">주소</div>
-			<section>
-				<input placeholder="우편번호" name="addr1" class="box_eft_00" id="addr1" type="text"
-					   readonly="readonly">
-				<button type="button" class="box_eft_02" onclick="execPostCode();">우편번호 찾기</button>
-				<br>
-				<input placeholder="도로명 주소" name="mb_addr" id="mb_addr" type="text" readonly="readonly"/><br>
-				<input placeholder="상세주소" name="addr3" id="addr3" type="text"/><br>
-			</section>
-		</li>
-		<li class="gender">
-			<div class="col-3 sub_title">성별</div>
-			<input type="radio" name="mb_sex" class="box_eft_01" id="select01" value="남성" checked><label
-				for="select01" style="margin-right: 10px;">남성</label>
-			<input type="radio" name="mb_sex" class="box_eft_01" id="select02" value="여성"><label for="select02">여성</label>
-		</li>
-		<li class="doctor">
-			<div class="col-4 col-md-6 sub_title">의사 혹은 상담가 등의 전문가 인가요?</div>
-			<div>
-				<input type="radio" name="mb_doctor" class="box_eft_01" id="select03" value="일반인"
-					   checked="checked"><label for="select03">아니오</label>
-				<input type="radio" name="mb_doctor" class="box_eft_01" id="select04" value="전문가">
-				<label for="select04">네</label>
-			</div>
-		</li>
-	</ul>
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-</form>
-<div class="col-12" style="text-align: center;">
-	<button type="button" class="col-3 box_eft_02" id="submit" disabled="disabled" onclick="registerCheck()">
-		회원가입
-	</button>
-</div>--%>
-
-
-
 <div class="col-12">
 	<div class="col-12 col-lg-10 register">
 		<div class="title_01">회원가입</div>
@@ -419,3 +342,79 @@
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>
+
+<%--<form action='<c:url value='/register'/>' method="post" enctype="multipart/form-data" id="form">
+	<div class="col-12" style="margin-bottom: 50px;">
+		<input type="file" class="col-12" name="file" id="mb_img" onchange="readURL(this);">
+		<label class="input_file" for="mb_img">프로필 선택</label>
+	</div>
+	<ul class="col-12 col-sm-11 col-md-10 col-lg-9">
+		<li>
+			<div class="col-3 sub_title">닉네임</div>
+			<input type="text" name="mb_nick" id="mb_nick" placeholder="닉네임">
+			<button type="button" class="box_eft_02" onclick="nickCheck()">중복확인</button> <!--08.23.error!-->
+		</li>
+		<li>
+			<div class="col-3 sub_title">아이디</div>
+			<input type="text" name="mb_id" id="mb_id" placeholder="아이디">
+			<button type="button" class="box_eft_02" onclick="idCheck()">중복확인</button>
+		</li> <!--08.23.error!-->
+		<li>
+			<div class="col-3 sub_title">비밀번호</div>
+			<input type="password" name="mb_pw" id="mb_pw" placeholder="비밀번호">
+		</li>
+		<li class="password">
+			<div class="col-3 sub_title">비밀번호 확인</div>
+			<input type="password" placeholder="비밀번호 확인" id="pw_check">
+		</li>
+		<li>
+			<div class="col-3 sub_title">이름</div>
+			<input type="text" name="mb_name" id="mb_name" placeholder="이름">
+		</li>
+		<li class="email_auth">
+			<div class="col-3 sub_title">이메일</div>
+			<div class="col-9" style="display: flex; flex-direction: column;">
+				<section>
+					<input type="text" placeholder="이메일" name="mb_email" id="mb_email" class="email">
+					<button type="button" id="email_auth_btn" class="box_eft_02 email_auth_btn">인증번호 받기</button>
+				</section>
+				<section>
+					<input type="text" placeholder="인증번호" id="email_auth_key">
+					<button type="button" class="box_eft_02" id="check_mail">인증번호 확인</button>
+				</section>
+			</div>
+		</li>
+		<li class="address">
+			<div class="col-3 sub_title">주소</div>
+			<section>
+				<input placeholder="우편번호" name="addr1" class="box_eft_00" id="addr1" type="text"
+					   readonly="readonly">
+				<button type="button" class="box_eft_02" onclick="execPostCode();">우편번호 찾기</button>
+				<br>
+				<input placeholder="도로명 주소" name="mb_addr" id="mb_addr" type="text" readonly="readonly"/><br>
+				<input placeholder="상세주소" name="addr3" id="addr3" type="text"/><br>
+			</section>
+		</li>
+		<li class="gender">
+			<div class="col-3 sub_title">성별</div>
+			<input type="radio" name="mb_sex" class="box_eft_01" id="select01" value="남성" checked><label
+				for="select01" style="margin-right: 10px;">남성</label>
+			<input type="radio" name="mb_sex" class="box_eft_01" id="select02" value="여성"><label for="select02">여성</label>
+		</li>
+		<li class="doctor">
+			<div class="col-4 col-md-6 sub_title">의사 혹은 상담가 등의 전문가 인가요?</div>
+			<div>
+				<input type="radio" name="mb_doctor" class="box_eft_01" id="select03" value="일반인"
+					   checked="checked"><label for="select03">아니오</label>
+				<input type="radio" name="mb_doctor" class="box_eft_01" id="select04" value="전문가">
+				<label for="select04">네</label>
+			</div>
+		</li>
+	</ul>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
+<div class="col-12" style="text-align: center;">
+	<button type="button" class="col-3 box_eft_02" id="submit" disabled="disabled" onclick="registerCheck()">
+		회원가입
+	</button>
+</div>--%>

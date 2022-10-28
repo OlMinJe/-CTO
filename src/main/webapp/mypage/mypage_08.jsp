@@ -38,7 +38,7 @@
                     success: function (data) {
                         if (data == "success") {
                             alert("탈퇴가 처리되었습니다.");
-                            location.href = "/mypage/mypage_08_1";
+                            location.href = "/main/main";
                         } else {
                             alert("비밀번호가 맞지 않습니다.");
                         }
@@ -92,6 +92,23 @@
                 </div>
             </div>
         </div>
+
+<!-- mypage_08.jsp와 mypage_08_01.jsp 합치기 -->
+        <div class="col-12 no_user">
+            <div class="col-10 no_user_title">설문조사</div>
+            <form class="col-10">
+                <ul>
+                    <li><input type="checkbox" checked>선택 1</li>
+                    <li><input type="checkbox">선택 1</li>
+                    <li><input type="checkbox">선택 1</li>
+                    <li><input type="checkbox">선택 1</li>
+                    <li><input type="checkbox">선택 1</li>
+                    <li class="flex__"><span>기타</span><input type="text" checked></li>
+                    <li class="float__"><input type="submit" class="no_user_btn btn btn-info"></input></li>
+                </ul>
+            </form>
+        </div>
+
         <div class="col-12 col-lg-9 content">
             <div class="col-12 content_box" id="tab_8_content">
                 <div class="col-12" id="sub_title">회원 탈퇴</div>
@@ -100,7 +117,7 @@
                         <ul>
                             <li>
                                 <span class="col-12 col-md-3">아이디</span>
-                                <input type="text" name="mb_id" id="mb_id" class="box_eft_01"  value="${modifyId}" readonly="readonly">
+                                <input type="text" name="mb_id" id="mb_id" class="box_eft_01" value="${modifyId}" readonly="readonly">
                             </li>
                             <li>
                                 <span class="col-12 col-md-3">비밀번호</span>
