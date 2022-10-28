@@ -301,7 +301,7 @@ public class MemberController {
     }
 
     //  닉네임 변경 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
-    @RequestMapping(value="/nick_modify", method=RequestMethod.GET)
+    @RequestMapping(value="/mypage/mypage_06", method=RequestMethod.GET)
     public String nickModifyGET(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
 
         HttpSession session = req.getSession();
@@ -318,7 +318,7 @@ public class MemberController {
 
     // 닉네임 수정 기능 구현 : POST방식 (회원정보 수정시 비동기 처리로 수정해주는 역할)
     @ResponseBody
-    @RequestMapping(value = "/nick_modify", method=RequestMethod.POST)
+    @RequestMapping(value = "/mypage/mypage_06", method=RequestMethod.POST)
     public void nickModifyPOST(@RequestBody MemberVO memberVO) throws Exception {
         memberService.nickModifyPOST(memberVO);
     }

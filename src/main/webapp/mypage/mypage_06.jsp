@@ -104,7 +104,7 @@
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
                     },
-                    url:"/nick_modify",
+                    url:"/mypage/mypage_06",
                     dataType: "text",
                     contentType: "application/json; charset=UTF-8",
                     success : function() {
@@ -193,7 +193,7 @@
             <div class="col-12 content_box" id="tab_6_content">
                 <div class="col-12" id="sub_title">닉네임 변경</div>
                 <div class="col-12 col-md-10 col-lg-8" style="text-align: center;  margin-left: auto; margin-right: auto;padding-top: 70px;">
-                    <form action='<c:url value='/register'/>' method="post" style="margin-bottom: 30px;">
+                    <form action='<c:url value='/login/register'/>' method="post" style="margin-bottom: 30px;">
                         <ul>
                             <li><%--<li style="display: none;">--%>
                                 <span class="col-12 col-md-3">아이디</span>

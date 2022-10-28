@@ -35,7 +35,7 @@
                     <div class="menu_title">정보변경</div>
                     <ul style="padding-top: 10px;">
                         <li class="col-12" onclick="location.href='/mypage/mypage_05.jsp'">비밀번호 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_06.jsp'">닉네임 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">닉네임 변경</li>
                         <li class="col-12" onclick="location.href='/mypage/mypage_07.jsp'">프로필 사진 변경</li>
                         <li class="col-12" onclick="location.href='/mypage/mypage_08.jsp'">회원탈퇴</li>
                     </ul>
