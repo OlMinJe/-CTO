@@ -254,7 +254,7 @@ public class MemberController {
 
     /* membeModify */
     // 회원정보 수정 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
-    @RequestMapping(value="/pw_modify", method=RequestMethod.GET)
+    @RequestMapping(value="/mypage/mypage_05", method=RequestMethod.GET)
     public String memberModifyGET(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
 
         HttpSession session = req.getSession();
@@ -272,7 +272,7 @@ public class MemberController {
     }
 
     // 회원정보 수정 기능 구현 : POST방식 (회원정보 수정시 비동기 처리로 수정해주는 역할)
-    @RequestMapping(value="/pw_modify", method=RequestMethod.POST)
+    @RequestMapping(value="/mypage/mypage_05", method=RequestMethod.POST)
     public void memberModifyPOST(@RequestBody MemberVO memberVO, HttpServletRequest req) throws Exception {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -322,7 +322,6 @@ public class MemberController {
     public void nickModifyPOST(@RequestBody MemberVO memberVO) throws Exception {
         memberService.nickModifyPOST(memberVO);
     }
-
 
     // 프로필 변경 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
     @RequestMapping(value="/profile_modify", method=RequestMethod.GET)

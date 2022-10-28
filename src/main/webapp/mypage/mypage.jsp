@@ -18,7 +18,7 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
-        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.jsp'">내정보</a>
+        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage?stateCode=${stateCode}'">내정보</a>
     </div>
     <div class="col-12 mypage_con">
         <!--왼쪽 메뉴 -->
@@ -26,18 +26,18 @@
             <div class="col-0 menu_list mt">
                 <div class="col-12 menu_title" onclick="mobile_menu();">활동내역</div>
                 <ul class="col-12" id="menu_list_01">
-                    <li class="col-12" onclick="location.href='/mypage/mypage_01.jsp'">이벤트 참여내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_02.jsp'">커뮤니티 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_03.jsp'">위치기반 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_04.jsp'">테스트 결과 내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01?stateCode=${stateCode}'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02?stateCode=${stateCode}'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03?stateCode=${stateCode}'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_04?stateCode=${stateCode}'">테스트 결과 내역</li>
                 </ul>
                 <div class="col-12 col-lg-0 menu_list" id="menu_list_02">
                     <div class="menu_title">정보변경</div>
                     <ul style="padding-top: 10px;">
-                        <li class="col-12" onclick="location.href='/mypage/mypage_05.jsp'">비밀번호 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_05?stateCode=${stateCode}'">비밀번호 변경</li>
                         <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">닉네임 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_07.jsp'">프로필 사진 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_08.jsp'">회원탈퇴</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_07?stateCode=${stateCode}'">프로필 사진 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_08?stateCode=${stateCode}'">회원탈퇴</li>
                     </ul>
                 </div>
             </div>

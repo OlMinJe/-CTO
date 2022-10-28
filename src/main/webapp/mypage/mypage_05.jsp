@@ -30,14 +30,16 @@
                 alert("새 비밀번호가 일치하지 않습니다. 다시 한 번 확인해주세요.")
             } else {
                 if(mb_pw == '') {
-                    alert("새비밀번호를 올바르게 입력해주세요.");
+                    alert("새 비밀번호를 올바르게 입력해주세요.");
                 } else {
                     $.ajax({
                         async:true,
                         type:'POST',
                         data: JSON.stringify(param),
-
-                        url:"/pw_modify",
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                        },
+                        url:"/mypage/mypage_05",
                         dataType: "text",
                         contentType: "application/json; charset=UTF-8",
                         success : function() {
@@ -66,7 +68,9 @@
                     async: true,
                     type: 'POST',
                     data: JSON.stringify(param),
-
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                    },
                     url: "/pw_check",
                     dataType: "text",
                     contentType: "application/json; charset=UTF-8",
@@ -93,7 +97,7 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
-        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.html'">내정보</a>
+        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage?stateCode=${stateCode}'">내정보</a>
     </div>
     <div class="col-12 mypage_con">
         <!--왼쪽 메뉴 -->
@@ -101,18 +105,18 @@
             <div class="col-0 menu_list mt">
                 <div class="col-12 menu_title" onclick="mobile_menu();">활동내역</div>
                 <ul class="col-12" id="menu_list_01">
-                    <li class="col-12" onclick="location.href='/mypage/mypage_01.jsp'">이벤트 참여내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_02.jsp'">커뮤니티 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_03.jsp'">위치기반 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_06.jsp'">테스트 결과 내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01?stateCode=${stateCode}'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02?stateCode=${stateCode}'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03?stateCode=${stateCode}'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">테스트 결과 내역</li>
                 </ul>
                 <div class="col-12 col-lg-0 menu_list" id="menu_list_02">
                     <div class="menu_title mt">정보변경</div>
                     <ul>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_05.jsp'">비밀번호 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_06.jsp'">닉네임 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_07.jsp'">프로필 사진 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_08.jsp'">회원탈퇴</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_05?stateCode=${stateCode}'">비밀번호 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">닉네임 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_07?stateCode=${stateCode}'">프로필 사진 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_08?stateCode=${stateCode}'">회원탈퇴</li>
                     </ul>
                 </div>
             </div>
@@ -148,18 +152,13 @@
             <div class="col-12 content_box" id="tab_5_content">
                 <div class="col-12" id="sub_title">비밀번호 변경</div>
                 <div class="col-12" style="text-align: center; padding-top: 40px;">
-                    <form action='/register' method="post" class="col-12 col-md-10 col-lg-8">
+                    <form action='<c:url value='/login/register'/>' method="post" class="col-12 col-md-10 col-lg-8">
                         <ul>
-                            <%--<li>
-                                <!--이름<input type="text" name="memberName" id="mb_name" th:value="${modifyName}" readonly="readonly">-->
-                                <span class="col-12 col-md-4">이름</span>
-                                <input type="text" name="memberName" class="col-12 col-md-8 box_eft_01" id="mb_name" th:text="${modifyName}" readonly="readonly">
-                            </li>
                             <li>
                                 <span class="col-12 col-md-4">아이디</span>
-                                <input type="text" name="memberId" class="col-12 col-md-8 box_eft_01" id="mb_id" th:value="${modifyId}" readonly="readonly">
+                                <input type="text" name="memberId" class="col-12 col-md-8 box_eft_01" id="mb_id" value="${modifyId}" readonly="readonly">
 
-                            </li>--%>
+                            </li>
                             <li>
                                 <input type="hidden" name="modifyPw" id="modifyPw" value="${modifyPw}"/>
                                 <span class="col-12 col-md-4">기존 비밀번호를 입력해주세요.</span>
@@ -179,12 +178,11 @@
                         </ul>
                     </form>
                     <button type="button" class="btn box_eft_02" id="submit" onclick="pw_modify()">변경하기</button>
-                    <button type="button" class="btn box_eft_02" onclick="location.href='/'">처음으로</button>
+                    <button type="button" class="btn box_eft_02" onclick="location.href='/main?stateCode=${stateCode}'">처음으로</button>
                 </div>
 
             </div>
         </div>
-
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
