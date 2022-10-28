@@ -369,6 +369,25 @@ public class MemberController {
         return "/mypage/mypage_08";
     }
 
+    @ResponseBody
+    @RequestMapping(value="/mypage/mypage_08", method=RequestMethod.POST)
+    public String memberDeletePOST(@RequestBody MemberVO memberVO, Model model) throws Exception {
+
+        String inputPass = memberVO.getMb_pw(); // 입력한 비밀번호
+        MemberVO member = memberService.userCheck(memberVO); // 암호화된 DB비밀번호
+        String result = "";
+
+        if(memberVO.getMb_id() != null && memberVO.getMb_id() != "") {
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+            if(encoder.matches(inputPass, member.getMb_pw())) {
+                memberService.memberDeletePOST(memberVO);
+                result = "success";
+            }
+        }
+        return result;
+    }
+
     /** logout **/
     @RequestMapping(value="/logout", method=RequestMethod.GET)
     public String logout(HttpServletRequest req) throws Exception {
