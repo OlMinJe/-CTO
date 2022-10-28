@@ -152,7 +152,7 @@
             <div class="col-12 content_box" id="tab_5_content">
                 <div class="col-12" id="sub_title">비밀번호 변경</div>
                 <div class="col-12" style="text-align: center; padding-top: 40px;">
-                    <form action='<c:url value='/login/register'/>' method="post" class="col-12 col-md-10 col-lg-8">
+                    <form action='<c:url value='/register'/>' method="post" class="col-12 col-md-10 col-lg-8">
                         <ul>
                             <li>
                                 <span class="col-12 col-md-4">아이디</span>

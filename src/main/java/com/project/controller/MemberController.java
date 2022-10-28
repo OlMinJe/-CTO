@@ -272,6 +272,7 @@ public class MemberController {
     }
 
     // 회원정보 수정 기능 구현 : POST방식 (회원정보 수정시 비동기 처리로 수정해주는 역할)
+    @ResponseBody
     @RequestMapping(value="/mypage/mypage_05", method=RequestMethod.POST)
     public void memberModifyPOST(@RequestBody MemberVO memberVO, HttpServletRequest req) throws Exception {
 
