@@ -325,7 +325,7 @@ public class MemberController {
     }
 
     // 프로필 변경 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
-    @RequestMapping(value="/profile_modify", method=RequestMethod.GET)
+    @RequestMapping(value="/mypage/mypage_07", method=RequestMethod.GET)
     public String profileModifyGET(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
 
         HttpSession session = req.getSession();
@@ -342,13 +342,13 @@ public class MemberController {
 
     // 프로필 수정 기능 구현 : POST방식 (회원정보 수정시 비동기 처리로 수정해주는 역할)
     @ResponseBody
-    @RequestMapping(value = "/profile_modify", method=RequestMethod.POST)
+    @RequestMapping(value = "/mypage/mypage_07", method=RequestMethod.POST)
     public void profileModifyPOST(@RequestBody MemberVO memberVO) throws Exception {
         memberService.profileModifyPOST(memberVO);
     }
 
     //  탈퇴 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
-    @RequestMapping(value="/memberDelete", method=RequestMethod.GET)
+    @RequestMapping(value="/mypage/mypage_08", method=RequestMethod.GET)
     public String memberDeleteGET(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode,
                                   HttpSession httpSession, MemberVO memberVO) throws Exception {
 

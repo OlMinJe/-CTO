@@ -36,7 +36,7 @@
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
                     },
-                    url: "/memberDelete",
+                    url: "/mypage/mypage_08",
                     dataType: "text",
                     contentType: "application/json; charset=UTF-8",
                     success: function (data) {
@@ -52,7 +52,7 @@
                             "message:" + request.responseText + "\n" + "error:" + error);
                     }
                 })
-                location.href='/mypage/mypage_08_1.html';
+                location.href='/mypage/mypage_08_1';
             } else {
                 alert("비밀번호를 제대로 입력해주세요.");
             }
@@ -72,7 +72,7 @@
 --%>
 <div class="col-12 mypage">
     <div class="col-12 title" style="float: left">
-        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.html'">내정보</a>
+        <a class="col-12" id="tab_0" name="menu_tab" onclick="location.href='/mypage/mypage.jsp'">내정보</a>
     </div>
     <div class="col-12 mypage_con">
         <!--왼쪽 메뉴 -->
@@ -80,18 +80,18 @@
             <div class="col-0 menu_list mt">
                 <div class="col-12 menu_title">활동내역</div>
                 <ul class="col-12" id="menu_list_01">
-                    <li class="col-12" onclick="location.href='/mypage/mypage_01.html'">이벤트 참여내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_02.html'">커뮤니티 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_03.html'">위치기반 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_04.html'">테스트 결과 내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01.jsp'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02.jsp'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03.jsp'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_04.jsp'">테스트 결과 내역</li>
                 </ul>
                 <div class="col-12 col-lg-12 menu_list" id="menu_list_02">
                     <div class="menu_title mt">정보변경</div>
                     <ul>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_05.html'">비밀번호 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_06.html'">닉네임 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_07.html'">프로필 사진 변경</li>
-                        <li class="col-12" onclick="location.href='/mypage/mypage_08.html'">회원탈퇴</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_05.jsp'">비밀번호 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_06.jsp'">닉네임 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_07.jsp'">프로필 사진 변경</li>
+                        <li class="col-12" onclick="location.href='/mypage/mypage_08.jsp'">회원탈퇴</li>
                     </ul>
                 </div>
             </div>
@@ -100,7 +100,7 @@
             <div class="col-12 content_box" id="tab_8_content">
                 <div class="col-12" id="sub_title">회원 탈퇴</div>
                 <div class="col-12 col-md-8 col-lg-6" style="text-align: center;margin-left: auto; margin-right: auto;padding-top: 70px;">
-                    <form action='<c:url value='/register'/>' method="post">
+                    <form action='<c:url value='/login/register'/>' method="post">
                         <ul>
                             <li>
                                 <span class="col-12 col-md-3">아이디</span>
@@ -113,7 +113,7 @@
                         </ul>
                     </form>
                     <button type="button" class="box_eft_02" onclick="deleteMember()">회원탈퇴</button>
-                    <button type="button" class="box_eft_02" onclick="location.href='/'">처음으로</button>
+                    <button type="button" class="box_eft_02" onclick="location.href='/main?stateCode=${stateCode}'">처음으로</button>
                 </div>
             </div>
         </div>

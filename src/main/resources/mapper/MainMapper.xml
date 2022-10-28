@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.project.mapper.MainMapper">
+
 	<select id="now" resultType="string">
 		SELECT NOW() FROM DUAL;
 	</select>	
@@ -69,7 +70,7 @@
 		WHERE mb_id = #{mb_id}
 	</update>
 	
-	<delete id="memberDelete" parameterType="MemberVO">
+	<delete id="memberDeletePOST" parameterType="MemberVO">
 		DELETE from hello_member
 		WHERE mb_id = #{mb_id}
 	</delete>
@@ -86,7 +87,7 @@
 		WHERE mb_nick = #{mb_nick}
 	</select>
 
-	<update id="proModifyPOST" parameterType="MemberVO">
+	<update id="profileModifyPOST" parameterType="MemberVO">
 		update hello_member
 		set mb_img=#{mb_img}
 		where mb_id=#{mb_id}
