@@ -59,7 +59,7 @@ public interface MainMapper {
 	public void memberModifyPOST(MemberVO memberVO) throws Exception;
 
 	// 회원 탈퇴
-	public void memberDeletePOST(MemberVO memberVO) throws Exception;
+	public void memberDelete(MemberVO memberVO) throws Exception;
 	public MemberVO memberDeleteGET(String mb_id) throws Exception;
 
 	// 닉네임 변경

@@ -207,8 +207,8 @@ public class MemberService implements UserDetailsService {
     }
 
     // 회원 탈퇴
-    public void memberDeletePOST(MemberVO memberVO) throws Exception {
-        mapper.memberDeletePOST(memberVO);
+    public void memberDelete(MemberVO memberVO) throws Exception {
+        mapper.memberDelete(memberVO);
     }
 
     public MemberVO memberDeleteGET(String mb_id) throws Exception {

@@ -69,7 +69,6 @@
 					alert("이메일 인증에 성공했습니다.");
 					return true;
 				}
-
 				fn_join();
 			});
 
@@ -115,7 +114,6 @@
 				alert("닉네임을 입력해주세요.");
 				return false;
 			}
-
 			if($.trim($('#mb_email').val()) == '') {
 				alert("이메일을 입력해주세요.");
 				return false;
@@ -128,7 +126,6 @@
 				alert("주소를 입력해주세요.");
 				return false;
 			}
-
 			if(confirm("회원가입을 하시겠습니까?")){
 				alert("회원가입이 완료되었습니다.");
 				$("form").submit();
@@ -253,7 +250,7 @@
 	<div class="col-12 col-lg-10 register">
 		<div class="title_01">회원가입</div>
 		<div class="title_02">정보입력</div>
-		<form action='<c:url value='/register'/>' method="post" enctype="multipart/form-data">
+		<form action='<c:url value='/login/register'/>' method="post" enctype="multipart/form-data">
 			<div class="col-12" style="margin-bottom: 50px;">
 				<input type="file" class="col-12" name="file" id="mb_img" onchange="readURL(this);">
 				<label class="input_file" for="mb_img">프로필 선택</label>

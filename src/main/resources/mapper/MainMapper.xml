@@ -70,7 +70,7 @@
 		WHERE mb_id = #{mb_id}
 	</update>
 	
-	<delete id="memberDeletePOST" parameterType="MemberVO">
+	<delete id="memberDelete" parameterType="MemberVO">
 		DELETE from hello_member
 		WHERE mb_id = #{mb_id}
 	</delete>

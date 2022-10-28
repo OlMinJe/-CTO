@@ -60,7 +60,7 @@ public class MemberController {
         return count;
     }
 
-    //id 중복 확인
+    //아이디 중복 확인
     @ResponseBody
     @RequestMapping(value="/idCheck", method=RequestMethod.POST)
     public int IdCheck(@RequestBody String mb_id) throws Exception {
@@ -74,7 +74,8 @@ public class MemberController {
     }
 
     //회원가입 GET
-    @RequestMapping(value="/register", method=RequestMethod.GET)
+    //@RequestMapping(value="/register", method=RequestMethod.GET)
+    @RequestMapping(value="/login/register", method=RequestMethod.GET)
     public void registerGet() throws Exception {
 
         logger.info("********GET register");
@@ -82,7 +83,8 @@ public class MemberController {
     }
     
     // 회원가입 시 프로필 이미지 저장
-    @RequestMapping(value={"/register","/memberImg"}, method=RequestMethod.POST)
+    @ResponseBody
+    @RequestMapping(value={"/login/register","/memberImg"}, method=RequestMethod.POST)
     public String memberRegister(MemberVO memberVO, MultipartFile file) throws Exception {
         //try 안에 구문이랑 충돌 되니까 이거 꼭 한 번만 쓰기
         //boardService.memberRegister(memberVO,file);
@@ -102,7 +104,7 @@ public class MemberController {
         } catch (Exception e) {
             logger.info("*****존재 하는 아이디");
         }
-        return "redirect:/";
+        return "redirect:/main/main";
     }
 
     //회원가입 시 이메일 인증
@@ -355,7 +357,9 @@ public class MemberController {
         HttpSession session = req.getSession();
 
         MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
-        MemberVO modifyMember = memberService.memberDeleteGET(member.getMb_id());
+        MemberVO modifyMember = memberService.membermodifyGET(member.getMb_id());
+        //MemberVO modifyMember = memberService.memberDeleteGET(member.getMb_id());
+        //MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
 
         //추가
         model.addAttribute("modifyId", modifyMember.getMb_id());
@@ -371,17 +375,19 @@ public class MemberController {
 
     @ResponseBody
     @RequestMapping(value="/mypage/mypage_08", method=RequestMethod.POST)
-    public String memberDeletePOST(@RequestBody MemberVO memberVO, Model model) throws Exception {
+    public String memberDelete(@RequestBody MemberVO memberVO, Model model, HttpServletRequest req) throws Exception {
 
         String inputPass = memberVO.getMb_pw(); // 입력한 비밀번호
-        MemberVO member = memberService.userCheck(memberVO); // 암호화된 DB비밀번호
+        MemberVO member = memberService.userCheck(memberVO); // 암호화된 DB 비밀번호
         String result = "";
 
         if(memberVO.getMb_id() != null && memberVO.getMb_id() != "") {
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
             if(encoder.matches(inputPass, member.getMb_pw())) {
-                memberService.memberDeletePOST(memberVO);
+                memberService.memberDelete(memberVO);
+                HttpSession session = req.getSession(); //탈퇴 시 세션 삭제(추후 확인 필)
+                session.invalidate();
                 result = "success";
             }
         }
@@ -391,13 +397,6 @@ public class MemberController {
     /** logout **/
     @RequestMapping(value="/logout", method=RequestMethod.GET)
     public String logout(HttpServletRequest req) throws Exception {
-        /*
-        HttpSession session = req.getSession();
-        if(session != null){
-            session.invalidate();
-        }
-        */
-        //MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
         HttpSession session = req.getSession();
         session.invalidate();
         return "/main/main";
