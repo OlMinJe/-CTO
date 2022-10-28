@@ -400,9 +400,9 @@
 				<li class="doctor">
 					<div class="col-4 col-md-6 sub_title">의사 혹은 상담가 등의 전문가 인가요?</div>
 					<div>
-						<input type="radio" name="mb_doctor" class="box_eft_01" id="select03" value="일반인"
+						<input type="radio" name="mb_doctor" class="box_eft_01" id="select03" value="0"
 							   checked="checked"><label for="select03">아니오</label>
-						<input type="radio" name="mb_doctor" class="box_eft_01" id="select04" value="전문가">
+						<input type="radio" name="mb_doctor" class="box_eft_01" id="select04" value="1">
 						<label for="select04">네</label>
 					</div>
 				</li>

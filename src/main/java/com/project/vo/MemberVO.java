@@ -26,7 +26,7 @@ public class MemberVO implements Serializable {
 	private String mb_sex;
 	private String mb_nick;
 	private String mb_img;
-	private String mb_doctor;
+	private Integer mb_doctor;
 	private Date reg_date;
 	private Boolean check_date;
 }
