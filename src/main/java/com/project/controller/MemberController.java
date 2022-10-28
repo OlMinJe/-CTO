@@ -75,16 +75,15 @@ public class MemberController {
 
     //회원가입 GET
     //@RequestMapping(value="/register", method=RequestMethod.GET)
-    @RequestMapping(value="/login/register", method=RequestMethod.GET)
+    @GetMapping(value="/register")
     public void registerGet() throws Exception {
-
         logger.info("********GET register");
         // void 타입일 경우 접근하는 URL 경로에 해당하는 jsp를 찾아 실행한다.
     }
     
     // 회원가입 시 프로필 이미지 저장
-    @ResponseBody
-    @RequestMapping(value={"/login/register","/memberImg"}, method=RequestMethod.POST)
+    //@ResponseBody
+    @RequestMapping(value={"/register","/memberImg"}, method=RequestMethod.POST)
     public String memberRegister(MemberVO memberVO, MultipartFile file) throws Exception {
         //try 안에 구문이랑 충돌 되니까 이거 꼭 한 번만 쓰기
         //boardService.memberRegister(memberVO,file);
@@ -104,7 +103,7 @@ public class MemberController {
         } catch (Exception e) {
             logger.info("*****존재 하는 아이디");
         }
-        return "redirect:/main/main";
+        return "redirect:/";
     }
 
     //회원가입 시 이메일 인증
