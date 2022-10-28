@@ -323,6 +323,7 @@ public class MemberController {
         memberService.nickModifyPOST(memberVO);
     }
 
+
     // 프로필 변경 화면 구현 : GET방식(회원정보 수정 페이지 진입시 해당 회원 정보를 새로운 세션과 연결하여 보여주는 역할)
     @RequestMapping(value="/profile_modify", method=RequestMethod.GET)
     public String profileModifyGET(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
