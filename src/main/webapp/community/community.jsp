@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@page import="com.project.vo.BoardVO" %>
+<%@page import="com.project.vo.MemberVO" %>
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -106,6 +108,17 @@
             </c:forEach>
         </table>
             <input type="hidden" name="category" value="${category}"/>
+            <ul class="paging">
+                <c:if test="${paging.prev}">
+                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.startPage-1}"/>'>이전</a></span>
+                </c:if>
+                <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${num}"/>'>${num}</a></span>
+                </c:forEach>
+                <c:if test="${paging.next && paging.endPage>0}">
+                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
+                </c:if>
+            </ul>
             <!--페이징-->
             <ul class="pagination">
                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>

@@ -146,7 +146,7 @@
 			b.com_photo = #{com_photo}
 		WHERE com_num = #{com_num}
 		and b.mb_nick in (
-			select mb_nick from hello_member
+			select mb_nick from tb_member
 			where mb_nick = #{mb_nick}
 		)		
 	</update>
@@ -266,7 +266,7 @@
 		WHERE talk_num = #{talk_num}
 	</select>
 
-	<update id="talkModify" parameterType="com.helloproject.vo.TalkVO">
+	<update id="talkModify" parameterType="com.project.vo.TalkVO">
 		UPDATE tb_talk t, tb_member m
 		SET t.talk_title = #{talk_title},
 			t.talk_content = #{talk_content},

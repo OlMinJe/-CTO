@@ -30,9 +30,9 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 
-/*	*//** board CRUD - 커뮤니티 **//*
+/*	*//** board CRUD - 커뮤니티 **///*
 	// 게시판 리스트 및 메인페이지 + kakao user/session
-	@RequestMapping(value="/boardList")
+	@RequestMapping(value="/community/community")
 	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
 
 		// 페이징 객체
@@ -60,9 +60,9 @@ public class BoardController {
 		model.addAttribute("category",category);
 		//model.addAttribute("num",num);
 
-		return "boardList";
+		return "/community/community";
 	}
-
+/*
 	// 게시판 글쓰기 폼(커뮤니티)
 	@RequestMapping(value="/boardWriteForm")
 	public String boardWriteForm(HttpServletRequest req, Model model) throws Exception {

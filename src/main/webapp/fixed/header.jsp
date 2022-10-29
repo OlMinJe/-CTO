@@ -42,7 +42,7 @@
                     <li id="m_admin"><a onclick="location.href='/'">관리자 페이지로 넘어가기.</a></li>
                 </ul>
             </li>
-            <li class="m_nav_title" onclick="location.href='/community/community.jsp?stateCode=${stateCode}&category=10'">커뮤니티</li>
+            <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
             <li class="m_nav_title" onclick="location.href='/advice/advice.jsp?stateCode=${stateCode}'">상담</li>
             <li class="m_nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
             <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
@@ -61,7 +61,7 @@
             </c:if>
         </div>
         <ul class="col-6 nav_mian">
-            <li class="nav_title" onclick="location.href='/community/community.jsp?stateCode=${stateCode}&category=10'">커뮤니티</li>
+            <li class="nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
             <li class="nav_title" onclick="location.href='/advice/advice.jsp?stateCode=${stateCode}'">상담</li>
             <li class="nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
             <li class="nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
