@@ -17,38 +17,71 @@
     <div class="col-12 col-lg-10 view_con">
         <div class="col-12 category_title">카테고리</div>
         <div class="col-12 view_list">
-            <div class="col-12 board_view_title">글 제목</div>
+            <div class="col-12 board_view_title"><input name="title" readonly="readonly" value="${data.com_title}"></div>
             <div class="col-12 board_view_info">
                 <dl>
                     <dt>번호</dt>
-                    <dd>1</dd>
+                    <dd><input name="writer" readonly="readonly" value="${data.com_num}"></dd>
                 </dl>
                 <dl>
-                    <dt>글쓴이</dt>
-                    <dd>김배화</dd>
+                    <dt>작성자</dt>
+                    <dd><input name="writer" readonly="readonly" value="${data.mb_nick}"></dd>
                 </dl>
                 <dl>
                     <dt>작성일</dt>
-                    <dd>2022.07.13</dd>
+                    <dd><input name="hit" readonly="readonly" value="${data.com_date}"></dd>
                 </dl>
                 <dl>
-                    <dt>조회</dt>
-                    <dd>33</dd>
+                    <dt>조회수</dt>
+                    <dd><input name="hit" readonly="readonly" value="${data.com_hit}"></dd>
+                </dl>
+                <dl>
+                    <dt>좋아요 수</dt>
+                    <dd><input name="com_like" readonly="readonly" value="${data.com_like}"></dd>
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용
+                <input name="content" readonly="readonly" value="${data.com_content}">
             </div>
         </div>
+
+        <%--<form name="form" method="post">
+            <div>글번호<input name="com_num" readonly="readonly" value="${data.com_num}"></div>
+            <div>카테고리
+                <c:choose>
+                    <c:when test="${data.com_category == 0}">
+                        <label>일상</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 1}">
+                        <label>취미</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 2}">
+                        <label>유머</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 3}">
+                        <label>음식</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 4}">
+                        <label>정보</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 5}">
+                        <label>취업/진로</label>
+                    </c:when>
+                    <c:when test="${data.com_category == 6}">
+                        <label>기타</label>
+                    </c:when>
+                </c:choose>
+            </div>
+            <div>제목<input name="title" readonly="readonly" value="${data.com_title}"></div>
+            <div>내용<input name="content" readonly="readonly" value="${data.com_content}"></div>
+            <div>작성자<input name="writer" readonly="readonly" value="${data.mb_nick}"></div>
+            <div>조회수<input name="hit" readonly="readonly" value="${data.com_hit}"></div>
+            <div>좋아요 수<input name="com_like" readonly="readonly" value="${data.com_like}"></div>
+
+        </form>--%>
+
         <div class="col-12 btn_wrap">
-            <a onclick="location.href='/community/community.jsp';" class="on box_eft_02">목록</a>
+            <a onclick="location.href='/community/community?stateCode=${stateCode}&category=10';" class="on box_eft_02">목록</a>
         </div>
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
