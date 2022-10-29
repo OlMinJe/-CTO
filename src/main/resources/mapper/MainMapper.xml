@@ -94,18 +94,18 @@
 	</update>
 
 	<insert id="boardWrite">
-		INSERT INTO hello_board (com_title, com_content, mb_seq,com_category,com_hit,mb_doctor,mb_nick,com_photo)
+		INSERT INTO tb_com_talk (com_title, com_content, mb_seq,com_category,com_hit,mb_doctor,mb_nick,com_photo)
 		VALUES (#{com_title}, #{com_content}, #{mb_seq}, #{com_category}, #{com_hit}, #{mb_doctor},#{mb_nick},#{com_photo} )
 	</insert>
 
 	<select id="boardList2" resultType="BoardVO">
 		select *
-        from hello_board
+        from tb_com_talk
 	</select>
 	<select id="boardList" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
 			SELECT *
-			FROM hello_board
+			FROM tb_com_talk
 			ORDER BY com_num DESC
 			LIMIT #{pageStart}, #{perPageNum}
 		]]>
@@ -113,7 +113,7 @@
 	<select id="boardListDetail" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
 		SELECT *
-		FROM hello_board
+		FROM tb_com_talk
 		where com_category = #{category}
 		ORDER BY com_num DESC
 			LIMIT #{cri.pageStart}, #{cri.perPageNum}
@@ -121,25 +121,25 @@
 	</select>
 	<select id="boardListCnt" resultType="int">
 		SELECT count(*)
-		FROM hello_board
+		FROM tb_com_talk
 	</select>
 	<select id="boardListCntDetail" resultType="int">
 		SELECT count(*)
-		FROM hello_board
+		FROM tb_com_talk
 		where com_category = #{category}
 	</select>
 
 	<select id="boardRead" resultType="BoardVO">
 		SELECT com_num, com_title, com_category,com_content, mb_nick,com_hit,com_photo,mb_seq,mb_doctor,com_like
-		FROM hello_board
+		FROM tb_com_talk
 		WHERE com_num = #{com_num}
 	</select>
 	<update id="increaseComhit">
-		update hello_board set com_hit = com_hit+1
+		update tb_com_talk set com_hit = com_hit+1
 		where com_num=#{com_num}
 	</update>
-	<update id="boardModify" parameterType="com.project.vo.BoardVO"><!--parameterType="com.helloproject.vo.BoardVO"-->
-		UPDATE hello_board b, hello_member m
+	<update id="boardModify" parameterType="com.project.vo.BoardVO">
+		UPDATE tb_com_talk b, tb_member m
 		SET b.com_title = #{com_title},
 			b.com_content = #{com_content},
 			b.com_date = now(),
@@ -152,7 +152,7 @@
 	</update>
 	
 	<delete id="boardDelete" parameterType="int">
-		DELETE FROM hello_board
+		DELETE FROM tb_com_talk
 		WHERE com_num = #{com_num}
 	</delete>
 
@@ -179,7 +179,7 @@
         </delete>
 	<!-- 댓글 카운트 관련-->
 	<update id="updateReplyCount" parameterType="int">
-		update hello_board b
+		update tb_com_talk b
 		set b.com_comment = (select count(comment_seq) from tb_comment where com_num = #{com_num})
 		where b.com_num = #{com_num}
 	</update>
@@ -216,7 +216,7 @@
 
 	<!-- 카운트한 값을 커뮤니티 DB의 com_like에 넣기-->
 	<update id="updatecomlike" parameterType="int">
-		update hello_board b
+		update tb_com_talk b
 		set b.com_like = (select count(com_num) from tb_like where com_num = #{com_num} and like_check=1)
 		where b.com_num = #{com_num}
 	</update>
