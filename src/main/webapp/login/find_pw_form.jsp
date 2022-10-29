@@ -19,10 +19,17 @@
                     },
                     success : function(result) {
                         alert(result);
+                        location.href='/login';
                     },
                 })
             });
         })
+
+        /*$(function(){
+            $("#findBtn").click(function(){
+                location.href='/login';
+            })
+        })*/
     </script>
     <title>비밀번호 찾기</title>
 </head>
