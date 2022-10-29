@@ -218,14 +218,14 @@ public class MemberController {
 
 
     // 비밀번호 찾기 폼
-    @RequestMapping(value = "/find_pw_form")
+    @RequestMapping(value = "/find_pw_form.do")
     public String find_pw_form() throws Exception{
         return "/login/find_pw_form";
     }
 
 
     // 비밀번호 찾기
-    @RequestMapping(value = "/find_pw", method = RequestMethod.GET)
+    @RequestMapping(value = "/find_pw.do", method = RequestMethod.GET)
     public void find_pw(@ModelAttribute MemberVO memberVO, HttpServletResponse response) throws Exception{
         memberService.find_pw(response, memberVO);
     }
