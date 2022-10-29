@@ -139,7 +139,8 @@
 .content_box#tab_8_content button { padding: 7px 15px; }
 
 .no_user { padding: 30px 0; }
-.no_user .no_user_title { margin-bottom: 30px; font-size: 30px; line-height: 36px; }
+.no_user .no_user_title { margin-bottom: 30px; margin-left: auto; margin-right: auto;font-size: 30px; line-height: 36px; }
+.no_user form { margin-left: auto; margin-right: auto; }
 .no_user form ul { text-align: left; }
 .no_user form ul li { display: flex; margin-bottom: 10px; font-size: 20px; line-height: 26px; }
 .no_user form ul li:last-child { margin-bottom: 0; }
@@ -221,7 +222,7 @@
     .mypage_con .mypage_menu #menu_list_02 .menu_title { border-radius: 10px 10px 0 0; }
 
     /* [0] 메인*/
-    .mypage_con .content { padding-top: 0; border: 0; }
+    .mypage_con .content { margin-left: auto; margin-right: auto; padding-top: 0; border: 0; }
     .mypage_con .content_box#tab_0_content { flex-direction: row; }
     .mypage .mypage_con .mypage_menu { display: flex; flex-direction: column; }
     .mypage_con .mypage_menu li:last-child { margin-bottom: 0; }

@@ -92,24 +92,42 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-9 content">
-            <div class="col-12 content_box" id="tab_8_content">
-                <div class="col-12" id="sub_title">회원 탈퇴</div>
-                <div class="col-12 col-md-8 col-lg-6" style="text-align: center;margin-left: auto; margin-right: auto;padding-top: 70px;">
-                    <form action='<c:url value='/login/register'/>' method="post">
-                        <ul>
-                            <li>
-                                <span class="col-12 col-md-3">아이디</span>
-                                <input type="text" name="mb_id" id="mb_id" class="box_eft_01" value="${modifyId}" readonly="readonly">
-                            </li>
-                            <li>
-                                <span class="col-12 col-md-3">비밀번호</span>
-                                <input type="password" name="pw" id="pw" class="box_eft_01">
-                            </li>
-                        </ul>
-                    </form>
-                    <button type="button" class="box_eft_02" onclick="deleteMember()">회원탈퇴</button>
-                    <button type="button" class="box_eft_02" onclick="location.href='/main?stateCode=${stateCode}'">처음으로</button>
+
+<!-- mypage_08.jsp와 mypage_08_01.jsp 합치기 -->
+        <div class="col-12 col-lg-9">
+            <div class="col-12 no_user">
+                <div class="col-10 no_user_title">설문조사</div>
+                <form class="col-10">
+                    <ul>
+                        <li><input type="checkbox" checked>선택 1</li>
+                        <li><input type="checkbox">불만 가득함</li>
+                        <li><input type="checkbox">서비스 부족</li>
+                        <li><input type="checkbox">컨텐츠 부족</li>
+                        <li><input type="checkbox">다른 서비스l 이용하기 위해서</li>
+                        <li class="flex__"><span>기타</span><input type="text" checked></li>
+                        <li class="float__"><input type="submit" class="no_user_btn box_eft_02"></input></li>
+                    </ul>
+                </form>
+            </div>
+            <div class="col-12 col-lg-9 content">
+                <div class="col-12 content_box" id="tab_8_content">
+                    <div class="col-12" id="sub_title">회원 탈퇴</div>
+                    <div class="col-12 col-md-8 col-lg-6" style="text-align: center;margin-left: auto; margin-right: auto;padding-top: 70px;">
+                        <form action='<c:url value='/login/register'/>' method="post">
+                            <ul>
+                                <li>
+                                    <span class="col-12 col-md-3">아이디</span>
+                                    <input type="text" name="mb_id" id="mb_id" class="box_eft_01" value="${modifyId}" readonly="readonly">
+                                </li>
+                                <li>
+                                    <span class="col-12 col-md-3">비밀번호</span>
+                                    <input type="password" name="pw" id="pw" class="box_eft_01">
+                                </li>
+                            </ul>
+                        </form>
+                        <button type="button" class="box_eft_02" onclick="deleteMember()">회원탈퇴</button>
+                        <button type="button" class="box_eft_02" onclick="location.href='/main?stateCode=${stateCode}'">처음으로</button>
+                    </div>
                 </div>
             </div>
         </div>
