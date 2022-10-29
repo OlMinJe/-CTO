@@ -161,23 +161,40 @@
 		SELECT *
 		FROM tb_comment
 		where com_num=#{com_num}
-		</select>
+		order by comment_group,comment_date
+	</select>
 	<insert id="commentInsert" parameterType="CommentVO">
-        INSERT INTO tb_comment(com_num,comment_content,mb_nick,mb_seq,mb_doctor)
-        VALUES(#{com_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor})
-        </insert>
+		INSERT INTO tb_comment(com_num,comment_content,mb_nick,mb_seq,mb_doctor,comment_depth,comment_group)
+		VALUES(#{com_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor},#{comment_depth},#{comment_group})
+	</insert>
+	<!-- 제일 최근 comment_seq 가져오기-->
+	<select id="last" resultType="int">
+		select last_insert_id();
+	</select>
+	<!-- comment_seq를 group값으로 넣기(모댓글인 경우에만 사용)-->
+	<update id="updateGroup" parameterType="int">
+		update tb_comment
+		set comment_group=#{comment_seq}
+		where comment_seq=#{comment_seq}
+	</update>
 	<update id="commentUpdate" parameterType="CommentVO">
 		UPDATE tb_comment
 		SET comment_content=#{comment_content},
 			comment_date=now()
 		WHERE comment_seq=#{comment_seq}
-		</update>
+	</update>
 	<delete id="commentDelete" parameterType="int">
-        DELETE
-        FROM tb_comment
-        WHERE comment_seq=#{comment_seq}
-        </delete>
-	<!-- 댓글 카운트 관련-->
+		DELETE
+		FROM tb_comment
+		WHERE comment_seq=#{comment_seq}
+	</delete>
+
+	<!-- 대댓글 출력을 위한 댓글 카운트-->
+	<select id="recommentList" parameterType="int" resultType="CommentVO">
+		select * from tb_comment where comment_group=#{comment_group} and comment_depth=1 order by comment_date
+	</select>
+
+	<!-- 게시글별 댓글 카운트 관련-->
 	<update id="updateReplyCount" parameterType="int">
 		update tb_com_talk b
 		set b.com_comment = (select count(comment_seq) from tb_comment where com_num = #{com_num})
@@ -220,4 +237,50 @@
 		set b.com_like = (select count(com_num) from tb_like where com_num = #{com_num} and like_check=1)
 		where b.com_num = #{com_num}
 	</update>
+
+	<!--상담 글작성-->
+	<insert id="talkWrite">
+		INSERT INTO tb_talk (talk_title, talk_content, mb_seq,talk_category,talk_hit,mb_doctor,mb_nick,talk_photo)
+		VALUES (#{talk_title}, #{talk_content}, #{mb_seq}, #{talk_category}, #{talk_hit}, #{mb_doctor},#{mb_nick},#{talk_photo} )
+	</insert>
+	<!-- 상담 리스트-->
+	<select id="talkList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM tb_talk
+		where talk_category = #{category}
+		ORDER BY talk_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+
+	<select id="talkListCnt" resultType="int">
+		SELECT count(*)
+		FROM tb_talk
+		where talk_category = #{category}
+	</select>
+
+	<select id="talkRead" resultType="TalkVO">
+		SELECT talk_num, talk_title, talk_category,talk_content, mb_nick,talk_hit,talk_photo,mb_seq,mb_doctor,talk_like
+		FROM tb_talk
+		WHERE talk_num = #{talk_num}
+	</select>
+
+	<update id="talkModify" parameterType="com.helloproject.vo.TalkVO">
+		UPDATE tb_talk t, tb_member m
+		SET t.talk_title = #{talk_title},
+			t.talk_content = #{talk_content},
+			t.talk_date = now(),
+			t.talk_photo = #{talk_photo}
+		WHERE talk_num = #{talk_num}
+		  and t.mb_nick in (
+			select mb_nick from tb_member
+			where mb_nick = #{mb_nick}
+			)
+	</update>
+
+	<delete id="talkDelete" parameterType="int">
+		DELETE FROM tb_talk
+		WHERE talk_num = #{talk_num}
+	</delete>
 </mapper>

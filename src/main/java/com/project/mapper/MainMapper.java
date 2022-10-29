@@ -40,6 +40,7 @@ public interface MainMapper {
 	// 로그인
 	public MemberVO memberLogin(MemberVO memberVO) throws Exception;
 
+
 	/** 관리자 페이지 **/
 	//관리자 페이지 - 회원 리스트
 	public List<MemberVO> Memberlist() throws Exception;
@@ -73,8 +74,9 @@ public interface MainMapper {
 
 
 	/** 게시판 **/
+	// 게시판
 	public void boardWrite(BoardVO boardVO) throws Exception;
-	
+
 	public List<Map<String, Object>> boardList(Criteria cri) throws Exception;
 
 	public List<Map<String, Object>> boardListDetail( Criteria cri, Integer category) throws Exception;
@@ -84,7 +86,7 @@ public interface MainMapper {
 	public void increaseComhit(int com_num) throws Exception;
 
 	public BoardVO boardRead(int num) throws Exception;
-	
+
 	public void boardModify(BoardVO boardVO) throws Exception;
 
 	public void boardModifyForm(int num) throws Exception;
@@ -100,10 +102,16 @@ public interface MainMapper {
 	public List<CommentVO> commentList(int com_num) throws Exception;
 	//댓글작성
 	public int commentInsert(CommentVO comment) throws Exception;
+	//제일 마지막에 추가된 댓글의 comment_seq값 가져오기
+	public int last() throws Exception;
+	//seq값을 comment_group 칼럼 값으로 넣기(모댓글인 경우)
+	public int updateGroup(int comment_seq) throws Exception;
 	//댓글수정
 	public int commentUpdate(CommentVO comment) throws Exception;
 	//댓글삭제
 	public int commentDelete(int cno) throws Exception;
+	//대댓글 출력 관련 코드
+	public List<CommentVO> recommentList(int comment_group) throws Exception;
 
 	/** 좋아요 기능 **/
 	//좋아요 기능
@@ -117,4 +125,17 @@ public interface MainMapper {
 
 	//게시글 별 좋아요 카운트 후 수정
 	public int updatecomlike(int com_num) throws Exception;
+
+	/** 상담 **/
+	// 상담
+	public void talkWrite(TalkVO talkVO) throws Exception;
+	//상담 리스트
+	public List<Map<String, Object>> talkList(Criteria cri, Integer category) throws Exception;
+	//상담 카테고리별 글 카운트
+	public int talkListCnt(Integer category) throws Exception;
+	public TalkVO talkRead(int talk_num) throws Exception;
+
+	public void talkModify(TalkVO talkVO) throws Exception;
+
+	public void talkDelete(int num) throws Exception;
 }
