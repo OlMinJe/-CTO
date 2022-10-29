@@ -92,23 +92,6 @@
                 </div>
             </div>
         </div>
-
-<!-- mypage_08.jsp와 mypage_08_01.jsp 합치기 -->
-        <div class="col-12 no_user">
-            <div class="col-10 no_user_title">설문조사</div>
-            <form class="col-10">
-                <ul>
-                    <li><input type="checkbox" checked>선택 1</li>
-                    <li><input type="checkbox">선택 1</li>
-                    <li><input type="checkbox">선택 1</li>
-                    <li><input type="checkbox">선택 1</li>
-                    <li><input type="checkbox">선택 1</li>
-                    <li class="flex__"><span>기타</span><input type="text" checked></li>
-                    <li class="float__"><input type="submit" class="no_user_btn btn btn-info"></input></li>
-                </ul>
-            </form>
-        </div>
-
         <div class="col-12 col-lg-9 content">
             <div class="col-12 content_box" id="tab_8_content">
                 <div class="col-12" id="sub_title">회원 탈퇴</div>
