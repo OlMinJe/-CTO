@@ -105,10 +105,11 @@ public class BoardController {
 		int category = boardVO.getCom_category();
 		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
 	}
+	*/
 
 
 	// 게시글 내용 읽기(커뮤니티)
-	@RequestMapping(value="/boardRead")
+	@RequestMapping(value="/community/community_view")
 	public String boardRead(@RequestParam("com_num") int com_num,
 							@RequestParam("stateCode") int stateCode,
 							@RequestParam("category") Integer category,
@@ -144,9 +145,10 @@ public class BoardController {
 			//boardService.updatecomlike(com_num);
 		}
 
-		return "boardRead";
+		return "/community/community_view";
 	}
 
+	/*
 	//좋아요 기능을 위한 코드 - 커뮤니티
 	@ResponseBody
 	@RequestMapping (value = "/like/likeupdate",method = RequestMethod.POST)

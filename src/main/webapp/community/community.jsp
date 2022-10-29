@@ -54,59 +54,59 @@
                 <div data-include-path="/community/editor.jsp"></div>
             </div>--%>
             <table border="1">
-            <tr>
-                <%--<th>자동순번</th>--%>
-                <th>글번호</th>
-                <%--<th>카테고리</th>--%>
-                <th>작성자</th>
-                <th>제목</th>
-                <th>작성시간</th>
-                <th>조회수</th>
-                <th>좋아요</th>
-            </tr>
-            <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
-            <c:forEach items="${list}" var="data">
                 <tr>
-                    <%--<td>${no}</td>--%>
-                    <td>${data.com_num}</td>
-                    <%--<div>
-                        <c:choose>
-                            <c:when test="${data.com_category == 0}">
-                                <td>일상</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 1}">
-                                <td>취미</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 2}">
-                                <td>유머</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 3}">
-                                <td>음식</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 4}">
-                                <td>정보</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 5}">
-                                <td>취업/진로</td>
-                            </c:when>
-                            <c:when test="${data.com_category == 6}">
-                                <td>기타</td>
-                            </c:when>
-                        </c:choose>
-                    </div>--%>
-                    <td>${data.mb_nick}</td>
-                    <td><a href="/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
-                        <c:if test="${data.com_comment ne 0}">
-                            <small><b>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</b></small>
-                        </c:if>
-                    </td>
-                    <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>
-                    <td>${data.com_hit}</td>
-                    <td>${data.com_like}</td>
+                    <%--<th>자동순번</th>--%>
+                    <th>글번호</th>
+                    <%--<th>카테고리</th>--%>
+                    <th>작성자</th>
+                    <th>제목</th>
+                    <th>작성시간</th>
+                    <th>조회수</th>
+                    <th>좋아요</th>
                 </tr>
-                <c:set var="no" value="${no-1}"></c:set>
-            </c:forEach>
-        </table>
+                <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
+                <c:forEach items="${list}" var="data">
+                    <tr>
+                            <%--<td>${no}</td>--%>
+                        <td>${data.com_num}</td>
+                            <%--<div>
+                                <c:choose>
+                                    <c:when test="${data.com_category == 0}">
+                                        <td>일상</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 1}">
+                                        <td>취미</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 2}">
+                                        <td>유머</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 3}">
+                                        <td>음식</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 4}">
+                                        <td>정보</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 5}">
+                                        <td>취업/진로</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 6}">
+                                        <td>기타</td>
+                                    </c:when>
+                                </c:choose>
+                            </div>--%>
+                        <td>${data.mb_nick}</td>
+                        <td><a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
+                            <c:if test="${data.com_comment ne 0}">
+                                <small><b>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</b></small>
+                            </c:if>
+                        </td>
+                        <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>
+                        <td>${data.com_hit}</td>
+                        <td>${data.com_like}</td>
+                    </tr>
+                    <c:set var="no" value="${no-1}"></c:set>
+                </c:forEach>
+            </table>
             <input type="hidden" name="category" value="${category}"/>
             <ul class="paging">
                 <c:if test="${paging.prev}">

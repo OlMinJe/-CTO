@@ -96,7 +96,7 @@ if(msg == "success") {
 			</c:choose>
 		</div>
 		<td>${data.mb_nick}</td>
-		<td><a href="/boardRead?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
+		<td><a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
 			<c:if test="${data.com_comment ne 0}">
 				<small><b>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</b></small>
 			</c:if>
@@ -111,7 +111,7 @@ if(msg == "success") {
 <input type="hidden" name="category" value="${category}"/>
 <button type="button" onclick="location.href='boardWriteForm'">글쓰기</button> 
 
-<ul class="paging">
+<%--<ul class="paging">
     <c:if test="${paging.prev}">
     	<span><a href='<c:url value="/boardList?stateCode=${stateCode}&page=${paging.startPage-1}"/>'>이전</a></span>
     </c:if>
@@ -121,6 +121,6 @@ if(msg == "success") {
     <c:if test="${paging.next && paging.endPage>0}">
     	<span><a href='<c:url value="/boardList?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
     </c:if>
-</ul>
+</ul>--%>
 </body>
 </html>

@@ -76,9 +76,7 @@ public interface MainMapper {
 	/** 게시판 **/
 	// 게시판
 	public void boardWrite(BoardVO boardVO) throws Exception;
-
 	public List<Map<String, Object>> boardList(Criteria cri) throws Exception;
-
 	public List<Map<String, Object>> boardListDetail( Criteria cri, Integer category) throws Exception;
 	public List<BoardVO> boardList2() throws Exception;
 	public int boardListCnt() throws Exception;
@@ -113,6 +111,7 @@ public interface MainMapper {
 	//대댓글 출력 관련 코드
 	public List<CommentVO> recommentList(int comment_group) throws Exception;
 
+
 	/** 좋아요 기능 **/
 	//좋아요 기능
 	public int likecount(LikeVO like) throws Exception;
@@ -125,6 +124,7 @@ public interface MainMapper {
 
 	//게시글 별 좋아요 카운트 후 수정
 	public int updatecomlike(int com_num) throws Exception;
+
 
 	/** 상담 **/
 	// 상담

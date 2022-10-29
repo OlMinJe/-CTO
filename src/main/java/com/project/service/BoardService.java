@@ -21,6 +21,16 @@ public class BoardService  {
 	@Autowired
 	MainMapper boardmapper;
 
+	// 회원정보 수정 - 세션 가져오기
+	public MemberVO membermodifyGET(String mb_id) throws Exception {
+		return boardmapper.memberModifyGET(mb_id);
+	}
+
+	// 회원정보 수정
+	public void memberModifyPOST(MemberVO memberVO) throws Exception {
+		boardmapper.memberModifyPOST(memberVO);
+	}
+
 	// 게시판
 	public void boardWrite(BoardVO boardVO) throws Exception {
 		boardmapper.boardWrite(boardVO);
@@ -155,7 +165,7 @@ public class BoardService  {
 		return boardmapper.updatecomlike(com_num);
 	}
 
-	/** 상담 서비스**/
+	/** 상담 서비스**//**/
 	//게시글 작성과 수정 시 사진 첨부
 	public String updateTalkImg(TalkVO talkVO, MultipartFile file) throws Exception{
 		String projectPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\files";
@@ -190,5 +200,5 @@ public class BoardService  {
 
 	public void talkDelete(int num) throws Exception{
 		boardmapper.talkDelete(num);
-	}
+	}/**/
 }
