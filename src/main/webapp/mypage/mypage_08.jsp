@@ -38,7 +38,7 @@
                     success: function (data) {
                         if (data == "success") {
                             alert("탈퇴가 처리되었습니다.");
-                            location.href = "/main/main";
+                            location.href = "/main?stateCode=${stateCode}";
                         } else {
                             alert("비밀번호가 맞지 않습니다.");
                         }

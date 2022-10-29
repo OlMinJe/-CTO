@@ -30,7 +30,7 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 
-	/** board CRUD - 커뮤니티 **/
+/*	*//** board CRUD - 커뮤니티 **//*
 	// 게시판 리스트 및 메인페이지 + kakao user/session
 	@RequestMapping(value="/boardList")
 	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
@@ -304,9 +304,9 @@ public class BoardController {
 		return boardService.updateReplyCount(com_num);
 	}
 
-	/** 상담 게시판(talk) **/
+	*//** 상담 게시판(talk) **//*
 	//mypage 연결
-	/*
+	*//*
 	@RequestMapping(value = "/talk",method = RequestMethod.GET)
 	public String talkList(HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception{
 		HttpSession session = req.getSession();
@@ -314,7 +314,7 @@ public class BoardController {
 		model.addAttribute("stateCode",stateCode);
 		return "talk";
 	}
-*/
+*//*
 	// 상담 게시판 리스트
 	@RequestMapping(value="/talk")
 	public String talkList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
@@ -478,7 +478,7 @@ public class BoardController {
 			mav.setViewName("index");
 		}
 		return mav;
-	}
+	}*/
 
 
 	/*   @RequestMapping(value = "/boardList2")

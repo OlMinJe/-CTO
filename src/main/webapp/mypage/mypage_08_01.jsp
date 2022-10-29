@@ -25,7 +25,8 @@
             <li><input type="checkbox">선택 1</li>
             <li><input type="checkbox">선택 1</li>
             <li class="flex__"><span>기타</span><input type="text" checked></li>
-            <li class="float__"><input type="submit" class="no_user_btn btn btn-info"></input></li>
+            <li class="float__">
+            <input type="submit" class="no_user_btn btn btn-info"></li>
         </ul>
     </form>
 </div>
