@@ -28,7 +28,7 @@
 			<div class="col-12" style="margin-bottom: 20px;">
 				<div class="col-7 user_id_pass">
 					<input type="button" title="아이디 찾기" id="find_id_btn" value="아이디 찾기"
-						   onclick="location.href='/login/find_id_form.jsp'">
+						   onclick="location.href='/find_id_form.do'">
 					<input type="button" title="비밀번호 찾기" id="find_pw_btn" value="비밀번호 찾기"
 						   onclick="location.href='/login/find_pw_form.jsp'">
 				</div>

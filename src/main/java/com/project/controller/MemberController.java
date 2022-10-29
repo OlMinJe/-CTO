@@ -204,13 +204,13 @@ public class MemberController {
     }
 
     // 아이디 찾기 폼
-    @RequestMapping(value = "/find_id_form")
+    @RequestMapping(value = "/find_id_form.do")
     public String find_id_form() throws Exception{
         return "/login/find_id_form";
     }
 
     // 아이디 찾기
-    @RequestMapping(value = "/find_id", method = RequestMethod.GET)
+    @RequestMapping(value = "/find_id.do", method = RequestMethod.GET)
     public String find_id(HttpServletResponse response, @RequestParam("mb_email") String mb_email, Model md) throws Exception {
         md.addAttribute("id", memberService.find_id(response, mb_email));
         return "/login/find_id";
