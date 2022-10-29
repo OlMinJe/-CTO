@@ -92,7 +92,9 @@
                                         }
                                     %>
                                 </span>
+                                <c:if test="${sessionScope.stateCode ne 1}">
                                 <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
+                                </c:if>
                                 <c:if test="${sessionScope.stateCode == 1}">
                                     <a class="box_eft_02"
                                        onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
