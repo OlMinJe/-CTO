@@ -9,7 +9,7 @@
 		
 	<!-- <select id="memberLogin" resultType="MemberVO">
 		SELECT memberId, memberPass
-		FROM hello_member
+		FROM tb_member
 		WHERE memberId = #{memberId}
 		AND memberPass = #{memberPass}
 	</select> -->
@@ -18,77 +18,77 @@
 	<!-- 관리자페이지 리스트보기-->
 	<select id="dispAdmin" resultType="MemberVO">
 		SELECT *
-		FROM hello_member
+		FROM tb_member
 	</select>
 
 	<!-- 회원 드롭-->
 	<update id="dropUser">
-		delete from hello_member
+		delete from tb_member
 		where mb_id= #{mb_id}
 	</update>
 
 	<delete id="memberOut" parameterType="MemberVO">
-		delete from hello_member
+		delete from tb_member
 		where mb_id= #{mb_id}
 	</delete>
 	<!-- 아이디 찾기 -->
 	<select id="find_id" parameterType="String" resultType="String">
-		select mb_id from hello_member where mb_email = #{mb_email}
+		select mb_id from tb_member where mb_email = #{mb_email}
 	</select>
 
 	<!-- 비밀번호 변경 -->
 	<update id="update_pw" parameterType="memberVO">
-		update hello_member set mb_pw = #{mb_pw} where mb_id = #{mb_id}
+		update tb_member set mb_pw = #{mb_pw} where mb_id = #{mb_id}
 	</update>
 
 	<select id="userCheck" resultType="MemberVO">
 		SELECT mb_id, mb_pw
-		FROM hello_member
+		FROM tb_member
 		WHERE mb_id = #{mb_id}
 	</select>
 	
 	<select id="idCheck" parameterType="String" resultType="Integer">
 		SELECT count(*)
-		FROM hello_member
+		FROM tb_member
 		WHERE mb_id = #{mb_id}
 	</select>
 
 	<insert id="memberRegister">
-		INSERT into hello_member(mb_name, mb_id, mb_pw, mb_nick, mb_email, mb_addr, mb_sex, mb_doctor, mb_img)
+		INSERT into tb_member(mb_name, mb_id, mb_pw, mb_nick, mb_email, mb_addr, mb_sex, mb_doctor, mb_img)
 		VALUES (#{mb_name}, #{mb_id}, #{mb_pw}, #{mb_nick}, #{mb_email}, #{mb_addr}, #{mb_sex}, #{mb_doctor}, #{mb_img})
 	</insert>
 
 	<select id="memberModifyGET" resultType="MemberVO" parameterType="String">
 		SELECT *
-		FROM hello_member
+		FROM tb_member
 		WHERE mb_id = #{mb_id}
 	</select>
 	
 	<update id="memberModifyPOST" parameterType="MemberVO">
-		UPDATE hello_member
+		UPDATE tb_member
 		SET mb_pw = #{mb_pw}
 		WHERE mb_id = #{mb_id}
 	</update>
 	
 	<delete id="memberDelete" parameterType="MemberVO">
-		DELETE from hello_member
+		DELETE from tb_member
 		WHERE mb_id = #{mb_id}
 	</delete>
 
 	<update id="nickModifyPOST" parameterType="MemberVO">
-		update hello_member
+		update tb_member
 		set mb_nick=#{mb_nick}
 		where mb_id = #{mb_id}
 	</update>
 
 	<select id="nickCheck" parameterType="String" resultType="Integer">
 		SELECT count(*)
-		FROM hello_member
+		FROM tb_member
 		WHERE mb_nick = #{mb_nick}
 	</select>
 
 	<update id="profileModifyPOST" parameterType="MemberVO">
-		update hello_member
+		update tb_member
 		set mb_img=#{mb_img}
 		where mb_id=#{mb_id}
 	</update>

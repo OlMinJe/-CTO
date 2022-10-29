@@ -32,15 +32,6 @@
                 <li class="box_eft_01"><a href="/community/community.jsp?stateCode=${stateCode}&category=4">정보</a></li>
                 <li class="box_eft_01"><a href="/community/community.jsp?stateCode=${stateCode}&category=5">취업/진로</a></li>
                 <li class="box_eft_01"><a href="/community/community.jsp?stateCode=${stateCode}&category=6">기타</a></li>
-                <%--<a href="/boardList?stateCode=${stateCode}&category=0">일상</a>
-                <a href="/boardList?stateCode=${stateCode}&category=1">취미</a>
-                <a href="/boardList?stateCode=${stateCode}&category=2">유머</a>
-                <a href="/boardList?stateCode=${stateCode}&category=3">음식</a>
-                <a href="/boardList?stateCode=${stateCode}&category=4">정보</a>
-                <a href="/boardList?stateCode=${stateCode}&category=5">취업/진로</a>
-                <a href="/boardList?stateCode=${stateCode}&category=6">기타</a>
-
-                <a href="/boardList?stateCode=${stateCode}&category=10">전체 조회</a>--%>
             </ul>
         </div>
     </div>
