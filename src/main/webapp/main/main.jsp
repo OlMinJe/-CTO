@@ -87,7 +87,7 @@
                                            title="Logout icons created by Pixel perfect - Flaticon"></a>
                                         <c:if test="${sessionScope.stateCode == 0}">
                                             <button type="button" class="admin_page_btn box_eft_02"
-                                                    onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기
+                                                    onclick="location.href='/admin/securityAdmin'">관리자 페이지로 넘어가기
                                             </button>
                                         </c:if>
                                     </li>

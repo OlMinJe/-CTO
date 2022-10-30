@@ -241,7 +241,7 @@ public class MemberController {
     }*/
 
     // 어드민 페이지 - 회원 리스트 보기 및 관리(리스트) - 실패
-    @GetMapping("/admin/securityAdmin.jsp")
+    @GetMapping("/admin/securityAdmin")
     public String dispAdmin(Model model) throws Exception {
         List<MemberVO> memberlist = memberService.dispAdmin();
         model.addAttribute("memberlist",memberlist);
