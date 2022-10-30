@@ -21,9 +21,10 @@ div.col-12.editor_wrap { text-align: center; }
 
 /* 하위 메뉴 */
 .menu .menu-box-01 { flex-direction: column; }
-.menu .menu-box-01 li { border-radius: 0; white-space: nowrap; font-size: 16px; line-height: 22px; }
+.menu .menu-box-01 li { border-radius: 0; white-space: nowrap; }
 .menu .menu-box-01 li:first-child { border-radius: 10px 10px 0 0; }
 .menu .menu-box-01 li:last-child { border-radius: 0 0 10px 10px; }
+.menu .menu-box-01 li a { font-size: 16px; line-height: 22px; font-weight: 500; }
 .menu #sub-menu { display: none; }
 
 /* 검색바 */

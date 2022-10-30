@@ -8,7 +8,7 @@ let active_editor = document.querySelector("#community_editor");
 
 /* 하위 메뉴 - 커뮤니티 */
 let normal = document.getElementById('sub-menu');
-let normal_li = document.querySelectorAll('.menu-box-01 li');
+let normal_li = document.querySelectorAll('.menu-box-02 li');
 
 /* content */
 let table = document.getElementById('community-table');
