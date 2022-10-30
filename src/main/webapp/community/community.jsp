@@ -62,7 +62,7 @@
                 <tr>
                     <%--<th>자동순번</th>--%>
                     <th>글번호</th>
-                    <%--<th>카테고리</th>--%>
+                    <th>카테고리</th>
                     <th>작성자</th>
                     <th>제목</th>
                     <th>작성시간</th>
@@ -74,7 +74,7 @@
                     <tr>
                             <%--<td>${no}</td>--%>
                         <td>${data.com_num}</td>
-                            <%--<div>
+                            <div>
                                 <c:choose>
                                     <c:when test="${data.com_category == 0}">
                                         <td>일상</td>
@@ -98,7 +98,7 @@
                                         <td>기타</td>
                                     </c:when>
                                 </c:choose>
-                            </div>--%>
+                            </div>
                         <td>${data.mb_nick}</td>
                         <td>
                             <c:if test="${sessionScope.stateCode ne 1}">
