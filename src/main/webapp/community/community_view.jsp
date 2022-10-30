@@ -17,31 +17,31 @@
     <div class="col-12 col-lg-10 view_con">
         <div class="col-12 category_title">카테고리</div>
         <div class="col-12 view_list">
-            <div class="col-12 board_view_title"><input name="title" readonly="readonly" value="${data.com_title}"></div>
+            <div class="col-12 board_view_title">${data.com_title}</div>
             <div class="col-12 board_view_info">
                 <dl>
                     <dt>번호</dt>
-                    <dd><input name="writer" readonly="readonly" value="${data.com_num}"></dd>
+                    <dd>${data.com_num}</dd>
                 </dl>
                 <dl>
                     <dt>작성자</dt>
-                    <dd><input name="writer" readonly="readonly" value="${data.mb_nick}"></dd>
+                    <dd>${data.mb_nick}</dd>
                 </dl>
                 <dl>
                     <dt>작성일</dt>
-                    <dd><input name="hit" readonly="readonly" value="${data.com_date}"></dd>
+                    <dd>${data.com_date}</dd>
                 </dl>
                 <dl>
                     <dt>조회수</dt>
-                    <dd><input name="hit" readonly="readonly" value="${data.com_hit}"></dd>
+                    <dd>${data.com_hit}</dd>
                 </dl>
                 <dl>
                     <dt>좋아요 수</dt>
-                    <dd><input name="com_like" readonly="readonly" value="${data.com_like}"></dd>
+                    <dd>${data.com_like}</dd>
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                <input name="content" readonly="readonly" value="${data.com_content}">
+                ${data.com_content}
             </div>
         </div>
 
