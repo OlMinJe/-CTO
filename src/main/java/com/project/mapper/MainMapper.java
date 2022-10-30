@@ -51,6 +51,11 @@ public interface MainMapper {
 	//관리자 페이지(추가)
 	Optional<MemberVO> findByUsername(String mb_id) throws Exception;
 
+	//관리자 페이지 - 회원리스트
+	public List<MemberVO> dispAdmin() throws Exception;
+
+	public void memberOut(MemberVO memberVO) throws Exception;
+
 
 	/** 회원 정보 관리 **/
 	// 회원정보 수정 - 세션 가져오기
