@@ -15,29 +15,29 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 view_wrap">
     <div class="col-12 col-lg-10 view_con">
-            <c:choose>
-                <c:when test="${data.com_category == 0}">
-                    <div class="col-12 category_title">일상</div>
-                </c:when>
-                <c:when test="${data.com_category == 1}">
-                    <div class="col-12 category_title">취미</div>
-                </c:when>
-                <c:when test="${data.com_category == 2}">
-                    <div class="col-12 category_title">유머</div>
-                </c:when>
-                <c:when test="${data.com_category == 3}">
-                    <div class="col-12 category_title">음식</div>
-                </c:when>
-                <c:when test="${data.com_category == 4}">
-                    <div class="col-12 category_title">정보</div>
-                </c:when>
-                <c:when test="${data.com_category == 5}">
-                    <div class="col-12 category_title">취업/진로</div>
-                </c:when>
-                <c:when test="${data.com_category == 6}">
-                    <div class="col-12 category_title">기타</div>
-                </c:when>
-            </c:choose>
+        <c:choose>
+            <c:when test="${data.com_category == 0}">
+                <div class="col-12 category_title">일상</div>
+            </c:when>
+            <c:when test="${data.com_category == 1}">
+                <div class="col-12 category_title">취미</div>
+            </c:when>
+            <c:when test="${data.com_category == 2}">
+                <div class="col-12 category_title">유머</div>
+            </c:when>
+            <c:when test="${data.com_category == 3}">
+                <div class="col-12 category_title">음식</div>
+            </c:when>
+            <c:when test="${data.com_category == 4}">
+                <div class="col-12 category_title">정보</div>
+            </c:when>
+            <c:when test="${data.com_category == 5}">
+                <div class="col-12 category_title">취업/진로</div>
+            </c:when>
+            <c:when test="${data.com_category == 6}">
+                <div class="col-12 category_title">기타</div>
+            </c:when>
+        </c:choose>
         <div class="col-12 view_list">
             <div class="col-12 board_view_title">${data.com_title}</div>
             <div class="col-12 board_view_info">
@@ -127,6 +127,9 @@
                             class="box_eft_01"
                     ></textarea>
                     <button class="btn btn-outline-success box_eft_02" type="submit">댓글 등록</button>
+                </div>
+                <div class="container"> <!-- 확인용 -->
+                    <div class="commentList"></div>
                 </div>
             </div>
         </div>
