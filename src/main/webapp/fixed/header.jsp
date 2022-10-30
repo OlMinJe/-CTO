@@ -13,12 +13,13 @@
             <c:if test="${sessionScope.stateCode ne 1}">
                 <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>
-            <c:if test="${sessionScope.stateCode == 0}">
+            <!--관리자의 경우 다시 만들기-->
+            <%--<c:if test="${sessionScope.stateCode == 0}">
                 <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>
             <c:if test="${sessionScope.stateCode ne 0}">
                 <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
-            </c:if>
+            </c:if>--%>
         </div>
         <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</div>
     </div>
