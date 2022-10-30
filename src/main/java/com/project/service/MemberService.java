@@ -186,6 +186,15 @@ public class MemberService implements UserDetailsService {
         }
     }
 
+    //관리자페이지
+    public List<MemberVO> dispAdmin() throws Exception {
+        return mapper.dispAdmin();
+    }
+
+    public void memberOut(MemberVO memberVO) throws Exception{
+        mapper.memberOut(memberVO);
+    }
+
     //관리자 페이지 - 회원정보 리스트
     public List<MemberVO> Memberlist() throws Exception {
         return mapper.Memberlist();

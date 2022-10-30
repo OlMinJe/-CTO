@@ -26,7 +26,7 @@
 						alert("해당 회원이 강제 탈퇴처리 되었습니다.");
 						location.reload();
 					}, error: function (status, error) {
-						console.log('에러발생!!');
+						console.log('에러발생!');
 						console.log(status, error);
 					}
 				})
@@ -40,7 +40,7 @@
 <div class="col-12 admin">
 	<div class="col-12 title">관리자 페이지</div>
 	<table class="col-11 table table-striped table-bordered">
-		<thead>
+	<thead>
 	<tr>
 		<th>회원 고유번호</th>
 		<th>회원 이름</th>

@@ -230,14 +230,30 @@ public class MemberController {
         memberService.find_pw(response, memberVO);
     }
 
-    // 어드민 페이지 - 회원 리스트 보기 및 관리(리스트) - 실패
-    @GetMapping(value = "/admin/securityAdmin")
+
+    /*@GetMapping(value = "/admin/securityAdmin")
     //@RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
     //@RequestMapping(value = "/admin")
     public String Memberlist(Model model) throws Exception {
         List<MemberVO> memberlist = memberService.Memberlist();
         model.addAttribute("memberlist", memberlist);
         return "/admin/securityAdmin";
+    }*/
+
+    // 어드민 페이지 - 회원 리스트 보기 및 관리(리스트) - 실패
+    @GetMapping("/admin/securityAdmin.jsp")
+    public String dispAdmin(Model model) throws Exception {
+        List<MemberVO> memberlist = memberService.dispAdmin();
+        model.addAttribute("memberlist",memberlist);
+        return "/admin/securityAdmin";
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/admin/securityAdmin", method=RequestMethod.POST)
+    public String memberOut(@RequestBody MemberVO memberVO, Model model) throws Exception{
+        memberService.memberOut(memberVO);
+        String result = "success";
+        return result;
     }
 
     //관리자 페이지 - 회원 강제 탈퇴(DB에서 삭제) - 성공했지만 추후 확인 예정
