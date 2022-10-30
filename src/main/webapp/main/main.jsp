@@ -58,7 +58,7 @@
                             <div class="col-12 user_login_top">
                                 <ul class="col-12 user_information">
                                     <li class="col-3 user_profile">
-                                        <img src="">프로필 사진
+                                        <img src="">프로필
                                     </li>
                                     <li class="col-4 user_home_01">
                                         <span>
@@ -144,7 +144,7 @@
                         <div class="swiper-slide slide02">
                             <div class="col-12 swiper_title"
                                  onclick="location.href='https://www.youtube.com/watch?v=yiS5jtvH0zU';">
-                                요즘은 <span class="dog">OOO</span>를<br>보고 <i>"힐링"</i>한다구!
+                                요즘은 <span class="dog">털 찐 강아지</span><br>보고 <i>"힐링"</i>한다구!
                             </div>
                         </div>
                         <div class="swiper-slide slide03">
@@ -153,8 +153,9 @@
                             </div>
                         </div>
                         <div class="swiper-slide slide04">
-                            <div class="col-12 swiper_title">
-                                흐엉 아이디어 고갈
+                            <div class="col-12 swiper_title"
+                                 onclick="location.href='https://post.naver.com/viewer/postView.naver?volumeNo=34003121&memberNo=856655&vType=VERTICAL';">
+                                오늘의 추천도서<br><span>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</span>
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,7 @@
             <div class="col-3 title">오늘의 명언</div>
             <div class="col-9 wiseSaying_con">명언 연결</div>
         </div>
-        <jsp:include page="/community/boardList2.jsp"></jsp:include><!--보기만 가능한 게시판-->
+        <%--<jsp:include page="/community/boardList2.jsp"></jsp:include>--%><!--보기만 가능한 게시판-->
         <div class="col-12 community_wrap mb">
             <div class="col-12 col-lg-7 moble_mb">
                 <div class="col-12 community_normal box_eft_00">
