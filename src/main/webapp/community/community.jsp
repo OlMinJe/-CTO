@@ -26,14 +26,26 @@
         </ul>
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01"><!--id="sub-menu"-->
-                <li class="box_eft_01 active"><a href="/community/community?stateCode=${stateCode}&category=10">전체</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=0">일상</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=1">취미</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=2">유머</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=3">음식</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=4">정보</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=5">취업/진로</a></li>
-                <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>
+                <c:if test="${sessionScope.stateCode ne 1}">
+                    <li class="box_eft_01 active"><a href="/com?category=10">전체</a></li>
+                    <li class="box_eft_01"><a href="/com?category=0">일상</a></li>
+                    <li class="box_eft_01"><a href="/com?category=1">취미</a></li>
+                    <li class="box_eft_01"><a href="/com?category=2">유머</a></li>
+                    <li class="box_eft_01"><a href="/com?category=3">음식</a></li>
+                    <li class="box_eft_01"><a href="/com?category=4">정보</a></li>
+                    <li class="box_eft_01"><a href="/com?category=5">취업/진로</a></li>
+                    <li class="box_eft_01"><a href="/com?category=6">기타</a></li>
+                </c:if>
+                <c:if test="${sessionScope.stateCode ==1}">
+                    <li class="box_eft_01 active"><a href="/community/community?stateCode=${stateCode}&category=10">전체</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=0">일상</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=1">취미</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=2">유머</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=3">음식</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=4">정보</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=5">취업/진로</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>
+                </c:if>
             </ul>
         </div>
     </div>
@@ -95,7 +107,13 @@
                                 </c:choose>
                             </div>--%>
                         <td>${data.mb_nick}</td>
-                        <td><a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
+                        <td>
+                            <c:if test="${sessionScope.stateCode ne 1}">
+                                <a href="/com/com_view?com_num=${data.com_num}&category=${data.com_category}">${data.com_title}</a>
+                            </c:if>
+                            <c:if test="${sessionScope.stateCode ==1}">
+                                <a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
+                            </c:if>
                             <c:if test="${data.com_comment ne 0}">
                                 <small><b>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</b></small>
                             </c:if>
@@ -132,7 +150,10 @@
         </div>
     </div>
     <div class="btn_wrap">
-        <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
+        <c:if test="${stateCode == 1}">
+            <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
+        </c:if>
+
         <!--<a href="#">수정</a>-->
     </div>
 </div>

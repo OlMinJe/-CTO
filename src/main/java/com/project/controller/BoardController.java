@@ -62,6 +62,31 @@ public class BoardController {
 
 		return "/community/community";
 	}
+	//커뮤니티 리스트 - 로그인 안했을 때
+	@RequestMapping(value="/com")
+	public String comList(@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception{
+		// 페이징 객체
+		Paging paging = new Paging();
+		if(category==10){
+			// 전체 글 개수 - 모든 페이지 포함
+			int boardListCnt = boardService.boardListCnt();
+			paging.setCri(cri);
+			paging.setTotalCount(boardListCnt);
+			List<Map<String, Object>> list = boardService.boardList(cri);
+			model.addAttribute("list", list);
+			model.addAttribute("paging", paging);
+		}
+		else{
+			//전체 글 개수 - 카테고리가 있는 경우
+			int boardListCntDetail = boardService.boardListCntDetail(category);
+			paging.setCri(cri);
+			paging.setTotalCount(boardListCntDetail);
+			List<Map<String, Object>> list = boardService.boardListDetail(cri,category);
+			model.addAttribute("list", list);
+			model.addAttribute("paging", paging);
+		}
+		return "/community/community";
+	}
 /*
 	// 게시판 글쓰기 폼(커뮤니티)
 	@RequestMapping(value="/boardWriteForm")
@@ -148,6 +173,43 @@ public class BoardController {
 		return "/community/community_view";
 	}
 
+	// 게시글 내용 읽기(커뮤니티) - 로그인 안했을 때
+	@RequestMapping(value="/com/com_view")
+	public String boardRead(@RequestParam("com_num") int com_num,
+							@RequestParam("category") Integer category,
+							Model model,
+							HttpServletRequest req) throws Exception {
+
+		HttpSession session = req.getSession();
+		boardService.increaseComhit(com_num,session);
+		boardService.updatecomlike(com_num); //여기서 수정이 될까...
+		BoardVO data = boardService.boardRead(com_num);
+		model.addAttribute("data", data);
+		model.addAttribute("category",category);
+
+		if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
+			model.addAttribute("membervo",membervo);
+
+			LikeVO like = new LikeVO();
+			like.setCom_num(com_num);
+			like.setMb_nick(membervo.getMb_nick());
+
+			int like_check = 0;
+
+			int check=boardService.likecount(like);
+			if(check ==0){
+				boardService.likeinsert(like);
+			} else if (check==1) {
+				like_check=boardService.likegetinfo(like);
+			}
+			model.addAttribute("like_check",like_check);
+			//boardService.updatecomlike(com_num);
+		}
+
+		return "/community/community_view";
+	}
 	/*
 	//좋아요 기능을 위한 코드 - 커뮤니티
 	@ResponseBody
