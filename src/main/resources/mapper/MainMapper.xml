@@ -130,7 +130,7 @@
 	</select>
 
 	<select id="boardRead" resultType="BoardVO">
-		SELECT com_num, com_title, com_category,com_content, mb_nick,com_hit,com_photo,mb_seq,mb_doctor,com_like
+		SELECT com_num, com_title, com_category,com_content, mb_nick,com_hit,com_photo,mb_seq,mb_doctor,com_like,com_date
 		FROM tb_com_talk
 		WHERE com_num = #{com_num}
 	</select>
