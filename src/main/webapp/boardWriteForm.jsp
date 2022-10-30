@@ -17,7 +17,7 @@ function confirm() {
 	}
 	
 	if(title != "" && title != "") {
-		location.href="/boardWrite";
+		location.href="/boardWrite"; ///community/community_write.jsp
 	}
 }
 </script>

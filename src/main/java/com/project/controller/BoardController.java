@@ -33,7 +33,8 @@ public class BoardController {
 /*	*//** board CRUD - 커뮤니티 **///*
 	// 게시판 리스트 및 메인페이지 + kakao user/session
 	@RequestMapping(value="/community/community")
-	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
+	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category")
+	Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
 
 		// 페이징 객체
 		Paging paging = new Paging();
