@@ -56,7 +56,9 @@
                         <a onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                         <a onclick="location.href='/login/logout.jsp'">로그아웃</a>
                     </li>
-                    <li id="m_admin"><a onclick="location.href='/'">관리자 페이지로 넘어가기.</a></li>
+                    <c:if test="${sessionScope.stateCode == 0}">
+                        <li id="m_admin"><a onclick="location.href='/'">관리자 페이지</a></li>
+                    </c:if>
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
@@ -125,7 +127,9 @@
                     <%--<a th:href="@{/login/logout.html}">로그아웃</a>
                     <a onclick="logout()">로그아웃</a>--%>
                 </li>
-                <li id="w_admin"><a onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지</a></li>
+                <c:if test="${sessionScope.stateCode == 0}">
+                    <li id="m_admin"><a onclick="location.href='/'">관리자 페이지</a></li>
+                </c:if>
             </ul>
         </div>
     <div id="burgerbtn" onclick="headerAction();"><img style="wdith: 100%; height: 100%;"

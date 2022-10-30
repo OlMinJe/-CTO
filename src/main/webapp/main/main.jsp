@@ -18,6 +18,7 @@
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de"></script>
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/main/main.css">
+    <script type="text/javascript" src="/js/login.js"></script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -52,29 +53,147 @@
                 <div id="map" style="width:100%;height:346px;"></div>
             </div>
             <div class="col-12 col-md-6 user_wrap"><!--회원 정보 및 로그인-->
-                <!-- [1] 로그인 화면  -->
-                <!--
-                <div class="col-12 login">
-                    <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
-                    <form action='/userCheck' method="post" class="col-12 col-lg-10">
-                        <input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">
-                        <input type="password" class="box_eft_01" id="mb_pw" name="mb_pw" placeholder="비밀번호를 입력해주세요.">
-                        <div class="col-12 input_type" style="margin-bottom: 20px;">
-                            <div class="col-7 user_id_pass">
-                                <input type="button" title="아이디 찾기" id="find_id_btn" value="아이디 찾기"
-                                       onclick="location.href='/login/find_id_form.html'">
-                                <input type="button" title="비밀번호 찾기" id="find_pw_btn" value="비밀번호 찾기"
-                                       onclick="location.href='/login/find_pw_form.html'">
+
+
+                <!-- [1] 로그인 이전 화면  - 왼쪽 지도가 안 보여,,,-->
+                <!---->
+                <c:if test="${sessionScope.stateCode eq null}">
+<%--                <div class="col-12 second_row_wrap mb">
+                    <div class="col-12 col-md-6 location_wrap">
+                        <div id="map1" style="width:100%;height:346px;"></div>
+                    </div>
+                    <div class="col-12 col-md-6 user_wrap"><!--회원 정보 및 로그인-->--%>
+                    <div class="col-12 login">
+                        <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
+                        <form action='<c:url value='/userCheck'/>' method="get" class="col-12 col-lg-10">
+                            <input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">
+                            <input type="password" class="box_eft_01" id="mb_pw" name="mb_pw" placeholder="비밀번호를 입력해주세요.">
+                            <div class="col-12 input_type" style="margin-bottom: 20px;">
+                                <div class="col-7 user_id_pass">
+                                    <input type="button" title="아이디 찾기" id="find_id_btn" value="아이디 찾기"
+                                           onclick="location.href='/find_id_form.do'">
+                                    <input type="button" title="비밀번호 찾기" id="find_pw_btn" value="비밀번호 찾기"
+                                           onclick="location.href='/login/find_pw_form.jsp'">
+                                </div>
+                                <div class="col-5 new_user">
+                                    <input type="button" value="회원가입" onclick="location.href='/login/register.jsp'">
+                                </div>
                             </div>
-                            <div class="col-5 new_user">
-                                <input type="button" value="회원가입" onclick="location.href='/login/register.html'">
+                            <input type="submit" value="로그인" class="btn box_eft_02">
+                        </form>
+                    </div>
+                </c:if>
+                    <%--<div class="col-12 login">
+                        <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
+                        <form action='/userCheck' method="post" class="col-12 col-lg-10">
+                            <input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">
+                            <input type="password" class="box_eft_01" id="mb_pw" name="mb_pw" placeholder="비밀번호를 입력해주세요.">
+                            <div class="col-12 input_type" style="margin-bottom: 20px;">
+                                <div class="col-7 user_id_pass">
+                                    <input type="button" title="아이디 찾기" id="find_id_btn" value="아이디 찾기"
+                                           onclick="location.href='/login/find_id_form.html'">
+                                    <input type="button" title="비밀번호 찾기" id="find_pw_btn" value="비밀번호 찾기"
+                                           onclick="location.href='/login/find_pw_form.html'">
+                                </div>
+                                <div class="col-5 new_user">
+                                    <input type="button" value="회원가입" onclick="location.href='/login/register.html'">
+                                </div>
+                            </div>
+                            <input type="submit" value="로그인" class="btn box_eft_02">
+                        </form>
+                    </div>--%>
+                <!---->
+
+                <!-- [2] 유저 로그인 완료 이후 화면-->
+                    <c:if test="${sessionScope.stateCode ne null}">
+<%--                    <div class="col-12 second_row_wrap mb">
+                        <div class="col-12 col-md-6 location_wrap">
+                            <div id="map2" style="width:100%;height:346px;"></div>
+                        </div>
+                        <div class="col-12 col-md-6 user_wrap"><!--회원 정보 및 로그인-->--%>
+                        <div class="col-12 user_login">
+                            <div class="col-12 user_login_top">
+                                <ul class="col-12 user_information">
+                                    <li class="col-3 user_profile">
+                                        <img src="">프로필 사진
+                                    </li>
+                                    <li class="col-4 user_home_01">
+                                        <span>
+                                            <%
+                                                if (session.getAttribute("member") == null) {
+                                                    out.println("<a href='/'로그인</a>");
+                                                } else {
+                                                    MemberVO vo = (MemberVO) session.getAttribute("member");
+                                                    out.println(vo.getMb_id() + "님 반갑습니다.<br>");
+                                                }
+                                            %>
+                                        </span>
+                                        <c:if test="${sessionScope.stateCode ne 1}">
+                                            <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
+                                        </c:if>
+                                        <c:if test="${sessionScope.stateCode == 1}">
+                                            <a class="box_eft_02"
+                                               onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                        </c:if>
+                                        <!--삭제 예정-->
+                                        <a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                    </li>
+                                    <li class="col-5 user_home_02">
+                                        <span>300P</span>
+                                        <a class="logout" onclick="location.href='/login/logout.jsp'"
+                                           title="Logout icons created by Pixel perfect - Flaticon"></a>
+                                        <c:if test="${sessionScope.stateCode == 0}">
+                                            <button type="button" class="admin_page_btn box_eft_02"
+                                                    onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기
+                                            </button>
+                                        </c:if>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 user_login_bottom">
+                                <!--
+                                TODOLIST: 사용설명서
+                                1. 체크 박스를 누르면 할 일 완료
+                                2. 할 일을 더블클릭하면
+                                2. 할 일을 클릭하면 완료
+                                3. x 버튼 누르면 삭제
+                                -->
+                                <div class="col-12 title">TODOLIST</div>
+                                <div class="to-dos" id="toDoList">
+                                    <form id="A17-todo" style="margin-bottom: 10px;">
+                                        <input type="text" class="box_eft_01" placeholder="할 일 작성하기" required/>
+                                        <input type="submit" value="추가" class="box_eft_02"/>
+                                    </form>
+                                    <ol id="A17-todo-list"></ol>
+                                </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
                             </div>
                         </div>
-                        <input type="submit" value="로그인" class="btn box_eft_02">
-                    </form>
+                    </c:if>
                 </div>
-                -->
-                <!-- [2] 유저 로그인 완료 이후 화면-->
+            </div>
+
+        <!-- [1] 로그인 화면  -->
+        <!--
+        <div class="col-12 login">
+            <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
+            <form action='/userCheck' method="post" class="col-12 col-lg-10">
+                <input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">
+                <input type="password" class="box_eft_01" id="mb_pw" name="mb_pw" placeholder="비밀번호를 입력해주세요.">
+                <div class="col-12 input_type" style="margin-bottom: 20px;">
+                    <div class="col-7 user_id_pass">
+                        <input type="button" title="아이디 찾기" id="find_id_btn" value="아이디 찾기"
+                               onclick="location.href='/login/find_id_form.html'">
+                        <input type="button" title="비밀번호 찾기" id="find_pw_btn" value="비밀번호 찾기"
+                               onclick="location.href='/login/find_pw_form.html'">
+                    </div>
+                    <div class="col-5 new_user">
+                        <input type="button" value="회원가입" onclick="location.href='/login/register.html'">
+                    </div>
+                </div>
+                <input type="submit" value="로그인" class="btn box_eft_02">
+            </form>
+        </div>-->
+<%--                <!-- [2] 유저 로그인 완료 이후 화면-->
                 <div class="col-12 user_login">
                     <div class="col-12 user_login_top">
                         <ul class="col-12 user_information">
@@ -93,7 +212,7 @@
                                     %>
                                 </span>
                                 <c:if test="${sessionScope.stateCode ne 1}">
-                                <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
+                                    <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
                                 </c:if>
                                 <c:if test="${sessionScope.stateCode == 1}">
                                     <a class="box_eft_02"
@@ -106,15 +225,11 @@
                                 <span>300P</span>
                                 <a class="logout" onclick="location.href='/login/logout.jsp'"
                                    title="Logout icons created by Pixel perfect - Flaticon"></a>
-                                <c:if test="${stateCode == '0'}">
+                                <c:if test="${sessionScope.stateCode == 0}">
                                     <button type="button" class="admin_page_btn box_eft_02"
                                             onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기
                                     </button>
                                 </c:if>
-                                <%--<button type="button" class="admin_page_btn box_eft_02" onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기</button>--%>
-                                <%--<c:if test="${stateCode == '0'}"> <!--적용 안됨;;;-->
-                                    <button type="button" class="admin_page_btn box_eft_02" onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지로 넘어가기</button>
-                                </c:if>--%>
                             </li>
                         </ul>
                     </div>
@@ -137,7 +252,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <div class="col-12 mainvisual_wrap">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">

@@ -63,7 +63,7 @@
                 <dl>
                     <dt class="col-12 col-sm-2">카테고리</dt>
                     <dd class="col-12 col-sm-10">
-                        <select name="com_category" form action='<c:url value='/boardWrite'/>' class="box_eft_01">
+                        <select name="com_category" form="" class="box_eft_01">
                             <option value="0">[일반] 일상</option>
                             <option value="1">[일반] 취미</option>
                             <option value="2">[일반] 유머</option>
