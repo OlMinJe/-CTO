@@ -4,11 +4,10 @@ $(document).ready(function () {
     saying();
     fixedIcon();
     initMap();
-    init();
 });
 
 // 찐 todolist
-function init(){
+function todoList(){
     const toDoForm = document.querySelector("#A17-todo");
     const toDoInput = document.querySelector("#A17-todo input");
     const toDoList = document.querySelector("#A17-todo-list");
@@ -52,11 +51,11 @@ function init(){
         const newToDoSet = document.createElement("li");
         newToDoSet.id = newObj.id;
         newToDoSet.innerHTML = `
-    <span class="${isDone} col-10">
-      ${temp.innerHTML}
-    </span>
-    <button id=${newObj.id}>X</button>
-  `;
+<span class="${isDone} col-10">
+  ${temp.innerHTML}
+</span>
+<button id=${newObj.id}>X</button>
+`;
         toDoList.appendChild(newToDoSet);
     }
 
@@ -91,8 +90,6 @@ function init(){
         parsedToDos.forEach(paintToDo);
     }
 }
-
-
 
 function swiperEvent() {
 // mainvisual 스와이퍼 이벤트

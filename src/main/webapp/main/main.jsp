@@ -55,7 +55,7 @@
             <c:if test="${sessionScope.stateCode ne null}">
                 <!--회원 정보 및 로그인-->
                 <div class="col-12 user_login">
-                            <div class="col-12 user_login_top">
+                    <div class="col-12 user_login_top">
                                 <ul class="col-12 user_information">
                                     <li class="col-3 user_profile">
                                         <img src="">프로필
@@ -93,7 +93,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-12 user_login_bottom">
+                    <div class="col-12 user_login_bottom" onload="todoList();">
                                 <!--
                                 TODOLIST: 사용설명서
                                 1. 체크 박스를 누르면 할 일 완료
@@ -110,7 +110,7 @@
                                     <ol id="A17-todo-list"></ol>
                                 </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
                             </div>
-                        </div>
+                </div>
             </c:if>
             </div>
         </div>
@@ -227,4 +227,4 @@
 <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de"></script>
 </body>
-</html>
+</html>=
