@@ -136,7 +136,7 @@
                                                onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                                         </c:if>
                                         <!--삭제 예정-->
-                                        <a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                        <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
                                     </li>
                                     <li class="col-5 user_home_02">
                                         <span>300P</span>
