@@ -44,7 +44,8 @@
 .user_login_top .user_information li:first-child { display: block; border: 1px solid #ccc; }
 .user_login_top .user_information li span { margin-bottom: 5px; font-size: 23px; line-height: 29px; font-weight: 500; }
 .user_login_top .user_information li a { display: inline-block; width: fit-content; padding: 3px 5px; text-align: center; }
-.user_login_top .user_information .user_home_01 { padding-left: 10px;}
+.user_login_top .user_information .user_home_01 { padding-left: 10px; }
+.user_login_top .user_information .user_home_01 li { font-size: 17px; line-height: 23px; }
 .user_login_top .user_information .user_home_02 { justify-items: end; }
 .user_login_top .user_information .user_home_02 button { margin-top: 10px; }
 .user_login_top .user_information .user_home_02 .logout { background-image:url("/img/logout_icon.png"); background-size: 30px; background-repeat: no-repeat; width: 30px; height: 30px; }
