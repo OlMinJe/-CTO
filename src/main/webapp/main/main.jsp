@@ -102,7 +102,7 @@
                                 3. x 버튼 누르면 삭제
                                 -->
                                 <div class="col-12 title">TODOLIST</div>
-                                <div class="to-dos" id="toDoList" onclick="init();">
+                                <div class="to-dos" id="toDoList">
                                     <form id="A17-todo" style="margin-bottom: 10px;">
                                         <input type="text" class="box_eft_01" placeholder="할 일 작성하기" required/>
                                         <input type="submit" value="추가" class="box_eft_02"/>

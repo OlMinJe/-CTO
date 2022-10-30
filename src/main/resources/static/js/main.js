@@ -4,6 +4,7 @@ $(document).ready(function () {
     saying();
     fixedIcon();
     initMap();
+    init();
 });
 
 // 찐 todolist
