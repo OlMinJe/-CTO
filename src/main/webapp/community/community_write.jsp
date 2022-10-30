@@ -63,7 +63,7 @@
                 <dl>
                     <dt class="col-12 col-sm-2">카테고리</dt>
                     <dd class="col-12 col-sm-10">
-                        <select name="com_category" form="" class="box_eft_01">
+                        <select name="com_category" form action='<c:url value='/boardWrite'/>' class="box_eft_01">
                             <option value="0">[일반] 일상</option>
                             <option value="1">[일반] 취미</option>
                             <option value="2">[일반] 유머</option>
@@ -112,6 +112,7 @@
                 </div>
             </form>
         </div>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="hidden" name="stateCode" value="${stateCode}"/>
         <input type="hidden" name="stateCode" value="${category}"/>
         <div class="col-12 btn_wrap">

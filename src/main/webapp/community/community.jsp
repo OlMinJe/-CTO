@@ -126,7 +126,7 @@
                 </c:forEach>
             </table>
             <input type="hidden" name="category" value="${category}"/>
-            <button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>
+            <%--<button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>--%>
             <!--백엔드 페이징 삭제-->
             <%--<ul class="paging">
                 <c:if test="${paging.prev}">
@@ -155,7 +155,9 @@
         <c:if test="${stateCode == 1}">
             <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
         </c:if>
-
+        <c:if test="${stateCode == 0}">
+            <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
+        </c:if>
         <!--<a href="#">수정</a>-->
     </div>
 </div>

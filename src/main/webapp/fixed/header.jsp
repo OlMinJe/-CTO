@@ -1,9 +1,10 @@
+<%@ page import="com.project.vo.MemberVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" type="text/css" href="/css/fixed/header.css">
 <script type="text/javascript" src="/js/includeHtml.js"></script>
 <header>
-    <!-- 고정 헤더-->
+    <!-- 고정 헤더(스크롤 내리면 보이는 헤더)-->
     <div class="col-12 fixed_header" style="position:fixed; display: none; justify-content: space-between; align-items: center;">
         <div class="col-1 header_logo">
             <c:if test="${sessionScope.stateCode == 1}">
@@ -12,10 +13,16 @@
             <c:if test="${sessionScope.stateCode ne 1}">
                 <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>
+            <c:if test="${sessionScope.stateCode == 0}">
+                <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
+            <c:if test="${sessionScope.stateCode ne 0}">
+                <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
         </div>
         <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</div>
     </div>
-    <!-- 모바일 메뉴 -->
+    <!-- 모바일 메뉴(모바일) -->
     <div id="slide_menu">
         <ul class="m_nav">
             <a href="#" id="close_btn">
@@ -34,10 +41,20 @@
                         <a onclick="location.href='/login/register.jsp'">회원가입</a>
                     </li>
                     <li id="m_user">
-                        <div class="user_name"><span th:text="${session.id}"></span>님, 환영합니다.</div>
+                        <div class="user_name">
+                        <%--<span th:text="${session.id}"></span>님, 환영합니다.</div>--%>
+                        <span>
+                        <%
+                            if (session.getAttribute("member") == null) {
+                                out.println(" ");
+                            } else {
+                                MemberVO vo = (MemberVO) session.getAttribute("member");
+                                out.println(vo.getMb_id() + "님 반갑습니다.<br>");
+                            }
+                        %>
+                        </span>
                         <a onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                         <a onclick="location.href='/login/logout.jsp'">로그아웃</a>
-                        <!--<a th:action = "@{/login/logout}">로그아웃</a>-->
                     </li>
                     <li id="m_admin"><a onclick="location.href='/'">관리자 페이지로 넘어가기.</a></li>
                 </ul>
@@ -50,7 +67,7 @@
             <li class="m_nav_title" onclick="location.href='/report/report.jsp?stateCode=${stateCode}'">신고</li>
         </ul>
     </div>
-    <!-- 기본 헤더 -->
+    <!-- 기본 헤더(웹) -->
     <div class="col-12 header_wrap" id="header">
         <div class="col-1 col-md-2 header_logo">
             <c:if test="${sessionScope.stateCode == 1}">
@@ -91,14 +108,24 @@
                 </li>
                 <li id="w_user">
                     <div class="user_name">
-                        <span th:text="${session.id}">님, 환영합니다.</span>
+                        <%--<span text="${session.id}">님, 환영합니다.</span>--%>
+                        <span>
+                        <%
+                            if (session.getAttribute("member") == null) {
+                                out.println(" ");
+                            } else {
+                                MemberVO vo = (MemberVO) session.getAttribute("member");
+                                out.println(vo.getMb_id() + "님 반갑습니다.<br>");
+                            }
+                        %>
+                        </span>
                     </div>
                     <a onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                     <a onclick="location.href='/login/logout.jsp'">로그아웃</a>
-                    <a th:href="@{/login/logout.html}">로그아웃</a>
-                    <a onclick="logout()">로그아웃</a>
+                    <%--<a th:href="@{/login/logout.html}">로그아웃</a>
+                    <a onclick="logout()">로그아웃</a>--%>
                 </li>
-                <li id="w_admin"><a onclick="location.href='/admin/admin.jsp'">관리자 페이지로 넘어가기.</a></li>
+                <li id="w_admin"><a onclick="location.href='/admin/securityAdmin.jsp'">관리자 페이지</a></li>
             </ul>
         </div>
     <div id="burgerbtn" onclick="headerAction();"><img style="wdith: 100%; height: 100%;"
