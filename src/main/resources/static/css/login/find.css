@@ -1,18 +1,19 @@
 /* 공통 */
-.title { margin-bottom: 40px; text-align: center; font-size: 25px; line-height: 31px; }
+.title { margin-bottom: 40px; text-align: center; font-size: 25px; line-height: 31px; font-weight: 600; }
 .comment { margin-right: 5px; margin-bottom: 10px; font-size: 17px; line-height: 23px; font-weight: 400; }
 button { padding: 7px 10px; }
 
 
 /* find_id_form_ */
 .id_form_wrap { display: flex; flex-direction: column; margin-left: auto; margin-right: auto; }
+.id_form_wrap form { margin-bottom: 1rem; }
 .id_form_wrap input { padding: 7px 10px; width: 100%; }
+.id_form_wrap span { margin-bottom: 1.5rem;}
 
 /* find_id , find_pw */
 .result_wrap { margin-left: auto; margin-right: auto; text-align: center; }
-.result_wrap tbody { margin-bottom: 30px; }
-.result_wrap span { margin-bottom: 10px; font-size: 17px; line-height: 23px; font-weight: 400; }
-.result_wrap td { font-size: 22px; line-height: 28px; color: red; font-weight: 500; }
+.result_wrap .result { font-size: 1.3rem; line-height: 2.6rem; margin-bottom: 1rem; }
+.result_wrap span { font-size: 2rem; line-height: 2.6rem; font-weight: 400; }
 
 /* find_pw_from */
 .pw_form_wrap { margin-left: auto; margin-right: auto; text-align: center; }
