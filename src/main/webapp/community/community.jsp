@@ -65,7 +65,7 @@
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=3">음식</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=4">정보</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=5">취업/진로</a></li>
-                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>--%>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>
                 </c:if>--%>
             </ul>
         </div>
