@@ -112,7 +112,7 @@ public class BoardController {
 
 
 	// 게시판 글쓰기(커뮤니티)
-	@RequestMapping(value="/boardWrite")
+	@RequestMapping(value="/communityWrite")
 	public String boardWrite(@RequestParam("stateCode") int stateCode, BoardVO boardVO,HttpServletRequest req, MultipartFile file) throws Exception {
 
 		HttpSession session = req.getSession();

@@ -153,7 +153,7 @@
     </div>
     <div class="btn_wrap">
         <c:if test="${stateCode == 1}">
-            <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
+            <a onclick="location.href='/community/community_write';" class="on box_eft_02">글쓰기</a>
         </c:if>
         <c:if test="${stateCode == 0}">
             <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
