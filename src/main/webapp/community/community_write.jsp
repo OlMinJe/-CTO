@@ -75,8 +75,8 @@
             </form>
         </div>
         <div class="col-12 btn_wrap">
-            <a onclick="location.href='/community/community_view.jsp';" class="on box_eft_02">등록</a>
-            <a onclick="location.href='/community/community.jsp';" class="box_eft_02">취소</a>
+            <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>
+            <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
         </div>
     </div>
 </div>

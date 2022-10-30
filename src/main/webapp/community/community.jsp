@@ -126,7 +126,9 @@
                 </c:forEach>
             </table>
             <input type="hidden" name="category" value="${category}"/>
-            <ul class="paging">
+            <button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>
+            <!--백엔드 페이징 삭제-->
+            <%--<ul class="paging">
                 <c:if test="${paging.prev}">
                     <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.startPage-1}"/>'>이전</a></span>
                 </c:if>
@@ -136,7 +138,7 @@
                 <c:if test="${paging.next && paging.endPage>0}">
                     <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
                 </c:if>
-            </ul>
+            </ul>--%>
             <!--페이징-->
             <ul class="pagination">
                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>

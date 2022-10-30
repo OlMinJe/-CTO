@@ -87,9 +87,9 @@ public class BoardController {
 		}
 		return "/community/community";
 	}
-/*
+/**/
 	// 게시판 글쓰기 폼(커뮤니티)
-	@RequestMapping(value="/boardWriteForm")
+	@RequestMapping(value="/community/community_write")
 	public String boardWriteForm(HttpServletRequest req, Model model) throws Exception {
 
 		HttpSession session = req.getSession();
@@ -106,7 +106,7 @@ public class BoardController {
 			model.addAttribute("modifyId", session.getAttribute("userId"));
 			model.addAttribute("stateCode", 2);
 		}
-		return "boardWriteForm";
+		return "/community/community_write";
 	}
 
 
@@ -119,7 +119,7 @@ public class BoardController {
 		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
 
 		int seq = modifyMember.getMb_seq();
-		String doctor = modifyMember.getMb_doctor();
+		int doctor = modifyMember.getMb_doctor();
 		boardVO.setMb_seq(seq);
 		boardVO.setMb_doctor(doctor);
 
@@ -128,9 +128,9 @@ public class BoardController {
 		}
 		boardService.boardWrite(boardVO);
 		int category = boardVO.getCom_category();
-		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
+		return "redirect:/community/community?stateCode="+stateCode+"&category="+category;
 	}
-	*/
+	/**/
 
 
 	// 게시글 내용 읽기(커뮤니티)

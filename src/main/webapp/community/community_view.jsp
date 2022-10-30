@@ -28,8 +28,9 @@
                     <dd>${data.mb_nick}</dd>
                 </dl>
                 <dl>
-                    <dt>작성일</dt>
-                    <dd>${data.com_date}</dd>
+                    <dt>작성일</dt><!--안 나옴(수정 필수)-->
+                    <%--<dd>${data.com_date}</dd>--%>
+                    <dd><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></dd>
                 </dl>
                 <dl>
                     <dt>조회수</dt>
@@ -81,7 +82,13 @@
         </form>--%>
 
         <div class="col-12 btn_wrap">
-            <a onclick="location.href='/community/community?stateCode=${stateCode}&category=10';" class="on box_eft_02">목록</a>
+            <!--로그인 유뮤에 따른 목차 주소 반환-->
+            <c:if test="${sessionScope.stateCode ne null}">
+                <a onclick="location.href='/community/community?stateCode=${stateCode}&category=10';" class="on box_eft_02">목록</a>
+            </c:if>
+            <c:if test="${sessionScope.stateCode eq null}">
+                <a onclick="location.href='/?com&category=10';" class="on box_eft_02">목록</a>
+            </c:if>
         </div>
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
