@@ -57,15 +57,8 @@
         </form>
         <!--테이블-->
         <div class="content-table">
+            <%-- 일반 --%>
             <table class="table table-hover table-bordered" id="community-table">
-                <thead id="community-table-head"></thead>
-                <tbody id="community-table-body"></tbody>
-            </table>
-            <!--글 테이블-->
-            <%--<div class="col-12" id="editor_content">
-                <div data-include-path="/community/editor.jsp"></div>
-            </div>--%>
-            <table border="1">
                 <tr>
                     <%--<th>자동순번</th>--%>
                     <th>글번호</th>
@@ -126,6 +119,10 @@
                 </c:forEach>
             </table>
             <input type="hidden" name="category" value="${category}"/>
+            <!-- 에디터 -->
+            <div class="col-12" id="editor_content">
+                <div data-include-path="/community/editor.jsp"></div>
+            </div>
             <%--<button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>--%>
             <!--백엔드 페이징 삭제-->
             <%--<ul class="paging">

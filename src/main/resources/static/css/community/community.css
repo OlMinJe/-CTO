@@ -35,7 +35,7 @@ div.col-12.editor_wrap { text-align: center; }
 .content form { margin-left: auto; margin-right: auto; margin-bottom: 20px; }
 .content-table table { margin-bottom: 2rem; }
 .content-table thead { text-align: center; }
-.content-table table th { font-weight: 600; }
+.content-table table th { font-weight: 500; }
 .content-table table td.title { text-align: initial; }
 .pagination { justify-content: center; }
 
