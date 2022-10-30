@@ -3,6 +3,7 @@ $(document).ready(function () {
     mainTableActive();
     saying();
     fixedIcon();
+    initMap();
 });
 
 // 찐 todolist
@@ -213,7 +214,7 @@ function subSwiperBack() {
 }
 
 // 지도
-var mapContainer = document.getElementById('map1'), // 지도를 표시할 div
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(37.577491675481404, 126.9770077164053), // 지도의 중심좌표
         draggable: false, // 지도를 생성할때 지도 이동 및 확대/축소를 막으려면 draggable: false 옵션을 추가하세요
@@ -228,37 +229,23 @@ function setDraggable(draggable) {
     map.setDraggable(draggable);
 }
 
+// 지도 실행 함순
+function initMap(){
+    // 지도1
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(37.577491675481404, 126.9770077164053), // 지도의 중심좌표
+            draggable: false, // 지도를 생성할때 지도 이동 및 확대/축소를 막으려면 draggable: false 옵션을 추가하세요
+            level: 3 // 지도의 확대 레벨
+        };
 
-// 지도1
-var mapContainer = document.getElementById('map1'), // 지도를 표시할 div
-    mapOption = {
-        center: new kakao.maps.LatLng(37.577491675481404, 126.9770077164053), // 지도의 중심좌표
-        draggable: false, // 지도를 생성할때 지도 이동 및 확대/축소를 막으려면 draggable: false 옵션을 추가하세요
-        level: 3 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-// 버튼 클릭에 따라 지도 이동 기능을 막거나 풀고 싶은 경우에는 map.setDraggable 함수를 사용합니다
-function setDraggable(draggable) {
-    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
-    map.setDraggable(draggable);
-}
-
-// 지도2
-var mapContainer = document.getElementById('map2'), // 지도를 표시할 div
-    mapOption = {
-        center: new kakao.maps.LatLng(37.577491675481404, 126.9770077164053), // 지도의 중심좌표
-        draggable: false, // 지도를 생성할때 지도 이동 및 확대/축소를 막으려면 draggable: false 옵션을 추가하세요
-        level: 3 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 // 버튼 클릭에 따라 지도 이동 기능을 막거나 풀고 싶은 경우에는 map.setDraggable 함수를 사용합니다
-function setDraggable(draggable) {
-    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
-    map.setDraggable(draggable);
+    function setDraggable(draggable) {
+        // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+        map.setDraggable(draggable);
+    }
 }
 
 // 커뮤니티+editor 이벤트
@@ -336,7 +323,6 @@ function saying(){
     const selected = words[Math.floor(Math.random() * words.length)];
     document.querySelector('.wiseSaying_con').innerHTML = selected;
 }
-
 
 // fixed 아이콘 hover 이벤트
 function fixedIcon() {

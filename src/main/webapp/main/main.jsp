@@ -23,16 +23,7 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <div class="col-12 main">
-        <%-- 검색바
-        <div class="col-12 search_wrap mb">
-            <!--221005-->
-            <form id="search_input">
-                <input type="text" id="search" class="box_eft_01">
-                <button id="search_btn" class="box_eft_02">검색하기</button>
-            </form>
-        </div>
-        --%>
-        <div class="col-12 second_row_wrap">
+        <div class="col-12 second_row_wrap mb">
             <div class="col-12 col-md-6 location_wrap">
                 <div id="map" style="width:100%;height:346px;"></div>
             </div>
@@ -123,20 +114,20 @@
             </c:if>
             </div>
         </div>
-    </div>
-<div class="col-12 mainvisual_wrap">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
-                <span>공지사항(ver.22/12/31)</span>
+        <div class="col-12 mainvisual_wrap">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
+                            <span>공지사항(ver.22/12/31)</span>
+                        </div>
+                        <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
+                        <div class="swiper-slide slide03">Slide 3</div>
+                        <div class="swiper-slide slide04">Slide 4</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
-            <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
-            <div class="swiper-slide slide03">Slide 3</div>
-            <div class="swiper-slide slide04">Slide 4</div>
-        </div>
-        <div class="swiper-pagination"></div>
     </div>
-</div>
     <section class="col-12 sub_swiper_wrap mb">
         <canvas id="nigthSky"></canvas>
         <div class="col-12 col-md-8 sub_swiper_con"><!-- https://lpla.tistory.com/149 -->
