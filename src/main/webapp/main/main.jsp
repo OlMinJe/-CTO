@@ -67,7 +67,7 @@
                                                     out.println("<a href='/'로그인</a>");
                                                 } else {
                                                     MemberVO vo = (MemberVO) session.getAttribute("member");
-                                                    out.println(vo.getMb_id() + "님 반갑습니다.<br>");
+                                                    out.println(vo.getMb_id() + "님 반갑습니다.");
                                                 }
                                             %>
                                         </span>
