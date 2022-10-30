@@ -49,16 +49,21 @@ function li_active_01() {
 
     // 하위 메뉴 영역
     for(let i = 0; i < normal_li.length; i++) {
-        normal_li[i].addEventListener("click", function () {
-            // 선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
-            for(let j = 0; j < normal_li.length; j++) {
-                if(normal_li[j].classList.contains('active') == true) {
-                    normal_li[j].classList.remove('active');
-                }
-            }
+        if(normal_li[i].classList.contains('active') == true) {
+            normal_li[i].classList.remove('active');
+        } else {
             normal_li[i].classList.add('active');
-            //dataRedundancy();
-        })
+        }
+        // normal_li[i].addEventListener("click", function () {
+        //     // 선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
+        //     for(let j = 0; j < normal_li.length; j++) {
+        //         if(normal_li[j].classList.contains('active') == true) {
+        //             normal_li[j].classList.remove('active');
+        //         }
+        //     }
+        //     normal_li[i].classList.add('active');
+        //     //dataRedundancy();
+        // })
     }
     sub_menu();
 }
