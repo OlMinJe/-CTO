@@ -9,7 +9,6 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 .m_right ul li:last-child { margin-bottom: 0; }
 .m_right ul li a, .m_right .user_name, .m_right .user_name span { font-size: 22px; line-height: 28px; font-width: 400; }
 .m_right .weatherIcon01 { width: 50px; }
-/*.m_right .weatherInfo br { display: none; }*/
 .m_right .user_name { margin-bottom: 15px; }
 /**/
 
@@ -33,22 +32,30 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 .fixed_header .mypage_btn { float: right; }
 
 /*날씨 api*/
-
 .container {position: relative;display: none; justify-content: flex-start; overflow: hidden; padding-left: 30px; }
 .container * {color: #212121;}
 .container h1 {font-size: 1.8rem;}
-.weatherInfo { font-size: 1em; margin: 0 10px; }
-.weatherIcon { width: 50px; position: absolute; top: -6px; left: -6px; white-space: nowrap; overflow: hidden; }
+.weatherInfo { font-size: 0.8rem; }
+.weatherIcon { width: 50px; position: absolute; top: -6px; left: calc(50% - 50px); white-space: nowrap; overflow: hidden; }
 
 @media all and (min-width: 768px){
-div#slide_menu { display: none; }
-.header_logo .logo img  { width: 80px; }
-div.m_right { display: none; }
-.header_wrap { padding-left: 30px; padding-right: 30px; }
-.header_wrap .nav_mian{ display: flex; justify-content: space-between; }
-.header_wrap .weather { display: block; }
-.header_wrap .w_right { display: block; }
-.header_wrap #burgerbtn { display: none; }
-.header_wrap .container {display: flex;}
+    div#slide_menu { display: none; }
+    .header_logo .logo img  { width: 80px; }
+    div.m_right { display: none; }
+    .header_wrap { padding-left: 30px; padding-right: 30px; }
+    .header_wrap .nav_mian{ display: flex; justify-content: space-between; }
+    .header_wrap .weather { display: block; }
+    .header_wrap .w_right { display: block; }
+    .header_wrap #burgerbtn { display: none; }
+    .header_wrap .container { display: flex; justify-content: flex-end; }
 }
 
+@media all and (min-width: 992px){
+    .weatherIcon { left: calc(50% - 35px); }
+}
+@media all and (min-width: 1200px){
+    .weatherIcon { left: 43%; }
+}
+@media all and (min-width: 1600px){
+    .weatherIcon { left: 57%; }
+}
