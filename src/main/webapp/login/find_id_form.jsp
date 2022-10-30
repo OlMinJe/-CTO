@@ -27,7 +27,7 @@
             </tbody>
         </form>
         <div style="text-align: center;">
-            <button type="submit" id=findBtn class="box_eft_02" onclick="location.href='/login/login.html'">로그인으로 이동</button>
+            <button type="submit" id=findBtn class="box_eft_02">아이디 찾기</button>
             <button type="button" class="box_eft_02" onclick="history.go(-1);">메인으로</button>
         </div>
     </div>
