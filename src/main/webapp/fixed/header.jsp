@@ -21,7 +21,12 @@
                 <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>--%>
         </div>
-        <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</div>
+        <c:if test="${sessionScope.stateCode ne 1}">
+            <div class="col-0 mypage_btn" onclick="location.href='/login/login.jsp'">로그인</div>
+        </c:if>
+        <c:if test="${sessionScope.stateCode == 1}">
+            <div class="col-0 mypage_btn" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</div>
+        </c:if>
     </div>
     <!-- 모바일 메뉴(모바일) -->
     <div id="slide_menu">
