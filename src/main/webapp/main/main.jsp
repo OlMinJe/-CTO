@@ -94,10 +94,10 @@
                         </ul>
                     </div>
                     <div class="col-12 user_login_bottom" onload="todoList();">
-                        <h1>할 일 목록</h1>
+                        <<div class="col-12 title">TODOLIST</div>
                         <span></span><br>
-                        <input id="todo">
-                        <button id="add-button">+</button>
+                        <input id="todo" class="box_eft_01" placeholder="할 일 작성하기">
+                        <button id="add-button" class="box_eft_02">추가</button>
                         <div id="todo-list"></div>
                         <%--<div class="col-12 title">TODOLIST</div>
                         <div class="to-dos" id="toDoList">
