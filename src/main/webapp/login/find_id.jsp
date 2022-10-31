@@ -28,8 +28,9 @@
         <div class="title">아이디 찾기 검색결과</div>
         <div>회원님의 아이디는
         <span>${ id }</span>입니다.</div>
+        <br>
         <div style="text-align: center;">
-            <button type="button" id=loginBtn" class="box_eft_02">로그인으로 이동</button>
+            <button type="button" id=loginBtn class="box_eft_02">로그인으로 이동</button>
             <button type="button" class="box_eft_02" onclick="history.go(-1);">취소</button>
         </div>
     </div>
