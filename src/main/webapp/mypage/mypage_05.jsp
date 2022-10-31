@@ -105,10 +105,10 @@
             <div class="col-0 menu_list mt">
                 <div class="col-12 menu_title" onclick="mobile_menu();">활동내역</div>
                 <ul class="col-12" id="menu_list_01">
-                    <li class="col-12" onclick="location.href='/mypage/mypage_01?stateCode=${stateCode}'">이벤트 참여내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_02?stateCode=${stateCode}'">커뮤니티 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_03?stateCode=${stateCode}'">위치기반 사용내역</li>
-                    <li class="col-12" onclick="location.href='/mypage/mypage_06?stateCode=${stateCode}'">테스트 결과 내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_01.jsp?stateCode=${stateCode}'">이벤트 참여내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_02.jsp?stateCode=${stateCode}'">커뮤니티 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_03.jsp?stateCode=${stateCode}'">위치기반 사용내역</li>
+                    <li class="col-12" onclick="location.href='/mypage/mypage_04.jsp?stateCode=${stateCode}'">테스트 결과 내역</li>
                 </ul>
                 <div class="col-12 col-lg-0 menu_list" id="menu_list_02">
                     <div class="menu_title mt">정보변경</div>
