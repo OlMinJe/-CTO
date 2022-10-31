@@ -15,17 +15,16 @@ let table = document.getElementById('community-table');
 let editor_content = document.getElementById('editor_content');
 
 /* 데이터 중복 출력 현상 임의로 막아둠 */
-// function dataRedundancy() {
-//     while (table_tbody.hasChildNodes()) {
-//         table_tbody.removeChild(table_tbody.firstChild);
-//     }
-// }
+/*function dataRedundancy() {
+    while (table_tbody.hasChildNodes()) {
+        table_tbody.removeChild(table_tbody.firstChild);
+    }
+}*/
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
-/*function sub_menu() {
+function sub_menu() {
     // 상위 메뉴 active 클래스 추가 -> 해당 클래스를 사용하여 css 효과 부여
-    active_normal.classList.add('active');
-    active_editor.classList.remove('active');
+    init();
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (normal.style.display == "block") {
@@ -34,13 +33,13 @@ let editor_content = document.getElementById('editor_content');
             normal.style.display = "block";
         }
     } else { normal.style.display = "block"; }
-}*/
+}
 
 var div2 = document.getElementsByClassName("div2");
 
 function handleClick(event) {
     if (event.target.classList[1] === "active") {
-        event.target.classList.remove("clicked");
+        event.target.classList.remove("active");
     } else {
         for (var i = 0; i < div2.length; i++) {
             div2[i].classList.remove("active");
@@ -56,12 +55,6 @@ function init() {
 
 init();
 
-
-
-
-
-Resources
-
 /* community 탭을 클릭한 경우 */
 function li_active_01() {
     // 초기에 출력되는 content 영역
@@ -74,21 +67,21 @@ function li_active_01() {
     active_editor.classList.remove('active');
 
     // 하위 메뉴 영역
- //   for(let i = 0; i < normal_li.length; i++) {
-//        normal_li[i].addEventListener("click", function () {
-            // 선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
-            //for(let j = 0; j < normal_li.length; j++) {
-   //             if(normal_li[i].classList.contains('active') == true) {
-     //               normal_li[i].classList.remove('active');
-       //         } else {
-         //           normal_li[i].classList.add('active');
-           //     }
+ /*  for(let i = 0; i < normal_li.length; i++) {
+       normal_li[i].addEventListener("click", function () {
+            선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
+            for(let j = 0; j < normal_li.length; j++) {
+               if(normal_li[i].classList.contains('active') == true) {
+                   normal_li[i].classList.remove('active');
+               } else {
+                   normal_li[i].classList.add('active');
+               }
 
-            //}
-            //dataRedundancy();
-//        })
-    //}
-    //sub_menu();
+            }
+            dataRedundancy();
+       })
+    }*/
+    sub_menu();
 }
 
 /* 에디터 탭을 클릭했을 떄의 이벤트 */
