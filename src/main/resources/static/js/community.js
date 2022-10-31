@@ -26,8 +26,6 @@ var div2 = document.getElementsByClassName("div2");
 var menuClick;
 // 모바일 버전
 function sub_menu() {
-    // 상위 메뉴 active 클래스 추가 -> 해당 클래스를 사용하여 css 효과 부여
-    init();
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (normal.style.display == "block") {
@@ -44,17 +42,15 @@ function handleClick(event) {
     } else {
         for (var i = 0; i < div2.length; i++) {
             div2[i].classList.remove("active");
-            menuClick = div2[i].classList;
-            init(menuClick);
         }
         event.target.classList.add("active");
     }
 }
 function init(menuClick) {
-    var menuClicks = menuClick;
-    menuClicks.add("active");
     for (var i = 0; i < div2.length; i++) {
         div2[i].addEventListener("click", handleClick);
+        menuClick = div2[i];
+        menuClick.className.add("active");
     }
 }
 
