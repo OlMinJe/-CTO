@@ -8,13 +8,13 @@
 </head>
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script type="text/javascript">
-var code = '${code}';
-if(code == "matchesError") {
-	alert("비밀번호가 맞지 않습니다.");
-} else if(code == "nullError") {
-	alert("아이디를 다시 입력해주세요.");
-}
-document.location.href = "/login/login.jsp";
+    var code = '${code}';
+    if(code == "matchesError") {
+        alert("비밀번호가 맞지 않습니다.");
+    } else if(code == "nullError") {
+        alert("아이디를 다시 입력해주세요.");
+    }
+    document.location.href = "/login/login.jsp";
 </script>
 <body>
 </body>
