@@ -22,7 +22,7 @@ let editor_content = document.getElementById('editor_content');
 // }
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
-function sub_menu() {
+/*function sub_menu() {
     // 상위 메뉴 active 클래스 추가 -> 해당 클래스를 사용하여 css 효과 부여
     active_normal.classList.add('active');
     active_editor.classList.remove('active');
@@ -34,7 +34,33 @@ function sub_menu() {
             normal.style.display = "block";
         }
     } else { normal.style.display = "block"; }
+}*/
+
+var div2 = document.getElementsByClassName("div2");
+
+function handleClick(event) {
+    if (event.target.classList[1] === "active") {
+        event.target.classList.remove("clicked");
+    } else {
+        for (var i = 0; i < div2.length; i++) {
+            div2[i].classList.remove("active");
+        }
+        event.target.classList.add("active");
+    }
 }
+function init() {
+    for (var i = 0; i < div2.length; i++) {
+        div2[i].addEventListener("click", handleClick);
+    }
+}
+
+init();
+
+
+
+
+
+Resources
 
 /* community 탭을 클릭한 경우 */
 function li_active_01() {
@@ -62,7 +88,7 @@ function li_active_01() {
             //dataRedundancy();
 //        })
     //}
-    sub_menu();
+    //sub_menu();
 }
 
 /* 에디터 탭을 클릭했을 떄의 이벤트 */
