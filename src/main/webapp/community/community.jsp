@@ -36,7 +36,17 @@
                     <li class="box_eft_01" onclick="location.href='/com?category=5'">취업/진로</li>
                     <li class="box_eft_01" onclick="location.href='/com?category=6'">기타</li>
                 </c:if>
-                <c:if test="${sessionScope.stateCode == 1}">
+                <c:if test="${sessionScope.stateCode eq 1}"> <!--https://liufeier.tistory.com/22-->
+                    <li class="box_eft_01 active"><a href="/community/community?stateCode=${stateCode}&category=10">전체</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=0">일상</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=1">취미</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=2">유머</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=3">음식</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=4">정보</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=5">취업/진로</a></li>
+                    <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>
+                </c:if>
+                <%--<c:if test="${sessionScope.stateCode == 1}">
                     <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
                     <c:choose>
                     <c:when test="${data.com_category == 10}">
@@ -120,7 +130,7 @@
                         <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
                     </c:when>
                     </c:choose>
-                </c:if>
+                </c:if>--%>
 
                 <%--<c:if test="${sessionScope.stateCode ne 1}">
                     <li class="box_eft_01 active"><a href="/com?category=10">전체</a></li>
@@ -132,7 +142,7 @@
                     <li class="box_eft_01"><a href="/com?category=5">취업/진로</a></li>
                     <li class="box_eft_01"><a href="/com?category=6">기타</a></li>
                 </c:if>
-                <c:if test="${sessionScope.stateCode ==1}">]
+                <c:if test="${sessionScope.stateCode ==1}">
                     <li class="box_eft_01 active"><a href="/community/community?stateCode=${stateCode}&category=10">전체</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=0">일상</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=1">취미</a></li>
