@@ -5,91 +5,148 @@ $(document).ready(function () {
     fixedIcon();
     initMap();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.querySelector('#todo')
+    const addButton = document.querySelector('#add-button')
+    const todoList = document.querySelector('#todo-list')
+    const alert = document.querySelector('span')
 
-// 찐 todolist
-function todoList(){
-    const toDoForm = document.querySelector("#A17-todo");
-    const toDoInput = document.querySelector("#A17-todo input");
-    const toDoList = document.querySelector("#A17-todo-list");
-    const TODO_KEY = "todos";
-    let toDos = [];
+    // '+' 버튼 익명 화살표 함수
+    const addTodo = () => {
+        if (input.value !== '') {
+            const item = document.createElement('div')
+            // 체크박스
+            const checkbox = document.createElement('input')
+            checkbox.type='checkbox'
+            // text
+            const text = document.createElement('span');
+            // 제거하기 버튼
+            const deleteButton = document.createElement('button')
+            deleteButton.textContent="제거하기"
 
-    function saveToDos() {
-        localStorage.setItem(TODO_KEY, JSON.stringify(toDos));
-    }
+            text.textContent = input.value
+            input.value=''
 
-    function deleteToDo(event) {
-        const target = toDoList.querySelector(`li[id="${event.target.id}"]`);
-        target.remove();
-        toDos = toDos.filter((toDos) => toDos.id !== parseInt(target.id));
-        saveToDos();
-    }
+            item.appendChild(checkbox)
+            item.appendChild(text)
+            item.appendChild(deleteButton)
+            todoList.appendChild(item)
 
-    function doneFunc(event) {
-        const tar = event.target.parentElement;
-        for (const i in toDos) {
-            if (toDos[i].id === parseInt(tar.id)) {
-                if (toDos[i].is_done === true) {
-                    event.target.classList.remove("A17-del");
-                    toDos[i].is_done = false;
-                } else {
-                    event.target.classList.add("A17-del");
-                    toDos[i].is_done = true;
+            // 체크박스 이벤트 리스너
+            checkbox.addEventListener('change', (event) =>{
+                if (event.currentTarget.checked)
+                {
+                    text.style.textDecoration='line-through'
                 }
-            }
+                else {
+                    text.style.textDecoration='none'
+                }
+            })
+
+            // 제거하기 버튼 클릭 이벤트 리스너
+            deleteButton.addEventListener('click', (event) => {
+                todoList.removeChild(event.currentTarget.parentNode)
+            })
+            input.value =''
+            alert.textContent = ''
         }
-        saveToDos();
+        else
+            alert.textContent = '할 일을 입력하세요!'
     }
 
-    function paintToDo(newObj) {
-        let isDone = "";
-        if (newObj.is_done === true) {
-            isDone = "A17-del";
-        }
-        const temp = document.createElement("b");
-        temp.textContent = newObj.text;
-        const newToDoSet = document.createElement("li");
-        newToDoSet.id = newObj.id;
-        newToDoSet.innerHTML = `
-<span class="${isDone} col-10">
-  ${temp.innerHTML}
-</span>
-<button id=${newObj.id}>X</button>
-`;
-        toDoList.appendChild(newToDoSet);
-    }
+    addButton.addEventListener('click', addTodo)
 
-    function submitFunc(event) {
-        event.preventDefault();
-        const newInput = toDoInput.value;
-        const newObj = {
-            text: newInput,
-            id: Date.now(),
-            is_done: false,
-        };
-        toDoInput.value = "";
-        toDos.push(newObj);
-        saveToDos();
-        paintToDo(newObj);
-    }
-
-    toDoForm.addEventListener("submit", submitFunc);
-    toDoList.addEventListener("click", (event) => {
-        if (event.target.tagName === "SPAN") {
-            doneFunc(event);
-        } else if (event.target.tagName === "BUTTON") {
-            deleteToDo(event);
-        }
-    });
-
-    const savedToDos = localStorage.getItem(TODO_KEY);
-
-    if (savedToDos !== null) {
-        const parsedToDos = JSON.parse(savedToDos);
-        toDos = parsedToDos;
-        parsedToDos.forEach(paintToDo);
-    }
-}
+    // 할 일 입력창에서 enter key가 눌렸을 때
+    input.addEventListener('keypress', (event) => {
+        const ENTER = 13
+        if (event.keyCode === ENTER)
+            addTodo();
+    })
+})
+// 찐 todolist
+// function todoList(){
+//     const toDoForm = document.querySelector("#A17-todo");
+//     const toDoInput = document.querySelector("#A17-todo input");
+//     const toDoList = document.querySelector("#A17-todo-list");
+//     const TODO_KEY = "todos";
+//     let toDos = [];
+//
+//     function saveToDos() {
+//         localStorage.setItem(TODO_KEY, JSON.stringify(toDos));
+//     }
+//
+//     function deleteToDo(event) {
+//         const target = toDoList.querySelector(`li[id="${event.target.id}"]`);
+//         target.remove();
+//         toDos = toDos.filter((toDos) => toDos.id !== parseInt(target.id));
+//         saveToDos();
+//     }
+//
+//     function doneFunc(event) {
+//         const tar = event.target.parentElement;
+//         for (const i in toDos) {
+//             if (toDos[i].id === parseInt(tar.id)) {
+//                 if (toDos[i].is_done === true) {
+//                     event.target.classList.remove("A17-del");
+//                     toDos[i].is_done = false;
+//                 } else {
+//                     event.target.classList.add("A17-del");
+//                     toDos[i].is_done = true;
+//                 }
+//             }
+//         }
+//         saveToDos();
+//     }
+//
+//     function paintToDo(newObj) {
+//         let isDone = "";
+//         if (newObj.is_done === true) {
+//             isDone = "A17-del";
+//         }
+//         const temp = document.createElement("b");
+//         temp.textContent = newObj.text;
+//         const newToDoSet = document.createElement("li");
+//         newToDoSet.id = newObj.id;
+//         newToDoSet.innerHTML = `
+// <span class="${isDone} col-10">
+//   ${temp.innerHTML}
+// </span>
+// <button id=${newObj.id}>X</button>
+// `;
+//         toDoList.appendChild(newToDoSet);
+//     }
+//
+//     function submitFunc(event) {
+//         event.preventDefault();
+//         const newInput = toDoInput.value;
+//         const newObj = {
+//             text: newInput,
+//             id: Date.now(),
+//             is_done: false,
+//         };
+//         toDoInput.value = "";
+//         toDos.push(newObj);
+//         saveToDos();
+//         paintToDo(newObj);
+//     }
+//
+//     toDoForm.addEventListener("submit", submitFunc);
+//     toDoList.addEventListener("click", (event) => {
+//         if (event.target.tagName === "SPAN") {
+//             doneFunc(event);
+//         } else if (event.target.tagName === "BUTTON") {
+//             deleteToDo(event);
+//         }
+//     });
+//
+//     const savedToDos = localStorage.getItem(TODO_KEY);
+//
+//     if (savedToDos !== null) {
+//         const parsedToDos = JSON.parse(savedToDos);
+//         toDos = parsedToDos;
+//         parsedToDos.forEach(paintToDo);
+//     }
+// }
 
 function swiperEvent() {
 // mainvisual 스와이퍼 이벤트

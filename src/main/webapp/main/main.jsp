@@ -94,22 +94,27 @@
                         </ul>
                     </div>
                     <div class="col-12 user_login_bottom" onload="todoList();">
-                                <!--
-                                TODOLIST: 사용설명서
-                                1. 체크 박스를 누르면 할 일 완료
-                                2. 할 일을 더블클릭하면
-                                2. 할 일을 클릭하면 완료
-                                3. x 버튼 누르면 삭제
-                                -->
-                                <div class="col-12 title">TODOLIST</div>
-                                <div class="to-dos" id="toDoList">
-                                    <form id="A17-todo" style="margin-bottom: 10px;">
-                                        <input type="text" class="box_eft_01" placeholder="할 일 작성하기" required/>
-                                        <input type="submit" value="추가" class="box_eft_02"/>
-                                    </form>
-                                    <ol id="A17-todo-list"></ol>
-                                </div>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
-                            </div>
+                        <h1>할 일 목록</h1>
+                        <span></span><br>
+                        <input id="todo">
+                        <button id="add-button">+</button>
+                        <div id="todo-list"></div>
+                    <!--
+                        TODOLIST: 사용설명서
+                        1. 체크 박스를 누르면 할 일 완료
+                        2. 할 일을 더블클릭하면
+                        2. 할 일을 클릭하면 완료
+                        3. x 버튼 누르면 삭제
+                        -->
+                        <%--<div class="col-12 title">TODOLIST</div>
+                        <div class="to-dos" id="toDoList">
+                            <form id="A17-todo" style="margin-bottom: 10px;">
+                                <input type="text" class="box_eft_01" placeholder="할 일 작성하기" required/>
+                                <input type="submit" value="추가" class="box_eft_02"/>
+                            </form>
+                            <ol id="A17-todo-list"></ol>
+                        </div>--%>  <!-- id = inputField에 할일이 입력되고 + 버튼이 눌리면 할일이 나타날 공간 만들기-->
+                    </div>
                 </div>
             </c:if>
             </div>
