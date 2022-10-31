@@ -14,13 +14,6 @@ let normal = document.getElementById('sub-menu');
 let table = document.getElementById('community-table');
 let editor_content = document.getElementById('editor_content');
 
-/* 데이터 중복 출력 현상 임의로 막아둠 */
-/*function dataRedundancy() {
-    while (table_tbody.hasChildNodes()) {
-        table_tbody.removeChild(table_tbody.firstChild);
-    }
-}*/
-
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
 var div2 = document.getElementsByClassName("div2");
 // 모바일 버전
@@ -44,17 +37,21 @@ function handleClick(event) {
         }
         event.target.classList.add("active");
     }
-    menuClick(event);
+
 }
+var clickMenu = document.getElementById('category1').classList;
 function init() {
     for (var i = 0; i < div2.length; i++) {
-        div2[i].addEventListener("click", handleClick);
+        div2[i].addEventListener("click", handleClick, function (){
+            clickMenu = div2[i].classList;
+        });
     }
+    console.log(clickMenu);
+    menuClick(clickMenu);
 }
-function menuClick(click) {
-    click.classList.add("active");
+function menuClick(clickMenus) {
+    clickMenus.add("active");
 }
-
 init();
 
 /* community 탭을 클릭한 경우 */
