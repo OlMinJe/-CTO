@@ -188,31 +188,31 @@
                     <tr>
                             <%--<td>${no}</td>--%>
                         <td>${data.com_num}</td>
-                            <div>
-                                <c:choose>
-                                    <c:when test="${data.com_category == 0}">
-                                        <td>일상</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 1}">
-                                        <td>취미</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 2}">
-                                        <td>유머</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 3}">
-                                        <td>음식</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 4}">
-                                        <td>정보</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 5}">
-                                        <td>취업/진로</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 6}">
-                                        <td>기타</td>
-                                    </c:when>
-                                </c:choose>
-                            </div>
+                        <div>
+                            <c:choose>
+                                <c:when test="${data.com_category == 0}">
+                                    <td>일상</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 1}">
+                                    <td>취미</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 2}">
+                                    <td>유머</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 3}">
+                                    <td>음식</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 4}">
+                                    <td>정보</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 5}">
+                                    <td>취업/진로</td>
+                                </c:when>
+                                <c:when test="${data.com_category == 6}">
+                                    <td>기타</td>
+                                </c:when>
+                            </c:choose>
+                        </div>
                         <td>${data.mb_nick}</td>
                         <td>
                             <c:if test="${sessionScope.stateCode ne 1}">

@@ -211,7 +211,7 @@ public class BoardController {
 
 		return "/community/community_view";
 	}
-	/*
+
 	//좋아요 기능을 위한 코드 - 커뮤니티
 	@ResponseBody
 	@RequestMapping (value = "/like/likeupdate",method = RequestMethod.POST)
@@ -234,7 +234,7 @@ public class BoardController {
 		return map;
 	}
 
-
+/*
 	// 게시글 수정폼(커뮤니티)
 	@RequestMapping(value="/boardModifyForm")
 	public String boardModifyForm(@RequestParam("com_num") int num,

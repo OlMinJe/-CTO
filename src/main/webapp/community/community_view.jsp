@@ -10,6 +10,56 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/community/community.css">
+
+    <script>
+
+        $('#likebtn').click(function(){
+            likeupdate();
+        });
+
+        function likeupdate(){
+            var root = getContextPath(),
+                likeurl = "/like/likeupdate",
+                mb_nick = $('#mb_nick').val(),
+                com_num = $('#com_num').val(),
+                count = $('#likecheck').val(),
+                data = {"mb_nick" : mb_nick,
+                    "com_num" : com_num,
+                    "count" : count};
+
+            $.ajax({
+                url : "/like/likeupdate",
+                type : 'POST',
+                contentType: "application/json; charset=UTF-8",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                },
+                async: false,
+                data : JSON.stringify(data),
+                success : function(result){
+                    console.log("수정" + result.result);
+
+                    if(count == 1){
+                        console.log("좋아요 취소");
+                        $('#likecheck').val(0);
+                        $('#likebtn').attr('class','btn-light');
+                    }else if(count == 0){
+                        console.log("좋아요!");
+                        $('#likecheck').val(1);
+                        $('#likebtn').attr('class','btn-danger');
+                    }
+                }, error : function(result){
+                    console.log("에러" + result.result)
+                }
+
+            });
+        };
+
+        function getContextPath() {
+            var hostIndex = location.href.indexOf( location.host ) + location.host.length;
+            return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -68,42 +118,30 @@
             </div>
         </div>
 
-        <%--<form name="form" method="post">
-            <div>글번호<input name="com_num" readonly="readonly" value="${data.com_num}"></div>
-            <div>카테고리
+        <style>
+            .btn-light{
+                color: slategray;
+            }
+            .btn-danger{
+                color: red;
+            }
+        </style>
+
+
+        <div class="col-12 btn_wrap">
+            <!--좋아요 버튼-->
+            <div id="like">
                 <c:choose>
-                    <c:when test="${data.com_category == 0}">
-                        <label>일상</label>
+                    <c:when test="${like_check ==0}">
+                        <button type="button" class="btn-light" id="likebtn">좋아요</button>
+                        <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
-                    <c:when test="${data.com_category == 1}">
-                        <label>취미</label>
-                    </c:when>
-                    <c:when test="${data.com_category == 2}">
-                        <label>유머</label>
-                    </c:when>
-                    <c:when test="${data.com_category == 3}">
-                        <label>음식</label>
-                    </c:when>
-                    <c:when test="${data.com_category == 4}">
-                        <label>정보</label>
-                    </c:when>
-                    <c:when test="${data.com_category == 5}">
-                        <label>취업/진로</label>
-                    </c:when>
-                    <c:when test="${data.com_category == 6}">
-                        <label>기타</label>
+                    <c:when test="${like_check ==1}">
+                        <button type="button" class="btn-danger" id="likebtn">좋아요</button>
+                        <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                 </c:choose>
             </div>
-            <div>제목<input name="title" readonly="readonly" value="${data.com_title}"></div>
-            <div>내용<input name="content" readonly="readonly" value="${data.com_content}"></div>
-            <div>작성자<input name="writer" readonly="readonly" value="${data.mb_nick}"></div>
-            <div>조회수<input name="hit" readonly="readonly" value="${data.com_hit}"></div>
-            <div>좋아요 수<input name="com_like" readonly="readonly" value="${data.com_like}"></div>
-
-        </form>--%>
-
-        <div class="col-12 btn_wrap">
             <!--로그인 유뮤에 따른 목차 주소 반환-->
             <c:if test="${sessionScope.stateCode ne null}">
                 <a onclick="location.href='/community/community?stateCode=${stateCode}&category=10';" class="on box_eft_02">목록</a>
