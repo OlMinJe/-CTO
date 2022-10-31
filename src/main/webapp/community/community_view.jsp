@@ -10,56 +10,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/community/community.css">
-
-    <script>
-
-        $('#likebtn').click(function(){
-            likeupdate();
-        });
-
-        function likeupdate(){
-            var root = getContextPath(),
-                likeurl = "/like/likeupdate",
-                mb_nick = $('#mb_nick').val(),
-                com_num = $('#com_num').val(),
-                count = $('#likecheck').val(),
-                data = {"mb_nick" : mb_nick,
-                    "com_num" : com_num,
-                    "count" : count};
-
-            $.ajax({
-                url : "/like/likeupdate",
-                type : 'POST',
-                contentType: "application/json; charset=UTF-8",
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-                },
-                async: false,
-                data : JSON.stringify(data),
-                success : function(result){
-                    console.log("수정" + result.result);
-
-                    if(count == 1){
-                        console.log("좋아요 취소");
-                        $('#likecheck').val(0);
-                        $('#likebtn').attr('class','btn-light');
-                    }else if(count == 0){
-                        console.log("좋아요!");
-                        $('#likecheck').val(1);
-                        $('#likebtn').attr('class','btn-danger');
-                    }
-                }, error : function(result){
-                    console.log("에러" + result.result)
-                }
-
-            });
-        };
-
-        function getContextPath() {
-            var hostIndex = location.href.indexOf( location.host ) + location.host.length;
-            return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
-        }
-    </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -150,6 +100,56 @@
                 <a onclick="location.href='/?com&category=10';" class="on box_eft_02">목록</a>
             </c:if>
         </div>
+
+        <script>
+
+            $('#likebtn').click(function(){
+                likeupdate();
+            });
+
+            function likeupdate(){
+                var root = getContextPath(),
+                    likeurl = "/like/likeupdate",
+                    mb_nick = $('#mb_nick').val(),
+                    com_num = $('#com_num').val(),
+                    count = $('#likecheck').val(),
+                    data = {"mb_nick" : mb_nick,
+                        "com_num" : com_num,
+                        "count" : count};
+
+                $.ajax({
+                    url : "/like/likeupdate",
+                    type : 'POST',
+                    contentType: "application/json; charset=UTF-8",
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                    },
+                    async: false,
+                    data : JSON.stringify(data),
+                    success : function(result){
+                        console.log("수정" + result.result);
+
+                        if(count == 1){
+                            console.log("좋아요 취소");
+                            $('#likecheck').val(0);
+                            $('#likebtn').attr('class','btn-light');
+                        }else if(count == 0){
+                            console.log("좋아요!");
+                            $('#likecheck').val(1);
+                            $('#likebtn').attr('class','btn-danger');
+                        }
+                    }, error : function(result){
+                        console.log("에러" + result.result)
+                    }
+
+                });
+            };
+
+            function getContextPath() {
+                var hostIndex = location.href.indexOf( location.host ) + location.host.length;
+                return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
+            }
+        </script>
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
             <c:if test="${sessionScope.stateCode ne null}">
