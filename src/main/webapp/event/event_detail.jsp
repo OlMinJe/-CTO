@@ -60,15 +60,15 @@
                 <!-- 참여하기 -->
                 <div class="col-12 content-dis">
                     <div class="col-12 col-md-10 event_content">
-                        <h4 style="text-align: left;"> 제 n회차 삼행시 </h4>
+                        <h4 style="text-align: left;"> 제 1회차 삼행시 </h4><!--회차 지정 방법 생각하기-->
                         <div class="col-12 event_content_top">
                             <div class="event_detail_box">응모중</div>
                             <p style="text-align: left;">기간 : 2022.07.27 ~ 2022.12.31</p>
                         </div>
                         <i style="text-align:left;">※ 삼행시 단어를 꼭 포함해서 제출해주세요! ※ </i>
-                        <label class="event_detail_label">살<input type="text"> </label>
-                        <label class="event_detail_label">려<input type="text"> </label>
-                        <label class="event_detail_label">줘<input type="text"> </label>
+                        <label class="event_detail_label">다<input type="text"> </label>
+                        <label class="event_detail_label">온<input type="text"> </label>
+                        <label class="event_detail_label">이<input type="text"> </label>
                         <div class="btn_wrap">
                             <a class="box_eft_02" onclick="javascript:btn()">제출하기</a>
                         </div>
@@ -77,7 +77,7 @@
                 <!-- 참여내역 -->
                 <div class="col-12 content-dis">
                     <div class="col-12 event_content">
-                        <h4 style="text-align: left;"> 제 n회차 삼행시 </h4>
+                        <h4 style="text-align: left;"> 제 1회차 삼행시 </h4>
                         <div class="col-12 event_content_top">
                             <div class="event_detail_box">응모중</div>
                             <p style="text-align: left;">기간 : 2022.07.27 ~ 2022.12.31</p>
@@ -87,13 +87,13 @@
                     <div class="event_sub_content text">
                         <div style="text-align: left;">
                             <ul class="col-12">
-                                <li>살려줘</li>
+                                <li>다온이</li>
                                 <img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">
                                 <!-- 하트 이모지 변경하여 리액트 구현 예정 -->
                                 <!-- 데이터 가져오기 ( 수정 예정 )  -->
-                                <li>살려주세요</li>
-                                <li>려기 죽어가요</li>
-                                <li>줘, 졸업장</li>
+                                <li>다시 없는 이 기회가</li>
+                                <li>온 바로 지금</li>
+                                <li>이제 시작하자</li>
                             </ul>
                             <hr/>
                         </div>

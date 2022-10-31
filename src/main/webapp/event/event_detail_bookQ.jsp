@@ -66,72 +66,72 @@
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ1.jpg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>해리포터 : 죽음의 성물</strong>
+                                        <p>저자 : 조앤 K. 롤링<br>출판사 : 문학수첩</p>
+                                        <a href="https://terms.naver.com/entry.naver?docId=5739622&cid=43667&categoryId=43667" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item2">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ2.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>책먹는 여우</strong>
+                                        <p>저자 : 프란치스카 비어만<br>출판사 : 주니어김영사</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/32464750449?cat_id=50010842&frm=PBOKMOD&query=%EC%B1%85%EB%A8%B9%EB%8A%94+%EC%97%AC%EC%9A%B0&NaPm=ct%3Dl9wtww00%7Cci%3Deb2e4b7d96de0e2ef8ceaffbf0534128a5e9b0eb%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D7a15e7e6780f2d2fbdf1627904c4d7cd82146c4c" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item3">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ3.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>불편한 편의점</strong>
+                                        <p>저자 : 김호연<br>출판사 : 나무옆의자</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/32444990070?cat_id=&frm=PBOKMOD&query=%EB%B6%88%ED%8E%B8%ED%95%9C+%ED%8E%B8%EC%9D%98%EC%A0%90&NaPm=ct%3Dl9wtvdzk%7Cci%3Dd019df0a69c230f0e2b125a05f9f6be188ccf7b8%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D2b7c46e0a9d0c497b5469869c989ab7109ffa5d8" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item4">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ4.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>시간을 파는 상점</strong>
+                                        <p>저자 : 김선영<br>출판사 : 자음과모음</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/32465784576?cat_id=50005708&frm=PBOKMOD&query=%EC%8B%9C%EA%B0%84%EC%9D%84+%ED%8C%8C%EB%8A%94+%EC%83%81%EC%A0%90&NaPm=ct%3Dl9wtuoiw%7Cci%3De1c8cbc7a0dd2f6e0c263d6be09a181aafe06673%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D71750583c4bdba80f90ef468de9af8b9412cd920" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item5">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ5.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>위저드 베이커리</strong>
+                                        <p>저자 : 구병모<br>출판사 : 창비</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/32462364642?cat_id=50010002&frm=PBOKMOD&query=%EC%9C%84%EC%A0%80%EB%93%9C+%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%A6%AC&NaPm=ct%3Dl9wttvz4%7Cci%3Df12ea07d4af9f03e2a167ea1b3cafd6e98a099f1%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3Da325d7073806ecd19417062c935740bdc0356d62" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item6">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ6.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>벌거벗은 세계사</strong>
+                                        <p>저자 : tvn&lt;벌거벗은세계사 &gt;제작팀<br>출판사 : 교보문고</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/33723469618?cat_id=50005872&frm=PBOKMOD&query=%EB%B2%8C%EA%B1%B0%EB%B2%97%EC%9D%80+%EC%84%B8%EA%B3%84%EC%82%AC+%EC%B1%85&NaPm=ct%3Dl9wtt9lk%7Cci%3D055a0327e9c531bc1fd329dad025075854dd8078%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D2dc019357a50ecccb33b011b90b9197ba3e8745a" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item7">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ7.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>해리포터 : 비밀의 방</strong>
+                                        <p>저자 : 조앤 K. 롤링<br>출판사 : 문학수첩</p>
+                                        <a href="https://terms.naver.com/entry.naver?docId=5737901&cid=43667&categoryId=43667" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <li class="col-12 col-sm-6 col-lg-4 Enter_bookQ_item item8">
                                     <img class="Enter_image" src="/img/Enter_list_bookQ/Enter_list_bookQ8.jpeg">
                                     <!-- css로 background:url 안 먹혀서 임시 방편 -->
                                     <div>
-                                        <strong>책 제목</strong>
-                                        <p>저자/출판사</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>하얼빈</strong>
+                                        <p>저자 : 김훈<br>출판사 : 문학동네</p>
+                                        <a href="https://search.shopping.naver.com/book/catalog/33684983664?cat_id=50005766&frm=PBOKMOD&section=info&query=%ED%95%98%EC%96%BC%EB%B9%88+%EC%B1%85&NaPm=ct%3Dl9wtni1c%7Cci%3Dd047f311ce785d1c7cdca40118e3776ab86c4628%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3Ded675b334cf9291d1164d2da68f883eb79be2889" target='_blank'>바로가기</a>
                                     </div>
                                 </li>
                                 <!-- <li class="col-12 col-sm-6 col-md-4 Enter_bookQ_item item8">

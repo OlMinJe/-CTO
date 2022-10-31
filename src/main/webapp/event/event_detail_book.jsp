@@ -50,7 +50,7 @@
                 <div class="col-12 content-dis">
                     <div class="col-12 event_content">
                         <h4 style="text-align: left;"> 독서감상대회 </h4>
-                        <h3 style="text-align: left;">9와 4분의 3 승강장에서 너를 기다려</h3>
+                        <h3 style="text-align: left;">꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</h3>
                         <div class="col-12 event_content_top">
                             <div class="event_detail_box">응모중</div>
                             <p style="text-align: left;">기간 : 2022.07.27 ~ 2022.12.31</p>
