@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-6 user_wrap">
             <!-- [1] 로그인 이전 화면 -->
-            <c:if test="${sessionScope.stateCode eq null}">
+            <c:if test="${sessionScope.stateCode ne null}">
                 <!--회원 정보 및 로그인-->
                 <div class="col-12 login">
                         <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
@@ -52,7 +52,7 @@
                     </div>
             </c:if>
             <!-- [2] 유저 로그인 완료 이후 화면-->
-            <c:if test="${sessionScope.stateCode ne null}">
+            <c:if test="${sessionScope.stateCode eq null}">
                 <!--회원 정보 및 로그인-->
                 <div class="col-12 user_login">
                     <div class="col-12 user_login_top">

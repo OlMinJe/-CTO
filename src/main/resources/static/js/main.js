@@ -4,6 +4,7 @@ $(document).ready(function () {
     saying();
     fixedIcon();
     initMap();
+    todoList();
 });
 
 function todoList(){
