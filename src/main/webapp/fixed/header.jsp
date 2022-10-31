@@ -42,10 +42,13 @@
                         <img class="weatherIcon01">
                         <span class="weatherInfo01"></span>
                     </li>
+                    <c:if test="${sessionScope.stateCode ne 1}">
                     <li id="m_visitor">
                         <a onclick="location.href='/login/login.jsp'">로그인</a>&nbsp;
                         <a onclick="location.href='/login/register.jsp'">회원가입</a>
                     </li>
+                    </c:if>
+                    <c:if test="${sessionScope.stateCode == 1}">
                     <li id="m_user">
                         <div class="user_name">
                         <%--<span th:text="${session.id}"></span>님, 환영합니다.</div>--%>
@@ -62,6 +65,7 @@
                         <a onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                         <a onclick="location.href='/login/logout.jsp'">로그아웃</a>
                     </li>
+                    </c:if>
                     <c:if test="${sessionScope.stateCode == 0}">
                         <li id="m_admin"><a onclick="location.href='/'">관리자 페이지</a></li>
                     </c:if>
@@ -110,10 +114,13 @@
         </div>
         <div class="col-2 w_right">
             <ul>
+                <c:if test="${sessionScope.stateCode ne 1}">
                 <li id="w_visitor">
                     <a onclick="location.href='/login/login.jsp'">로그인</a>
                     <a onclick="location.href='/login/register.jsp'">회원가입</a>
                 </li>
+                </c:if>
+                <c:if test="${sessionScope.stateCode == 1}">
                 <li id="w_user">
                     <div class="user_name">
                         <%--<span text="${session.id}">님, 환영합니다.</span>--%>
@@ -133,6 +140,7 @@
                     <%--<a th:href="@{/login/logout.html}">로그아웃</a>
                     <a onclick="logout()">로그아웃</a>--%>
                 </li>
+                </c:if>
                 <c:if test="${sessionScope.stateCode == 0}">
                     <li id="m_admin"><a onclick="location.href='/'">관리자 페이지</a></li>
                 </c:if>
