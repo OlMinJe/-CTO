@@ -29,7 +29,9 @@
                         if (list[i].comment_depth == 0) {
                             a += '<div class="commentArea" align="left" style="border-bottom:1px solid darkgray; margin-bottom:15px;" >';
                             a += '<div class="commentInfo' + list[i].comment_seq + '">' + '댓글번호 : ' + list[i].comment_seq + ' / 작성자 : ' + list[i].mb_nick;
-                            a += '<br><a onclick="recommentInsertForm(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');">답글달기</a>';
+                            if(${sessionScope.stateCode ne null}){
+                                a += '<br><a onclick="recommentInsertForm(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');">답글달기</a>';
+                            }
                             if (list[i].mb_nick == writer) {
                                 a += '<a onclick="commentUpdate(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');"> 수정 </a>';
                                 a += '<a onclick="commentDelete(' + list[i].comment_seq + ');"> 삭제 </a>';
