@@ -22,6 +22,9 @@ let editor_content = document.getElementById('editor_content');
 }*/
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
+var div2 = document.getElementsByClassName("div2");
+var menuClick;
+// 모바일 버전
 function sub_menu() {
     // 상위 메뉴 active 클래스 추가 -> 해당 클래스를 사용하여 css 효과 부여
     init();
@@ -34,20 +37,22 @@ function sub_menu() {
         }
     } else { normal.style.display = "block"; }
 }
-
-var div2 = document.getElementsByClassName("div2");
-
+// 웹 버전
 function handleClick(event) {
     if (event.target.classList[1] === "active") {
         event.target.classList.remove("active");
     } else {
         for (var i = 0; i < div2.length; i++) {
             div2[i].classList.remove("active");
+            menuClick = div2[i].classList;
+            init(menuClick);
         }
         event.target.classList.add("active");
     }
 }
-function init() {
+function init(menuClick) {
+    var menuClicks = menuClick;
+    menuClicks.add("active");
     for (var i = 0; i < div2.length; i++) {
         div2[i].addEventListener("click", handleClick);
     }
