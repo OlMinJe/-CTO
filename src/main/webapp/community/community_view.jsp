@@ -114,8 +114,15 @@
         </div>
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
+            <c:if test="${sessionScope.stateCode ne null}">
             <div class="col-12 comment_writer">
+
+                <form name="commentInsertForm" method="post">
                 <div class="col-12 input_box">
+                    <input type="hidden" name="com_num" id="com_num" value="${data.com_num}"/>
+                    <input type="hidden" name="mb_nick" id="mb_nick" value="${membervo.mb_nick}"/>
+                    <input type="hidden" name="mb_seq" value="${membervo.mb_seq}"/>
+                    <input type="hidden" name="mb_doctor" value="${membervo.mb_doctor}"/>
                     <!-- TODO : https://tried.tistory.com/95 -->
                     <textarea
                             className={`block whitespace-pre-wrap w-full bg-white text-gray-700 border border-black py-2
@@ -125,14 +132,36 @@
                             value={text}
                             onChange={handleChange}
                             class="box_eft_01"
+                            id="comment_content"
+                            name="comment_content"
                     ></textarea>
-                    <button class="btn btn-outline-success box_eft_02" type="submit">댓글 등록</button>
+                    <span class="input-group-btn">
+                    <button class="btn btn-outline-success box_eft_02" type="submit" name="commentInsertBtn">댓글 등록</button>
+                    </span>
                 </div>
-                <div class="container"> <!-- 확인용 -->
-                    <div class="commentList"></div>
-                </div>
+                </form>
+
             </div>
+            </c:if>
+            <div class="col-12 comment_writer"> <!-- 확인용 -->
+                <div class="commentList"></div>
+            </div>
+            <%@include file="../community/comment.jsp"%>
         </div>
+        <!-- <form name="commentInsertForm" method="post">
+			<div class="input-group">
+			<input type="hidden" name="com_num" id="com_num" value="${data.com_num}"/>
+			<input type="hidden" name="mb_nick" id="mb_nick" value="${membervo.mb_nick}"/>
+			<input type="hidden" name="mb_seq" value="${membervo.mb_seq}"/>
+			<input type="hidden" name="mb_doctor" value="${membervo.mb_doctor}"/>
+			<input type="text" class="form-control" id="comment_content" name="comment_content" placeholder="내용을 입력하세요.">
+			<span class="input-group-btn"><button class="btn btn-default" type="button" name="commentInsertBtn">등록</button></span>
+		</div>
+		</form>
+	</div>
+	<div class="container">
+		<div class="commentList"></div>
+	</div>-->
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>

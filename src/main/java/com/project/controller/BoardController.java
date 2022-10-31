@@ -303,7 +303,7 @@ public class BoardController {
 		}
 		return mav;
 	}
-
+*/
 	//댓글 리스트 - 커뮤니티
 	@RequestMapping(value = "/comment/list",method= RequestMethod.GET)//댓글리스트
 	@ResponseBody
@@ -368,7 +368,7 @@ public class BoardController {
 		boardService.commentInsert(comment);
 		return boardService.updateReplyCount(com_num);
 	}
-
+/*
 	*//** 상담 게시판(talk) **//*
 	//mypage 연결
 	*//*
