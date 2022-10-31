@@ -23,7 +23,6 @@ let editor_content = document.getElementById('editor_content');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
 var div2 = document.getElementsByClassName("div2");
-var clickMenu = document.getElementsByClassName("category1");
 // 모바일 버전
 function sub_menu() {
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
@@ -45,13 +44,15 @@ function handleClick(event) {
         }
         event.target.classList.add("active");
     }
+    menuClick(event);
 }
 function init() {
     for (var i = 0; i < div2.length; i++) {
-        div2[i].addEventListener("click", handleClick, function (){
-            clickMenu = div2[i].target.className;
-        });
+        div2[i].addEventListener("click", handleClick);
     }
+}
+function menuClick(click) {
+    click.classList.add("active");
 }
 
 init();
