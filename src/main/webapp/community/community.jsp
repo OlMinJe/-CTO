@@ -27,24 +27,24 @@
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01 div1"><!--id="sub-menu"-->
                 <c:if test="${sessionScope.stateCode ne 1}">
-                    <li class="box_eft_01 category1" id="category1" onclick="location.href='/com?category=10'">전체</li>
-                    <li class="box_eft_01 category2" id="category2" onclick="location.href='/com?category=0'">일상</li>
-                    <li class="box_eft_01 category3" id="category3" onclick="location.href='/com?category=1'">취미</li>
-                    <li class="box_eft_01 category4" id="category4" onclick="location.href='/com?category=2'">유머</li>
-                    <li class="box_eft_01 category5" id="category5" onclick="location.href='/com?category=3'">음식</li>
-                    <li class="box_eft_01 category6" id="category6" onclick="location.href='/com?category=4'">정보</li>
-                    <li class="box_eft_01 category7" id="category7" onclick="location.href='/com?category=5'">취업/진로</li>
-                    <li class="box_eft_01 category8" id="category8" onclick="location.href='/com?category=6'">기타</li>
+                    <li class="box_eft_01 active" onclick="location.href='/com?category=10'">전체</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=0'">일상</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=1'">취미</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=2'">유머</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=3'">음식</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=4'">정보</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=5'">취업/진로</li>
+                    <li class="box_eft_01" onclick="location.href='/com?category=6'">기타</li>
                 </c:if>
                 <c:if test="${sessionScope.stateCode eq 1}"> <!--https://liufeier.tistory.com/22-->
-                    <li class="box_eft_01 div2 category1" id="category1" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                    <li class="box_eft_01 div2 category2" id="category2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                    <li class="box_eft_01 div2 category3" id="category3" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                    <li class="box_eft_01 div2 category4" id="category4" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                    <li class="box_eft_01 div2 category5" id="category5" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                    <li class="box_eft_01 div2 category6" id="category6" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                    <li class="box_eft_01 div2 category7" id="category7" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                    <li class="box_eft_01 div2 category8" id="category8" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
+                    <li class="box_eft_01 div2 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
                     <%--<li class="box_eft_01 active"><a href="/community/community?stateCode=${stateCode}&category=10">전체</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=0">일상</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=1">취미</a></li>
@@ -54,91 +54,6 @@
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=5">취업/진로</a></li>
                     <li class="box_eft_01"><a href="/community/community?stateCode=${stateCode}&category=6">기타</a></li>--%>
                 </c:if>
-                <%--<c:if test="${sessionScope.stateCode == 1}">
-                    <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
-                    <c:choose>
-                    <c:when test="${data.com_category == 10}">
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 0}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 1}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 2}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 3}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 4}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 5}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    <c:when test="${data.com_category == 6}">
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=0'">일상</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=1'">취미</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=2'">유머</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=3'">음식</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=4'">정보</li>
-                        <li class="box_eft_02" onclick="location.href='/community/community?stateCode=${stateCode}&category=5'">취업/진로</li>
-                        <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=6'">기타</li>
-                    </c:when>
-                    </c:choose>
-                </c:if>--%>
 
                 <%--<c:if test="${sessionScope.stateCode ne 1}">
                     <li class="box_eft_01 active"><a href="/com?category=10">전체</a></li>

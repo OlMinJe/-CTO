@@ -16,6 +16,7 @@ let editor_content = document.getElementById('editor_content');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
 var div2 = document.getElementsByClassName("div2");
+var clickMenu;
 // 모바일 버전
 function sub_menu() {
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
@@ -28,29 +29,33 @@ function sub_menu() {
     } else { normal.style.display = "block"; }
 }
 // 웹 버전
-function handleClick(event) {
+/*function handleClick(event) {
     if (event.target.classList[1] === "active") {
         event.target.classList.remove("active");
     } else {
         for (var i = 0; i < div2.length; i++) {
             div2[i].classList.remove("active");
         }
-        event.target.classList.add("active");
     }
-
+}*/
+function menuClick(clickMenus) {
+    if(clickMenus.classList !== "active" ) {
+        clickMenus.classList.add("active");
+        console.log(clickMenus.classList);
+    } else {
+        console.log('그냥 지나감');
+    }
 }
-var clickMenu = document.getElementById('category1').classList;
 function init() {
     for (var i = 0; i < div2.length; i++) {
-        div2[i].addEventListener("click", handleClick, function (){
-            clickMenu = div2[i].classList;
+        div2[i].addEventListener("click", function (){
+            clickMenu = div2[i];
+            for (var j = 0; j < div2.length; j++) {
+                div2[j].classList.remove("active");
+            }
         });
     }
-    console.log(clickMenu);
     menuClick(clickMenu);
-}
-function menuClick(clickMenus) {
-    clickMenus.add("active");
 }
 init();
 
