@@ -50,7 +50,7 @@ function init(menuClick) {
     for (var i = 0; i < div2.length; i++) {
         div2[i].addEventListener("click", handleClick);
         menuClick = div2[i];
-        menuClick.className.add("active");
+        menuClick.classList.add("active");
     }
 }
 
