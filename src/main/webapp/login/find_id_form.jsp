@@ -25,11 +25,12 @@
                 <input class="w3-input" type="text" id="mb_email" name="mb_email" required>
             </tr>
             </tbody>
-        </form>
+            <br>
         <div style="text-align: center;">
             <button type="submit" id=findBtn class="box_eft_02">아이디 찾기</button>
             <button type="button" class="box_eft_02" onclick="history.go(-1);">메인으로</button>
         </div>
+        </form>
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
