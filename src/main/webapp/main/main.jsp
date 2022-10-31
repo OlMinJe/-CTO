@@ -56,43 +56,43 @@
                 <!--회원 정보 및 로그인-->
                 <div class="col-12 user_login">
                     <div class="col-12 user_login_top">
-                                <ul class="col-12 user_information">
-                                    <li class="col-3 user_profile">
-                                        <img src="">프로필
-                                    </li>
-                                    <li class="col-4 user_home_01">
-                                        <span>
-                                            <%
-                                                if (session.getAttribute("member") == null) {
-                                                    out.println("<a href='/'로그인</a>");
-                                                } else {
-                                                    MemberVO vo = (MemberVO) session.getAttribute("member");
-                                                    out.println(vo.getMb_id() + "님 반갑습니다.");
-                                                }
-                                            %>
-                                        </span>
-                                        <c:if test="${sessionScope.stateCode ne 1}">
-                                            <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
-                                        </c:if>
-                                        <c:if test="${sessionScope.stateCode == 1}">
-                                            <a class="box_eft_02"
-                                               onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
-                                        </c:if>
-                                        <!--삭제 예정-->
-                                        <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
-                                    </li>
-                                    <li class="col-5 user_home_02">
-                                        <span>300P</span>
-                                        <a class="logout" onclick="location.href='/login/logout.jsp'"
-                                           title="Logout icons created by Pixel perfect - Flaticon"></a>
-                                        <c:if test="${sessionScope.stateCode == 0}">
-                                            <button type="button" class="admin_page_btn box_eft_02"
-                                                    onclick="location.href='/admin/securityAdmin'">관리자 페이지로 넘어가기
-                                            </button>
-                                        </c:if>
-                                    </li>
-                                </ul>
-                            </div>
+                        <ul class="col-12 user_information">
+                            <li class="col-3 user_profile">
+                                <img src="/img/chatbox_img.jpeg" style="width: 100%;">
+                            </li>
+                            <li class="col-4 user_home_01">
+                                <span>
+                                    <%
+                                        if (session.getAttribute("member") == null) {
+                                            out.println("<a href='/'로그인</a>");
+                                        } else {
+                                            MemberVO vo = (MemberVO) session.getAttribute("member");
+                                            out.println(vo.getMb_id() + "님 반갑습니다.");
+                                        }
+                                    %>
+                                </span>
+                                <c:if test="${sessionScope.stateCode ne 1}">
+                                    <a class="box_eft_02" onclick="location.href='/login/login.jsp'">로그인</a>
+                                </c:if>
+                                <c:if test="${sessionScope.stateCode == 1}">
+                                    <a class="box_eft_02"
+                                       onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                </c:if>
+                                <!--삭제 예정-->
+                                <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
+                            </li>
+                            <li class="col-5 user_home_02">
+                                <span>300P</span>
+                                <a class="logout" onclick="location.href='/login/logout.jsp'"
+                                   title="Logout icons created by Pixel perfect - Flaticon"></a>
+                                <c:if test="${sessionScope.stateCode == 0}">
+                                    <button type="button" class="admin_page_btn box_eft_02"
+                                            onclick="location.href='/admin/securityAdmin'">관리자 페이지로 넘어가기
+                                    </button>
+                                </c:if>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="col-12 user_login_bottom" onload="todoList();">
                                 <!--
                                 TODOLIST: 사용설명서

@@ -37,6 +37,7 @@
                     <li class="box_eft_01" onclick="location.href='/com?category=6'">기타</li>
                 </c:if>
                 <c:if test="${sessionScope.stateCode == 1}">
+                    <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
                     <c:choose>
                     <c:when test="${data.com_category == 10}">
                         <li class="box_eft_02 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">전체</li>
