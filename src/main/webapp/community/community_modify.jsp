@@ -110,6 +110,7 @@
             <input type="hidden" name="stateCode" value="${stateCode}"/>
             <input type="hidden" name="category" value="${category}"/>
             <input type="hidden" name="mb_nick" id="mb_nick" value="${data.mb_nick}">
+            <input type="hidden" name="com_num" value="${data.com_num}">
             <div class="col-12 btn_wrap">
                 <%--<a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>--%>
                 <button type="submit" class="on box_eft_02">글 수정</button>

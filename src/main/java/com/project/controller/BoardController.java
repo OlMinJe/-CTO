@@ -252,7 +252,6 @@ public class BoardController {
 
 
 	// 게시글 수정(커뮤니티)
-	@ResponseBody
 	@RequestMapping(value="/communityModify", method= RequestMethod.POST)
 	public String boardModify(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category,BoardVO boardVO, HttpServletRequest req,MultipartFile file) throws Exception {
 
