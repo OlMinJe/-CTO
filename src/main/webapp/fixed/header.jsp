@@ -72,7 +72,7 @@
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="m_nav_title" onclick="location.href='/advice/advice.jsp?stateCode=${stateCode}'">상담</li>
+            <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
             <li class="m_nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
             <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
             <li class="m_nav_title" onclick="location.href='/event/event_detail.jsp?stateCode=${stateCode}'">이벤트</li>
