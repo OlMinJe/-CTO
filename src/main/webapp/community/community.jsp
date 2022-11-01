@@ -27,7 +27,7 @@
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01"><!--id="sub-menu"-->
                 <c:if test="${sessionScope.stateCode ne 1}">
-                    <li class="box_eft_01 div2 active" onclick="location.href='/com?category=10';">전체</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=10';">전체</li>
                     <li class="box_eft_01 div2" onclick="location.href='/com?category=0';">일상</li>
                     <li class="box_eft_01 div2" onclick="location.href='/com?category=1';">취미</li>
                     <li class="box_eft_01 div2" onclick="location.href='/com?category=2';">유머</li>
@@ -37,7 +37,7 @@
                     <li class="box_eft_01 div2" onclick="location.href='/com?category=6';">기타</li>
                 </c:if>
                 <c:if test="${sessionScope.stateCode eq 1}"> <!--https://liufeier.tistory.com/22-->
-                    <li class="box_eft_01 div2 active" onclick="location.href='/community/community?stateCode=${stateCode}&category=10';">전체</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=10';">전체</li>
                     <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0';">일상</li>
                     <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=1';">취미</li>
                     <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=2';">유머</li>
