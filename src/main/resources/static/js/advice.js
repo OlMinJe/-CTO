@@ -57,26 +57,21 @@ function menuClick() {
             div1[i].classList.remove("active");
         }
         liActive01();
-        console.log('liActive01');
 
         for(var a = 0; a < div1.length; a++) {
             if (params.get('category') == a) {
                 div1[a].classList.add("active");
-                console.log("active1 추가됨");
             }
         }
     } else {
         for (var j = 0; j < div2.length; j++) {
             div2[i].classList.remove("active");
-            console.log('active2 삭제됨');
         }
         liActive02();
-        console.log('liActive02');
 
         for(var b= 0; b < div2.length ; b++) {
             if(params.get('category') == b+5) {
                 div2[b].classList.add("active");
-                console.log("active2 추가됨");
             }
         }
     }
