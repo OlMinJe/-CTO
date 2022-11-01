@@ -104,7 +104,7 @@
         <div>
             <c:if test="${membervo.mb_nick == data.mb_nick}">
                 <button id="modify" onclick="location.href='/community/community_modify?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
-                <button id="delete" onclick="location.href='boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
+                <button id="delete" onclick="location.href='/boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
             </c:if>
         </div>
         <script>

@@ -295,7 +295,7 @@ public class BoardController {
 			} else {
 				mav.addObject("msg", "fail");
 			}
-			mav.setViewName("forward:/boardList?stateCode="+stateCode);
+			mav.setViewName("forward:/community/community?stateCode="+stateCode);
 		} else {
 			logger.info("***session이 끝난 경우");
 			mav.addObject("msg", "sessionFin");
