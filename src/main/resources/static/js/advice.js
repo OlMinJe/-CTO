@@ -13,10 +13,11 @@ let div2 = document.getElementsByClassName("div2");
 /* '일반 고민' 탭을 클릭한 경우 */
 function liActive01() {
     // 상위 메뉴
-    active_normal.classList.add('active');
     active_woman.classList.remove('active');
+    active_normal.classList.add('active');
     // 하위 메뉴
     woman.style.display = "none";
+    normal.style.display = "flex";
     // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (normal.style.display == "none") {
@@ -24,8 +25,6 @@ function liActive01() {
         } else {
             normal.style.display = "none";
         }
-    } else {
-        normal.style.display = "flex";
     }
 }
 
@@ -34,9 +33,9 @@ function liActive02() {
     // 초기에 출력되는 content 영역
     active_normal.classList.remove('active');
     active_woman.classList.add('active');
-    console.log("상위메뉴2");
     // 하위 메뉴
     normal.style.display = "none";
+    woman.style.display = "flex";
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (woman.style.display == "none") {
@@ -44,8 +43,6 @@ function liActive02() {
         } else {
             woman.style.display = "none";
         }
-    } else {
-        woman.style.display = "flex";
     }
 }
 
