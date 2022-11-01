@@ -234,9 +234,9 @@ public class BoardController {
 		return map;
 	}
 
-/*
+
 	// 게시글 수정폼(커뮤니티)
-	@RequestMapping(value="/boardModifyForm")
+	@RequestMapping(value="/community/community_modify")
 	public String boardModifyForm(@RequestParam("com_num") int num,
 								  @RequestParam("stateCode") int stateCode,
 								  @RequestParam("writer") String writer,
@@ -247,7 +247,7 @@ public class BoardController {
 		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
-		return "boardModifyForm";
+		return "/community/community_modify";
 	}
 
 
@@ -303,7 +303,7 @@ public class BoardController {
 		}
 		return mav;
 	}
-*/
+
 	//댓글 리스트 - 커뮤니티
 	@RequestMapping(value = "/comment/list",method= RequestMethod.GET)//댓글리스트
 	@ResponseBody
