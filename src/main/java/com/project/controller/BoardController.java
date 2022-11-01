@@ -234,9 +234,9 @@ public class BoardController {
 		return map;
 	}
 
-/*
+
 	// 게시글 수정폼(커뮤니티)
-	@RequestMapping(value="/boardModifyForm")
+	@RequestMapping(value="/community/community_modify")
 	public String boardModifyForm(@RequestParam("com_num") int num,
 								  @RequestParam("stateCode") int stateCode,
 								  @RequestParam("writer") String writer,
@@ -247,12 +247,13 @@ public class BoardController {
 		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
-		return "boardModifyForm";
+		return "/community/community_modify";
 	}
 
 
 	// 게시글 수정(커뮤니티)
-	@RequestMapping(value="/boardModify", method= RequestMethod.POST)
+	@ResponseBody
+	@RequestMapping(value="/communityModify", method= RequestMethod.POST)
 	public String boardModify(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category,BoardVO boardVO, HttpServletRequest req,MultipartFile file) throws Exception {
 
 		HttpSession session = req.getSession();
@@ -271,7 +272,7 @@ public class BoardController {
 
 		boardService.boardModify(boardVO);
 
-		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
+		return "redirect:/community/community?stateCode="+stateCode+"&category="+category;
 	}
 
 
@@ -303,7 +304,7 @@ public class BoardController {
 		}
 		return mav;
 	}
-*/
+
 	//댓글 리스트 - 커뮤니티
 	@RequestMapping(value = "/comment/list",method= RequestMethod.GET)//댓글리스트
 	@ResponseBody
@@ -379,9 +380,10 @@ public class BoardController {
 		model.addAttribute("stateCode",stateCode);
 		return "talk";
 	}
-*//*
+*/
+
 	// 상담 게시판 리스트
-	@RequestMapping(value="/talk")
+	@RequestMapping(value="/advice/advice")
 	public String talkList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
 
 		// 페이징 객체
@@ -397,9 +399,9 @@ public class BoardController {
 		model.addAttribute("category",category);
 		//model.addAttribute("num",num);
 
-		return "talk";
+		return "/advice/advice";
 	}
-
+/*
 	// 상담 게시판 글쓰기
 	@RequestMapping(value="/talkWriteForm")
 	public String talkWriteForm(HttpServletRequest req, Model model) throws Exception {
