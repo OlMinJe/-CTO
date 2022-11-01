@@ -52,44 +52,40 @@ function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
+    console.log(div1)
+    console.log(div2);
+    console.log(params.get('category'));
+
     if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
         for (var i = 0; i < div1.length; i++) {
-            console.log('active1 삭제됨');
             div1[i].classList.remove("active");
+            console.log('active1 삭제됨');
         }
         liActive01();
         console.log('liActive01');
-
-        for(var a = 0; a < div1.length; a++) {
-            if(params.get('category') == i) {
-                div1[a].classList.add("active");
-            }
-        }
     } else {
         for (var j = 0; j < div2.length; j++) {
-            console.log('active2 삭제됨');
             div2[i].classList.remove("active");
+            console.log('active2 삭제됨');
         }
         liActive02();
         console.log('liActive02');
+    }
 
-        for(var b= 5; b < div2.length + 5 ; b++) {
-            if(params.get('category') == i) {
+    if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4) {
+        for(var a = 0; a < div1.length; a++) {
+            if (params.get('category') == i) {
+                div1[a].classList.add("active");
+                console.log("active1 추가됨");
+            }
+        }
+    } else {
+        for(var b= 0; b < div2.length ; b++) {
+            if(params.get('category') == i+5) {
                 div2[b].classList.add("active");
+                console.log("active2 추가됨");
             }
         }
     }
-
-    console.log(params.get('category'));
-
-    /*if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
-        for(var a = 0; a < div1.length; a++) {
-            div1[a].classList.add("active");
-         }
-    } else {
-        for(var b= 5; b < div2.length + 5 ; b++) {
-            div2[b].classList.add("active");
-        }
-    }*/
 }
 menuClick();
