@@ -6,6 +6,9 @@ let active_woman = document.querySelector("#active_woman");
 let normal = document.getElementById('sub-menu-01');
 let woman = document.getElementById('sub-menu-02');
 
+/* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
+let div2 = document.getElementsByClassName("div2");
+
 /* '일반 고민' 탭을 클릭한 경우 */
 function liActive01() {
     // 상위 메뉴
@@ -62,7 +65,6 @@ function menuClick() {
     }
 
     console.log(params.get('category'));
-
 
     if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
         for(var i = 0; i < div2.length; i++) {
