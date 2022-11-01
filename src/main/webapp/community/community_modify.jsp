@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>관리자 페이지</title>
+    <title>커뮤니티 게시물 수정</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- 부트스트랩 -->
     <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">

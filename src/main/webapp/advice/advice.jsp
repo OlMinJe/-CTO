@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>상담</title>
+    <title>상담 페이지</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- 부트스트랩 -->
     <script type="text/javascript" src="/js/jquery-3.6.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
