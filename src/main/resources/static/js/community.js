@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    li_active_01();
 });
 
 /* 상위 메뉴 */
@@ -39,11 +38,13 @@ function sub_menu() {
     }
 }*/
 function menuClick(clickMenus) {
-    if(clickMenus.classList !== "active" ) {
+    if(clickMenus == undefined){
+        console.log('그냥 지나감1');
+    } else if(clickMenus.classList !== "active" ) {
         clickMenus.classList.add("active");
         console.log(clickMenus.classList);
     } else {
-        console.log('그냥 지나감');
+        console.log('그냥 지나감2');
     }
 }
 function init() {
@@ -62,8 +63,8 @@ init();
 /* community 탭을 클릭한 경우 */
 function li_active_01() {
     // 초기에 출력되는 content 영역
-    editor_content.style.display = "none";
     table.style.display = "table";
+    editor_content.style.display = "none";
     //dataRedundancy();
 
     /* 상위 메뉴 class */
@@ -88,8 +89,10 @@ function li_active_01() {
     sub_menu();
 }
 
+li_active_01();
+
 /* 에디터 탭을 클릭했을 떄의 이벤트 */
-active_editor.addEventListener("click", function () {
+function li_active_02(){
     /* 상위 메뉴 class */
     active_normal.classList.remove('active');
     active_editor.classList.add('active');
@@ -97,6 +100,18 @@ active_editor.addEventListener("click", function () {
     normal.style.display = "none";
     /* 데이터 중복 현상 해결*/
     //dataRedundancy();
+    table.style.display = "none";
+    editor_content.style.display = "block";
+}
+/*
+active_editor.addEventListener("click", function () {
+    /!* 상위 메뉴 class *!/
+    active_normal.classList.remove('active');
+    active_editor.classList.add('active');
+    /!* 하위 메뉴 class *!/
+    normal.style.display = "none";
+    /!* 데이터 중복 현상 해결*!/
+    //dataRedundancy();
     editor_content.style.display = "block";
     table.style.display = "none";
-})
+})*/

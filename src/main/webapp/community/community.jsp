@@ -22,7 +22,7 @@
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
             <li class="col-6 active box_eft_01" id="community_normal" onclick="li_active_01();"> <!-- normal_event(); -->커뮤니티</li>
-            <li class="col-6 box_eft_01" id="community_editor">에디터 칼럼</li>
+            <li class="col-6 box_eft_01" id="community_editor" onclick="li_active_02();">에디터 칼럼</li>
         </ul>
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01 div1"><!--id="sub-menu"-->
@@ -78,15 +78,11 @@
             </ul>
         </div>
     </div>
+    <%-- 글 구조 바꾸지마 --%>
     <div class="col-12 col-lg-10 content">
-        <!--검색-->
-        <form class="d-flex">
-            <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
-        </form>
-        <!--테이블-->
+        <!-- 여기서부터 content로 들어가는 부분-->
         <div class="content-table">
-            <%-- 일반 --%>
+            <%-- 커뮤니티 - 일반 --%>
             <table class="table table-hover table-bordered" id="community-table">
                 <tr>
                     <%--<th>자동순번</th>--%>
@@ -148,9 +144,56 @@
                 </c:forEach>
             </table>
             <input type="hidden" name="category" value="${category}"/>
-            <!-- 에디터 -->
+
+            <!-- 커뮤니티 - 에디터 -->
             <div class="col-12" id="editor_content">
-                <div data-include-path="/community/editor.jsp"></div>
+                <%--<div data-include-path="/community/editor.jsp"></div>--%>
+                <div class="col-12 editor_wrap">
+                    <div class="col-12 editor_con">
+                        <!--<div class="col-12 menu">
+                            <ul class="menu-wrap">
+                                <li class="col-6 box_eft_01" id="community_normal">
+                                    커뮤니티
+                                    <img src="/22_ig031/src/main/resources/static/img/icon_01.png" alt="모바일 아이콘" onclick="imgClick();">
+                                </li>
+                                <li class="col-6 active  box_eft_01" id="community_editor">
+                                    에디터 칼럼
+                                    <img src="/22_ig031/src/main/resources/static/img/icon_01.png" alt="모바일 아이콘" onclick="imgClick();">
+                                </li>
+                            </ul>
+                        </div>-->
+                        <div class="col-12 title">Editor</div>
+                        <div class="col-12 content_list">
+                            <%-- 글 1개의 구조 --%>
+                            <div class="col-12 content_card">
+                                <div class="col-12 col-md-4 img"><img src></div>
+                                <ul class="col-0 right">
+                                    <%-- 카테고리가 column 이라는 뜻 --%>
+                                    <li class="col-12 column">column</li>
+                                    <li class="col-12 sub_title">글 제목</li>
+                                    <li class="col-12 sub_content">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세.
+                                        남산 위에 저 소나무, 철갑을 두른 듯 바람서리 불변함은 우리 기상일세.
+                                        가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세.
+                                        이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세
+                                        무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세
+                                    </li>
+                                    <li class="col-4 col-md-3 col-lg-2 username">작성자<span>작성자명</span></li>
+                                    <li class="col-4 col-md-3 col-lg-2 comment_num">댓글수<span>댓글수</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--<ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>-->
+                    </div>
+                </div>
             </div>
             <%--<button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>--%>
             <!--백엔드 페이징 삭제-->
@@ -166,7 +209,7 @@
                 </c:if>
             </ul>--%>
             <!--페이징-->
-            <ul class="pagination">
+            <ul class="pagination" style="margin-top: 20px;">
                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -175,6 +218,12 @@
                 <li class="page-item"><a class="page-link" href="#">5</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
+        </div>
+        <!--검색-->
+        <form class="d-flex">
+            <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
+        </form>
         </div>
     </div>
     <div class="btn_wrap">
