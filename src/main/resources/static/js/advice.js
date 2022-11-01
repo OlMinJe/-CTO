@@ -60,8 +60,10 @@ function menuClick() {
 
     if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
         liActive01();
+        console.log('liActive01');
     } else {
         liActive02();
+        console.log('liActive02');
     }
 
     console.log(params.get('category'));
@@ -71,8 +73,8 @@ function menuClick() {
             div2[i].classList.add("active");
          }
     } else {
-        for(var i = 5; i < div2.length + 4; i++) {
-            div2[i].classList.add("active");
+        for(var i = 0; i < div2.length ; i++) {
+            div2[i+4].classList.add("active");
         }
     }
 }
