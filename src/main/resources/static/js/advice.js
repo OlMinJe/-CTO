@@ -34,6 +34,7 @@ function liActive02() {
     // 초기에 출력되는 content 영역
     active_normal.classList.remove('active');
     active_woman.classList.add('active');
+    console.log("상위메뉴2");
     // 하위 메뉴
     normal.style.display = "none";
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
@@ -65,7 +66,7 @@ function menuClick() {
         }
     } else {
         for (var j = 0; j < div2.length; j++) {
-            div2[i].classList.remove("active");
+            div2[j].classList.remove("active");
         }
         liActive02();
 
