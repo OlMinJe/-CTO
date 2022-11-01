@@ -72,16 +72,16 @@ function menuClick() {
         console.log('liActive02');
     }
 
-    if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4) {
+    if((params.get('category') == 0) || (params.get('category') == 1) || (params.get('category') == 2) || (params.get('category') == 3) || (params.get('category')==4)) {
         for(var a = 0; a < div1.length; a++) {
-            if (params.get('category') == i) {
+            if (params.get('category') == a) {
                 div1[a].classList.add("active");
                 console.log("active1 추가됨");
             }
         }
     } else {
         for(var b= 0; b < div2.length ; b++) {
-            if(params.get('category') == i+5) {
+            if(params.get('category') == b+5) {
                 div2[b].classList.add("active");
                 console.log("active2 추가됨");
             }
