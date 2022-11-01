@@ -25,33 +25,23 @@ function sub_menu() {
     } else { normal.style.display = "block"; }
 }
 function menuClick() {
-/*    var categoryNum = category;
-    clickMenu[0] = categoryNum;
-    for (var i = 0; i < div2.length; i++) {
-        div2[i].classList.remove("active");
-        console.log('active 삭제됨');
-    }
-    if(div2[clickMenu[0]].classList == undefined){
-        console.log('그냥 지나감1');
-    } else {
-        div2[clickMenu[0]].classList.add("active");
-    }*/
     var sch = location.search;
-    console.log(sch);
     var params = new URLSearchParams(sch);
 
     for (var i = 0; i < div2.length; i++) {
-        div2[i].classList.remove("active");
-        console.log('active 삭제됨');
+        if(div2[i].classList[1] == "active"){
+            console.log('active 삭제됨');
+            div2[i].classList.remove("active");
+        }
     }
 
     console.log(params.get('category'));
 
     if(params.get('category') == 10){
-        div2[clickMenu[0]].classList.add("active");
+        div2[0].classList.add("active");
     } else {
-        for(var i = 0; i < div2.length - 1; i++) {
-            if(params.get('category') == i){
+        for(var i = 1; i < div2.length; i++) {
+            if(params.get('category') == i-1){
                 div2[i].classList.add("active");
             }
         }
