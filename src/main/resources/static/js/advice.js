@@ -7,6 +7,7 @@ let normal = document.getElementById('sub-menu-01');
 let woman = document.getElementById('sub-menu-02');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
+let div1 = document.getElementsByClassName("div1");
 let div2 = document.getElementsByClassName("div2");
 
 /* '일반 고민' 탭을 클릭한 경우 */
@@ -51,8 +52,13 @@ function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
-    for (var i = 0; i < div2.length; i++) {
-        console.log('active 삭제됨');
+    for (var i = 0; i < div1.length; i++) {
+        console.log('active1 삭제됨');
+        div1[i].classList.remove("active");
+    }
+
+    for (var j = 0; j < div2.length; j++) {
+        console.log('active2 삭제됨');
         div2[i].classList.remove("active");
     }
 
@@ -67,12 +73,12 @@ function menuClick() {
     console.log(params.get('category'));
 
     if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
-        for(var i = 0; i < div2.length; i++) {
-            div2[i].classList.add("active");
+        for(var a = 0; a < div1.length; a++) {
+            div1[a].classList.add("active");
          }
     } else {
-        for(var i = 0; i < div2.length ; i++) {
-            div2[i+4].classList.add("active");
+        for(var b= 0; b < div2.length ; b++) {
+            div2[b].classList.add("active");
         }
     }
 }
