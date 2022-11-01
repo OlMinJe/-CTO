@@ -442,9 +442,9 @@ public class BoardController {
 		int category = talkVO.getTalk_category();
 		return "redirect:talk?stateCode="+stateCode+"&category="+category;
 	}
-
+*/
 	// 상담 글 읽기
-	@RequestMapping(value="/talkRead")
+	@RequestMapping(value="/advice/advice_view")
 	public String talkRead(@RequestParam("talk_num") int talk_num,
 						   @RequestParam("stateCode") int stateCode,
 						   @RequestParam("category") Integer category,
@@ -479,8 +479,9 @@ public class BoardController {
 			//model.addAttribute("like_check",like_check);
 			//boardService.updatecomlike(com_num);
 		}
-		return "talkRead";
+		return "/advice/advice_view";
 	}
+	/*
 	//상담 게시글 수정 폼
 	@RequestMapping(value = "/talkModifyForm")
 	public String talkModifyForm(@RequestParam("talk_num") int num,

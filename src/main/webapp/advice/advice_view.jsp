@@ -16,36 +16,59 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 view_wrap">
     <div class="col-12 col-lg-10 view_con">
-        <div class="col-12 category_title">카테고리</div>
+        <div class="col-12 category_title">
+            <c:choose>
+                <c:when test="${data.talk_category == 0}">
+                    <div class="col-12 category_title">일반고민</div>
+                </c:when>
+                <c:when test="${data.talk_category == 1}">
+                    <div class="col-12 category_title">대인관계/가족</div>
+                </c:when>
+                <c:when test="${data.talk_category == 2}">
+                    <div class="col-12 category_title">정신건강</div>
+                </c:when>
+                <c:when test="${data.talk_category == 3}">
+                    <div class="col-12 category_title">직장</div>
+                </c:when>
+                <c:when test="${data.talk_category == 4}">
+                    <div class="col-12 category_title">성소수자</div>
+                </c:when>
+                <c:when test="${data.talk_category == 5}">
+                    <div class="col-12 category_title">성추행</div>
+                </c:when>
+                <c:when test="${data.talk_category == 6}">
+                    <div class="col-12 category_title">출산/육아</div>
+                </c:when>
+                <c:when test="${data.talk_category == 7}">
+                    <div class="col-12 category_title">섭식장애</div>
+                </c:when>
+                <c:when test="${data.talk_category == 8}">
+                    <div class="col-12 category_title">외모</div>
+                </c:when>
+            </c:choose>
+        </div>
         <div class="col-12 view_list">
-            <div class="col-12 board_view_title">글 제목</div>
+            <div class="col-12 board_view_title">${data.talk_title}</div>
             <div class="col-12 board_view_info">
                 <dl>
                     <dt>번호</dt>
-                    <dd>1</dd>
+                    <dd>${data.talk_num}</dd>
                 </dl>
                 <dl>
                     <dt>글쓴이</dt>
-                    <dd>김배화</dd>
+                    <dd>${data.mb_nick}</dd>
                 </dl>
                 <dl>
                     <dt>작성일</dt>
-                    <dd>2022.07.13</dd>
+                    <dd><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.talk_date}"/></dd>
                 </dl>
                 <dl>
                     <dt>조회</dt>
-                    <dd>33</dd>
+                    <dd>${data.talk_hit}</dd>
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용
+                ${data.talk_content}
             </div>
         </div>
         <div class="col-12 btn_wrap">
