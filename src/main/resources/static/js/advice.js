@@ -4,7 +4,6 @@ let active_woman = document.querySelector("#active_woman");
 
 /* 하위 메뉴 */
 let normal = document.getElementById('sub-menu-01');
-
 let woman = document.getElementById('sub-menu-02');
 
 /* '일반 고민' 탭을 클릭한 경우 */
@@ -14,17 +13,6 @@ function liActive01() {
     active_woman.classList.remove('active');
     // 하위 메뉴
     woman.style.display = "none";
-/*    for (let i = 0; i < normal_li.length; i++) {
-        normal_li[i].addEventListener("click", function () {
-            // 선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
-            for (let j = 0; j < normal_li.length; j++) {
-                if (normal_li[j].classList.contains('active') == true) {
-                    normal_li[j].classList.remove('active');
-                }
-            }
-            normal_li[i].classList.add('active');
-        })
-    }*/
     // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (normal.style.display == "none") {
@@ -44,17 +32,7 @@ function liActive02() {
     active_woman.classList.add('active');
     // 하위 메뉴
     normal.style.display = "none";
-/*    for(let i = 0; i < woman_li.length; i++) {
-        woman_li[i].addEventListener("click", function () {
-            // 선택한 메뉴에 active 클래스 추가 및 이전 메뉴 active 클래스 삭제
-            for(let j = 0; j < woman_li.length; j++) {
-                if(woman_li[j].classList.contains('active') == true) {
-                    woman_li[j].classList.remove('active');
-                }
-            }
-            woman_li[i].classList.add('active');
-        })
-    }*/
+    // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
     if (matchMedia("screen and (max-width: 767px)").matches) {
         if (woman.style.display == "none") {
             woman.style.display = "flex";
@@ -66,11 +44,15 @@ function liActive02() {
     }
 }
 
-
-/* 하위 메뉴 */
 function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
+
+    if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
+        liActive01();
+    } else {
+        liActive02();
+    }
 
     for (var i = 0; i < div2.length; i++) {
         if(div2[i].classList[1] == "active"){

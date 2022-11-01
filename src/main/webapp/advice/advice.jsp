@@ -17,8 +17,8 @@
 <div class="col-12 advice">
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
-            <li class="col-6 active box_eft_01" id="active_normal" onclick="liActive01();">일반 고민</li>
-            <li class="col-6 box_eft_01" id="active_woman" onclick="liActive02();">여성 고민</li>
+            <li class="col-6 active box_eft_01" id="active_normal">일반 고민</li>
+            <li class="col-6 box_eft_01" id="active_woman">여성 고민</li>
         </ul>
         <div class="col-12 menu-con">
             <ul class="col-12 menu-box-01" id="sub-menu-01">
@@ -36,28 +36,6 @@
             </ul>
         </div>
     </div>
-
-    <%--<div class="col-12 col-lg-10 menu">
-        <ul class="menu-wrap">
-            <li class="col-6 active box_eft_01" id="active_normal" onclick="liActive01();">일반 고민</li>
-            <li class="col-6 box_eft_01" id="active_woman" onclick="liActive02();">여성 고민</li>
-        </ul>
-        <div class="col-12 menu-con">
-            <ul class="col-12 menu-box-01" id="sub-menu-01">
-                <li class="box_eft_01 active">일반고민</li>
-                <li class="box_eft_01">대인관계 / 가족</li>
-                <li class="box_eft_01">정신건강</li>
-                <li class="box_eft_01">직장</li>
-                <li class="box_eft_01">성소수자</li>
-            </ul>
-            <ul class="col-12 menu-box-02" id="sub-menu-02" style="display: none;">
-                <li class="box_eft_01 active">성추행</li>
-                <li class="box_eft_01">출산 / 육아</li>
-                <li class="box_eft_01">섭식장애</li>
-                <li class="box_eft_01">외모 강박증</li>
-            </ul>
-        </div>
-    </div>--%>
     <div class="col-12 col-lg-10 content">
         <form class="d-flex">
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
