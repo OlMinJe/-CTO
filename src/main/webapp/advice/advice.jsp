@@ -17,7 +17,7 @@
 <div class="col-12 advice">
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
-            <li class="col-6 active box_eft_01" id="active_normal">일반 고민</li>
+            <li class="col-6 box_eft_01" id="active_normal">일반 고민</li>
             <li class="col-6 box_eft_01" id="active_woman">여성 고민</li>
         </ul>
         <div class="col-12 menu-con">
