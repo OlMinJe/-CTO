@@ -379,9 +379,10 @@ public class BoardController {
 		model.addAttribute("stateCode",stateCode);
 		return "talk";
 	}
-*//*
+*/
+
 	// 상담 게시판 리스트
-	@RequestMapping(value="/talk")
+	@RequestMapping(value="/advice/advice")
 	public String talkList(@RequestParam("stateCode") int stateCode,@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
 
 		// 페이징 객체
@@ -397,9 +398,9 @@ public class BoardController {
 		model.addAttribute("category",category);
 		//model.addAttribute("num",num);
 
-		return "talk";
+		return "/advice/advice";
 	}
-
+/*
 	// 상담 게시판 글쓰기
 	@RequestMapping(value="/talkWriteForm")
 	public String talkWriteForm(HttpServletRequest req, Model model) throws Exception {
