@@ -22,14 +22,14 @@
         </ul>
         <div class="col-12 menu-con">
             <ul class="col-12 menu-box-01" id="sub-menu-01">
-                <li class="box_eft_01 div2 active"><a href="/advice/advice?stateCode=${stateCode}&category=0">일반고민</a></li>
+                <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=0">일반고민</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=1">대인관계/가족</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=2">정신건강</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=3">직장</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=4">성소수자</a></li>
             </ul>
             <ul class="col-12 menu-box-02" id="sub-menu-02" style="display: none;">
-                <li class="box_eft_01 div2 active"><a href="/advice/advice?stateCode=${stateCode}&category=5">성추행</a></li>
+                <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=5">성추행</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=6">출산/육아</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=7">섭식장애</a></li>
                 <li class="box_eft_01 div2"><a href="/advice/advice?stateCode=${stateCode}&category=8">외모</a></li>

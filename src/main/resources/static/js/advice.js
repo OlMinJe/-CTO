@@ -1,20 +1,11 @@
-$(document).ready(function() {
-    liActive01();
-});
-
 /* 상위 메뉴 */
 let active_normal = document.querySelector("#active_normal");
 let active_woman = document.querySelector("#active_woman");
 
 /* 하위 메뉴 */
 let normal = document.getElementById('sub-menu-01');
-let normal_li = document.querySelectorAll('.menu-box-01 > li');
 
 let woman = document.getElementById('sub-menu-02');
-let woman_li = document.querySelectorAll('.menu-box-02 > li');
-
-/* content */
-let title_index = document.getElementById('advice-table');
 
 /* '일반 고민' 탭을 클릭한 경우 */
 function liActive01() {
@@ -90,13 +81,9 @@ function menuClick() {
 
     console.log(params.get('category'));
 
-    if(params.get('category') == 10){
-        div2[0].classList.add("active");
-    } else {
-        for(var i = 1; i < div2.length; i++) {
-            if(params.get('category') == i-1){
-                div2[i].classList.add("active");
-            }
+    for(var i = 0; i < div2.length; i++) {
+        if (params.get('category') == i) {
+            div2[i].classList.add("active");
         }
     }
 }
