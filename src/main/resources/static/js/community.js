@@ -41,6 +41,8 @@ function menuClick() {
         console.log('active 삭제됨');
     }
 
+    consloe.log(urlParams.get('category'));
+
     if(urlParams.get('category') == 10){
         div2[clickMenu[0]].classList.add("active");
     } else {
