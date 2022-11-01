@@ -61,7 +61,9 @@ function menuClick() {
         console.log('liActive01');
 
         for(var a = 0; a < div1.length; a++) {
-            div1[a].classList.add("active");
+            if(params.get('category') == i) {
+                div1[a].classList.add("active");
+            }
         }
     } else {
         for (var j = 0; j < div2.length; j++) {
@@ -72,7 +74,9 @@ function menuClick() {
         console.log('liActive02');
 
         for(var b= 5; b < div2.length + 5 ; b++) {
-            div2[b].classList.add("active");
+            if(params.get('category') == i) {
+                div2[b].classList.add("active");
+            }
         }
     }
 
