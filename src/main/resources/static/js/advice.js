@@ -48,17 +48,17 @@ function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
-    if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
-        liActive01();
-    } else {
-        liActive02();
-    }
-
     for (var i = 0; i < div2.length; i++) {
         if(div2[i].classList[1] == "active"){
             console.log('active 삭제됨');
             div2[i].classList.remove("active");
         }
+    }
+
+    if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
+        liActive01();
+    } else {
+        liActive02();
     }
 
     console.log(params.get('category'));
