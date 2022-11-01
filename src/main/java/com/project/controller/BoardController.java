@@ -391,18 +391,18 @@ public class BoardController {
 		int talkListCnt = boardService.talkListCnt(category);
 		paging.setCri(cri);
 		paging.setTotalCount(talkListCnt);
-		List<Map<String,Object>> list = boardService.talkList(cri,category);
-		model.addAttribute("list",list);
-		model.addAttribute("paging",paging);
+		List<Map<String, Object>> list = boardService.talkList(cri, category);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
 		model.addAttribute("stateCode", stateCode);
-		model.addAttribute("category",category);
+		model.addAttribute("category", category);
 		//model.addAttribute("num",num);
 
 		return "/advice/advice";
 	}
-/*
+
 	// 상담 게시판 글쓰기
-	@RequestMapping(value="/talkWriteForm")
+	@RequestMapping(value="/advice/advice_write")
 	public String talkWriteForm(HttpServletRequest req, Model model) throws Exception {
 
 		HttpSession session = req.getSession();
@@ -413,13 +413,14 @@ public class BoardController {
 			model.addAttribute("modifyId", modifyMember.getMb_id());
 			model.addAttribute("modifyNick",modifyMember.getMb_nick());
 			model.addAttribute("stateCode", 1);
+			model.addAttribute("category",0);
 			//model.addAttribute("category",10);
 
 		} else if(session.getAttribute("userId") != null) {
 			model.addAttribute("modifyId", session.getAttribute("userId"));
 			model.addAttribute("stateCode", 2);
 		}
-		return "talkWriteForm";
+		return "/advice/advice_write";
 	}
 
 	// 상담 글쓰기
@@ -431,7 +432,7 @@ public class BoardController {
 		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
 
 		int seq = modifyMember.getMb_seq();
-		String doctor = modifyMember.getMb_doctor();
+		int doctor = modifyMember.getMb_doctor();
 		talkVO.setMb_seq(seq);
 		talkVO.setMb_doctor(doctor);
 
@@ -440,9 +441,9 @@ public class BoardController {
 		}
 		boardService.talkWrite(talkVO);
 		int category = talkVO.getTalk_category();
-		return "redirect:talk?stateCode="+stateCode+"&category="+category;
+		return "redirect:/advice/advice?stateCode="+stateCode+"&category="+category;
 	}
-*/
+
 	// 상담 글 읽기
 	@RequestMapping(value="/advice/advice_view")
 	public String talkRead(@RequestParam("talk_num") int talk_num,

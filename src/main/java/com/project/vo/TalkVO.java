@@ -19,7 +19,7 @@ public class TalkVO {
     private Date talk_date;
     private int talk_hit;
     private int talk_comment; //댓글 수 카운트를 위해 int로 변경
-    private String mb_doctor;
+    private Integer mb_doctor;
     private String mb_nick;
 }
 
