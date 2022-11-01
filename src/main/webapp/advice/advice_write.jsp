@@ -104,7 +104,7 @@
                 <div class="filebox">
                     <label class="box_back" for="talk_photo">파일찾기</label>
                     <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일">
-                    <input type="file" id="talk_photo">
+                    <input type="file" name="file" id="talk_photo">
                 </div>
 
         </div>
