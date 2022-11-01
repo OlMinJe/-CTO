@@ -24,19 +24,8 @@ function sub_menu() {
         }
     } else { normal.style.display = "block"; }
 }
-// 웹 버전
-/*function menuClick(clickMenus) {
-    if(clickMenus == undefined){
-        console.log('그냥 지나감1');
-    } else if(clickMenus.classList !== "active" ) {
-        //clickMenus.classList.add("active");
-        console.log(clickMenus.classList);
-    } else {
-        console.log('그냥 지나감2');
-    }
-}*/
-function menuClick(category) {
-    var categoryNum = category;
+function menuClick() {
+/*    var categoryNum = category;
     clickMenu[0] = categoryNum;
     for (var i = 0; i < div2.length; i++) {
         div2[i].classList.remove("active");
@@ -46,20 +35,25 @@ function menuClick(category) {
         console.log('그냥 지나감1');
     } else {
         div2[clickMenu[0]].classList.add("active");
+    }*/
+    for (var i = 0; i < div2.length; i++) {
+        div2[i].classList.remove("active");
+        console.log('active 삭제됨');
     }
 
-    /*for (var i = 0; i < div2.length; i++) {
-        div2[i].addEventListener("click", function (){
-            clickMenu = div2[i];
-            for (var j = 0; j < div2.length; j++) {
-                div2[j].classList.remove("active");
-                console.log('active 삭제됨');
+    if(urlParams.get('category') == 10){
+        div2[clickMenu[0]].classList.add("active");
+    } else {
+        for(var i = 0; i < div2.length - 1; i++) {
+            if(urlParams.get('category') == i){
+                div2[i].classList.add("active");
             }
-        });
+        }
     }
-    console.log(clickMenu[0]);
-    menuClick(clickMenu[0]);*/
 }
+menuClick();
+
+
 /* community 탭을 클릭한 경우 */
 function li_active_01() {
     // 초기에 출력되는 content 영역
