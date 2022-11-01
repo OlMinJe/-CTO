@@ -1,6 +1,3 @@
-$(document).ready(function(){
-});
-
 /* 상위 메뉴 */
 let active_normal = document.querySelector("#community_normal");
 let active_editor = document.querySelector("#community_editor");
@@ -14,8 +11,8 @@ let table = document.getElementById('community-table');
 let editor_content = document.getElementById('editor_content');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
-var div2 = $(".div2");
-var clickMenu;
+let div2 = document.getElementsByClassName("div2");//$(".div2")
+let clickMenu = [];
 // 모바일 버전
 function sub_menu() {
     // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
@@ -28,38 +25,41 @@ function sub_menu() {
     } else { normal.style.display = "block"; }
 }
 // 웹 버전
-/*function handleClick(event) {
-    if (event.target.classList[1] === "active") {
-        event.target.classList.remove("active");
-    } else {
-        for (var i = 0; i < div2.length; i++) {
-            div2[i].classList.remove("active");
-        }
-    }
-}*/
-function menuClick(clickMenus) {
+/*function menuClick(clickMenus) {
     if(clickMenus == undefined){
         console.log('그냥 지나감1');
     } else if(clickMenus.classList !== "active" ) {
-        clickMenus.classList.add("active");
+        //clickMenus.classList.add("active");
         console.log(clickMenus.classList);
     } else {
         console.log('그냥 지나감2');
     }
-}
-function init() {
+}*/
+function menuClick(category) {
+    var categoryNum = category;
+    clickMenu[0] = categoryNum;
     for (var i = 0; i < div2.length; i++) {
+        div2[i].classList.remove("active");
+        console.log('active 삭제됨');
+    }
+    if(div2[clickMenu[0]].classList == undefined){
+        console.log('그냥 지나감1');
+    } else {
+        div2[clickMenu[0]].classList.add("active");
+    }
+
+    /*for (var i = 0; i < div2.length; i++) {
         div2[i].addEventListener("click", function (){
             clickMenu = div2[i];
             for (var j = 0; j < div2.length; j++) {
                 div2[j].classList.remove("active");
+                console.log('active 삭제됨');
             }
         });
     }
-    menuClick(clickMenu);
+    console.log(clickMenu[0]);
+    menuClick(clickMenu[0]);*/
 }
-init();
-
 /* community 탭을 클릭한 경우 */
 function li_active_01() {
     // 초기에 출력되는 content 영역
