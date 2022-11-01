@@ -133,7 +133,7 @@
                                 <a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
                             </c:if>
                             <c:if test="${data.com_comment ne 0}">
-                                <small><b>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</b></small>
+                                <small>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</small>
                             </c:if>
                         </td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>

@@ -157,7 +157,11 @@
             }
         </script>
         <div class="col-12 comment_box">
-            <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
+            <div class="col12 comment_num ">댓글 수
+                <span>
+                    ${data.com_comment}
+                </span>
+            </div><!--댓글 수 0만 출력됨-->
             <c:if test="${sessionScope.stateCode ne null}">
             <div class="col-12 comment_writer">
 
@@ -172,7 +176,7 @@
                             className={`block whitespace-pre-wrap w-full bg-white text-gray-700 border border-black py-2
                             px-2 mb-3 leading-tight focus:border focus:border-pz-pt-1 `}
                             rows={large ? 5 : 1}
-                            placeholder={placeholder}
+                            placeholder="당신의 의견을 들려주세요."
                             value={text}
                             onChange={handleChange}
                             class="box_eft_01"

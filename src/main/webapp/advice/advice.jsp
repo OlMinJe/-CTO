@@ -91,7 +91,7 @@
                     <td>${data.mb_nick}</td>
                     <td><a href="/advice/advice_view?talk_num=${data.talk_num}&stateCode=${stateCode}&category=${data.talk_category}">${data.talk_title}</a>
                         <c:if test="${data.talk_comment ne 0}">
-                            <small><b>[&nbsp;<c:out value="${data.talk_comment}"/>&nbsp;]</b></small>
+                            <small>[&nbsp;<c:out value="${data.talk_comment}"/>&nbsp;]</small>
                         </c:if>
                     </td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.talk_date}"/></td>

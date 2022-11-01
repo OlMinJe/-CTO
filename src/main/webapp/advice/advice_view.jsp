@@ -85,7 +85,7 @@
                             className={`block whitespace-pre-wrap w-full bg-white text-gray-700 border border-black py-2
                             px-2 mb-3 leading-tight focus:border focus:border-pz-pt-1 `}
                             rows={large ? 5 : 1}
-                            placeholder={placeholder}
+                            placeholder="댓글을 통해 작성자에게 큰 힘이 되어주세요."
                             value={text}
                             onChange={handleChange}
                             class="box_border"></textarea>

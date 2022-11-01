@@ -379,7 +379,7 @@ public class BoardController {
 		model.addAttribute("stateCode",stateCode);
 		return "talk";
 	}
-*/
+/**/
 
 	// 상담 게시판 리스트
 	@RequestMapping(value="/advice/advice")
