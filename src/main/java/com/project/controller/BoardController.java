@@ -24,13 +24,13 @@ import java.util.Map;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class BoardController {
-	
+
 	Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	BoardService boardService;
 
-/*	*//** board CRUD - 커뮤니티 **///*
+	/*	*//** board CRUD - 커뮤니티 **///*
 	// 게시판 리스트 및 메인페이지 + kakao user/session
 	@RequestMapping(value="/community/community")
 	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category")
@@ -88,7 +88,7 @@ public class BoardController {
 		}
 		return "/community/community";
 	}
-/**/
+	/**/
 	// 게시판 글쓰기 폼(커뮤니티)
 	@RequestMapping(value="/community/community_write")
 	public String boardWriteForm(HttpServletRequest req, Model model) throws Exception {
@@ -368,8 +368,8 @@ public class BoardController {
 		boardService.commentInsert(comment);
 		return boardService.updateReplyCount(com_num);
 	}
-/*
-	*//** 상담 게시판(talk) **//*
+	/*
+	 *//** 상담 게시판(talk) **//*
 	//mypage 연결
 	*//*
 	@RequestMapping(value = "/talk",method = RequestMethod.GET)
@@ -587,13 +587,13 @@ public class BoardController {
 
 		return "boardList";
 	}
-	
+
 	// 게시판 글쓰기 폼
 	@RequestMapping(value="/boardWriteForm")
 	public String boardWriteForm(HttpServletRequest req, Model model) throws Exception {
 
 		HttpSession session = req.getSession();
-		
+
 		if(session.getAttribute("member") != null) {
 			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
 			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
@@ -608,8 +608,8 @@ public class BoardController {
 		}
 		return "boardWriteForm";
 	}
-	
-	
+
+
 	// 게시판 글쓰기
 	@RequestMapping(value="/boardWrite")
 	public String boardWrite(@RequestParam("stateCode") int stateCode, BoardVO boardVO,HttpServletRequest req, MultipartFile file) throws Exception {
@@ -631,7 +631,7 @@ public class BoardController {
 		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
 	}
 
-	
+
 	// 게시글 내용 읽기
 	@RequestMapping(value="/boardRead")
 	public String boardRead(@RequestParam("com_num") int com_num,
@@ -644,7 +644,7 @@ public class BoardController {
 		boardService.increaseComhit(com_num,session);
 		boardService.updatecomlike(com_num); //여기서 수정이 될까...
 		BoardVO data = boardService.boardRead(com_num);
-		model.addAttribute("data", data);		
+		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
 
@@ -669,7 +669,7 @@ public class BoardController {
 			//boardService.updatecomlike(com_num);
 		}
 
-		return "boardRead";	
+		return "boardRead";
 	}
 
 	//좋아요 기능을 위한 코드
@@ -698,24 +698,24 @@ public class BoardController {
 	// 게시글 수정폼
 	@RequestMapping(value="/boardModifyForm")
 	public String boardModifyForm(@RequestParam("com_num") int num,
-								  @RequestParam("stateCode") int stateCode, 
+								  @RequestParam("stateCode") int stateCode,
 								  @RequestParam("writer") String writer,
 								  @RequestParam("category") Integer category,
 								  Model model) throws Exception {
 
 		BoardVO data = boardService.boardRead(num);
-		model.addAttribute("data", data);	
+		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
 		return "boardModifyForm";
 	}
-	
-	
+
+
 	// 게시글 수정
 	@RequestMapping(value="/boardModify", method= RequestMethod.POST)
 	public String boardModify(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category,BoardVO boardVO, HttpServletRequest req,MultipartFile file) throws Exception {
-		
-		HttpSession session = req.getSession();	
+
+		HttpSession session = req.getSession();
 
 		if(session.getAttribute("userId") != null) {
 			String userId = (String) session.getAttribute("userId");
@@ -734,29 +734,29 @@ public class BoardController {
 		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
 	}
 
-	
+
 	// 게시글 삭제
 	@RequestMapping(value="/boardDelete")
 	public ModelAndView boardDelete(@RequestParam("stateCode") int stateCode, @RequestParam("com_num") int com_num,
 									@RequestParam("writer") String writer,@RequestParam("category") Integer category, HttpServletRequest req) throws Exception {
 
 		HttpSession session = req.getSession();
-		ModelAndView mav = new ModelAndView();	
-		
-		if(session.getAttribute("member") != null) { 
+		ModelAndView mav = new ModelAndView();
+
+		if(session.getAttribute("member") != null) {
 			logger.info("***session이 유지되는 경우");
 			MemberVO member = (MemberVO)session.getAttribute("member");
 			MemberVO membervo = boardService.membermodifyGET(member.getMb_id());
 			String memeberNick = membervo.getMb_nick();
-			
+
 			if(writer.equals(memeberNick)) {
 				boardService.boardDelete(com_num);
 				mav.addObject("msg", "success");
 			} else {
-				mav.addObject("msg", "fail");	
+				mav.addObject("msg", "fail");
 			}
 			mav.setViewName("forward:/boardList?stateCode="+stateCode);
-		} else { 
+		} else {
 			logger.info("***session이 끝난 경우");
 			mav.addObject("msg", "sessionFin");
 			mav.setViewName("index");

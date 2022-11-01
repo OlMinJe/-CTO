@@ -64,7 +64,7 @@
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                ${data.com_content}
+                <pre>${data.com_content}</pre>
             </div>
         </div>
 
