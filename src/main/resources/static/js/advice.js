@@ -52,27 +52,13 @@ function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
-    console.log(div1)
-    console.log(div2);
-    console.log(params.get('category'));
-
     if(params.get('category')==0 || params.get('category')==1 || params.get('category')==2 || params.get('category')==3 || params.get('category')==4){
         for (var i = 0; i < div1.length; i++) {
             div1[i].classList.remove("active");
-            console.log('active1 삭제됨');
         }
         liActive01();
         console.log('liActive01');
-    } else {
-        for (var j = 0; j < div2.length; j++) {
-            div2[i].classList.remove("active");
-            console.log('active2 삭제됨');
-        }
-        liActive02();
-        console.log('liActive02');
-    }
 
-    if((params.get('category') == 0) || (params.get('category') == 1) || (params.get('category') == 2) || (params.get('category') == 3) || (params.get('category')==4)) {
         for(var a = 0; a < div1.length; a++) {
             if (params.get('category') == a) {
                 div1[a].classList.add("active");
@@ -80,6 +66,13 @@ function menuClick() {
             }
         }
     } else {
+        for (var j = 0; j < div2.length; j++) {
+            div2[i].classList.remove("active");
+            console.log('active2 삭제됨');
+        }
+        liActive02();
+        console.log('liActive02');
+
         for(var b= 0; b < div2.length ; b++) {
             if(params.get('category') == b+5) {
                 div2[b].classList.add("active");

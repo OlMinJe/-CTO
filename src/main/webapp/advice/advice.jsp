@@ -17,8 +17,8 @@
 <div class="col-12 advice">
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
-            <li class="col-6 box_eft_01" id="active_normal">일반 고민</li>
-            <li class="col-6 box_eft_01" id="active_woman">여성 고민</li>
+            <li class="col-6 box_eft_01" id="active_normal" onclick="menuClick();">일반 고민</li>
+            <li class="col-6 box_eft_01" id="active_woman" onclick="menuClick();">여성 고민</li>
         </ul>
         <div class="col-12 menu-con">
             <ul class="col-12 menu-box-01" id="sub-menu-01">
