@@ -14,7 +14,7 @@ let table = document.getElementById('community-table');
 let editor_content = document.getElementById('editor_content');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
-var div2 = document.getElementsByClassName("div2");
+var div2 = $(".div2");
 var clickMenu;
 // 모바일 버전
 function sub_menu() {
