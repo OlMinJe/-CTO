@@ -29,42 +29,73 @@
             });
         });
 
+        function confirm() {
+            var title = $("#com_title").val().trim();
+            var content =  $("#com_content").val().trim();
+
+            if(title == "" || title ==null) {
+                alert("제목을 입력해주세요.");
+                return false;
+            } else if(content == ""|| content ==null) {
+                alert("내용을 입력해주세요.");
+                return false;
+            }
+
+            if(title != "" && title != "") {
+                location.href="/communityModify";
+                return true;
+            }
+        }
     </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <div class="col-12 board_wrap">
-    <form action='<c:url value='/communityModify'/>' method="post" enctype="multipart/form-data">
+    <form action='<c:url value='/communityModify'/>' method="post" onsubmit="return confirm()" enctype="multipart/form-data">
         <div class="col-12 col-lg-10 board_con">
             <div class="col-12 board_title">글 수정</div>
             <div class="col-12 board_list">
                 <div class="col-12 write_title">
                     <dl>
                         <dt class="col-12 col-sm-2">제목</dt>
-                        <dd class="col-12 col-sm-10"><input type="text" placeholder="제목 입력" id="com_title" name="com_title" class="box_eft_01"></dd>
+                        <dd class="col-12 col-sm-10"><input type="text" value="${data.com_title}" id="com_title" name="com_title" class="box_eft_01"></dd>
                     </dl>
                 </div>
                 <div class="col-12 write_info">
                     <dl>
                         <dt class="col-12 col-sm-2">카테고리</dt>
                         <dd class="col-12 col-sm-10">
-                            <select name="com_category" id="com_category" class="box_eft_01">
-                                <option value="0">[일반] 일상</option>
-                                <option value="1">[일반] 취미</option>
-                                <option value="2">[일반] 유머</option>
-                                <option value="3">[일반] 음식</option>
-                                <option value="4">[일반] 정보</option>
-                                <option value="5">[일반] 취업/진로</option>
-                                <option value="6">[일반] 기타</option>
-                            </select>
+                            <c:choose>
+                                <c:when test="${data.com_category == 0}">
+                                    <label name="category" readonly="readonly">일상</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 1}">
+                                    <label name="category" readonly="readonly">취미</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 2}">
+                                    <label name="category" readonly="readonly">유머</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 3}">
+                                    <label name="category" readonly="readonly">음식</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 4}">
+                                    <label name="category" readonly="readonly">정보</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 5}">
+                                    <label name="category" readonly="readonly">취업/진로</label>
+                                </c:when>
+                                <c:when test="${data.com_category == 6}">
+                                    <label name="category" readonly="readonly">기타</label>
+                                </c:when>
+                            </c:choose>
                         </dd>
                     </dl>
                 </div>
                 <div class="col-12 write_content">
                     <form method="post">
                         <!--<textarea id="summernote" name="editordata"></textarea>-->
-                        <textarea placeholder="자유롭게 내용을 작성해주세요!" name="com_content" id="com_content"></textarea>
+                        <textarea placeholder="자유롭게 내용을 작성해주세요!" name="com_content" id="com_content">${data.com_content}</textarea>
                     </form>
                 </div>
 
@@ -78,10 +109,10 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="hidden" name="stateCode" value="${stateCode}"/>
             <input type="hidden" name="category" value="${category}"/>
-            <input type="hidden" name="mb_nick" value="${modifyNick}">
+            <input type="hidden" name="mb_nick" id="mb_nick" value="${data.mb_nick}">
             <div class="col-12 btn_wrap">
                 <%--<a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>--%>
-                <button type="submit" class="on box_eft_02">글 등록</button>
+                <button type="submit" class="on box_eft_02">글 수정</button>
                 <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
             </div>
         </div>

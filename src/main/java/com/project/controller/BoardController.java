@@ -252,7 +252,8 @@ public class BoardController {
 
 
 	// 게시글 수정(커뮤니티)
-	@RequestMapping(value="/boardModify", method= RequestMethod.POST)
+	@ResponseBody
+	@RequestMapping(value="/communityModify", method= RequestMethod.POST)
 	public String boardModify(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category,BoardVO boardVO, HttpServletRequest req,MultipartFile file) throws Exception {
 
 		HttpSession session = req.getSession();
@@ -271,7 +272,7 @@ public class BoardController {
 
 		boardService.boardModify(boardVO);
 
-		return "redirect:boardList?stateCode="+stateCode+"&category="+category;
+		return "redirect:/community/community?stateCode="+stateCode+"&category="+category;
 	}
 
 
