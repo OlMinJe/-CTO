@@ -107,19 +107,17 @@
                     <textarea placeholder="자유롭게 내용을 작성해주세요!" name="com_content" id="com_content"></textarea>
                 </form>
             </div>
-
-                <div class="filebox">
-                    <label class="box_back" for="com_photo">파일찾기</label>
-                    <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일 추가">
-                    <input type="file" name="file" id="com_photo">
-                </div>
-
+            <div class="filebox">
+                <label class="box_back" for="com_photo">파일찾기</label>
+                <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일 추가">
+                <input type="file" name="file" id="com_photo">
+            </div>
         </div>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="hidden" name="stateCode" value="${stateCode}"/>
         <input type="hidden" name="category" value="${category}"/>
         <input type="hidden" name="mb_nick" value="${modifyNick}">
-        <div class="col-12 btn_wrap">
+        <div class="col-12 btn_wrap" style="margin-top: 20px;">
             <%--<a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>--%>
             <button type="submit"  class="on box_eft_02">글 등록</button>
             <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
