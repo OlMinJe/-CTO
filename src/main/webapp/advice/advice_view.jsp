@@ -71,13 +71,89 @@
                 ${data.talk_content}
             </div>
         </div>
+
+        <style>
+            .btn-light{
+                color: slategray;
+            }
+            .btn-danger{
+                color: red;
+            }
+        </style>
+
         <div class="col-12 btn_wrap">
-            <a onclick="location.href='/advice/advice.jsp';" class="on box_eft_02">목록</a>
+            <!--좋아요 버튼-->
+            <div id="like">
+                <c:choose>
+                    <c:when test="${like_check == 0}">
+                        <button type="button" class="btn-light" id="likebtn">좋아요</button>
+                        <input type="hidden" id="likecheck" value="${like_check }">
+                    </c:when>
+                    <c:when test="${like_check == 1}">
+                        <button type="button" class="btn-danger" id="likebtn">좋아요</button>
+                        <input type="hidden" id="likecheck" value="${like_check }">
+                    </c:when>
+                </c:choose>
+            </div>
+            <a onclick="location.href='/advice/advice?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">목록</a>
         </div>
+
+        <script>
+            $('#likebtn').click(function(){
+                likeupdate();
+            });
+
+            function likeupdate(){
+                var root = getContextPath(),
+                    likeurl = "/like/likeupdate",
+                    mb_nick = $('#mb_nick').val(),
+                    com_num = $('#com_num').val(),
+                    count = $('#likecheck').val(),
+                    data = {"mb_nick" : mb_nick,
+                        "com_num" : com_num,
+                        "count" : count};
+
+                $.ajax({
+                    url : "/like/likeupdate",
+                    type : 'POST',
+                    contentType: "application/json; charset=UTF-8",
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                    },
+                    async: false,
+                    data : JSON.stringify(data),
+                    success : function(result){
+                        console.log("수정" + result.result);
+
+                        if(count == 1){
+                            console.log("좋아요 취소");
+                            $('#likecheck').val(0);
+                            $('#likebtn').attr('class','btn-light');
+                        }else if(count == 0){
+                            console.log("좋아요!");
+                            $('#likecheck').val(1);
+                            $('#likebtn').attr('class','btn-danger');
+                        }
+                    }, error : function(result){
+                        console.log("에러" + result.result)
+                    }
+
+                });
+            };
+
+            function getContextPath() {
+                var hostIndex = location.href.indexOf( location.host ) + location.host.length;
+                return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
+            }
+        </script>
 
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
-            <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
+            <div class="col12 comment_num ">댓글수
+                <span>
+                    ${data.com_comment} <!--작업 중-->
+                </span>
+            </div>
             <div class="col-12 comment_writer">
                 <div class="col-12 input_box">
                     <!-- TODO : https://tried.tistory.com/95 -->
