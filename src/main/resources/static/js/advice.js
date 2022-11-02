@@ -30,10 +30,32 @@ function liActive02() {
     woman.style.display = "flex";
 }
 
+const addUrl = (displayParam1, displays) => {
+    let url = displayParam1;
+    if (displays) url += '&displays=' + displays
+    return url
+}
+
 function mb_click(displayParam) {
     var displayParam1 = displayParam;
 
     if(displayParam1.get('displays') == 'flex'){
+        addUrl(displayParam1, 'none');
+        if(displayParam1.get('category') == 0) {
+            normal.style.display = "flex";
+        } else {
+            woman.style.display = "flex";
+        }
+    } else {
+        addUrl(displayParam1, 'flex');
+        if(displayParam1.get('category') == 0) {
+            normal.style.display = "none";
+        } else {
+            woman.style.display = "none";
+        }
+    }
+
+/*    if(displayParam1.get('displays') == 'flex'){
         console.log(displayParam1.get('displays'));
         if(displayParam1.get('displays') == 'flex'){
             normal.style.display = "flex";
@@ -50,7 +72,7 @@ function mb_click(displayParam) {
             woman.style.display = "none";
             displayParam1.set('displays', 'flex');
         }
-    }
+    }*/
 }
 
 function menuClick() {
