@@ -13,13 +13,13 @@
 
         $('[name=commentInsertBtn]').click(function(){//댓글등록버튼 클릭시
             var insertData=$('#comment_content').val();//commentInsertForm의 내용을 가져옴
-        commentInsert(insertData);//Insert 함수호출(아래)
+            commentInsert(insertData);//Insert 함수호출(아래)
          });
         //댓글목록
         function commentList(){
             $.ajax({
                 url: '/comment/list',
-                type: 'get',
+                type: 'GET',
                 data: {'com_num': bno},
                 success: function (data) {
                     var a = '';
@@ -116,7 +116,7 @@
             var updateContent=$('[name=content_'+comment_seq+']').val();
             $.ajax({
                 url:'/comment/update',
-                type:'get',
+                type:'GET',
                 data:{'comment_content':updateContent,'comment_seq':comment_seq},
                 success:function(data){
                     if(data==1)commentList(bno);//댓글 수정후 목록출력
@@ -127,7 +127,7 @@
         function commentDelete(comment_seq){
             $.ajax({
                 url:'/comment/delete/'+comment_seq,
-                type:'get',
+                type:'GET',
                 data:{'com_num':bno},
                 success:function(data){
                     if(data==1)commentList(bno);

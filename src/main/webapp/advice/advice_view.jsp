@@ -99,7 +99,7 @@
                             name="comment_content"
                     ></textarea>
                     <span class="input-group-btn">
-                    <button class="btn btn-outline-success box_eft_02" type="submit" name="commentInsertBtn">댓글 등록</button>
+                    <button class="btn btn-outline-success box_eft_02" type="button" name="commentInsertBtn">댓글 등록</button>
                     </span>
                 </div>
                 </form>
@@ -108,7 +108,7 @@
             <div class="col-12 comment_writer"> <!-- 확인용 -->
                 <div class="commentList"></div>
             </div>
-            <%@include file="../advice/comment.jsp"%>
+            <%@include file="advice_comment.jsp"%>
         </div>
     </div>
 </div>

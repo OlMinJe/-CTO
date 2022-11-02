@@ -334,7 +334,7 @@ public class BoardController {
 	}
 
 	//댓글 수정 - 커뮤니티
-	@RequestMapping(value = "comment/update",method= RequestMethod.GET)//댓글수정
+	@RequestMapping(value = "/comment/update",method= RequestMethod.GET)//댓글수정
 	@ResponseBody
 	private int mCommentServiceUpdateProc(@RequestParam("comment_seq") int comment_seq, @RequestParam("comment_content") String comment_content)throws Exception{
 		CommentVO comment=new CommentVO();
@@ -344,7 +344,7 @@ public class BoardController {
 	}
 
 	//댓글 삭제 - 커뮤니티
-	@RequestMapping(value = "comment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
+	@RequestMapping(value = "/comment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
 	@ResponseBody
 	private int mCommentServiceDelete(@PathVariable int comment_seq,@RequestParam("com_num") int com_num) throws Exception{
 		boardService.commentDelete(comment_seq);
@@ -512,7 +512,7 @@ public class BoardController {
 	}
 
 	//댓글 수정 - 상담
-	@RequestMapping(value = "talkcomment/update",method= RequestMethod.GET)//댓글수정
+	@RequestMapping(value = "/talkcomment/update",method= RequestMethod.GET)//댓글수정
 	@ResponseBody
 	private int tCommentServiceUpdateProc(@RequestParam("comment_seq") int comment_seq, @RequestParam("comment_content") String comment_content)throws Exception{
 		CommentVO comment=new CommentVO();
@@ -522,7 +522,7 @@ public class BoardController {
 	}
 
 	//댓글 삭제 - 상담
-	@RequestMapping(value = "talkcomment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
+	@RequestMapping(value = "/talkcomment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
 	@ResponseBody
 	private int tCommentServiceDelete(@PathVariable int comment_seq,@RequestParam("talk_num") int talk_num) throws Exception{
 		boardService.talkcommentDelete(comment_seq);
@@ -543,7 +543,7 @@ public class BoardController {
 		comment.setMb_seq(mb_seq);
 		comment.setComment_group(comment_seq); //대댓글의 경우 어떤 댓글에 다는지를 확인하기 위해서 모댓글의 comment_seq를 저장한다...
 		comment.setComment_depth(1); //대댓글 경우 comment_depth를 1로 지정
-		boardService.commentInsert(comment);
+		boardService.talkcommentInsert(comment);
 		return boardService.talkupdateReplyCount(talk_num);
 	}
 	/*
