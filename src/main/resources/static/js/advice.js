@@ -30,6 +30,29 @@ function liActive02() {
     woman.style.display = "flex";
 }
 
+function mb_click(displayParam) {
+    var displayParam1 = displayParam;
+
+    if(displayParam1.get('displays') == 'flex'){
+        console.log(displayParam1.get('displays'));
+        if(displayParam1.get('displays') == 'flex'){
+            normal.style.display = "flex";
+            woman.style.display = "flex";
+            displayParam1.set('displays', 'none');
+        }
+    }
+
+    if (normal.style.display == "flex" || woman.style.display == "flex") {
+        displayParam1.set('displays', 'none');
+        console.log(displayParam1.get('displays'));
+        if(displayParam1.get('displays') == 'none'){
+            normal.style.display = "none";
+            woman.style.display = "none";
+            displayParam1.set('displays', 'flex');
+        }
+    }
+}
+
 function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
@@ -42,11 +65,7 @@ function menuClick() {
 
         // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
-            if (normal.style.display == "none") {
-                normal.style.display = "flex";
-            } else {
-                normal.style.display = "none";
-            }
+            mb_click(params);
         }
 
         for(var a = 0; a < div1.length; a++) {
@@ -62,11 +81,7 @@ function menuClick() {
 
         // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
-            if (woman.style.display == "none") {
-                woman.style.display = "flex";
-            } else {
-                woman.style.display = "none";
-            }
+            mb_click(params);
         }
 
         for(var b= 0; b < div2.length ; b++) {
