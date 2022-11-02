@@ -72,7 +72,13 @@
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
+            <c:if test="${sessionScope.stateCode == 1}">
+                <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
+            </c:if>
+            <c:if test="${sessionScope.stateCode ne 1}">
+                <li class="m_nav_title" onclick="location.href='/login/login.jsp'">상담</li>
+            </c:if>
+            <%--<li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>--%>
             <li class="m_nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
             <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
             <li class="m_nav_title" onclick="location.href='/event/event_detail.jsp?stateCode=${stateCode}'">이벤트</li>
@@ -92,13 +98,13 @@
         <ul class="col-6 nav_mian">
             <c:if test="${sessionScope.stateCode ne 1}">
                 <li class="nav_title" onclick="location.href='/com?category=10'">커뮤니티</li>
-                <li class="nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
+                <li class="nav_title" onclick="location.href='/login/login.jsp'">상담</li>
                 <li class="nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
                 <li class="nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
                 <li class="nav_title" onclick="location.href='/event/event_detail.jsp?stateCode=${stateCode}'">이벤트</li>
                 <li class="nav_title" onclick="location.href='/report/report.jsp?stateCode=${stateCode}'">신고</li>
             </c:if>
-            <c:if test="${sessionScope.stateCode ==1}">
+            <c:if test="${sessionScope.stateCode == 1}">
                 <li class="nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
                 <li class="nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
                 <li class="nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
