@@ -146,14 +146,9 @@
             }
         </script>
         <div class="col-12 comment_box">
-            <div class="col12 comment_num ">댓글 수
-                <span>
-                    ${data.com_comment}
-                </span>
-            </div><!--댓글 수 0만 출력됨-->
+            <div class="col12 comment_num ">댓글 수<span>${data.com_comment}</span></div><!--댓글 수 0만 출력됨-->
             <c:if test="${sessionScope.stateCode ne null}">
             <div class="col-12 comment_writer">
-
                 <form name="commentInsertForm" method="post">
                 <div class="col-12 input_box">
                     <input type="hidden" name="com_num" id="com_num" value="${data.com_num}"/>

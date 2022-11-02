@@ -94,7 +94,7 @@
                             placeholder="댓글을 통해 작성자에게 큰 힘이 되어주세요."
                             value={text}
                             onChange={handleChange}
-                            class="box_border"
+                            class="box_eft_01"
                             id="comment_content"
                             name="comment_content"
                     ></textarea>

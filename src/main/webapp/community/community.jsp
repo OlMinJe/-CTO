@@ -225,7 +225,6 @@
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
         </form>
         </div>
-    </div>
     <div class="btn_wrap">
         <c:if test="${stateCode == 1}">
             <a onclick="location.href='/community/community_write';" class="on box_eft_02">글쓰기</a>
