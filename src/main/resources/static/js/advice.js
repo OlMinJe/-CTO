@@ -18,14 +18,6 @@ function liActive01() {
     // 하위 메뉴
     woman.style.display = "none";
     normal.style.display = "flex";
-    // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
-    if (matchMedia("screen and (max-width: 767px)").matches) {
-        if (normal.style.display == "none") {
-            normal.style.display = "flex";
-        } else {
-            normal.style.display = "none";
-        }
-    }
 }
 
 /* '여성 고민' 탭을 선택한 경우 */
@@ -36,14 +28,6 @@ function liActive02() {
     // 하위 메뉴
     normal.style.display = "none";
     woman.style.display = "flex";
-    // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
-    if (matchMedia("screen and (max-width: 767px)").matches) {
-        if (woman.style.display == "none") {
-            woman.style.display = "flex";
-        } else {
-            woman.style.display = "none";
-        }
-    }
 }
 
 function menuClick() {
@@ -56,6 +40,15 @@ function menuClick() {
         }
         liActive01();
 
+        // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
+        if (matchMedia("screen and (max-width: 767px)").matches) {
+            if (normal.style.display == "none") {
+                normal.style.display = "flex";
+            } else {
+                normal.style.display = "none";
+            }
+        }
+
         for(var a = 0; a < div1.length; a++) {
             if (params.get('category') == a) {
                 div1[a].classList.add("active");
@@ -66,6 +59,15 @@ function menuClick() {
             div2[j].classList.remove("active");
         }
         liActive02();
+
+        // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
+        if (matchMedia("screen and (max-width: 767px)").matches) {
+            if (woman.style.display == "none") {
+                woman.style.display = "flex";
+            } else {
+                woman.style.display = "none";
+            }
+        }
 
         for(var b= 0; b < div2.length ; b++) {
             if(params.get('category') == b+5) {
