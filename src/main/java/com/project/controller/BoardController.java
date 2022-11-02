@@ -482,6 +482,70 @@ public class BoardController {
 		}
 		return "/advice/advice_view";
 	}
+	//댓글 리스트 - 상담
+	@RequestMapping(value = "/talkcomment/list",method= RequestMethod.GET)//댓글리스트
+	@ResponseBody
+	private Map<String,Object> tCommentServiceList(int talk_num) throws Exception{
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<CommentVO> list= boardService.talkcommentList(talk_num);
+		map.put("list",list);
+		return map;
+	}
+
+	//댓글 작성 - 상담
+	@RequestMapping(value = "/talkcomment/insert",method= RequestMethod.GET)//댓글작성
+	@ResponseBody
+	private int tCommentServiceInsert(@RequestParam("bno") int talk_num,@RequestParam("content") String comment_content,
+									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									  @RequestParam("seq") int mb_seq) throws Exception {
+		CommentVO comment=new CommentVO();
+		comment.setTalk_num(talk_num);
+		comment.setComment_content(comment_content);
+		comment.setMb_nick(mb_nick);
+		comment.setMb_doctor(mb_doctor);
+		comment.setMb_seq(mb_seq);
+		comment.setComment_depth(0); //그냥 댓글인 경우에는 0으로 지정
+		boardService.talkcommentInsert(comment); //기본적으로 추가함.
+		int comment_seq=boardService.last2(); //제일 마지막 comment_seq가져와서
+		boardService.talkupdateGroup(comment_seq); //comment_group값에 넣기 ( 모댓글인 경우)
+		return boardService.talkupdateReplyCount(talk_num);
+	}
+
+	//댓글 수정 - 상담
+	@RequestMapping(value = "talkcomment/update",method= RequestMethod.GET)//댓글수정
+	@ResponseBody
+	private int tCommentServiceUpdateProc(@RequestParam("comment_seq") int comment_seq, @RequestParam("comment_content") String comment_content)throws Exception{
+		CommentVO comment=new CommentVO();
+		comment.setComment_seq(comment_seq);
+		comment.setComment_content(comment_content);
+		return boardService.talkcommentUpdate(comment);
+	}
+
+	//댓글 삭제 - 상담
+	@RequestMapping(value = "talkcomment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
+	@ResponseBody
+	private int tCommentServiceDelete(@PathVariable int comment_seq,@RequestParam("talk_num") int talk_num) throws Exception{
+		boardService.talkcommentDelete(comment_seq);
+		return boardService.talkupdateReplyCount(talk_num);
+	}
+
+	//대댓글 작성 - 상담
+	@RequestMapping(value = "/talkrecomment/insert",method= RequestMethod.GET)//댓글작성
+	@ResponseBody
+	private int retCommentServiceInsert(@RequestParam("bno") int talk_num,@RequestParam("comment_content") String comment_content,
+									   @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									   @RequestParam("seq") int mb_seq,@RequestParam("comment_seq") int comment_seq) throws Exception {
+		CommentVO comment=new CommentVO();
+		comment.setTalk_num(talk_num);
+		comment.setComment_content(comment_content);
+		comment.setMb_nick(mb_nick);
+		comment.setMb_doctor(mb_doctor);
+		comment.setMb_seq(mb_seq);
+		comment.setComment_group(comment_seq); //대댓글의 경우 어떤 댓글에 다는지를 확인하기 위해서 모댓글의 comment_seq를 저장한다...
+		comment.setComment_depth(1); //대댓글 경우 comment_depth를 1로 지정
+		boardService.commentInsert(comment);
+		return boardService.talkupdateReplyCount(talk_num);
+	}
 	/*
 	//상담 게시글 수정 폼
 	@RequestMapping(value = "/talkModifyForm")

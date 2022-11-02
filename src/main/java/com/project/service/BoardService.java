@@ -201,4 +201,41 @@ public class BoardService  {
 	public void talkDelete(int num) throws Exception{
 		boardmapper.talkDelete(num);
 	}/**/
+	//댓글 리스트 - 상담
+	public List<CommentVO> talkcommentList(int talk_num) throws Exception{
+		return boardmapper.talkcommentList(talk_num);
+	}
+
+	//댓글 추가 - 상담
+	public int talkcommentInsert(CommentVO comment) throws Exception{
+		return boardmapper.talkcommentInsert(comment);
+	}
+
+	//제일 마지막에 추가된 댓글의 comment_seq값 가져오기 - 상담
+	public int last2() throws Exception{
+		return boardmapper.last2();
+	}
+
+	//seq값을 comment_group 칼럼 값으로 넣기(모댓글인 경우) - 상담
+	public int talkupdateGroup(int comment_seq) throws Exception{
+		return boardmapper.talkupdateGroup(comment_seq);
+	}
+
+	//댓글 수정 - 상담
+	public int talkcommentUpdate(CommentVO comment)  throws Exception{
+		return boardmapper.talkcommentUpdate(comment);
+	}
+
+	//댓글삭제 - 상담
+	public int talkcommentDelete(int cno) throws Exception{
+		return boardmapper.talkcommentDelete(cno);
+	}
+	//대댓글 리스트 - 상담
+	public List<CommentVO> talkrecommentList(int comment_group) throws Exception{
+		return boardmapper.talkrecommentList(comment_group);
+	}
+	//댓글 카운트 - 상담
+	public int talkupdateReplyCount(int talk_num) throws Exception {
+		return boardmapper.talkupdateReplyCount(talk_num);
+	}
 }

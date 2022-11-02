@@ -143,4 +143,22 @@ public interface MainMapper {
 	public void talkModify(TalkVO talkVO) throws Exception;
 
 	public void talkDelete(int num) throws Exception;
+
+	//댓글 카운트 - 상담
+	public int talkupdateReplyCount(int talk_num) throws Exception;
+
+	//댓글목록 - 상담
+	public List<CommentVO> talkcommentList(int talk_num) throws Exception;
+	//댓글작성 - 상담
+	public int talkcommentInsert(CommentVO comment) throws Exception;
+	//제일 마지막에 추가된 댓글의 comment_seq값 가져오기 - 상담
+	public int last2() throws Exception;
+	//seq값을 comment_group 칼럼 값으로 넣기(모댓글인 경우) - 상담
+	public int talkupdateGroup(int comment_seq) throws Exception;
+	//댓글수정 - 상담
+	public int talkcommentUpdate(CommentVO comment) throws Exception;
+	//댓글삭제 - 상담
+	public int talkcommentDelete(int cno) throws Exception;
+	//대댓글 출력 관련 코드 - 상담
+	public List<CommentVO> talkrecommentList(int comment_group) throws Exception;
 }

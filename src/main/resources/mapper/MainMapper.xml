@@ -283,4 +283,49 @@
 		DELETE FROM tb_talk
 		WHERE talk_num = #{talk_num}
 	</delete>
+
+	<!-- 댓글부분(상담) -->
+	<select id="talkcommentList" parameterType="int" resultType="CommentVO">
+		SELECT *
+		FROM tb_comment
+		where talk_num=#{talk_num}
+		order by comment_group,comment_date
+	</select>
+	<insert id="talkcommentInsert" parameterType="CommentVO">
+		INSERT INTO tb_comment(talk_num,comment_content,mb_nick,mb_seq,mb_doctor,comment_depth,comment_group)
+		VALUES(#{talk_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor},#{comment_depth},#{comment_group})
+	</insert>
+	<!-- 제일 최근 comment_seq 가져오기-->
+	<select id="last2" resultType="int">
+		select last_insert_id();
+	</select>
+	<!-- comment_seq를 group값으로 넣기(모댓글인 경우에만 사용)-->
+	<update id="talkupdateGroup" parameterType="int">
+		update tb_comment
+		set comment_group=#{comment_seq}
+		where comment_seq=#{comment_seq}
+	</update>
+	<update id="talkcommentUpdate" parameterType="CommentVO">
+		UPDATE tb_comment
+		SET comment_content=#{comment_content},
+			comment_date=now()
+		WHERE comment_seq=#{comment_seq}
+	</update>
+	<delete id="talkcommentDelete" parameterType="int">
+		DELETE
+		FROM tb_comment
+		WHERE comment_seq=#{comment_seq}
+	</delete>
+
+	<!-- 대댓글 출력을 위한 댓글 카운트-->
+	<select id="talkrecommentList" parameterType="int" resultType="CommentVO">
+		select * from tb_comment where comment_group=#{comment_group} and comment_depth=1 order by comment_date
+	</select>
+
+	<!-- 게시글별 댓글 카운트 관련-->
+	<update id="talkupdateReplyCount" parameterType="int">
+		update tb_talk b
+		set b.talk_comment = (select count(comment_seq) from tb_comment where talk_num = #{talk_num})
+		where b.talk_num = #{talk_num}
+	</update>
 </mapper>

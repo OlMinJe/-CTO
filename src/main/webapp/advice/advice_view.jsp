@@ -71,97 +71,21 @@
                 ${data.talk_content}
             </div>
         </div>
-
-        <style>
-            .btn-light{
-                color: slategray;
-            }
-            .btn-danger{
-                color: red;
-            }
-        </style>
-
         <div class="col-12 btn_wrap">
-            <!--좋아요 버튼-->
-            <div id="like">
-                <c:choose>
-                    <c:when test="${like_check == 0}">
-                        <button type="button" class="btn-light" id="likebtn">좋아요</button>
-                        <input type="hidden" id="likecheck" value="${like_check }">
-                    </c:when>
-                    <c:when test="${like_check == 1}">
-                        <button type="button" class="btn-danger" id="likebtn">좋아요</button>
-                        <input type="hidden" id="likecheck" value="${like_check }">
-                    </c:when>
-                </c:choose>
-            </div>
-            <a onclick="location.href='/advice/advice?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">목록</a>
+            <a onclick="location.href='/advice/advice.jsp';" class="on box_eft_02">목록</a>
         </div>
-        <div>
-            <c:if test="${membervo.mb_nick == data.mb_nick}"><!--추후 기능 작동 여부 확인 및 /advice/advice_modify.jsp 파일 생성하기-->
-                <button id="modify" onclick="location.href='/advice/advice_modidfy?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
-                <button id="delete" onclick="location.href='/talkDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
-            </c:if>
-        </div>
-
-        <script>
-            $('#likebtn').click(function(){
-                likeupdate();
-            });
-
-            function likeupdate(){
-                var root = getContextPath(),
-                    likeurl = "/like/likeupdate",
-                    mb_nick = $('#mb_nick').val(),
-                    com_num = $('#com_num').val(),
-                    count = $('#likecheck').val(),
-                    data = {"mb_nick" : mb_nick,
-                        "com_num" : com_num,
-                        "count" : count};
-
-                $.ajax({
-                    url : "/like/likeupdate",
-                    type : 'POST',
-                    contentType: "application/json; charset=UTF-8",
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-                    },
-                    async: false,
-                    data : JSON.stringify(data),
-                    success : function(result){
-                        console.log("수정" + result.result);
-
-                        if(count == 1){
-                            console.log("좋아요 취소");
-                            $('#likecheck').val(0);
-                            $('#likebtn').attr('class','btn-light');
-                        }else if(count == 0){
-                            console.log("좋아요!");
-                            $('#likecheck').val(1);
-                            $('#likebtn').attr('class','btn-danger');
-                        }
-                    }, error : function(result){
-                        console.log("에러" + result.result)
-                    }
-
-                });
-            };
-
-            function getContextPath() {
-                var hostIndex = location.href.indexOf( location.host ) + location.host.length;
-                return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
-            }
-        </script>
 
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
-            <div class="col12 comment_num ">댓글수
-                <span>
-                    ${data.com_comment} <!--작업 중 : 출력 안 될 것으로 예상됨. cuz) DB 없음-->
-                </span>
-            </div>
+            <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
+            <c:if test="${sessionScope.stateCode ne null}">
             <div class="col-12 comment_writer">
+                <form name="commentInsertForm" method="post">
                 <div class="col-12 input_box">
+                    <input type="hidden" name="talk_num" id="talk_num" value="${data.talk_num}"/>
+                    <input type="hidden" name="mb_nick" id="mb_nick" value="${membervo.mb_nick}"/>
+                    <input type="hidden" name="mb_seq" value="${membervo.mb_seq}"/>
+                    <input type="hidden" name="mb_doctor" value="${membervo.mb_doctor}"/>
                     <!-- TODO : https://tried.tistory.com/95 -->
                     <textarea
                             className={`block whitespace-pre-wrap w-full bg-white text-gray-700 border border-black py-2
@@ -170,10 +94,21 @@
                             placeholder="댓글을 통해 작성자에게 큰 힘이 되어주세요."
                             value={text}
                             onChange={handleChange}
-                            class="box_border"></textarea>
-                    <button class="btn btn-outline-success box_eft_02" type="submit">댓글 등록</button>
+                            class="box_border"
+                            id="comment_content"
+                            name="comment_content"
+                    ></textarea>
+                    <span class="input-group-btn">
+                    <button class="btn btn-outline-success box_eft_02" type="submit" name="commentInsertBtn">댓글 등록</button>
+                    </span>
                 </div>
+                </form>
             </div>
+            </c:if>
+            <div class="col-12 comment_writer"> <!-- 확인용 -->
+                <div class="commentList"></div>
+            </div>
+            <%@include file="../advice/comment.jsp"%>
         </div>
     </div>
 </div>
