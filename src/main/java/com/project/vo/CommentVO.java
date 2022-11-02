@@ -14,7 +14,7 @@ public class CommentVO {
     private String mb_nick;
     private int com_num;
     private int talk_num;
-    private String mb_doctor;
+    private Integer mb_doctor;
     private String comment_content;
     private int comment_like;
     private Date comment_date;

@@ -318,7 +318,7 @@ public class BoardController {
 	@RequestMapping(value = "/comment/insert",method= RequestMethod.GET)//댓글작성
 	@ResponseBody
 	private int mCommentServiceInsert(@RequestParam("bno") int com_num,@RequestParam("content") String comment_content,
-									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
 									  @RequestParam("seq") int mb_seq) throws Exception {
 		CommentVO comment=new CommentVO();
 		comment.setCom_num(com_num);
@@ -355,7 +355,7 @@ public class BoardController {
 	@RequestMapping(value = "/recomment/insert",method= RequestMethod.GET)//댓글작성
 	@ResponseBody
 	private int reCommentServiceInsert(@RequestParam("bno") int com_num,@RequestParam("comment_content") String comment_content,
-									   @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									   @RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
 									   @RequestParam("seq") int mb_seq,@RequestParam("comment_seq") int comment_seq) throws Exception {
 		CommentVO comment=new CommentVO();
 		comment.setCom_num(com_num);
@@ -496,7 +496,7 @@ public class BoardController {
 	@RequestMapping(value = "/talkcomment/insert",method= RequestMethod.GET)//댓글작성
 	@ResponseBody
 	private int tCommentServiceInsert(@RequestParam("bno") int talk_num,@RequestParam("content") String comment_content,
-									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
 									  @RequestParam("seq") int mb_seq) throws Exception {
 		CommentVO comment=new CommentVO();
 		comment.setTalk_num(talk_num);
@@ -533,7 +533,7 @@ public class BoardController {
 	@RequestMapping(value = "/talkrecomment/insert",method= RequestMethod.GET)//댓글작성
 	@ResponseBody
 	private int retCommentServiceInsert(@RequestParam("bno") int talk_num,@RequestParam("comment_content") String comment_content,
-									   @RequestParam("writer") String mb_nick,@RequestParam("doctor") String mb_doctor,
+									   @RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
 									   @RequestParam("seq") int mb_seq,@RequestParam("comment_seq") int comment_seq) throws Exception {
 		CommentVO comment=new CommentVO();
 		comment.setTalk_num(talk_num);
