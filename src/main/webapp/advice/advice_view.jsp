@@ -97,6 +97,12 @@
             </div>
             <a onclick="location.href='/advice/advice?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">목록</a>
         </div>
+        <div>
+            <c:if test="${membervo.mb_nick == data.mb_nick}"><!--추후 기능 작동 여부 확인 및 /advice/advice_modify.jsp 파일 생성하기-->
+                <button id="modify" onclick="location.href='/advice/advice_modidfy?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
+                <button id="delete" onclick="location.href='/talkDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
+            </c:if>
+        </div>
 
         <script>
             $('#likebtn').click(function(){
@@ -151,7 +157,7 @@
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수
                 <span>
-                    ${data.com_comment} <!--작업 중-->
+                    ${data.com_comment} <!--작업 중 : 출력 안 될 것으로 예상됨. cuz) DB 없음-->
                 </span>
             </div>
             <div class="col-12 comment_writer">

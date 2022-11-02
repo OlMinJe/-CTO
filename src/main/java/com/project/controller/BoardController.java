@@ -519,6 +519,8 @@ public class BoardController {
 
 		return "redirect:talk?stateCode="+stateCode+"&category="+category;
 	}
+*/
+
 	// 게시글 삭제(커뮤니티)
 	@RequestMapping(value="/talkDelete")
 	public ModelAndView talkDelete(@RequestParam("stateCode") int stateCode, @RequestParam("talk_num") int talk_num,
@@ -546,7 +548,7 @@ public class BoardController {
 			mav.setViewName("index");
 		}
 		return mav;
-	}*/
+	}
 
 
 	/*   @RequestMapping(value = "/boardList2")
