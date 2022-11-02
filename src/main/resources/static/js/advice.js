@@ -30,7 +30,7 @@ function liActive02() {
     woman.style.display = "flex";
 }
 
-const addUrl = (displayParam1, displays) => {
+/*const addUrl = (displayParam1, displays) => {
     let url = displayParam1;
     if (displays) url += '&displays=' + displays
     return url
@@ -55,7 +55,7 @@ function mb_click(displayParam) {
         }
     }
 
-/*    if(displayParam1.get('displays') == 'flex'){
+/!*    if(displayParam1.get('displays') == 'flex'){
         console.log(displayParam1.get('displays'));
         if(displayParam1.get('displays') == 'flex'){
             normal.style.display = "flex";
@@ -72,7 +72,29 @@ function mb_click(displayParam) {
             woman.style.display = "none";
             displayParam1.set('displays', 'flex');
         }
-    }*/
+    }*!/
+}*/
+
+function mb_click(){
+    var imgClick01 = document.getElementById('click01');
+    var imgClick02 = document.getElementById('click02');
+
+    imgClick01.addEventListener("click", function (){
+        if(normal.style.display == "flex") {
+            normal.style.display = "none";
+        } else {
+            normal.style.display = "flex";
+        }
+    })
+
+    imgClick02.addEventListener("click", function (){
+        if(woman.style.display == "flex") {
+            woman.style.display = "none";
+        } else {
+            woman.style.display = "flex";
+        }
+    })
+
 }
 
 function menuClick() {
@@ -87,7 +109,7 @@ function menuClick() {
 
         // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
-            mb_click(params);
+            mb_click();
         }
 
         for(var a = 0; a < div1.length; a++) {
@@ -103,7 +125,7 @@ function menuClick() {
 
         // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
-            mb_click(params);
+            mb_click();
         }
 
         for(var b= 0; b < div2.length ; b++) {
