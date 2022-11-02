@@ -78,7 +78,7 @@
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
-            <c:if test="${sessionScope.stateCode ne null}">
+            <c:if test="${membervo.mb_doctor != 0}">
             <div class="col-12 comment_writer">
                 <form name="commentInsertForm" method="post">
                 <div class="col-12 input_box">
