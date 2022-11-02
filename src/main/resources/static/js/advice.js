@@ -76,8 +76,8 @@ function mb_click(displayParam) {
 }*/
 
 function mb_click(){
-    var imgClick01 = document.getElementById('click01');
-    var imgClick02 = document.getElementById('click02');
+    var imgClick01 = document.getElementsByName('li #click01');
+    var imgClick02 = document.getElementsByName('li #click02');
 
     imgClick01.addEventListener("click", function (){
         if(normal.style.display == "flex") {
