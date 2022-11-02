@@ -108,7 +108,7 @@
             <div class="col-12 comment_writer"> <!-- 확인용 -->
                 <div class="commentList"></div>
             </div>
-            <%@include file="../advice/comment.jsp"%>
+            <%@include file="advice_comment.jsp"%>
         </div>
     </div>
 </div>
