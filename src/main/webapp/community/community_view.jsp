@@ -72,11 +72,11 @@
             <div id="like">
                 <c:choose>
                     <c:when test="${like_check ==0}">
-                        <button type="button" class="box_eft_01" id="likebtn">좋아요</button>
+                        <button type="button" id="likebtn">1</button>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                     <c:when test="${like_check ==1}">
-                        <button type="button" class="box_eft_02" id="likebtn">좋아요</button>
+                        <button type="button" id="likebtn">2</button>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                 </c:choose>
