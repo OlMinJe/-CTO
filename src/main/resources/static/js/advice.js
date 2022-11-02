@@ -107,11 +107,11 @@ function menuClick() {
         for (var i = 0; i < div1.length; i++) {
             div1[i].classList.remove("active");
         }
+        liActive01();
+
         // 반응 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
             mb_click();
-        } else {
-            liActive01();
         }
 
         for(var a = 0; a < div1.length; a++) {
@@ -123,12 +123,11 @@ function menuClick() {
         for (var j = 0; j < div2.length; j++) {
             div2[j].classList.remove("active");
         }
+        liActive02();
 
         // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
         if (matchMedia("screen and (max-width: 767px)").matches) {
             mb_click();
-        } else {
-            liActive02();
         }
 
         for(var b= 0; b < div2.length ; b++) {

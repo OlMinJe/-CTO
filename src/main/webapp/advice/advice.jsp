@@ -17,12 +17,13 @@
 <div class="col-12 advice">
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
-            <li class="col-6 box_eft_01" id="active_normal" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">
-                일반 고민
+            <li class="col-6 box_eft_01" id="active_normal">
+                <a href="/advice/advice?stateCode=${stateCode}&category=0">일반 고민</a>
                 <img src="/img/icon_01.png" id="click01" style="float: right;">
             </li>
-            <li class="col-6 box_eft_01" id="active_woman" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=5';">
-                여성 고민
+            <li class="col-6 box_eft_01" id="active_woman">
+                <a href="/advice/advice?stateCode=${stateCode}&category=5">여성 고민</a>
+
                 <img src="/img/icon_01.png" id="click02" style="float: right;">
             </li>
         </ul>
