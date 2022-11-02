@@ -48,7 +48,7 @@
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
         </form>
-        <table border="1">
+        <table class="table table-hover table-bordered">
             <tr>
                 <%--<th>자동순번</th>--%>
                 <th>글번호</th>

@@ -195,36 +195,35 @@
                     </div>
                 </div>
             </div>
-            <%--<button type="button" class="btn btn-outline-success box_eft_02" onclick="location.href='/community/community_write'">글쓰기</button><br>--%>
-            <!--백엔드 페이징 삭제-->
-            <%--<ul class="paging">
-                <c:if test="${paging.prev}">
-                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.startPage-1}"/>'>이전</a></span>
-                </c:if>
-                <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${num}"/>'>${num}</a></span>
-                </c:forEach>
-                <c:if test="${paging.next && paging.endPage>0}">
-                    <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
-                </c:if>
-            </ul>--%>
-            <!--페이징-->
-            <ul class="pagination" style="margin-top: 20px;">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
         </div>
+        <!--백엔드 페이징 삭제-->
+        <%--<ul class="paging">
+            <c:if test="${paging.prev}">
+                <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.startPage-1}"/>'>이전</a></span>
+            </c:if>
+            <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${num}"/>'>${num}</a></span>
+            </c:forEach>
+            <c:if test="${paging.next && paging.endPage>0}">
+                <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
+            </c:if>
+        </ul>--%>
+        <!--페이징-->
+        <ul class="pagination" style="margin-bottom: 20px;">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item active"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
         <!--검색-->
         <form class="d-flex">
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
         </form>
-        </div>
+    </div>
     <div class="btn_wrap">
         <c:if test="${stateCode == 1}">
             <a onclick="location.href='/community/community_write';" class="on box_eft_02">글쓰기</a>
