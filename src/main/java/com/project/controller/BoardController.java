@@ -543,7 +543,7 @@ public class BoardController {
 		comment.setMb_seq(mb_seq);
 		comment.setComment_group(comment_seq); //대댓글의 경우 어떤 댓글에 다는지를 확인하기 위해서 모댓글의 comment_seq를 저장한다...
 		comment.setComment_depth(1); //대댓글 경우 comment_depth를 1로 지정
-		boardService.commentInsert(comment);
+		boardService.talkcommentInsert(comment);
 		return boardService.talkupdateReplyCount(talk_num);
 	}
 	/*

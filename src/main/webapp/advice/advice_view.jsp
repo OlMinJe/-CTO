@@ -99,7 +99,7 @@
                             name="comment_content"
                     ></textarea>
                     <span class="input-group-btn">
-                    <button class="btn btn-outline-success box_eft_02" type="submit" name="commentInsertBtn">댓글 등록</button>
+                    <button class="btn btn-outline-success box_eft_02" type="button" name="commentInsertBtn">댓글 등록</button>
                     </span>
                 </div>
                 </form>
