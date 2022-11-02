@@ -67,27 +67,16 @@
                 <pre>${data.com_content}</pre>
             </div>
         </div>
-
-        <style>
-            .btn-light{
-                color: slategray;
-            }
-            .btn-danger{
-                color: red;
-            }
-        </style>
-
-
         <div class="col-12 btn_wrap">
             <!--좋아요 버튼-->
             <div id="like">
                 <c:choose>
                     <c:when test="${like_check ==0}">
-                        <button type="button" class="btn-light" id="likebtn">좋아요</button>
+                        <button type="button" class="box_eft_01" id="likebtn">좋아요</button>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                     <c:when test="${like_check ==1}">
-                        <button type="button" class="btn-danger" id="likebtn">좋아요</button>
+                        <button type="button" class="box_eft_02" id="likebtn">좋아요</button>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                 </c:choose>
@@ -103,8 +92,8 @@
 
         <div>
             <c:if test="${membervo.mb_nick == data.mb_nick}">
-                <button id="modify" onclick="location.href='/community/community_modify?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
-                <button id="delete" onclick="location.href='/boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
+                <button class="box_eft_02" id="modify" onclick="location.href='/community/community_modify?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
+                <button class="box_eft_01" id="delete" onclick="location.href='/boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
             </c:if>
         </div>
         <script>
@@ -138,11 +127,11 @@
                         if(count == 1){
                             console.log("좋아요 취소");
                             $('#likecheck').val(0);
-                            $('#likebtn').attr('class','btn-light');
+                            $('#likebtn').attr('class','box_eft_01');
                         }else if(count == 0){
                             console.log("좋아요!");
                             $('#likecheck').val(1);
-                            $('#likebtn').attr('class','btn-danger');
+                            $('#likebtn').attr('class','box_eft_02');
                         }
                     }, error : function(result){
                         console.log("에러" + result.result)
