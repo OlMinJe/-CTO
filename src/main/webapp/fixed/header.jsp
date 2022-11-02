@@ -72,6 +72,9 @@
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
+            <c:if test="${sessionScope.stateCode == 0}">
+                <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
+            </c:if>
             <c:if test="${sessionScope.stateCode == 1}">
                 <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
             </c:if>
@@ -88,6 +91,9 @@
     <!-- 기본 헤더(웹) -->
     <div class="col-12 header_wrap" id="header">
         <div class="col-1 col-md-2 header_logo">
+            <c:if test="${sessionScope.stateCode == 0}">
+                <a href="/main?stateCode=0" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+            </c:if>
             <c:if test="${sessionScope.stateCode == 1}">
                 <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>
