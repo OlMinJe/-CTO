@@ -78,8 +78,9 @@ function mb_click(displayParam) {
 function mb_click(){
     var imgClick01 = document.getElementById('click01');
     var imgClick02 = document.getElementById('click02');
-    console.log(imgClick01);
-    console.log(imgClick02);
+
+    normal.style.display = "none";
+    woman.style.display = "none";
 
     imgClick01.addEventListener("click", function (){
         if(normal.style.display == "flex") {
