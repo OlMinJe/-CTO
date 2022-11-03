@@ -72,11 +72,13 @@
             <div id="like">
                 <c:choose>
                     <c:when test="${like_check ==0}">
-                        <button type="button" id="likebtn" onClick="window.location.reload()">1</button>
+                        <button type="button" id="likebtn" onClick="window.location.reload()" tyle="background-image: url('/static/img/heart_icon_3.png');">1</button>
+                        <%--출처: Heart icons created by Vlad Szirka - Flaticon--%>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                     <c:when test="${like_check ==1}">
-                        <button type="button" id="likebtn" onClick="window.location.reload()">2</button>
+                        <button type="button" id="likebtn" onClick="history.go(0)" style="background-image: url('/static/img/heart_icon_2.png');">2</button>
+                        <%--출처:Heart icons created by Vlad Szirka - Flaticon--%>
                         <input type="hidden" id="likecheck" value="${like_check }">
                     </c:when>
                 </c:choose>

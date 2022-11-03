@@ -27,9 +27,10 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 
 /* 고정헤더 */
 .fixed_header { z-index: 100; padding: 10px; height: 50px; background-color: #fff; }
+.fixed_header .header_logo { margin: 0; }
 .fixed_header .header_logo, .fixed_header #fixedBtn { display: inline-block; }
 .fixed_header .header_logo .logo img { width: 50%; }
-.fixed_header .mypage_btn { float: right; }
+.fixed_header .mypage_btn { float: right; margin: 0;}
 
 /*날씨 api*/
 .container {position: relative;display: none; justify-content: flex-start; overflow: hidden; padding-left: 30px; }
