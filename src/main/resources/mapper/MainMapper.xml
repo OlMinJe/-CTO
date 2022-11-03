@@ -261,7 +261,7 @@
 	</select>
 
 	<select id="talkRead" resultType="TalkVO">
-		SELECT talk_num, talk_title, talk_category,talk_content, mb_nick,talk_hit,talk_photo,mb_seq,mb_doctor,talk_like,talk_date
+		SELECT talk_num, talk_title, talk_category,talk_content, mb_nick,talk_hit,talk_photo,mb_seq,mb_doctor,talk_like,talk_date,talk_comment
 		FROM tb_talk
 		WHERE talk_num = #{talk_num}
 	</select>
