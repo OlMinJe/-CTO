@@ -1,0 +1,91 @@
+html {
+    background-color: #ffffff;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+}
+div .game_2048 .titlePad,
+div .game_2048 .scoreType {
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.game_2048 {
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+td {
+    border: 2px solid #372c25;
+    border-radius: 9px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    height: 70px;
+    width: 70px;
+    color: #684a23;
+    background-color: #fbeddc;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+p {
+    color: white;
+    vertical-align: top;
+}
+body {
+    background-color: #372c25;
+    /* 372c25 */
+    justify-items: center;
+    justify-content: center;
+}
+#title {
+    color: white;
+    font-size: 48px;
+    padding: 0px;
+    margin-left: 50px;
+}
+#titleBar {
+    margin-left: 70px;
+    margin-top: 35px;
+    height: 70px;
+}
+#titlePad {
+    width: 148px;
+    height: 35px;
+    background-color: #372c25;
+    margin: 0;
+}
+#scorePad {
+    width: 148px;
+    height: 35px;
+    background-color: #46382e;
+    padding: 0px;
+}
+#scoreType {
+    font-size: 14pt;
+    margin: 0px;
+    color: #715541;
+}
+#score {
+    font-size: 28pt;
+    margin: 0px;
+    color: white;
+}
+#board {
+    margin: 0 auto;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#info {
+    margin-top: 3px;
+    /* margin-left: 200px; */
+    font-size: 10pt;
+    color: white;
+}

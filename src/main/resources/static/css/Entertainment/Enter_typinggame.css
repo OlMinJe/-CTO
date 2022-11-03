@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0;}
+.ty_game { justify-content: center; justify-items: center; align-content: center; align-items: center; text-align: center; margin: auto; background-color: #ddd; display: table-column;}
+
+body { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+.game_header { display:inline-block; justify-content: center; width: 120%; height: 60px; background: #9575CD; color: #fff; text-align: center; padding: 1rem; margin-bottom: 5rem;}
+
+.word-display { font-size: 80px; color: #000000; margin-bottom: 5rem; justify-content: center;}
+
+.word-input{ padding:0.5rem; width: 300px;  margin-bottom: 3rem;}
+
+.game-info { display:inline; font-size: 0.8rem; justify-content: space-between; text-align: center; margin: auto;}
+
+.time, .score { font-size: 30px; margin-bottom: 10px;}
+
+.button{ width: 200px; height: 35px; background-color:#9575CD; color: #fff; border: none; margin-top: 3rem; cursor: pointer; text-align: center;}
+
+.loading { background-color: #ccc; cursor: not-allowed; text-align: center;}
+
+
+/* 반응형 */
+@media all and (min-width: 480px) {
+    .game_header { width: 480px; }
+}

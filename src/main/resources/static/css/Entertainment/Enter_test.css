@@ -1,32 +1,220 @@
+/*!* 동물 테스트 프로그레스 바 css *!*/
+/*@import url(progress.css);*/
 
-/* 안녕자두야 테스트 css */
+/*!* Enter_jadoo_mbti *!*/
 
-article { display: flex; flex-direction: column;}
+/*.article { display: flex; flex-direction: column; }*/
 
-#img { width: 300px; height: 300px;  margin: 0 auto;}
+/*.Enter_question { display: none;}*/
 
-.Enter_question { display: none;}
+/*.result { display: none;}*/
 
-.result { display: none;}
+/*#Enter_mbti_img { width: 300px; height: 300px; margin: 0 auto;}*/
 
-#Enter_mbti_img { width: 300px; height: 300px; margin: 0 auto; }
+/*.Enter_image { width: 100%; height: 400px; background-color: #ddd; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}*/
 
-.Enter_image { width: 100%; height: 400px; background-color: #ddd; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}
+/*.Enter_jadoo_test_title { width: 100%; height: 50px; font-size: 1.5em; text-align: center; border-bottom: 1px solid #ddd;}*/
 
-.Enter_jadoo_test_title { width: 100%; height: 50px; font-size: 1.5em; text-align: center; border-bottom: 1px solid #ddd; }
+/*#Enter_title { font-size: 1.5em; line-height: 30px; height: 100px; margin: 60px 0px 50px 0px;}*/
 
-#Enter_title { font-size: 1.7em; line-height: 30px; padding:70px 0px 50px 0px;}
+/*#Enter_explain { text-align: left;}*/
 
-#Enter_explain { text-align: left; }
+/*#Enter_title_explain { font-size: 1.5em;}*/
 
-#Enter_title_explain { font-size: 1.5em;}
+/*.Enter_jadoo_title { width: 100%; height: 50px; font-size: 1.5em; text-align: center; border-bottom: 1px solid #ddd;}*/
 
-.Enter_jadoo_title { width: 100%; height: 50px; font-size: 1.5em; text-align: center; border-bottom: 1px solid #ddd; }
+/*.share { margin: 0 auto;}*/
+
+/*.Enter_page { margin-bottom: 10px;}*/
+
+/*#result_BW { border: 1px solid #ddd; height: 200px; margin: 20px 350px 20px 350px; justify-content: space-around; display: flex; align-content: stretch; align-items: center; text-align: center;}*/
+
+/*#result_best_ul, #result_worst_ul { border: 1px solid #ddd; border-radius: 10px; display: flex; justify-content: space-around; height: 150px; width: 180px; text-align: center; list-style: none; padding-left: 0; flex-direction: column;}*/
+
+/*#result_Best, #jadoo_Best { display: inline-block; justify-content: space-between; text-align: center;}*/
+
+/*#jadoo_result2 { margin: 20px 350px 20px 350px; text-align: center; font-size: 1.3rem; text-align: left;}*/
+
+/*!* Enter_animal_test *!*/
+
+/*.ani_question { display: none;}*/
+
+/*.result { display: none;}*/
+
+/*.Enter_ani_test_title { width: 100%; height: 50px; font-size: 1.7em; text-align: center; border-bottom: 1px solid #ddd;}*/
+
+/*#ani_title { font-size: 1.7em; line-height: 30px; height: 100px; margin: 70px 0px 50px 0px;}*/
+
+/*.Enter_ani_image {width: 100%; height: 400px; background-color: #ddd; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}*/
+
+
+@import url(progress.css);
+
+/* Enter_jadoo_mbti */
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.Enter_question {
+    display: none;
+}
+
+.result {
+    display: none;
+}
+
+#Enter_mbti_img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.Enter_image {
+    width: 100%;
+    height: 400px;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    /*background-image: url(Enter_jadoo_title_image.png);*/
+}
+
+.Enter_jadoo_test_title {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#Enter_title {
+    font-size: 1.5em;
+    line-height: 30px;
+    height: 100px;
+    margin: 60px 0px 50px 0px;
+}
+
+#Enter_explain {
+    text-align: left;
+}
+
+#Enter_title_explain {
+    font-size: 1.5em;
+}
+
+.Enter_jadoo_title {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.share {
+    margin: 0 auto;
+}
+
+.Enter_page {
+    margin-bottom: 10px;
+}
+
+#result_BW {
+    border: 1px solid #ddd;
+    height: 200px;
+    margin: 20px 350px 20px 350px;
+    justify-content: space-around;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    text-align: center;
+}
+
+#result_best_ul,
+#result_worst_ul {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+    width: 180px;
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+    flex-direction: column;
+}
+
+#result_Best,
+#jadoo_Best {
+    display: inline-block;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#jadoo_result2 {
+    margin: 20px 350px 20px 350px;
+    text-align: center;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+/* Enter_animal_test */
+
+.ani_question {
+    display: none;
+}
+
+.result {
+    display: none;
+}
+
+.Enter_ani_test_title {
+    width: 100%;
+    height: 50px;
+    font-size: 1.7em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#ani_title {
+    font-size: 1.7em;
+    line-height: 30px;
+    height: 100px;
+    margin: 70px 0px 50px 0px;
+}
+
+.Enter_ani_image {
+    width: 100%;
+    height: 400px;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    /*background-image: url(Enter_ani_test_title.jpg);*/
+}
+
+
+
+/* Enter_trip_test */
+
+.Enter_trip_test_title { width: 100%; height: 50px; font-size: 1.5em; text-align: center; border-bottom: 1px solid #ddd;}
+
+#trip_title { font-size: 1.7em; line-height: 30px; height: 100px; margin: 70px 0px 50px 0px;}
+
+.trip_question { display: none;}
 
 .share { margin: 0 auto;}
 
 .Enter_page { margin-bottom: 10px;}
 
+.Enter_trip_image { width: 100%; height: 400px; background-color: #ddd; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}
+
+#explain_tourist, #explain_tourlist_recommend { font-size: 1.3rem; text-align: justify; line-height: 30px; margin: 0px 350px 10px 350px;}
+
+#explain_tourist_1, #tourlist_recommend_explain1, #tourlist_recommend_explain2, #tourlist_recommend_explain3 { font-size: medium; text-align: justify; line-height: 30px; margin: 0px 350px 20px 350px;}
+
+#explain_tourlist_recommend1, #explain_tourlist_recommend2, #explain_tourlist_recommend3 { font-size: 1.1rem; text-align: justify; line-height: 30px; margin: 0px 350px 10px 350px; }
 
 
 /* Enter_animal_test */
@@ -40,6 +228,19 @@ article { display: flex; flex-direction: column;}
 #ani_title { font-size: 1.7em; line-height: 30px; padding:70px 0px 50px 0px;}
 
 .Enter_ani_image { width: 100%; height: 400px; background-color: #ddd; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; }
+
+
+
+.progressbar_all {
+    padding: 0px 330px 0px 330px;
+    /*background-color: #ddd;*/
+}
+
+.progressbar {
+    display: inline-block;
+}
+
+
 
 /* Enter_trip_test */
 
