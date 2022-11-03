@@ -1,3 +1,12 @@
+$('.file').click(function (e) {
+    /* e.preventDefault(); */
+    document.getElementById('file_01').click();
+});
+function changeValue(a) {
+    console.log(a.files[0].name);
+    $(".file span").text(a.files[0].name);
+}
+
 /* 상위 메뉴 */
 let active_normal = document.querySelector("#community_normal");
 let active_editor = document.querySelector("#community_editor");
@@ -72,3 +81,5 @@ function li_active_02(){
     table.style.display = "none";
     editor_content.style.display = "block";
 }
+
+

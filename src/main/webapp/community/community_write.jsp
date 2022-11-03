@@ -108,9 +108,13 @@
                 </form>
             </div>
             <div class="filebox">
-                <label class="box_back" for="com_photo">파일찾기</label>
+<%--                <label class="box_back" for="com_photo">파일찾기</label>
                 <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일 추가">
-                <input type="file" name="file" id="com_photo">
+                <input type="file" name="file" id="com_photo">--%>
+
+                <%--<button type="button">파일첨부</button>
+                <span>선택 파일 없음</span></div>--%>
+                <input type="file" name="file" value="" title="파일첨부" onchange="changeValue(this)" id="file_01">
             </div>
         </div>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -119,7 +123,7 @@
         <input type="hidden" name="mb_nick" value="${modifyNick}">
         <div class="col-12 btn_wrap" style="margin-top: 20px;">
             <%--<a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>--%>
-            <button type="submit" class="on box_eft_02">글 등록</button>
+            <%--<button type="submit" class="on box_eft_02">글 등록</button>--%>
             <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
         </div>
     </div>

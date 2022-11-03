@@ -69,6 +69,8 @@
 .mainvisual_wrap .swiper-slide.slide01 span::after { content: ''; position: absolute; bottom: -80px; right: -30px; background-image: url("/img/cursor_icon.png"); background-size: 70px; width: 70px; height: 70px; background-repeat: no-repeat; }
 .mainvisual_wrap .swiper-slide.slide02 { background-color: #b5c7ed;}
 .mainvisual_wrap .swiper-slide.slide02 img { height: 100%; }
+.mainvisual_wrap .swiper-slide.slide03 { background-color: salmon;}
+.mainvisual_wrap .swiper-slide.slide03 { background-color: yellowgreen;}
 
     /* advice_wrap */
 .advice_wrap ul { display: flex; justify-content: space-around; text-align: center; }
