@@ -13,6 +13,7 @@
             <c:if test="${sessionScope.stateCode ne 1}">
                 <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
             </c:if>
+
             <!--관리자의 경우 다시 만들기-->
             <%--<c:if test="${sessionScope.stateCode == 0}">
                 <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
@@ -72,15 +73,18 @@
                 </ul>
             </li>
             <li class="m_nav_title" onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <c:if test="${sessionScope.stateCode == 0}">
+            <%--<c:if test="${sessionScope.stateCode == 0}">
                 <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
-            </c:if>
+            </c:if>--%>
             <c:if test="${sessionScope.stateCode == 1}">
                 <li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>
             </c:if>
             <c:if test="${sessionScope.stateCode ne 1}">
                 <li class="m_nav_title" onclick="location.href='/login/login.jsp'">상담</li>
             </c:if>
+            <%--<c:if test="${sessionScope.stateCode ne 0}">
+                <li class="m_nav_title" onclick="location.href='/login/login.jsp'">상담</li>
+            </c:if>--%>
             <%--<li class="m_nav_title" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">상담</li>--%>
             <li class="m_nav_title" onclick="location.href='/location/location.jsp?stateCode=${stateCode}'">위치기반</li>
             <li class="m_nav_title" onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">ENT</li>
@@ -91,15 +95,19 @@
     <!-- 기본 헤더(웹) -->
     <div class="col-12 header_wrap" id="header">
         <div class="col-1 col-md-2 header_logo">
-            <c:if test="${sessionScope.stateCode == 0}">
+            <%--<c:if test="${sessionScope.stateCode == 0}">
                 <a href="/main?stateCode=0" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
-            </c:if>
-            <c:if test="${sessionScope.stateCode == 1}">
-                <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
-            </c:if>
-            <c:if test="${sessionScope.stateCode ne 1}">
-                <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
-            </c:if>
+            </c:if>--%>
+                <c:if test="${sessionScope.stateCode == 0}">
+                    <a href="/main?stateCode=0" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                </c:if>
+                <c:if test="${sessionScope.stateCode == 1}">
+                    <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                </c:if>
+                <c:if test="${sessionScope.stateCode ne 1}">
+                    <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                </c:if>
+
         </div>
         <ul class="col-6 nav_mian">
             <c:if test="${sessionScope.stateCode ne 1}">
