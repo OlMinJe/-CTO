@@ -34,7 +34,7 @@
             type="button"
             class="btn btn-outline-secondary mt-5"
             style="height: 80px; font-size: large"
-            onclick="location.href='Entertainment.html'"
+            onclick="location.href='Entertainment.jsp'"
     >
         다른 테스트 보러가기
     </button>
