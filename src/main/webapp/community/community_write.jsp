@@ -111,10 +111,8 @@
 <%--                <label class="box_back" for="com_photo">파일찾기</label>
                 <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일 추가">
                 <input type="file" name="file" id="com_photo">--%>
-
-                <%--<button type="button">파일첨부</button>
-                <span>선택 파일 없음</span></div>--%>
-                <input type="file" name="file" value="" title="파일첨부" onchange="changeValue(this)" id="file_01">
+                <input type="file" name="file" value="" title="파일첨부" onchange="changeValue(this)" id="com_photo">
+                <label class="box_back" for="com_photo">파일찾기</label>
             </div>
         </div>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

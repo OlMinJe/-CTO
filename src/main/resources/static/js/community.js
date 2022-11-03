@@ -1,6 +1,6 @@
 $('.file').click(function (e) {
     /* e.preventDefault(); */
-    document.getElementById('file_01').click();
+    document.getElementById('com_photo').click();
 });
 function changeValue(a) {
     console.log(a.files[0].name);
