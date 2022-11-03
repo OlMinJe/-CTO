@@ -65,6 +65,7 @@
             </div>
             <div class="col-12 board_view_content">
                 <pre>${data.com_content}</pre>
+                ${data.com_photo}
             </div>
         </div>
         <div class="col-12 btn_wrap">

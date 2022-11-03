@@ -109,7 +109,8 @@
                     contentType: "application/json; charset=UTF-8",
                     success : function() {
                         alert("닉네임 변경이 완료되었습니다.");
-                        location.href="/"+stateCode;
+                        //location.href="/"+stateCode;
+                        location.href="/login/logout.jsp";
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert("ERROR : " + textStatus + " : " + errorThrown);

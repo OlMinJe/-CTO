@@ -44,7 +44,8 @@
                         contentType: "application/json; charset=UTF-8",
                         success : function() {
                             alert("비밀번호 변경이 완료되었습니다.");
-                            location.href="/"+stateCode;
+                            //location.href="/"+stateCode;
+                            location.href="/login/logout.jsp";
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             alert("ERROR : " + textStatus + " : " + errorThrown);
