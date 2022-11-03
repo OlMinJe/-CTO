@@ -32,37 +32,41 @@
                         <ul>
                             <li class="col-12 col-sm-6 col-md-4 Enter_item item1">
                                 <div class="col-12 Enter_item_border">
-                                    <div class="Enter_image"> 사진</div>
+                                    <div> <img class="Enter_image"
+                                               src="/img/Enter_Game/Enter_TetrisGame.png"></div>
                                     <div class="Enter_content">
                                         <strong>테트리스</strong>
-                                        <p>게임 내용 소개</p>
+                                        <p>간단하게 무료 퍼즐 게임을 즐겨보세요!</p>
                                         <a href="Enter_tetris.jsp">바로가기</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-12 col-sm-6 col-md-4 Enter_item item2">
                                 <div class="col-12 Enter_item_border">
-                                    <div class="Enter_image"> 사진</div>
+                                    <div ><img class="Enter_image"
+                                               src="/img/Enter_Game/Enter_typingGame.png"></div>
                                     <div class="Enter_content">
-                                        <strong>게임 제목1</strong>
-                                        <p>게임 내용 소개</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>타이핑 게임</strong>
+                                        <p>차근 차근 타자 실력을 키워보세요!</p>
+                                        <a href="Enter_TypingGame.jsp">바로가기</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-12 col-sm-6 col-md-4 Enter_item item3">
                                 <div class="col-12 Enter_item_border">
-                                    <div class="Enter_image"> 사진</div>
+                                    <div ><img class="Enter_image"
+                                               src="/img/Enter_Game/Enter_2048_Game.png"></div>
                                     <div class="Enter_content">
-                                        <strong>게임 제목1</strong>
-                                        <p>게임 내용 소개</p>
-                                        <a href="#">바로가기</a>
+                                        <strong>2048</strong>
+                                        <p>최종 숫자 2048을 만들어보세요!</p>
+                                        <a href="Game2048.jsp">바로가기</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-12 col-sm-6 col-md-4 Enter_item item4">
                                 <div class="col-12 Enter_item_border">
-                                    <div class="Enter_image"> 사진</div>
+                                    <div ><img class="Enter_image"
+                                               src="/img/Enter_Game/Enter_game_image.jpeg"></div>
                                     <div class="Enter_content">
                                         <strong>게임 제목1</strong>
                                         <p>게임 내용 소개</p>
@@ -113,7 +117,7 @@
                             </li>
                             <li class="col-12 col-sm-6 col-md-4 Enter_item item8">
                                 <div class="col-12 Enter_item_border">
-                                    <div class="Enter_image"> 사진</div>
+                                    <div> <img class="Enter_image" src="/img/Enter_HarryPotter_test/Enter_HarryPotter.jpeg"></div>
                                     <div class="Enter_content">
                                         <strong>해리포터 속으로 들어간다면?</strong>
                                         <p>호그와트 미리 체험하기</p>
