@@ -131,10 +131,12 @@
                             console.log("좋아요 취소");
                             $('#likecheck').val(0);
                             $('#likebtn').attr('class','box_eft_01');
+                            location.reload();//추가
                         }else if(count == 0){
                             console.log("좋아요!");
                             $('#likecheck').val(1);
                             $('#likebtn').attr('class','box_eft_02');
+                            location.reload();//추가
                         }
                     }, error : function(result){
                         console.log("에러" + result.result)

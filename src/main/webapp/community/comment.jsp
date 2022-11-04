@@ -69,6 +69,7 @@
                 data:{'content':insertData , 'bno':bno, 'writer':writer, 'doctor':doctor, 'seq':seq},
                 success:function(data){
                     if(data==1){
+                        location.reload();//추가
                         commentList();
                         $('[name=comment_content]').val('');
                     }
@@ -96,6 +97,7 @@
                 data:{'comment_content':reCommentContent ,'comment_seq':comment_seq, 'bno':bno, 'writer':writer, 'doctor':doctor, 'seq':seq},
                 success:function(data){
                     if(data==1){
+                        location.reload();//추가
                         commentList(bno);//대댓글 작성 후 목록 출력
                     }
                 }
