@@ -75,6 +75,13 @@
             <a onclick="location.href='/advice/advice.jsp';" class="on box_eft_02">목록</a>
         </div>
 
+        <div>
+            <c:if test="${membervo.mb_nick == data.mb_nick}">
+                <button class="box_eft_02" id="modify" onclick="location.href='/advice/advice_modify?talk_num=${data.talk_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
+                <button class="box_eft_01" id="delete" onclick="location.href='/talkDelete?talk_num=${data.talk_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
+            </c:if>
+        </div>
+
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
             <div class="col12 comment_num ">댓글수<span>${data.talk_comment}</span></div>

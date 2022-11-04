@@ -546,9 +546,9 @@ public class BoardController {
 		boardService.talkcommentInsert(comment);
 		return boardService.talkupdateReplyCount(talk_num);
 	}
-	/*
+
 	//상담 게시글 수정 폼
-	@RequestMapping(value = "/talkModifyForm")
+	@RequestMapping(value = "/advice/advice_modify")
 	public String talkModifyForm(@RequestParam("talk_num") int num,
 								 @RequestParam("stateCode") int stateCode,
 								 @RequestParam("writer") String writer,
@@ -558,7 +558,7 @@ public class BoardController {
 		model.addAttribute("data",data);
 		model.addAttribute("stateCode",stateCode);
 		model.addAttribute("category",category);
-		return "talkModifyForm";
+		return "/advice/advice_modify";
 	}
 
 	// 상담 글 수정
@@ -581,11 +581,10 @@ public class BoardController {
 
 		boardService.talkModify(talkVO);
 
-		return "redirect:talk?stateCode="+stateCode+"&category="+category;
+		return "redirect:/advice/advice?stateCode="+stateCode+"&category="+category;
 	}
-*/
 
-	// 게시글 삭제(커뮤니티)
+	// 게시글 삭제(상담)
 	@RequestMapping(value="/talkDelete")
 	public ModelAndView talkDelete(@RequestParam("stateCode") int stateCode, @RequestParam("talk_num") int talk_num,
 								   @RequestParam("writer") String writer,@RequestParam("category") Integer category, HttpServletRequest req) throws Exception {
@@ -605,7 +604,7 @@ public class BoardController {
 			} else {
 				mav.addObject("msg", "fail");
 			}
-			mav.setViewName("forward:/talk?stateCode=" + stateCode);
+			mav.setViewName("forward:/advice/advice?stateCode="+stateCode);
 		} else {
 			logger.info("***session이 끝난 경우");
 			mav.addObject("msg", "sessionFin");
