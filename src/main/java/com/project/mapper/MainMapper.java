@@ -161,4 +161,12 @@ public interface MainMapper {
 	public int talkcommentDelete(int cno) throws Exception;
 	//대댓글 출력 관련 코드 - 상담
 	public List<CommentVO> talkrecommentList(int comment_group) throws Exception;
+
+	/** 신고 페이지 **/
+	public List<Map<String, Object>> reportList(Criteria cri, Integer category) throws Exception;
+	//상담 카테고리별 글 카운트
+	public int reportListCnt(Integer category) throws Exception;
+
+	// 신고
+	public void reportWrite(ReportVO reportVO) throws Exception;
 }

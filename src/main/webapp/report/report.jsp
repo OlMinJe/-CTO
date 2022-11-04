@@ -24,13 +24,28 @@
         <input type="radio" id="tab-4" name="show"/>
         <input type="radio" id="tab-5" name="show"/>
         <div class="tab">
+            <label class="box_eft_01" for="tab-1"><a href="/report/report?stateCode=${stateCode}&category=0">유저신고</a></label>
+            <label class="box_eft_01" for="tab-2"><a href="/report/report?stateCode=${stateCode}&category=1">댓글/게시판신고</a></label>
+            <label class="box_eft_01" for="tab-3"><a href="/report/report?stateCode=${stateCode}&category=2">페이지오류신고</a></label>
+            <label class="box_eft_01" for="tab-4"><a href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
+            <label class="box_eft_01" for="tab-5"><a href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
+        </div>
+    </div>
+    <!--
+    <div class="col-12 col-lg-10 menu">
+        <input type="radio" id="tab-1" name="show" checked/>
+        <input type="radio" id="tab-2" name="show"/>
+        <input type="radio" id="tab-3" name="show"/>
+        <input type="radio" id="tab-4" name="show"/>
+        <input type="radio" id="tab-5" name="show"/>
+        <div class="tab">
             <label class="box_eft_01" for="tab-1">유저신고</label>
             <label class="box_eft_01" for="tab-2">댓글/게시판신고</label>
             <label class="box_eft_01" for="tab-3">페이지오류신고</label>
             <label class="box_eft_01" for="tab-4">저작권/명예회손</label>
             <label class="box_eft_01" for="tab-5">기타</label>
         </div>
-    </div>
+    </div>-->
     <div class="col-12 col-lg-10 content">
         <form class="d-flex">
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
@@ -45,14 +60,26 @@
                     <th style="width: 10%;">날짜</th>
                 </tr>
                 </thead>
+                <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
+                <c:forEach items="${list}" var="data">
                 <tbody id="report-table">
-                <!-- TODO : 추후에 스크립트를 이용해서 넣는걸로 바꾸기 -->
+                <tr>
+                    <td>${no}</td>
+                    <td><a href="/report/report_view?re_num=${data.re_num}&stateCode=${stateCode}&category=${data.report_category}">${data.re_title}</a></td>
+                    <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.re_date}"/></td>
+                </tr>
+                </tbody>
+                    <c:set var="no" value="${no-1}"></c:set>
+                </c:forEach>
+                <!--
+                <tbody id="report-table">
+                 TODO : 추후에 스크립트를 이용해서 넣는걸로 바꾸기
                 <tr>
                     <td>1</td>
                     <td><a href="/report/report_view.jsp">신고 글 제목</a></td>
                     <td>2022.07.13</td>
                 </tr>
-                </tbody>
+                </tbody>-->
             </table>
             <!-- TODO: 부트스트랩 템플릿 이용 -->
             <ul class="pagination">
@@ -67,7 +94,7 @@
 
         </div>
     </div>
-
+    <input type="hidden" name="category" value="${category}"/>
     <div class="btn_wrap">
         <a onclick="location.href='/report/report_write.jsp';" class="on box_eft_02">글쓰기</a>
     </div>

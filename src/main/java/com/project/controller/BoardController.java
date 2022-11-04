@@ -613,13 +613,90 @@ public class BoardController {
 		return mav;
 	}
 
+	//신고 게시판 리스트
+	@RequestMapping(value = "/report/report")
+	public String reList(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category, Criteria cri,Model model, ReportVO reportVO) throws Exception{
+		Paging paging = new Paging();
+		int reportListCnt = boardService.reportListCnt(category);
+		paging.setCri(cri);
+		paging.setTotalCount(reportListCnt);
+		List<Map<String, Object>> list = boardService.reportList(cri, category);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category", category);
+		return "/report/report";
+	}
 
+	//신고 게시판 글쓰기 폼
+	@RequestMapping(value = "report/report_write")
+	public String reportWriteForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
+			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			model.addAttribute("stateCode", 1);
+			model.addAttribute("category",0);
+			//model.addAttribute("category",10);
+
+		} else if(session.getAttribute("userId") != null) {
+			model.addAttribute("modifyId", session.getAttribute("userId"));
+			model.addAttribute("stateCode", 2);
+		}
+		return "/report/report_write";
+	}
+
+	// 신고 글쓰기
+	@RequestMapping(value = "/reportWrite")
+	public String reportWrite(@RequestParam("stateCode") int stateCode, ReportVO reportVO,HttpServletRequest req, MultipartFile file) throws Exception{
+		HttpSession session = req.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		//int doctor = modifyMember.getMb_doctor();
+		reportVO.setMb_seq(seq);
+		//talkVO.setMb_doctor(doctor);
+
+		//if(!file.isEmpty()){
+			//boardService.updateTalkImg(talkVO,file);
+		//}
+		boardService.reportWrite(reportVO);
+		int category = reportVO.getReport_category();
+		return "redirect:/report/report?stateCode="+stateCode+"&category="+category;
+	}
 	/*   @RequestMapping(value = "/boardList2")
 	public String boardList2(Model model)throws Exception {
 
 		List<BoardVO> list=boardService.boardList2();
 		model.addAttribute("list",list);
 		return "boardList2";
+	}
+
+
+	// 상담 글쓰기
+	@RequestMapping(value="/talkWrite")
+	public String talkWrite(@RequestParam("stateCode") int stateCode, TalkVO talkVO,HttpServletRequest req, MultipartFile file) throws Exception {
+
+		HttpSession session = req.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		int doctor = modifyMember.getMb_doctor();
+		talkVO.setMb_seq(seq);
+		talkVO.setMb_doctor(doctor);
+
+		if(!file.isEmpty()){
+			boardService.updateTalkImg(talkVO,file);
+		}
+		boardService.talkWrite(talkVO);
+		int category = talkVO.getTalk_category();
+		return "redirect:/advice/advice?stateCode="+stateCode+"&category="+category;
 	}
 
 	*//** board CRUD **//*

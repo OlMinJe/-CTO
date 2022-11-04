@@ -328,4 +328,25 @@
 		set b.talk_comment = (select count(comment_seq) from tb_comment where talk_num = #{talk_num})
 		where b.talk_num = #{talk_num}
 	</update>
+	<!-- 신고 페이지 작성-->
+	<select id="reportList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM tb_report
+		where report_category = #{category}
+		ORDER BY re_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+
+	<select id="reportListCnt" resultType="int">
+		SELECT count(*)
+		FROM tb_report
+		where report_category = #{category}
+	</select>
+	<!-- 신고 글 작성 -->
+	<insert id="reportWrite">
+		INSERT INTO tb_report (re_title, re_content, mb_seq,report_category,re_photo)
+		VALUES (#{re_title}, #{re_content}, #{mb_seq}, #{report_category},#{re_photo} )
+	</insert>
 </mapper>

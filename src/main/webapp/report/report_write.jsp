@@ -51,49 +51,86 @@
     </div>
   </div>
 </div>-->
+<script>
+    function confirm() {
+        var title = $("#re_title").val().trim();
+        var content =  $("#re_content").val().trim();
+
+        if(title == "" || title ==null) {
+            alert("제목을 입력해주세요.");
+            return false;
+        } else if(content == ""|| content ==null) {
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+
+        if(title != "" && title != "") {
+            location.href="/reportWrite";
+            return true;
+        }
+    }
+</script>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <div class="col-12 board_wrap">
+    <form action='<c:url value='/reportWrite'/>' method="post"  onsubmit="return confirm()" enctype="multipart/form-data">
     <div class="col-12 col-lg-10 board_con">
         <div class="col-12 board_title">글 작성</div>
         <div class="col-12 board_list">
             <div class="col-12 write_title">
                 <dl>
                     <dt class="col-12 col-sm-2">제목</dt>
-                    <dd class="col-12 col-sm-10"><input type="text" placeholder="제목 입력" class="box_eft_01"></dd>
+                    <dd class="col-12 col-sm-10"><input type="text" placeholder="제목 입력" id="re_title" name="re_title" class="box_eft_01"></dd>
                 </dl>
             </div>
             <div class="col-12 write_info">
                 <dl>
                     <dt class="col-12 col-sm-2">카테고리</dt>
                     <dd class="col-12 col-sm-10">
+                        <select name="report_category" id="report_category" class="box_eft_01">
+                            <option value="0">유저신고</option>
+                            <option value="1">댓글/게시판신고</option>
+                            <option value="2">페이지오류신고</option>
+                            <option value="3">저작권/명예회손</option>
+                            <option value="4">기타</option>
+                        </select>
+                        <!--
                         <select name="category" form="" class="box_eft_01">
                             <option value="01">유저신고</option>
                             <option value="02">댓글/게시판신고</option>
                             <option value="03">페이지오류신고</option>
                             <option value="04">저작권/명예회손</option>
                             <option value="05">기타</option>
-                        </select>
+                        </select> -->
                     </dd>
                 </dl>
             </div>
             <div class="col-12 write_content">
                 <form method="post">
                     <!--<textarea id="summernote" name="editordata"></textarea>-->
-                    <textarea>내용</textarea>
+                    <textarea placeholder="자유롭게 내용을 작성해주세요!" name="re_content" id="re_content"></textarea>
                 </form>
             </div>
             <form name="file" action="" method="post" enctype="multipart/form-data">
                 <div class="filebox">
-                    <label class="box_back" for="file">파일찾기</label>
+                    <label class="box_back" for="re_photo">파일찾기</label>
                     <input class="upload-name box_eft_01" value="첨부파일" placeholder="첨부파일">
-                    <input type="file" id="file">
+                    <input type="file" id="re_photo">
                 </div>
             </form>
         </div>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <input type="hidden" name="stateCode" id="stateCode" value="${stateCode}">
+        <input type="hidden" name="category" value="${category}"/>
+
         <div class="col-12 btn_wrap">
+            <button type="submit" class="on box_eft_02">글 등록</button>
+            <a onclick="location.href='/report/report?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
+            <!--
             <a onclick="location.href='/advice/advice_view.jsp';" class="on box_eft_02">등록</a>
-            <a onclick="location.href='/advice/advice.jsp';" class="box_eft_01">취소</a>
+            <a onclick="location.href='/advice/advice.jsp';" class="box_eft_01">취소</a>-->
         </div>
     </div>
+    </form>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 <script>

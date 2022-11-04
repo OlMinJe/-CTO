@@ -238,4 +238,18 @@ public class BoardService  {
 	public int talkupdateReplyCount(int talk_num) throws Exception {
 		return boardmapper.talkupdateReplyCount(talk_num);
 	}
+
+	//신고페이지
+	public List<Map<String, Object>> reportList( Criteria cri, Integer category) throws Exception{
+		return boardmapper.reportList(cri,category);
+	}
+	public int reportListCnt(Integer category) throws Exception{
+		return boardmapper.reportListCnt(category);
+	}
+
+	public void reportWrite(ReportVO reportVO) throws Exception{
+		boardmapper.reportWrite(reportVO);
+	}
+
+
 }
