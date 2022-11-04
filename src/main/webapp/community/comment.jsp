@@ -28,27 +28,35 @@
                     for(var i=0; i<list.length; i++) {
                         if (list[i].comment_depth == 0) {
                             a += '<div class="commentArea" align="left" style="border-bottom:1px solid darkgray; margin-bottom:15px;" >';
-                            a += '<div class="commentInfo' + list[i].comment_seq + '">' + '댓글번호 : ' + list[i].comment_seq + ' / 작성자 : ' + list[i].mb_nick;
-                            if(${sessionScope.stateCode ne null}){
-                                a += '<br><a onclick="recommentInsertForm(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');">답글달기</a>';
-                            }
+                            //a += '<div class="commentInfo' + list[i].comment_seq + '">' + '댓글번호 : ' + list[i].comment_seq + ' / 작성자 : ' + list[i].mb_nick;
+                            a += '<div class="commentInfo"' + list[i].comment_seq + '">' + ' 작성자 : ' + list[i].mb_nick;
+
                             if (list[i].mb_nick == writer) {
+                                a += '<div class="commentInfo" align="right">';
                                 a += '<a onclick="commentUpdate(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');"> 수정 </a>';
                                 a += '<a onclick="commentDelete(' + list[i].comment_seq + ');"> 삭제 </a>';
+                                a += '</div>';
                             }
                             a += '</div>';
                             a += '<div class="commentContent' + list[i].comment_seq + '"> <p> 내용 : ' + list[i].comment_content + '</p>';
+                            if(${sessionScope.stateCode ne null}){
+                                a += '<div class="commentInfo" align="right">';
+                                a += '<br><a onclick="recommentInsertForm(' + list[i].comment_seq + ',\'' + list[i].comment_content + '\');">답글달기</a>';
+                                a += '</div>';
+                            }
                             a += '<div class="recommentContent' + list[i].comment_seq + '"></div>';
                             a += '</div>';
                             a += '</div>';
                         }
                         if(list[i].comment_depth ==1){
                             a+='<div class="commentArea" align="left" style="border-bottom:1px solid darkgray; margin-bottom:15px; margin-left: 20px;">';
-                            a+='<div class="commentInfo'+list[i].comment_seq+'">'+'댓글번호 : '+list[i].comment_seq+' / 모댓글 번호 : '+list[i].comment_group+' / 작성자 : '+list[i].mb_nick;
+                            //a+='<div class="commentInfo'+list[i].comment_seq+'">'+'댓글번호 : '+list[i].comment_seq+' / 모댓글 번호 : '+list[i].comment_group+' / 작성자 : '+list[i].mb_nick;
+                            a+='<div class="commentInfo'+list[i].comment_seq+'">'+' 작성자 : '+list[i].mb_nick;
                             if(list[i].mb_nick == writer){
-
+                                a += '<div class="commentInfo" align="right">';
                                 a+='<a onclick="commentUpdate('+list[i].comment_seq+',\''+list[i].comment_content+'\');"> 수정 </a>';
                                 a+='<a onclick="commentDelete('+list[i].comment_seq+');"> 삭제 </a>';
+                                a += '</div>';
                             }
                             a+='<div class="commentContent'+list[i].comment_seq+'"> <p> 내용 : '+list[i].comment_content+'</p>';
                             a+='</div>';
@@ -81,7 +89,7 @@
             var a='';
             a+='<div class="col-12 input_box">';
             a+='<input type="text" class="box_eft_01" name="recontent_'+comment_seq+'"placeholder="내용 입력하세요."/>';
-            a+='<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="reCommentInsert('+comment_seq+');">답글달기</button></span>';
+            a+='<span class="input-group-btn"><button class="btn btn-default" type="button" class="float-right" onclick="reCommentInsert('+comment_seq+');">답글달기</button></span>';
             a+='<br>';
             a+='</div>';
             $('.recommentContent'+comment_seq).html(a);
