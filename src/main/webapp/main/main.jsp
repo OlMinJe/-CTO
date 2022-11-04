@@ -166,7 +166,7 @@
             <div class="col-3 title">오늘의 명언</div>
             <div class="col-9 wiseSaying_con">명언 연결</div>
         </div>
-        <%--<jsp:include page="/community/boardList2.jsp"></jsp:include>--%><!--보기만 가능한 게시판-->
+        <%--<jsp:include page="/community/community.jsp"></jsp:include>--%><!--페이지 전체를 가져와서 불가능!-->
         <div class="col-12 community_wrap mb">
             <div class="col-12 col-lg-7 moble_mb">
                 <div class="col-12 community_normal box_eft_00">
@@ -192,6 +192,60 @@
                         </table>
                     </div>
                 </div>
+                <%--<div class="col-12 community_normal box_eft_00">
+                <table class="table table-hover table-bordered" id="community-table">
+                    <tr>
+                        <th>제목</th>
+                        <th>조회수</th>
+                        <th>좋아요</th>
+                    </tr>
+                    <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
+                    <c:forEach items="${list}" var="data">
+                        <tr>
+                            &lt;%&ndash;<div>
+                                <c:choose>
+                                    <c:when test="${data.com_category == 0}">
+                                        <td>일상</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 1}">
+                                        <td>취미</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 2}">
+                                        <td>유머</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 3}">
+                                        <td>음식</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 4}">
+                                        <td>정보</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 5}">
+                                        <td>취업/진로</td>
+                                    </c:when>
+                                    <c:when test="${data.com_category == 6}">
+                                        <td>기타</td>
+                                    </c:when>
+                                </c:choose>
+                            </div>&ndash;%&gt;
+                            <td>
+                                <c:if test="${sessionScope.stateCode ne 1}">
+                                    <a href="/com/com_view?com_num=${data.com_num}&category=${data.com_category}">${data.com_title}</a>
+                                </c:if>
+                                <c:if test="${sessionScope.stateCode ==1}">
+                                    <a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
+                                </c:if>
+                                <c:if test="${data.com_comment ne 0}">
+                                    <small>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</small>
+                                </c:if>
+                            </td>
+                            <td>${data.com_hit}</td>
+                            <td>${data.com_like}</td>
+                        </tr>
+                        <c:set var="no" value="${no-1}"></c:set>
+                    </c:forEach>
+                </table>
+                <input type="hidden" name="category" value="${category}"/>
+                </div>--%>
             </div>
             <div class="col-12 col-lg-5 pl">
                 <div class="col-12 community_editor box_eft_00">
@@ -202,7 +256,31 @@
             </div>
         </div>
         <div class="col-12 advice_wrap">
-            <ul style="margin-bottom: 15px;">
+            <c:if test="${sessionScope.stateCode == 1}">
+                <ul style="margin-bottom: 15px;">
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=0'">일반고민</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=1'">대인관계/가족</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=2'">정신건강</li>
+                </ul>
+                <ul>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=3'">직장</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=4'">성소수자</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice?stateCode=${stateCode}&category=5'">여성</li>
+                </ul>
+            </c:if>
+            <c:if test="${sessionScope.stateCode ne 1}">
+                <ul style="margin-bottom: 15px;">
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">일반고민</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">대인관계/가족</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">정신건강</li>
+                </ul>
+                <ul>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">직장</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">성소수자</li>
+                    <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">여성</li>
+                </ul>
+            </c:if>
+            <%--<ul style="margin-bottom: 15px;">
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">일반고민</li>
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">대인관계/가족</li>
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">정신건강</li>
@@ -211,12 +289,11 @@
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">직장</li>
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">성소수자</li>
                 <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">여성</li>
-            </ul>
+            </ul>--%>
         </div>
         <div class="col-12 fixed" id="fixed">
             <div class="comment" id="fixed_comment">
-                <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러
-                    가기(클릭)</a>
+                <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러 가기(클릭)</a>
             </div>
         </div>
     </div>
