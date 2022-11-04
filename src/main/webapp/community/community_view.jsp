@@ -50,8 +50,7 @@
                     <dd>${data.mb_nick}</dd>
                 </dl>
                 <dl>
-                    <dt>작성일</dt><!--안 나옴(수정 필수)-->
-                    <%--<dd>${data.com_date}</dd>--%>
+                    <dt>작성일</dt>
                     <dd><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></dd>
                 </dl>
                 <dl>

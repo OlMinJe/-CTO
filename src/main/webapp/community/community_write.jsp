@@ -121,7 +121,7 @@
         <input type="hidden" name="mb_nick" value="${modifyNick}">
         <div class="col-12 btn_wrap" style="margin-top: 20px;">
             <%--<a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="on box_eft_02">등록</a>--%>
-            <%--<button type="submit" class="on box_eft_02">글 등록</button>--%>
+            <button type="submit" class="on box_eft_02">글 등록</button>
             <a onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}';" class="box_eft_02">목록</a>
         </div>
     </div>
