@@ -18,13 +18,31 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 view_wrap">
     <div class="col-12 col-lg-10 view_con">
-        <div class="col-12 category_title">신고게시판의 카테고리</div>
+        <div class="col-12 category_title">
+            <c:choose>
+                <c:when test="${data.report_category == 0}">
+                    <div class="col-12 category_title">유저신고</div>
+                </c:when>
+                <c:when test="${data.report_category == 1}">
+                    <div class="col-12 category_title">댓글/게시판신고</div>
+                </c:when>
+                <c:when test="${data.report_category == 2}">
+                    <div class="col-12 category_title">페이지오류신고</div>
+                </c:when>
+                <c:when test="${data.report_category == 3}">
+                    <div class="col-12 category_title">저작권/명예회손</div>
+                </c:when>
+                <c:when test="${data.report_category == 4}">
+                    <div class="col-12 category_title">기타</div>
+                </c:when>
+            </c:choose>
+        </div>
         <div class="col-12 view_list">
-            <div class="col-12 board_view_title">글 제목</div>
+            <div class="col-12 board_view_title">${data.re_title}</div>
             <div class="col-12 board_view_info">
                 <dl>
                     <dt>번호</dt>
-                    <dd>1</dd>
+                    <dd>${data.re_num}</dd>
                 </dl>
                 <dl>
                     <dt>글쓴이</dt>
@@ -32,22 +50,15 @@
                 </dl>
                 <dl>
                     <dt>작성일</dt>
-                    <dd>2022.07.13</dd>
+                    <dd><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.re_date}"/></dd>
                 </dl>
                 <dl>
                     <dt>조회</dt>
-                    <dd>33</dd>
+                    <dd>0</dd>
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용<br>
-                글 내용
+                ${data.re_content}
             </div>
         </div>
         <div class="col-12 btn_wrap">

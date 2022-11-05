@@ -251,5 +251,8 @@ public class BoardService  {
 		boardmapper.reportWrite(reportVO);
 	}
 
+	public ReportVO reportRead(int re_num) throws Exception{
+		return boardmapper.reportRead(re_num);
+	}
 
 }

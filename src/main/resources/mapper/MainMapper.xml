@@ -349,4 +349,10 @@
 		INSERT INTO tb_report (re_title, re_content, mb_seq,report_category,re_photo)
 		VALUES (#{re_title}, #{re_content}, #{mb_seq}, #{report_category},#{re_photo} )
 	</insert>
+	<!-- 신고 글 읽기 -->
+	<select id="reportRead" resultType="ReportVO">
+		SELECT re_num, re_title, report_category,re_content,re_photo,mb_seq,re_date
+		FROM tb_report
+		WHERE re_num = #{re_num}
+	</select>
 </mapper>

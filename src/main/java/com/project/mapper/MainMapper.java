@@ -169,4 +169,6 @@ public interface MainMapper {
 
 	// 신고
 	public void reportWrite(ReportVO reportVO) throws Exception;
+
+	public ReportVO reportRead(int re_num) throws Exception;
 }
