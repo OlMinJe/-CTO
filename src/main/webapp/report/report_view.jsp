@@ -68,7 +68,8 @@
 
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
-            <div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>
+            <%--<div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>--%>
+            <div class="col12 comment_num "></div><!--일단 댓글 수 지움 추후에 살릴 예정-->
             <div class="col-12 comment_writer">
                 <div class="col-12 input_box">
                     <!-- TODO : https://tried.tistory.com/95 -->
@@ -76,7 +77,7 @@
                             className={`block whitespace-pre-wrap w-full bg-white text-gray-700 border border-black py-2
                             px-2 mb-3 leading-tight focus:border focus:border-pz-pt-1 `}
                             rows={large ? 5 : 1}
-                            placeholder={placeholder}
+                            placeholder= "댓글을 통해 작성자에게 도움을 주세요.";
                             value={text}
                             onChange={handleChange}
                             class="box_border"></textarea>
