@@ -57,7 +57,7 @@
                 <tr>
                     <th style="width: 10%;">No.</th>
                     <th style="width: auto;">제목</th>
-                    <th style="width: 10%;">날짜</th>
+                    <th style="width: 20%;">날짜</th>
                 </tr>
                 </thead>
                 <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
