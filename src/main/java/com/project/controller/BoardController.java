@@ -669,6 +669,45 @@ public class BoardController {
 		int category = reportVO.getReport_category();
 		return "redirect:/report/report?stateCode="+stateCode+"&category="+category;
 	}
+
+	// 신고 글 읽기
+	@RequestMapping(value="/report/report_view")
+	public String reportRead(@RequestParam("re_num") int re_num,
+						   @RequestParam("stateCode") int stateCode,
+						   @RequestParam("category") Integer category,
+						   Model model,
+						   HttpServletRequest req) throws Exception {
+
+		HttpSession session = req.getSession();
+		//boardService.increaseComhit(com_num,session);
+		//boardService.updatecomlike(com_num); //여기서 수정이 될까...
+		ReportVO data = boardService.reportRead(re_num);
+		model.addAttribute("data", data);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category",category);
+
+		if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
+			model.addAttribute("membervo",membervo);
+
+			//LikeVO like = new LikeVO();
+			//like.setCom_num(com_num);
+			//like.setMb_nick(membervo.getMb_nick());
+
+			//int like_check = 0;
+
+			//int check=boardService.likecount(like);
+			//if(check ==0){
+			//boardService.likeinsert(like);
+			//} else if (check==1) {
+			//like_check=boardService.likegetinfo(like);
+			//}
+			//model.addAttribute("like_check",like_check);
+			//boardService.updatecomlike(com_num);
+		}
+		return "/report/report_view";
+	}
 	/*   @RequestMapping(value = "/boardList2")
 	public String boardList2(Model model)throws Exception {
 
