@@ -5,19 +5,13 @@ function menuClick() {
     var params = new URLSearchParams(sch);
 
     if (params.get('category') == 0 || params.get('category') == 1 || params.get('category') == 2 || params.get('category') == 3 || params.get('category') == 4) {
-        for (var j = 0; j < div2.length; j++) {
-            div2[j].classList.remove("active");
-        }
-        liActive02();
-
-        // 반응형 하위 메뉴 - 화면 크기가 767px 이하일 경우
-        if (matchMedia("screen and (max-width: 767px)").matches) {
-            mb_click();
+        for (var i = 0; i < div1.length; i++) {
+            div1[i].classList.remove("active");
         }
 
-        for (var b = 0; b < div2.length; b++) {
-            if (params.get('category') == b + 5) {
-                div2[b].classList.add("active");
+        for(var a = 0; a < div1.length; a++) {
+            if (params.get('category') == a) {
+                div1[a].classList.add("active");
             }
         }
     }
