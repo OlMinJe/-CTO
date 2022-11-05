@@ -12,8 +12,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/location/location.css">
-    <script type="module" src="/js/map.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de&libraries=services"></script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -50,8 +48,8 @@
         </div>
         <!--지도 확대, 축소 컨트롤 div--><!--작동 안함-->
         <div class="custom_zoomcontrol radius_border">
-            <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
-            <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+            <span onclick="zoomIn();"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+            <span onclick="zoomOut();"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
         </div>
         <%--<div class="col-12" style=" text-align: center;">
             <button class="box_eft_02" style="padding: 5px 25px;">선택하기</button>
@@ -59,5 +57,9 @@
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
+
+
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e0b9488f11b6cad91c9c64919764e1de&libraries=services"></script>
+<script type="text/javascript" src="/js/map.js"></script>
 </body>
 </html>

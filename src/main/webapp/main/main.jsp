@@ -146,8 +146,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide slide03">
-                            <div class="col-12 swiper_title">
-                                Q. 요즘 유행하는 <span>당근게임</span> 들어봤어?
+                            <div class="col-12 swiper_title" onclick="location.href='/Entertainment/Enter_mbti_jadoo';">
+                                Q. 요즘 유행하는 <span>자두 테스트</span> 들어봤어?
                             </div>
                         </div>
                         <div class="swiper-slide slide04">
