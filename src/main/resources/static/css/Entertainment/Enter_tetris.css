@@ -1,5 +1,6 @@
-body > div.col-12 { padding-top: 50px; padding-bottom: 50px;}
+
 /*body { height: 100%; overflow: hidden; }*/
+.wrapper { padding: 20px 10px; }
 .game_text { display: none;  z-index: 1000; justify-content: center; align-items: center; flex-direction: column; position: fixed; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); left: 0; top: 0; color: #fff; font-size: 50px; line-height: 56px; }
 button { padding: 0.5rem 1rem; color: #fff; background: salmon; border: none; border-radius: 10px; cursor: pointer; font-size: 20px; line-height: 26px; }
 .score { text-align: center; font-size: 36px; line-height: 42px; margin-bottom: 2rem; }

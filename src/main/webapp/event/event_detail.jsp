@@ -32,7 +32,7 @@
 
 <!--화면 구조 설계-->
 
-
+<%-- 삼행시 --%>
 <div class="col-12 event_detail">
     <div class="col-12 col-md-10" id="event-container">
         <!-- 카테고리 메뉴 -->
@@ -98,20 +98,16 @@
                                     <li>온라인 서비스를</li>
                                     <li>이용하고 싶어</li>
                                 </ul>
-                                <%--<ul class="col-12">
+                                <ul class="col-12">
                                     <li>다온이</li>
-                                    &lt;%&ndash;<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">&ndash;%&gt;
-                                    <!-- 하트 이모지 변경하여 리액트 구현 예정 -->
-                                    <!-- 데이터 가져오기 ( 수정 예정 )  -->
+                                    <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
                                     <li>다시 없는 이 기회가</li>
                                     <li>온 바로 지금</li>
                                     <li>이제 시작하자</li>
-                                </ul>--%>
+                                </ul>
                                 <ul class="col-12">
                                     <li>다온이</li>
-                                    <img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">
-                                    <!-- 하트 이모지 변경하여 리액트 구현 예정 -->
-                                    <!-- 데이터 가져오기 ( 수정 예정 )  -->
+                                    <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
                                     <li>다같이</li>
                                     <li>온기를 나누는</li>
                                     <li>이 겨울밤</li>

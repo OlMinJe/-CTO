@@ -104,8 +104,9 @@ img{ /*float:left; */margin: 0px auto; }
 
 .event_bookQ_content { border: 1px solid #dcc5df; height: 1000px; border-radius: 20px; margin-bottom: 70px;}
 
-.event_sub_content { border: 1px solid #dcc5df; height: 350px; margin: 0 20px 40px; border-radius: 20px; }
+.event_sub_content { overflow-y: scroll; overflow-x: hidden; border: 1px solid #dcc5df; height: 350px; margin: 0 20px 40px; }
 .event_sub_content ul{ padding: 20px 30px; }
+.event_sub_content ul lu { border-bottom: 1px solid #dcc5df; }
 .event_sub_content ul li:first-child { font-weight: 600; }
 
 /* button */

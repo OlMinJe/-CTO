@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Enter_tetris.css">
 </head>
 <body>
-<div class="col-12" style="background-color: #ccc;">
-    <div class="wrapper">
+<div style="background-color: #ccc;">
+    <div class="col-12 wrapper">
         <div class="game_text">
             GAME OVER
             <div>
@@ -25,7 +25,7 @@
         </div>
         <div class="col-12 score">0</div>
         <div class="col-12 playground">
-            <ul class="col-5"></ul>
+            <ul class="col-12 col-sm-9 col-md-4"></ul>
         </div>
         <div class="col-12" style="text-align: center;">
             <button onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">포기하기</button>
