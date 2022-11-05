@@ -68,7 +68,7 @@
                 </dl>
             </div>
             <div class="col-12 board_view_content">
-                ${data.talk_content}
+                <pre>${data.talk_content}</pre>
             </div>
         </div>
         <div class="col-12 btn_wrap">
