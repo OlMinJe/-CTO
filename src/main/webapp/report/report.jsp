@@ -17,7 +17,7 @@
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 report_main">
-    <div class="col-12 col-lg-10 menu">
+<%--    <div class="col-12 col-lg-10 menu">
         <input type="radio" id="tab-1" name="show" checked/>
         <input type="radio" id="tab-2" name="show"/>
         <input type="radio" id="tab-3" name="show"/>
@@ -30,6 +30,15 @@
             <label class="box_eft_01" for="tab-4"><a href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
             <label class="box_eft_01" for="tab-5"><a href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
         </div>
+    </div>--%>
+    <div class="col-12 col-lg-10 menu">
+        <ul class="col-12 menu-box-01" id="sub-menu-01">
+            <li class="box_eft_01 div1"><a href="/report/report?stateCode=${stateCode}&category=0">일반고민</a></li>
+            <li class="box_eft_01 div1"><a href="/report/report?stateCode=${stateCode}&category=1">대인관계/가족</a></li>
+            <li class="box_eft_01 div1"><a href="/report/report?stateCode=${stateCode}&category=2">정신건강</a></li>
+            <li class="box_eft_01 div1"><a href="/report/report?stateCode=${stateCode}&category=3">직장</a></li>
+            <li class="box_eft_01 div1"><a href="/report/report?stateCode=${stateCode}&category=4">성소수자</a></li>
+        </ul>
     </div>
     <!--
     <div class="col-12 col-lg-10 menu">

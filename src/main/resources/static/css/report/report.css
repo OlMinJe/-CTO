@@ -6,15 +6,28 @@
 
 
 /* ----------- tab menu css(메뉴 속성) -----------*/
-.menu input[type=radio] { display: none; }
+/*.menu input[type=radio] { display: none; }
 .menu .tab { display: flex; flex-direction: column; }
 
 .menu label { cursor: pointer; float: left; padding: 10px 0; border-radius: 0; border-bottom: 0; text-align: center; text-transform: uppercase; white-space: nowrap; font-size: 16px; line-height: 22px; font-weight: 600; letter-spacing: 2px; user-select: none; -webkit-user-select: none; }
 .menu label:first-child { border-radius: 10px 10px 0 0; }
 .menu label:last-child { border-bottom: 1px solid #dcc5df; border-radius: 0 0 10px 10px; }
-#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }
+#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }*/
 /* TODO: 스크립트로 수정 필요
 #tab-1:checked ~ .report_content div:nth-child(1), #tab-2:checked ~ .report_content div:nth-child(2), #tab-3:checked ~ .report_content div:nth-child(3), #tab-4:checked ~ .report_content div:nth-child(4), #tab-5:checked ~ .report_content div:nth-child(5)  { display: block; }*/
+
+
+/* report 메뉴 */
+.menu ul { display: flex; text-align: center; }
+.menu ul li{ padding: 10px 0; cursor: pointer; font-size: 20px; line-height: 26px; font-weight: 600; }
+.menu ul li:first-child { border-radius: 10px 0 0 10px; }
+.menu ul li:last-child { border-radius: 0 10px 10px 0; }
+.menu .menu-con ul li:first-child { border-radius: 10px 10px 0 0; }
+.menu .menu-con ul li:last-child { border-radius: 0 0 10px 10px; }
+.menu .menu-box-01, .menu .menu-box-02 { flex-direction: column; }
+.menu .menu-box-01 li, .menu .menu-box-02 li { border-radius: 0; white-space: nowrap; font-size: 16px; line-height: 22px; }
+.menu .menu-box-01 li:last-child, .menu .menu-box-02 li:last-child { border-right: 1px solid #dcc5df; }
+/*#sub-menu-01, #sub-menu-02 { display: none; }*/
 
 
 /* ----------- report list - 검색바 -----------*/
@@ -80,14 +93,30 @@
 .filebox input[type="file"] { position: absolute; width: 0; height: 0; padding: 0; overflow: hidden; border: 0; }
 
 
-
 @media all and (min-width: 768px){
-    .report_main .tab { flex-direction: row; }
+    .menu-wrap li img { display: none; }
+    .menu-wrap li img { display: none; }
+    .menu .menu-box-01 { flex-direction: row; }
+    .menu .menu-box-01 li { width: 20%; }
+    .menu .menu-box-02 li { width: 25%; }
+    .menu .menu-box-01 li:first-child { border-radius: 10px 0 0 10px; }
+    .menu .menu-box-01 li:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }
+
+    #sub-menu-01, #sub-menu-02 { display: flex; }
+
+    .menu .menu-box-01 li { border-right: none; }
+    .menu ul li:first-child { border-radius: 10px 0 0 10px; }
+    .menu ul li:last-child { border-radius: 0 10px 10px 0; }
+    .menu .menu-con ul li:first-child { border-radius: 10px 0 0 10px; }
+    .menu .menu-con ul li:last-child { border-radius: 0 10px 10px 0; }
+
+
+    /*.report_main .tab { flex-direction: row; }
     .report_main .tab label { width: 20%; }
 
     .menu label { border-bottom: 1px solid #dcc5df; border-right: 0; }
     .menu label:first-child { border-radius: 10px 0 0 10px; }
-    .menu label:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }
+    .menu label:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }*/
 
     .report_content, .report_notice { padding-left: 30px; padding-right: 30px; }
 
