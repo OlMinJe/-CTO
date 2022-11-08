@@ -192,6 +192,7 @@
                         </table>
                     </div>
                 </div>
+                <!--실패 : 아마 서비스 컨트롤러 매퍼 생성 필요할듯, 맨위에 지도 안 나옴-->
                 <%--<div class="col-12 community_normal box_eft_00">
                 <table class="table table-hover table-bordered" id="community-table">
                     <tr>
