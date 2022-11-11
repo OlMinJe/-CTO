@@ -704,8 +704,43 @@ public class BoardController {
 		return "/report/report_view";
 	}
 
-	// 신고 글 수정
+	// 신고 글 수정 폼
+	@RequestMapping(value = "/report/report_modify")
+	public String reportModifyForm(@RequestParam("re_num") int num,
+								 @RequestParam("stateCode") int stateCode,
+								 @RequestParam("writer") String writer,
+								 @RequestParam("category") Integer category,
+								 Model model) throws Exception{
+		ReportVO data = boardService.reportRead(num);
+		model.addAttribute("data",data);
+		model.addAttribute("stateCode",stateCode);
+		model.addAttribute("category",category);
+		return "/report/report_modify";
+	}
 
+	//신고 글 수정
+	// 상담 글 수정
+	@RequestMapping(value="/reportModify", method= RequestMethod.POST)
+	public String reportModify(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category,ReportVO reportVO, HttpServletRequest req,MultipartFile file) throws Exception {
+
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("userId") != null) {
+			String userId = (String) session.getAttribute("userId");
+			//talkVO.setMb_nick(userId);
+		} else if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			//boardVO.setMb_nick(vo.getMb_nick());
+		}
+
+		//if(!file.isEmpty()){
+			//boardService.updateTalkImg(talkVO,file);
+		//}
+
+		boardService.reportModify(reportVO);
+
+		return "redirect:/report/report?stateCode="+stateCode+"&category="+category;
+	}
 	// 신고 글 삭제
 
 

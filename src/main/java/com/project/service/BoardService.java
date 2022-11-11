@@ -255,4 +255,8 @@ public class BoardService  {
 		return boardmapper.reportRead(re_num);
 	}
 
+	public void reportModify(ReportVO reportVO) throws Exception{
+		boardmapper.reportModify(reportVO);
+	}
+
 }

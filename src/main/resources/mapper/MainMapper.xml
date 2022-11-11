@@ -355,4 +355,17 @@
 		FROM tb_report
 		WHERE re_num = #{re_num}
 	</select>
+	<!-- 신고 글 수정 -->
+	<update id="reportModify" parameterType="com.project.vo.ReportVO">
+		UPDATE tb_report r, tb_member m
+		SET r.re_title = #{re_title},
+			r.re_content = #{re_content},
+			r.re_date = now(),
+			r.re_photo = #{re_photo}
+		WHERE re_num = #{re_num}
+		  and r.mb_seq in (
+			select mb_seq from tb_member
+			where mb_seq = #{mb_seq}
+			)
+	</update>
 </mapper>

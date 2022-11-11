@@ -30,7 +30,7 @@
                     <div class="col-12 category_title">페이지오류신고</div>
                 </c:when>
                 <c:when test="${data.report_category == 3}">
-                    <div class="col-12 category_title">저작권/명예회손</div>
+                    <div class="col-12 category_title">저작권/명예훼손</div>
                 </c:when>
                 <c:when test="${data.report_category == 4}">
                     <div class="col-12 category_title">기타</div>
@@ -61,11 +61,18 @@
                 ${data.re_content}
             </div>
         </div>
+        <!--
         <div class="col-12 btn_wrap">
             <a onclick="location.href='/report/report.jsp';" class="on box_eft_02">목록</a>
             <a href="edit.html" class="box_eft_01">수정</a>
-        </div>
+        </div> -->
 
+        <div>
+            <c:if test="${membervo.mb_seq == data.mb_seq}">
+                <button class="box_eft_02" id="modify" onclick="location.href='/report/report_modify?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'">수정</button>
+                <button class="box_eft_01" id="delete" onclick="location.href='/reportDelete?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'">삭제</button>
+            </c:if>
+        </div>
         <!-- 여기 댓글 -->
         <div class="col-12 comment_box">
             <%--<div class="col12 comment_num ">댓글수<span>카운트해서 넣기</span></div>--%>
