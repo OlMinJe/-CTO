@@ -22,100 +22,40 @@
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
             <li class="col-6 active box_eft_01" id="community_normal" <%--onclick="li_active_01();"--%> onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="col-6 box_eft_01" id="community_editor" <%--onclick="li_active_02();"--%> onclick="location.href='/editor/editor.jsp'">에디터 칼럼</li>
+            <li class="col-6 box_eft_01" id="community_editor"<%-- onclick="li_active_02();"--%> onclick="location.href='/editor/editor.jsp'">에디터 칼럼</li>
         </ul>
-        <div class="col-12 menu-con" id="sub-menu">
-            <ul class="col-12 menu-box-01"><!--id="sub-menu"-->
-                <c:if test="${sessionScope.stateCode ne 1}">
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=10';">전체</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=0';">일상</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=1';">취미</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=2';">유머</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=3';">음식</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=4';">정보</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=5';">취업/진로</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=6';">기타</li>
-                </c:if>
-                <c:if test="${sessionScope.stateCode eq 1}"> <!--https://liufeier.tistory.com/22-->
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=10';">전체</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0';">일상</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=1';">취미</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=2';">유머</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=3';">음식</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=4';">정보</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=5';">취업/진로</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=6';">기타</li>
-                </c:if>
-            </ul>
-        </div>
     </div>
     <%-- 글 구조 바꾸지마 --%>
     <div class="col-12 col-lg-10 content">
-        <!-- 여기서부터 content로 들어가는 부분-->
         <div class="content-table">
-            <%-- 커뮤니티 - 일반 --%>
-            <table class="table table-hover table-bordered" id="community-table">
-                <tr>
-                    <th>글번호</th>
-                    <th>카테고리</th>
-                    <th>작성자</th>
-                    <th>제목</th>
-                    <th>작성시간</th>
-                    <th>조회수</th>
-                    <th>좋아요</th>
-                </tr>
-                <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
-                <c:forEach items="${list}" var="data">
-                    <tr>
-                        <td>${data.com_num}</td>
-                        <div>
-                            <c:choose>
-                                <c:when test="${data.com_category == 0}">
-                                    <td>일상</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 1}">
-                                    <td>취미</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 2}">
-                                    <td>유머</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 3}">
-                                    <td>음식</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 4}">
-                                    <td>정보</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 5}">
-                                    <td>취업/진로</td>
-                                </c:when>
-                                <c:when test="${data.com_category == 6}">
-                                    <td>기타</td>
-                                </c:when>
-                            </c:choose>
+            <!-- 커뮤니티 - 에디터 -->
+            <div class="col-12" id="editor_content">
+                <div class="col-12 editor_wrap">
+                    <div class="col-12 editor_con">
+                        <div class="col-12 title">Editor</div>
+                        <div class="col-12 content_list"><!--테이블 리스트-->
+                            <%-- 글 1개의 구조 --%>
+                            <div class="col-12 content_card">
+                                <div class="col-12 col-md-4 img"><img src></div>
+                                <ul class="col-0 right">
+                                    <%-- 카테고리가 column 이라는 뜻 : 에디터 창도 카테고리가 필요한가?--%>
+                                    <li class="col-12 column">column</li><!--카테고리 없으면 삭제-->
+                                    <li class="col-12 sub_title">글 제목</li>
+                                    <li class="col-12 sub_content">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세.
+                                        남산 위에 저 소나무, 철갑을 두른 듯 바람서리 불변함은 우리 기상일세.
+                                        가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세.
+                                        이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세
+                                        무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세
+                                    </li>
+                                    <li class="col-4 col-md-3 col-lg-2 username">작성자<span>작성자명</span></li>
+                                    <li class="col-4 col-md-3 col-lg-2 comment_num">댓글수<span>댓글수</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <td>${data.mb_nick}</td>
-                        <td>
-                            <c:if test="${sessionScope.stateCode ne 1}">
-                                <a href="/com/com_view?com_num=${data.com_num}&category=${data.com_category}">${data.com_title}</a>
-                            </c:if>
-                            <c:if test="${sessionScope.stateCode ==1}">
-                                <a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
-                            </c:if>
-                            <c:if test="${data.com_comment ne 0}">
-                                <small>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</small>
-                            </c:if>
-                        </td>
-                        <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>
-                        <td>${data.com_hit}</td>
-                        <td>${data.com_like}</td>
-                    </tr>
-                    <c:set var="no" value="${no-1}"></c:set>
-                </c:forEach>
-            </table>
-            <input type="hidden" name="category" value="${category}"/>
-
-            <!-- 커뮤니티 - 에디터 : 주소창 옮기고 새 페이지 생성 -->
-
+                    </div>
+                </div>
+            </div>
         </div>
         <!--백엔드 페이징 삭제-->
         <%--<ul class="paging">
@@ -145,12 +85,10 @@
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
         </form>
     </div>
+    <!--의사 여부에 따른 글쓰기 버튼 보이기 여부-->
     <div class="btn_wrap">
-        <c:if test="${stateCode == 1}">
-            <a onclick="location.href='/community/community_write';" class="on box_eft_02">글쓰기</a>
-        </c:if>
-        <c:if test="${stateCode == 0}">
-            <a onclick="location.href='/community/community_write.jsp';" class="on box_eft_02">글쓰기</a>
+        <c:if test="${data.mb_doctor == 1}">
+            <a onclick="location.href='/editor/editor_write';" class="on box_eft_02">글쓰기</a>
         </c:if>
     </div>
 </div>
