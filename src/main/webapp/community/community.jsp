@@ -22,7 +22,7 @@
     <div class="col-12 col-lg-10 menu">
         <ul class="menu-wrap">
             <li class="col-6 active box_eft_01" id="community_normal" <%--onclick="li_active_01();"--%> onclick="location.href='/community/community?stateCode=${stateCode}&category=10'">커뮤니티</li>
-            <li class="col-6 box_eft_01" id="community_editor" <%--onclick="li_active_02();"--%> onclick="location.href='/editor/editor.jsp'">에디터 칼럼</li>
+            <li class="col-6 box_eft_01" id="community_editor" <%--onclick="li_active_02();"--%> onclick="location.href='/editor/editor?stateCode=${stateCode}'">에디터 칼럼</li>
         </ul>
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01"><!--id="sub-menu"-->

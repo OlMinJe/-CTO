@@ -31,6 +31,7 @@
 		delete from tb_member
 		where mb_id= #{mb_id}
 	</delete>
+
 	<!-- 아이디 찾기 -->
 	<select id="find_id" parameterType="String" resultType="String">
 		select mb_id from tb_member where mb_email = #{mb_email}
@@ -102,6 +103,7 @@
 		select *
         from tb_com_talk
 	</select>
+
 	<select id="boardList" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
 			SELECT *
@@ -110,6 +112,7 @@
 			LIMIT #{pageStart}, #{perPageNum}
 		]]>
 	</select>
+
 	<select id="boardListDetail" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
 		SELECT *
@@ -119,10 +122,12 @@
 			LIMIT #{cri.pageStart}, #{cri.perPageNum}
 		]]>
 	</select>
+
 	<select id="boardListCnt" resultType="int">
 		SELECT count(*)
 		FROM tb_com_talk
 	</select>
+
 	<select id="boardListCntDetail" resultType="int">
 		SELECT count(*)
 		FROM tb_com_talk
@@ -134,10 +139,12 @@
 		FROM tb_com_talk
 		WHERE com_num = #{com_num}
 	</select>
+
 	<update id="increaseComhit">
 		update tb_com_talk set com_hit = com_hit+1
 		where com_num=#{com_num}
 	</update>
+
 	<update id="boardModify" parameterType="com.project.vo.BoardVO">
 		UPDATE tb_com_talk b, tb_member m
 		SET b.com_title = #{com_title},
@@ -163,26 +170,31 @@
 		where com_num=#{com_num}
 		order by comment_group,comment_date
 	</select>
+
 	<insert id="commentInsert" parameterType="CommentVO">
 		INSERT INTO tb_comment(com_num,comment_content,mb_nick,mb_seq,mb_doctor,comment_depth,comment_group)
 		VALUES(#{com_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor},#{comment_depth},#{comment_group})
 	</insert>
+
 	<!-- 제일 최근 comment_seq 가져오기-->
 	<select id="last" resultType="int">
 		select last_insert_id();
 	</select>
+
 	<!-- comment_seq를 group값으로 넣기(모댓글인 경우에만 사용)-->
 	<update id="updateGroup" parameterType="int">
 		update tb_comment
 		set comment_group=#{comment_seq}
 		where comment_seq=#{comment_seq}
 	</update>
+
 	<update id="commentUpdate" parameterType="CommentVO">
 		UPDATE tb_comment
 		SET comment_content=#{comment_content},
 			comment_date=now()
 		WHERE comment_seq=#{comment_seq}
 	</update>
+
 	<delete id="commentDelete" parameterType="int">
 		DELETE
 		FROM tb_comment
@@ -243,6 +255,7 @@
 		INSERT INTO tb_talk (talk_title, talk_content, mb_seq,talk_category,talk_hit,mb_doctor,mb_nick,talk_photo)
 		VALUES (#{talk_title}, #{talk_content}, #{mb_seq}, #{talk_category}, #{talk_hit}, #{mb_doctor},#{mb_nick},#{talk_photo} )
 	</insert>
+
 	<!-- 상담 리스트-->
 	<select id="talkList" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
@@ -291,26 +304,31 @@
 		where talk_num=#{talk_num}
 		order by comment_group,comment_date
 	</select>
+
 	<insert id="talkcommentInsert" parameterType="CommentVO">
 		INSERT INTO tb_comment(talk_num,comment_content,mb_nick,mb_seq,mb_doctor,comment_depth,comment_group)
 		VALUES(#{talk_num},#{comment_content},#{mb_nick},#{mb_seq},#{mb_doctor},#{comment_depth},#{comment_group})
 	</insert>
+
 	<!-- 제일 최근 comment_seq 가져오기-->
 	<select id="last2" resultType="int">
 		select last_insert_id();
 	</select>
+
 	<!-- comment_seq를 group값으로 넣기(모댓글인 경우에만 사용)-->
 	<update id="talkupdateGroup" parameterType="int">
 		update tb_comment
 		set comment_group=#{comment_seq}
 		where comment_seq=#{comment_seq}
 	</update>
+
 	<update id="talkcommentUpdate" parameterType="CommentVO">
 		UPDATE tb_comment
 		SET comment_content=#{comment_content},
 			comment_date=now()
 		WHERE comment_seq=#{comment_seq}
 	</update>
+
 	<delete id="talkcommentDelete" parameterType="int">
 		DELETE
 		FROM tb_comment
@@ -328,6 +346,7 @@
 		set b.talk_comment = (select count(comment_seq) from tb_comment where talk_num = #{talk_num})
 		where b.talk_num = #{talk_num}
 	</update>
+
 	<!-- 신고 페이지 작성-->
 	<select id="reportList" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
@@ -344,17 +363,20 @@
 		FROM tb_report
 		where report_category = #{category}
 	</select>
+
 	<!-- 신고 글 작성 -->
 	<insert id="reportWrite">
 		INSERT INTO tb_report (re_title, re_content, mb_seq,report_category,re_photo)
 		VALUES (#{re_title}, #{re_content}, #{mb_seq}, #{report_category},#{re_photo} )
 	</insert>
+
 	<!-- 신고 글 읽기 -->
 	<select id="reportRead" resultType="ReportVO">
 		SELECT re_num, re_title, report_category,re_content,re_photo,mb_seq,re_date
 		FROM tb_report
 		WHERE re_num = #{re_num}
 	</select>
+
 	<!-- 신고 글 수정 -->
 	<update id="reportModify" parameterType="com.project.vo.ReportVO">
 		UPDATE tb_report r, tb_member m
@@ -368,4 +390,38 @@
 			where mb_seq = #{mb_seq}
 			)
 	</update>
+
+	<!--에디터 리스트-->
+	<select id="editorList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM tb_editor
+		where edit_category = #{category}
+		ORDER BY edit_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+
+	<select id="editorListCnt" resultType="int">
+		SELECT count(*)
+		FROM tb_editor
+		where edit_category = #{category}
+	</select>
+
+	<!-- 에디터 글 작성 -->
+	<insert id="editorWrite">
+		INSERT INTO tb_editor (edit_title, edit_content, mb_seq,edit_photo)
+		VALUES (#{edit_title}, #{edit_content}, #{mb_seq}, #{edit_photo} )
+	</insert>
+
+	<!-- 에디터 글 읽기 -->
+	<select id="editorRead" resultType="EditorVO">
+		SELECT edit_num, edit_title, edit_content, edit_photo, mb_seq, edit_date
+		FROM tb_editor
+		WHERE edit_num = #{edit_num}
+	</select>
+
+
+
+
 </mapper>

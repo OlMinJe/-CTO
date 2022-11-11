@@ -751,6 +751,102 @@ public class BoardController {
 	/** 에디터 페이지 CRUD () **/
 	//단독 페이지 생성 필요! 현재는 이벤트로 넘어가서 단독 페이지 없음
 
+	//에디터 리스트
+	@RequestMapping(value = "/editor/editor")
+	public String editorList(@RequestParam("stateCode") int stateCode, Criteria cri, @RequestParam("category") Integer category, Model model, EditorVO editorVO) throws Exception{
+		Paging paging = new Paging();
+		int reportListCnt = boardService.editorListCnt(category);
+		paging.setCri(cri);
+		paging.setTotalCount(reportListCnt);
+		List<Map<String, Object>> list = boardService.editorList(cri, category);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category", category);
+		return "/editor/editor";
+	}
+
+	// 에디터 게시판 글쓰기 폼
+	@RequestMapping(value = "/editor/editor_write")
+	public String editorWriteForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
+			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인 시 있던 세션
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			model.addAttribute("stateCode", 1);
+			model.addAttribute("category",0);
+			//model.addAttribute("category",10);
+
+		} else if(session.getAttribute("userId") != null) {
+			model.addAttribute("modifyId", session.getAttribute("userId"));
+			model.addAttribute("stateCode", 2);
+		}
+		return "/editor/editor_write";
+	}
+
+	// 에디터 글쓰기
+	@RequestMapping(value = "/editorWrite")
+	public String editorWrite(@RequestParam("stateCode") int stateCode, EditorVO editorVO, HttpServletRequest req, MultipartFile file) throws Exception{
+		HttpSession session = req.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		//int doctor = modifyMember.getMb_doctor();
+		editorVO.setMb_seq(seq);
+		//talkVO.setMb_doctor(doctor);
+
+		//if(!file.isEmpty()){
+		//boardService.updateTalkImg(talkVO,file);
+		//}
+		boardService.editorWrite(editorVO);
+		int category = editorVO.getEdit_category();
+		return "redirect:/editor/editor?stateCode="+stateCode+"&category="+category;
+	}
+
+	// 에디터 글 읽기
+	@RequestMapping(value="/editor/editor_view")
+	public String editorRead(@RequestParam("edit_num") int re_num,
+							 @RequestParam("stateCode") int stateCode,
+							 @RequestParam("category") Integer category,
+							 Model model,
+							 HttpServletRequest req) throws Exception {
+
+		HttpSession session = req.getSession();
+		//boardService.increaseComhit(com_num,session);
+		//boardService.updatecomlike(com_num); //여기서 수정이 될까...
+		ReportVO data = boardService.reportRead(re_num);
+		model.addAttribute("data", data);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category",category);
+
+		if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
+			model.addAttribute("membervo",membervo);
+
+			//LikeVO like = new LikeVO();
+			//like.setCom_num(com_num);
+			//like.setMb_nick(membervo.getMb_nick());
+
+			//int like_check = 0;
+
+			//int check=boardService.likecount(like);
+			//if(check ==0){
+			//boardService.likeinsert(like);
+			//} else if (check==1) {
+			//like_check=boardService.likegetinfo(like);
+			//}
+			//model.addAttribute("like_check",like_check);
+			//boardService.updatecomlike(com_num);
+
+		}
+		return "/editor/editor_view";
+	}
 
 	/** 공지사항 페이지 CRUD () **/
 	//글 작성이랑 리스트만 할까 생각 중...

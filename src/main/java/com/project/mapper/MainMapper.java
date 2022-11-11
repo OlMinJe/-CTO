@@ -134,8 +134,10 @@ public interface MainMapper {
 	/** 상담 **/
 	// 상담
 	public void talkWrite(TalkVO talkVO) throws Exception;
+
 	//상담 리스트
 	public List<Map<String, Object>> talkList(Criteria cri, Integer category) throws Exception;
+
 	//상담 카테고리별 글 카운트
 	public int talkListCnt(Integer category) throws Exception;
 	public TalkVO talkRead(int talk_num) throws Exception;
@@ -173,4 +175,22 @@ public interface MainMapper {
 	public ReportVO reportRead(int re_num) throws Exception;
 
 	public void reportModify(ReportVO reportVO) throws Exception;
+
+	/** 메인 페이지 커뮤니티 리스트 **/
+	//커뮤니티 전체 리스트 끌어오기 실패(컨트롤러,매퍼,서비스 없어서 그런 듯 , 리스트 생성시 상위 지도 없어지는 문제 발생)
+
+
+	/** 에디터 페이지 **/
+	public List<Map<String, Object>> editorList(Criteria cri) throws Exception;
+	//에디터 글 카운트
+	public int editorListCnt() throws Exception;
+
+	//에디터 글 작성
+	public void editorWrite(EditorVO editorVO) throws Exception;
+
+	//에디터 글 읽기
+	public ReportVO editorRead(int re_num) throws Exception;
+
+
+	/** 공지사항 페이지 **/
 }
