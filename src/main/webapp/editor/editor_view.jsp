@@ -15,7 +15,7 @@
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 view_wrap">
     <div class="col-12 col-lg-10 view_con">
-        <div>에디터 칼럼</div>
+        <div class="col-12 category_title">에디터 칼럼</div>
         <div class="col-12 view_list">
             <div class="col-12 board_view_title">${data.edit_title}</div>
             <div class="col-12 board_view_info">
@@ -154,7 +154,7 @@
             <div class="col-12 comment_writer"> <!-- 확인용 -->
                 <div class="commentList"></div>
             </div>
-            <%@include file="../community/comment.jsp"%>
+            <%--<%@include file="../community/comment.jsp"%>--%>
         </div>
     </div>
 </div>
