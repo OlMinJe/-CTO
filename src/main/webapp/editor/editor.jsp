@@ -44,9 +44,9 @@
                 <c:forEach items="${list}" var="data">
                     <tr>
                         <td>${data.edit_num}</td>
-                        <td>${data.edit_nick}</td>
+                        <td>${data.mb_seq}</td>
                         <td>
-                            <a href="/editor/editor_view?com_num=${data.com_num}&stateCode=${stateCode}">${data.edit_title}</a>
+                            <a href="/editor/editor_view?edit_num=${data.edit_num}&stateCode=${stateCode}">${data.edit_title}</a>
                             <c:if test="${data.edit_comment ne 0}">
                                 <small>[&nbsp;<c:out value="${data.edit_comment}"/>&nbsp;]</small>
                             </c:if>

@@ -262,7 +262,7 @@ public class BoardService  {
 
 	//에디터 페이지
 	public List<Map<String, Object>> editorList(Criteria cri, Integer category) throws Exception{
-		return boardmapper.reportList(cri,category);
+		return boardmapper.editorList(cri,category);
 	}
 	public int editorListCnt(Integer category) throws Exception{
 		return boardmapper.reportListCnt(category);

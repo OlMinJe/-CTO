@@ -181,7 +181,7 @@ public interface MainMapper {
 
 
 	/** 에디터 페이지 **/
-	public List<Map<String, Object>> editorList(Criteria cri) throws Exception;
+	public List<Map<String, Object>> editorList(Criteria cri, Integer category) throws Exception;
 	//에디터 글 카운트
 	public int editorListCnt() throws Exception;
 

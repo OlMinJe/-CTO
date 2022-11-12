@@ -17,6 +17,6 @@ public class EditorVO {
     private String edit_photo;
     private Date edit_date;
     private int edit_hit;
-    private String edit_comment;
+    private int edit_comment;
     private int edit_like;
 }
