@@ -265,7 +265,7 @@ public class BoardService  {
 		return boardmapper.editorList(cri,category);
 	}
 	public int editorListCnt(Integer category) throws Exception{
-		return boardmapper.reportListCnt(category);
+		return boardmapper.editorListCnt(category);
 	}
 
 	public void editorWrite(EditorVO editorVO) throws Exception{
