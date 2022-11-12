@@ -81,7 +81,7 @@
             <%--<c:if test="${data.mb_doctor == 1}">
                 <a onclick="location.href='/editor/editor_write';" class="on box_eft_02">글쓰기</a>
             </c:if>--%>
-            <a onclick="location.href='/editor/editor_write.jsp';" class="on box_eft_02">글쓰기</a>
+            <a onclick="location.href='/editor/editor_write';" class="on box_eft_02">글쓰기</a>
         </div>
     </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
