@@ -189,7 +189,7 @@ public interface MainMapper {
 	public void editorWrite(EditorVO editorVO) throws Exception;
 
 	//에디터 글 읽기
-	public ReportVO editorRead(int re_num) throws Exception;
+	public EditorVO editorRead(int edit_num) throws Exception;
 
 
 	/** 공지사항 페이지 **/

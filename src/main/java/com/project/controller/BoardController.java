@@ -755,9 +755,9 @@ public class BoardController {
 	@RequestMapping(value = "/editor/editor")
 	public String editorList(@RequestParam("stateCode") int stateCode, Criteria cri, @RequestParam("category") Integer category, Model model, EditorVO editorVO) throws Exception{
 		Paging paging = new Paging();
-		int reportListCnt = boardService.editorListCnt(category);
+		int editorListCnt = boardService.editorListCnt(category);
 		paging.setCri(cri);
-		paging.setTotalCount(reportListCnt);
+		paging.setTotalCount(editorListCnt);
 		List<Map<String, Object>> list = boardService.editorList(cri, category);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
@@ -810,16 +810,11 @@ public class BoardController {
 
 	// 에디터 글 읽기
 	@RequestMapping(value="/editor/editor_view")
-	public String editorRead(@RequestParam("edit_num") int re_num,
-							 @RequestParam("stateCode") int stateCode,
-							 @RequestParam("category") Integer category,
-							 Model model,
-							 HttpServletRequest req) throws Exception {
+	public String editorRead(@RequestParam("edit_num") int edit_num, @RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category
+								, Model model, HttpServletRequest req) throws Exception {
 
 		HttpSession session = req.getSession();
-		//boardService.increaseComhit(com_num,session);
-		//boardService.updatecomlike(com_num); //여기서 수정이 될까...
-		ReportVO data = boardService.reportRead(re_num);
+		EditorVO data = boardService.editorRead(edit_num);
 		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
@@ -828,22 +823,6 @@ public class BoardController {
 			MemberVO vo = (MemberVO) session.getAttribute("member");
 			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
 			model.addAttribute("membervo",membervo);
-
-			//LikeVO like = new LikeVO();
-			//like.setCom_num(com_num);
-			//like.setMb_nick(membervo.getMb_nick());
-
-			//int like_check = 0;
-
-			//int check=boardService.likecount(like);
-			//if(check ==0){
-			//boardService.likeinsert(like);
-			//} else if (check==1) {
-			//like_check=boardService.likegetinfo(like);
-			//}
-			//model.addAttribute("like_check",like_check);
-			//boardService.updatecomlike(com_num);
-
 		}
 		return "/editor/editor_view";
 	}

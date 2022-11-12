@@ -272,8 +272,8 @@ public class BoardService  {
 		boardmapper.editorWrite(editorVO);
 	}
 
-	public ReportVO editorRead(int edit_num) throws Exception{
-		return boardmapper.reportRead(edit_num);
+	public EditorVO editorRead(int edit_num) throws Exception{
+		return boardmapper.editorRead(edit_num);
 	}
 
 

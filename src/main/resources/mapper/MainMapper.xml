@@ -410,13 +410,13 @@
 
 	<!-- 에디터 글 작성 -->
 	<insert id="editorWrite">
-		INSERT INTO tb_editor (edit_title, edit_content, mb_seq,edit_photo)
-		VALUES (#{edit_title}, #{edit_content}, #{mb_seq}, #{edit_photo} )
+		INSERT INTO tb_editor (edit_title, edit_content, mb_seq, edit_photo, mb_nick)
+		VALUES (#{edit_title}, #{edit_content}, #{mb_seq}, #{edit_photo}, #{mb_nick})
 	</insert>
 
 	<!-- 에디터 글 읽기 -->
 	<select id="editorRead" resultType="EditorVO">
-		SELECT edit_num, edit_title, edit_content, edit_photo, mb_seq, edit_date
+		SELECT edit_num, edit_title, edit_content, edit_photo, mb_seq, edit_date, mb_nick
 		FROM tb_editor
 		WHERE edit_num = #{edit_num}
 	</select>

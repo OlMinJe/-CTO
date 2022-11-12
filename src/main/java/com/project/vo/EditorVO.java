@@ -19,4 +19,5 @@ public class EditorVO {
     private int edit_hit;
     private int edit_comment;
     private int edit_like;
+    private String mb_nick;
 }
