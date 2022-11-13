@@ -63,6 +63,7 @@ public class BoardController {
 
 		return "/community/community";
 	}
+
 	//커뮤니티 리스트 - 로그인 안했을 때
 	@RequestMapping(value="/com")
 	public String comList(@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception{
@@ -88,7 +89,7 @@ public class BoardController {
 		}
 		return "/community/community";
 	}
-	/**/
+
 	// 게시판 글쓰기 폼(커뮤니티)
 	@RequestMapping(value="/community/community_write")
 	public String boardWriteForm(HttpServletRequest req, Model model) throws Exception {
@@ -110,7 +111,6 @@ public class BoardController {
 		return "/community/community_write";
 	}
 
-
 	// 게시판 글쓰기(커뮤니티)
 	@RequestMapping(value="/communityWrite")
 	public String boardWrite(@RequestParam("stateCode") int stateCode, BoardVO boardVO,HttpServletRequest req, MultipartFile file) throws Exception {
@@ -131,8 +131,6 @@ public class BoardController {
 		int category = boardVO.getCom_category();
 		return "redirect:/community/community?stateCode="+stateCode+"&category="+category;
 	}
-	/**/
-
 
 	// 게시글 내용 읽기(커뮤니티)
 	@RequestMapping(value="/community/community_view")
@@ -891,6 +889,30 @@ public class BoardController {
 		boardService.editorcommentInsert(comment);
 		return boardService.editorupdateReplyCount(edit_num);
 	}
+
+	//좋아요 기능을 위한 코드 - 에디터
+	@ResponseBody
+	@RequestMapping (value = "/like/editorlikeupdate", method = RequestMethod.POST)
+	public Map<String,String> editorlikeupdate(@RequestBody LikeVO like){
+		logger.info("editorlikeupdate");
+
+		Map<String,String> map = new HashMap<String,String>();
+
+		try {
+			int edit_num = like.getEdit_num();
+			boardService.editorlikeupdate(like);
+			boardService.editorupdatecomlike(edit_num); //좋아요 변화에 따라서 바로 커뮤니티 테이블에서 com_like 값 변경
+			map.put("result", "success");
+
+		}catch(Exception e) {
+			e.printStackTrace();
+			map.put("result", "fail");
+		}
+
+		return map;
+	}
+
+
 
 	/** 공지사항 페이지 CRUD () **/
 	//글 작성이랑 리스트만 해도 될까 고민 중, DB 설계도 없음

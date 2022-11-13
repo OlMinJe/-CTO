@@ -52,12 +52,12 @@
                     <c:when test="${like_check == 0}">
                         <button type="button" id="likebtn" onclick="window.location.reload();" style="background-image: url('/static/img/heart_icon_3.png');">1</button>
                         <%--출처: Heart icons created by Vlad Szirka - Flaticon--%>
-                        <input type="hidden" id="likecheck" value="${like_check }">
+                        <input type="hidden" id="likecheck" value="${like_check}">
                     </c:when>
                     <c:when test="${like_check == 1}">
                         <button type="button" id="likebtn" onClick="history.go(0);" style="background-image: url('/static/img/heart_icon_2.png');">2</button>
                         <%--출처:Heart icons created by Vlad Szirka - Flaticon--%>
-                        <input type="hidden" id="likecheck" value="${like_check }">
+                        <input type="hidden" id="likecheck" value="${like_check}">
                     </c:when>
                 </c:choose>
             </div>
@@ -78,7 +78,7 @@
 
             function likeupdate(){
                 var root = getContextPath(),
-                    likeurl = "/like/likeupdate",
+                    likeurl = "/like/editorlikeupdate",
                     mb_nick = $('#mb_nick').val(),
                     edit_num = $('#edit_num').val(),
                     count = $('#likecheck').val(),
@@ -87,7 +87,7 @@
                         "count" : count};
 
                 $.ajax({
-                    url : "/like/likeupdate",
+                    url : "/like/editorlikeupdate",
                     type : 'POST',
                     contentType: "application/json; charset=UTF-8",
                     beforeSend: function(xhr) {

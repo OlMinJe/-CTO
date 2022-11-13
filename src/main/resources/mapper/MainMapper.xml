@@ -471,5 +471,24 @@
 		where b.edit_num = #{edit_num}
 	</update>
 
+	<!-- 좋아요 기능 - 에디터 -->
+	<select id="editorlikecount" resultType="Integer" parameterType="LikeVO">
+		select count(like_check) from tb_like where mb_nick=#{mb_nick} and edit_num=#{edit_num}
+	</select>
+
+	<insert id="editorlikeinsert" parameterType="LikeVO">
+		insert into tb_like(mb_nick, edit_num)
+		values (#{mb_nick}, #{edit_num})
+	</insert>
+
+	<select id="editorlikegetinfo" resultType="Integer" parameterType="LikeVO">
+		select like_check from tb_like where mb_nick=#{mb_nick} and edit_num=#{edit_num}
+	</select>
+
+	<update id="editorlikeupdate" parameterType="LikeVO">
+		update tb_like
+		set <include refid="cal"></include>
+		where mb_nick=#{mb_nick} and edit_num=#{edit_num}
+	</update>
 
 </mapper>

@@ -165,7 +165,7 @@ public class BoardService  {
 		return boardmapper.updatecomlike(com_num);
 	}
 
-	/** 상담 서비스**//**/
+	/** 상담 페이지 **/
 	//게시글 작성과 수정 시 사진 첨부
 	public String updateTalkImg(TalkVO talkVO, MultipartFile file) throws Exception{
 		String projectPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\files";
@@ -240,6 +240,7 @@ public class BoardService  {
 		return boardmapper.talkupdateReplyCount(talk_num);
 	}
 
+	/** 신고 페이지 **/
 	//신고페이지
 	public List<Map<String, Object>> reportList( Criteria cri, Integer category) throws Exception{
 		return boardmapper.reportList(cri,category);
@@ -260,6 +261,8 @@ public class BoardService  {
 		boardmapper.reportModify(reportVO);
 	}
 
+
+	/** 에디터 페이지 **/
 
 	//에디터 페이지
 	public List<Map<String, Object>> editorList(Criteria cri, Integer category) throws Exception{
@@ -310,10 +313,31 @@ public class BoardService  {
 	public List<CommentVO> editorrecommentList(int comment_group) throws Exception{
 		return boardmapper.editorrecommentList(comment_group);
 	}
+
 	//댓글 카운트 - 에디터
 	public int editorupdateReplyCount(int edit_num) throws Exception {
 		return boardmapper.editorupdateReplyCount(edit_num);
 	}
 
+	//좋아요 기능 - 에디터
+	public int editorlikecount(LikeVO like)  throws Exception{
+		return boardmapper.editorlikecount(like);
+	}
+
+	public int editorlikegetinfo(LikeVO like)  throws Exception{
+		return boardmapper.editorlikegetinfo(like);
+	}
+
+	public void editorlikeinsert(LikeVO like) throws Exception{
+		boardmapper.editorlikeinsert(like);
+	}
+
+	public void editorlikeupdate(LikeVO like) throws Exception{
+		boardmapper.editorlikeupdate(like);
+	}
+
+	public int editorupdatecomlike(int com_num) throws Exception {
+		return boardmapper.editorupdatecomlike(com_num);
+	}
 
 }

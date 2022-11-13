@@ -117,7 +117,7 @@ public interface MainMapper {
 	public List<CommentVO> recommentList(int comment_group) throws Exception;
 
 
-	/** 좋아요 기능 **/
+	/** 좋아요 기능 - 커뮤니티 **/
 	//좋아요 기능
 	public int likecount(LikeVO like) throws Exception;
 
@@ -215,6 +215,18 @@ public interface MainMapper {
 	//대댓글 출력 관련 코드 - 에디터
 	public List<CommentVO> editorrecommentList(int comment_group) throws Exception;
 
+	/** 좋아요 기능 - 에디터 **/
+	//좋아요 기능
+	public int editorlikecount(LikeVO like) throws Exception;
+
+	public int editorlikegetinfo(LikeVO like) throws Exception;
+
+	public void editorlikeinsert(LikeVO like) throws Exception;
+
+	public void editorlikeupdate(LikeVO like) throws Exception;
+
+	//게시글 별 좋아요 카운트 후 수정
+	public int editorupdatecomlike(int com_num) throws Exception;
 
 	/** 공지사항 페이지 **/
 }
