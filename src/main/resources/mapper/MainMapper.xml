@@ -421,7 +421,55 @@
 		WHERE edit_num = #{edit_num}
 	</select>
 
+	<!-- 댓글부분 -->
+	<select id="editorcommentList" parameterType="int" resultType="CommentVO">
+		SELECT *
+		FROM tb_comment
+		where edit_num=#{edit_num}
+		order by comment_group,comment_date
+	</select>
 
+	<insert id="editorcommentInsert" parameterType="CommentVO">
+		INSERT INTO tb_comment(edit_num, comment_content, mb_nick, mb_seq, mb_doctor, comment_depth, comment_group)
+		VALUES(#{edit_num}, #{comment_content}, #{mb_nick}, #{mb_seq}, #{mb_doctor}, #{comment_depth}, #{comment_group})
+	</insert>
+
+	<!-- 제일 최근 comment_seq 가져오기-->
+	<select id="last3" resultType="int">
+		select last_insert_id();
+	</select>
+
+	<!-- comment_seq를 group값으로 넣기(모댓글인 경우에만 사용)-->
+	<update id="editorupdateGroup" parameterType="int">
+		update tb_comment
+		set comment_group=#{comment_seq}
+		where comment_seq=#{comment_seq}
+	</update>
+
+	<update id="editorcommentUpdate" parameterType="CommentVO">
+		UPDATE tb_comment
+		SET comment_content=#{comment_content},
+			comment_date=now()
+		WHERE comment_seq=#{comment_seq}
+	</update>
+
+	<delete id="editorcommentDelete" parameterType="int">
+		DELETE
+		FROM tb_comment
+		WHERE comment_seq=#{comment_seq}
+	</delete>
+
+	<!-- 대댓글 출력을 위한 댓글 카운트-->
+	<select id="editorrecommentList" parameterType="int" resultType="CommentVO">
+		select * from tb_comment where comment_group=#{comment_group} and comment_depth=1 order by comment_date
+	</select>
+
+	<!-- 게시글별 댓글 카운트 관련-->
+	<update id="editorupdateReplyCount" parameterType="int">
+		update tb_editor b
+		set b.edit_comment = (select count(comment_seq) from tb_comment where edit_num = #{edit_num})
+		where b.edit_num = #{edit_num}
+	</update>
 
 
 </mapper>

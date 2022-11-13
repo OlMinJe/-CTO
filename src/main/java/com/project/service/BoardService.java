@@ -200,7 +200,8 @@ public class BoardService  {
 
 	public void talkDelete(int num) throws Exception{
 		boardmapper.talkDelete(num);
-	}/**/
+	}
+
 	//댓글 리스트 - 상담
 	public List<CommentVO> talkcommentList(int talk_num) throws Exception{
 		return boardmapper.talkcommentList(talk_num);
@@ -276,6 +277,43 @@ public class BoardService  {
 		return boardmapper.editorRead(edit_num);
 	}
 
+	//댓글 리스트 - 에디터
+	public List<CommentVO> editorcommentList(int edit_num) throws Exception{
+		return boardmapper.editorcommentList(edit_num);
+	}
+
+	//댓글 추가 - 에디터
+	public int editorcommentInsert(CommentVO comment) throws Exception{
+		return boardmapper.editorcommentInsert(comment);
+	}
+
+	//제일 마지막에 추가된 댓글의 comment_seq값 가져오기 - 에디터
+	public int last3() throws Exception{
+		return boardmapper.last3();
+	}
+
+	//seq값을 comment_group 칼럼 값으로 넣기(모댓글인 경우) - 에디터
+	public int editorupdateGroup(int comment_seq) throws Exception{
+		return boardmapper.editorupdateGroup(comment_seq);
+	}
+
+	//댓글 수정 - 에디터
+	public int editorcommentUpdate(CommentVO comment)  throws Exception{
+		return boardmapper.editorcommentUpdate(comment);
+	}
+
+	//댓글삭제 - 에디터
+	public int editorcommentDelete(int cno) throws Exception{
+		return boardmapper.editorcommentDelete(cno);
+	}
+	//대댓글 리스트 - 에디터
+	public List<CommentVO> editorrecommentList(int comment_group) throws Exception{
+		return boardmapper.editorrecommentList(comment_group);
+	}
+	//댓글 카운트 - 에디터
+	public int editorupdateReplyCount(int edit_num) throws Exception {
+		return boardmapper.editorupdateReplyCount(edit_num);
+	}
 
 
 }

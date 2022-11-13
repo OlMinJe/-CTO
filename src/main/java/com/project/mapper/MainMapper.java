@@ -191,6 +191,30 @@ public interface MainMapper {
 	//에디터 글 읽기
 	public EditorVO editorRead(int edit_num) throws Exception;
 
+	//댓글 카운트 - 에디터
+	public int editorupdateReplyCount(int edit_num) throws Exception;
+
+	//댓글목록 - 에디터
+	public List<CommentVO> editorcommentList(int edit_num) throws Exception;
+
+	//댓글작성 - 에디터
+	public int editorcommentInsert(CommentVO comment) throws Exception;
+
+	//제일 마지막에 추가된 댓글의 comment_seq값 가져오기 - 에디터
+	public int last3() throws Exception;
+
+	//seq값을 comment_group 칼럼 값으로 넣기(모댓글인 경우) - 에디터
+	public int editorupdateGroup(int comment_seq) throws Exception;
+
+	//댓글수정 - 에디터
+	public int editorcommentUpdate(CommentVO comment) throws Exception;
+
+	//댓글삭제 - 에디터
+	public int editorcommentDelete(int cno) throws Exception;
+
+	//대댓글 출력 관련 코드 - 에디터
+	public List<CommentVO> editorrecommentList(int comment_group) throws Exception;
+
 
 	/** 공지사항 페이지 **/
 }

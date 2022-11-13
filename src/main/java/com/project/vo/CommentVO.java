@@ -21,4 +21,5 @@ public class CommentVO {
     //대댓글을 위한 칼럼 2개
     private int comment_depth;
     private int comment_group;
+    private int edit_num;
 }
