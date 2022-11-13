@@ -473,6 +473,7 @@ public class BoardController {
 		}
 		return "/advice/advice_view";
 	}
+
 	//댓글 리스트 - 상담
 	@RequestMapping(value = "/talkcomment/list",method= RequestMethod.GET)//댓글리스트
 	@ResponseBody
@@ -749,7 +750,6 @@ public class BoardController {
 
 
 	/** 에디터 페이지 CRUD () **/
-	//단독 페이지 생성 필요! 현재는 이벤트로 넘어가서 단독 페이지 없음
 
 	//에디터 리스트
 	@RequestMapping(value = "/editor/editor")
@@ -827,8 +827,73 @@ public class BoardController {
 		return "/editor/editor_view";
 	}
 
+	//댓글 리스트 - 에디터
+	@RequestMapping(value = "/editorcomment/list", method= RequestMethod.GET)//댓글리스트
+	@ResponseBody
+	private Map<String,Object> eCommentServiceList(int edit_num) throws Exception{
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<CommentVO> list= boardService.editorcommentList(edit_num);
+		map.put("list",list);
+		return map;
+	}
+
+	//댓글 작성 - 에디터
+	@RequestMapping(value = "/editorcomment/insert", method= RequestMethod.GET)//댓글작성
+	@ResponseBody
+	private int eCommentServiceInsert(@RequestParam("bno") int edit_num,@RequestParam("content") String comment_content,
+									  @RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
+									  @RequestParam("seq") int mb_seq) throws Exception {
+		CommentVO comment = new CommentVO();
+		comment.setEdit_num(edit_num);
+		comment.setComment_content(comment_content);
+		comment.setMb_nick(mb_nick);
+		comment.setMb_doctor(mb_doctor);
+		comment.setMb_seq(mb_seq);
+		comment.setComment_depth(0); //그냥 댓글인 경우에는 0으로 지정
+		boardService.editorcommentInsert(comment); //기본적으로 추가함.
+		int comment_seq=boardService.last3(); //제일 마지막 comment_seq가져와서
+		boardService.editorupdateGroup(comment_seq); //comment_group값에 넣기 ( 모댓글인 경우)
+		return boardService.editorupdateReplyCount(edit_num);
+	}
+
+	//댓글 수정 - 에디터
+	@RequestMapping(value = "/editorcomment/update", method= RequestMethod.GET)//댓글수정
+	@ResponseBody
+	private int eCommentServiceUpdateProc(@RequestParam("comment_seq") int comment_seq, @RequestParam("comment_content") String comment_content)throws Exception{
+		CommentVO comment = new CommentVO();
+		comment.setComment_seq(comment_seq);
+		comment.setComment_content(comment_content);
+		return boardService.editorcommentUpdate(comment);
+	}
+
+	//댓글 삭제 - 에디터
+	@RequestMapping(value = "/editorcomment/delete/{comment_seq}",method= RequestMethod.GET)//댓글삭제
+	@ResponseBody
+	private int eCommentServiceDelete(@PathVariable int comment_seq,@RequestParam("edit_num") int edit_num) throws Exception{
+		boardService.editorcommentDelete(comment_seq);
+		return boardService.editorupdateReplyCount(edit_num);
+	}
+
+	//대댓글 작성 - 에디터
+	@RequestMapping(value = "/editorrecomment/insert",method= RequestMethod.GET)//댓글작성
+	@ResponseBody
+	private int reeCommentServiceInsert(@RequestParam("bno") int edit_num,@RequestParam("comment_content") String comment_content,
+										@RequestParam("writer") String mb_nick,@RequestParam("doctor") int mb_doctor,
+										@RequestParam("seq") int mb_seq,@RequestParam("comment_seq") int comment_seq) throws Exception {
+		CommentVO comment=new CommentVO();
+		comment.setEdit_num(edit_num);
+		comment.setComment_content(comment_content);
+		comment.setMb_nick(mb_nick);
+		comment.setMb_doctor(mb_doctor);
+		comment.setMb_seq(mb_seq);
+		comment.setComment_group(comment_seq); //대댓글의 경우 어떤 댓글에 다는지를 확인하기 위해서 모댓글의 comment_seq를 저장한다...
+		comment.setComment_depth(1); //대댓글 경우 comment_depth를 1로 지정
+		boardService.editorcommentInsert(comment);
+		return boardService.editorupdateReplyCount(edit_num);
+	}
+
 	/** 공지사항 페이지 CRUD () **/
-	//글 작성이랑 리스트만 할까 생각 중...
+	//글 작성이랑 리스트만 해도 될까 고민 중, DB 설계도 없음
 
 
 

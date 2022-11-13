@@ -151,35 +151,16 @@
 
                 </div>
             </c:if>
-            <div class="col-12 comment_writer"> <!-- 확인용 -->
+            <div class="col-12 comment_writer">
                 <div class="commentList"></div>
             </div>
-            <%--<%@include file="../community/comment.jsp"%>--%>
+            <%@include file="../editor/editor_comment.jsp"%>
         </div>
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <%--
