@@ -32,7 +32,7 @@ function sub_menu() {
         }
     } else { normal.style.display = "block"; }
 }
-
+sub_menu();
 function menuClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);

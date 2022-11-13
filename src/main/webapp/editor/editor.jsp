@@ -84,9 +84,10 @@
             <a onclick="location.href='/editor/editor_write';" class="on box_eft_02">글쓰기</a>
         </div>
     </div>
+</div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
-<script type="text/javascript" src="/js/community.js"></script>
+<script type="text/javascript" src="/js/editor.js"></script>
 </html>
 
 <!-- 커뮤니티 - 에디터 -->
