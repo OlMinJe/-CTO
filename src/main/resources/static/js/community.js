@@ -8,15 +8,15 @@ function changeValue(a) {
 }
 
 /* 상위 메뉴 */
-let active_normal = document.querySelector("#community_normal");
-let active_editor = document.querySelector("#community_editor");
+//let active_normal = document.querySelector("#community_normal");
+//let active_editor = document.querySelector("#community_editor");
 
 /* 하위 메뉴 - 커뮤니티 */
 let normal = document.getElementById('sub-menu');
 
 /* content */
 let table = document.getElementById('community-table');
-let editor_content = document.getElementById('editor_content');
+//let editor_content = document.getElementById('editor_content');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
 let div2 = document.getElementsByClassName("div2");
@@ -57,29 +57,29 @@ menuClick();
 
 
 /* community 탭을 클릭한 경우 */
-function li_active_01() {
+/*function li_active_01() {
     // 초기에 출력되는 content 영역
     table.style.display = "table";
     editor_content.style.display = "none";
 
-    /* 상위 메뉴 class */
+    /!* 상위 메뉴 class *!/
     active_normal.classList.add('active');
     active_editor.classList.remove('active');
     sub_menu();
 }
-li_active_01();
+li_active_01();*/
 
 /* 에디터 탭을 클릭했을 떄의 이벤트 */
-function li_active_02(){
-    /* 상위 메뉴 class */
+/*function li_active_02(){
+    /!* 상위 메뉴 class *!/
     active_normal.classList.remove('active');
     active_editor.classList.add('active');
-    /* 하위 메뉴 class */
+    /!* 하위 메뉴 class *!/
     normal.style.display = "none";
-    /* 데이터 중복 현상 해결*/
+    /!* 데이터 중복 현상 해결*!/
     //dataRedundancy();
     table.style.display = "none";
     editor_content.style.display = "block";
-}
+}*/
 
 
