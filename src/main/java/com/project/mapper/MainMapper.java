@@ -239,4 +239,6 @@ public interface MainMapper {
 	//에디터 글 읽기
 	public NoticeVO noticeRead(int notice_num) throws Exception;
 
+	/** 포인트 관리 **/
+	public void pointModify(MemberVO memberVO) throws Exception;
 }

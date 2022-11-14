@@ -357,4 +357,8 @@ public class BoardService  {
 		return boardmapper.noticeRead(notice_num);
 	}
 
+	public void pointModify(MemberVO memberVO) throws Exception {
+		boardmapper.pointModify(memberVO);
+	}
+
 }

@@ -1017,4 +1017,24 @@ public class BoardController {
 	}
 
 
+
+
+	// 버튼 클릭시 사용자DB에 포인트 +100P 추가
+	@RequestMapping(value="/pointModify", method= RequestMethod.GET)
+	public String pointModify(MemberVO memberVO, HttpServletRequest req) throws Exception {
+
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("userId") != null) {
+			String userId = (String) session.getAttribute("userId");
+			memberVO.setMb_nick(userId);
+		} else if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			//boardVO.setMb_nick(vo.getMb_nick());
+		}
+		boardService.pointModify(memberVO);
+
+		return "redirect:/Entertainment/Entertainment.jsp";
+	}
+
 }

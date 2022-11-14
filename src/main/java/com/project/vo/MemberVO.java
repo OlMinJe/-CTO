@@ -29,4 +29,5 @@ public class MemberVO implements Serializable {
 	private Integer mb_doctor;
 	private Date reg_date;
 	private Boolean check_date;
+	private int mb_point;
 }
