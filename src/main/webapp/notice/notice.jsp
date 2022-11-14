@@ -36,7 +36,7 @@
                         <td>${data.notice_num}</td>
                         <td>${data.mb_nick}</td>
                         <td>
-                            <a href="/editor/editor_view?edit_num=${data.edit_num}&stateCode=${stateCode}&category=${data.edit_category}">${data.notice_title}</a>
+                            <a href="/notice/notice_view?notice_num=${data.notice_num}&stateCode=${stateCode}&category=${data.notice_category}">${data.notice_title}</a>
                         </td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.notice_date}"/></td>
                     </tr>

@@ -525,7 +525,7 @@
 	</insert>
 
 	<!-- 공지사항 글 읽기 -->
-	<select id="noticeRead" resultType="EditorVO">
+	<select id="noticeRead" resultType="NoticeVO">
 		SELECT notice_num, notice_title, notice_content, mb_seq, notice_date, mb_nick
 		FROM tb_notice
 		WHERE notice_num = #{notice_num}
