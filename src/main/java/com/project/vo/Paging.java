@@ -4,7 +4,7 @@ package com.project.vo;
 public class Paging {
 	
 	private int totalCount; // 게시판 전체 데이터 개수
-	private int displayPageNum = 10; // 게시판 화면에서 한번에 보여질 페이지 번호의 개수
+	private int displayPageNum = 5; // 게시판 화면에서 한번에 보여질 페이지 번호의 개수
 	
 	private int startPage; // 화면의 시작 번호
 	private int endPage;  // 화면의 끝 번호

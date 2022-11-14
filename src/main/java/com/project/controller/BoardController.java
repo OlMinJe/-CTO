@@ -87,6 +87,7 @@ public class BoardController {
 			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
 		}
+		model.addAttribute("category",category);
 		return "/community/community";
 	}
 
