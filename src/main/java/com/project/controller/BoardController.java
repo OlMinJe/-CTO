@@ -999,45 +999,18 @@ public class BoardController {
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
 
-		/*if(session.getAttribute("member") != null) {
-			MemberVO vo = (MemberVO) session.getAttribute("member");
-			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
-			model.addAttribute("membervo",membervo);
-			LikeVO like = new LikeVO();
-			like.setEdit_num(notice_num);
-			like.setMb_nick(membervo.getMb_nick());
-
-			int like_check = 0;
-
-			int check=boardService.editorlikecount(like);
-			if(check ==0){
-				boardService.editorlikeinsert(like);
-			} else if (check==1) {
-				like_check=boardService.editorlikegetinfo(like);
-			}
-			model.addAttribute("like_check",like_check);
-		}*/
 		return "/notice/notice_view";
 	}
 
 
 
+	/** ENT 참여 시 포인트 지급 **/
 
-	// 버튼 클릭시 사용자DB에 포인트 +100P 추가
+	// 버튼 클릭시 사용자 DB에 포인트 +100P 추가
 	@RequestMapping(value="/pointModify", method = {RequestMethod.GET, RequestMethod.POST})
 	public String pointModify(MemberVO memberVO, HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
 
 		HttpSession session = req.getSession();
-
-		/*if(session.getAttribute("userId") != null) {
-			String userId = (String) session.getAttribute("userId");
-			memberVO.setMb_nick(userId);
-		} else if(session.getAttribute("member") != null) {
-			MemberVO vo = (MemberVO) session.getAttribute("member");
-			memberVO.setMb_nick(vo.getMb_nick());
-		}*/
-
-
 
 		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
 		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
@@ -1046,7 +1019,8 @@ public class BoardController {
 		memberVO.setMb_seq(seq);
 		boardService.pointModify(memberVO);
 
-		return "redirect:/Entertainment/Entertainment?stateCode="+stateCode;
+		return "redirect:/Entertainment/Entertainment";
+		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 
 	@RequestMapping(value = "/Entertainment/Entertainment")
@@ -1060,12 +1034,9 @@ public class BoardController {
 			model.addAttribute("modifySeq",modifyMember.getMb_seq());
 			model.addAttribute("modifyNick",modifyMember.getMb_nick());
 			boardService.pointModify(modifyMember);
-
-		} else if(session.getAttribute("userId") != null) {
-			model.addAttribute("modifyId", session.getAttribute("userId"));
-			model.addAttribute("stateCode", 2);
 		}
 		return "/Entertainment/Entertainment";
+		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 
 }

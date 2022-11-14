@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Entertainment.css">
     <script>
         function confirm() {
-            var mb_point = $("#mb_point").val();
             location.href="/pointModify";
             return true;
         }
@@ -150,9 +149,9 @@
 
             </div>
         </div>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    <input type="hidden" name="stateCode" value="${stateCode}"/>
-    <input type="hidden" name="mb_nick" id="mb_nick" value="${data.mb_nick}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <input type="hidden" name="stateCode" value="${stateCode}"/>
+        <input type="hidden" name="mb_nick" id="mb_nick" value="${data.mb_nick}">
     </form>
 </div>
 
