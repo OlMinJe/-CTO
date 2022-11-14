@@ -932,6 +932,89 @@ public class BoardController {
 	/** 공지사항 페이지 CRUD () **/
 	//글 작성이랑 리스트만 해도 될까 고민 중, DB 설계도 없음
 
+	//공지사항 리스트
+	@RequestMapping(value = "/notice/notice")
+	public String noticeList(@RequestParam("stateCode") int stateCode, Criteria cri, @RequestParam("category") Integer category, Model model, NoticeVO noticeVO) throws Exception{
+		Paging paging = new Paging();
+		int noticeListCnt = boardService.noticeListCnt(category);
+		paging.setCri(cri);
+		paging.setTotalCount(noticeListCnt);
+		List<Map<String, Object>> list = boardService.noticeList(cri, category);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category", category);
+		return "/notice/notice";
+	}
+
+	// 공지사항 게시판 글쓰기 폼
+	@RequestMapping(value = "/notice/notice_write")
+	public String noticeWriteForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
+			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인 시 있던 세션
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			model.addAttribute("stateCode", 1);
+			model.addAttribute("category",0);
+			//model.addAttribute("category",10);
+
+		} else if(session.getAttribute("userId") != null) {
+			model.addAttribute("modifyId", session.getAttribute("userId"));
+			model.addAttribute("stateCode", 2);
+		}
+		return "/notice/notice_write";
+	}
+
+	// 공지사항 글쓰기
+	@RequestMapping(value = "/noticeWrite")
+	public String noticeWrite(@RequestParam("stateCode") int stateCode, NoticeVO noticeVO, HttpServletRequest req, MultipartFile file) throws Exception{
+		HttpSession session = req.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		noticeVO.setMb_seq(seq);
+		boardService.noticeWrite(noticeVO);
+		int category = noticeVO.getNotice_category();
+		return "redirect:/notice/notice?stateCode="+stateCode+"&category="+category;
+	}
+
+	// 공지사항 글 읽기
+	@RequestMapping(value="/notice/notice_view")
+	public String noticeRead(@RequestParam("notice_num") int notice_num, @RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category
+			, Model model, HttpServletRequest req) throws Exception {
+
+		HttpSession session = req.getSession();
+		//boardService.noticeupdatelike(notice_num);
+		NoticeVO data = boardService.noticeRead(notice_num);
+		model.addAttribute("data", data);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category",category);
+
+		/*if(session.getAttribute("member") != null) {
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
+			model.addAttribute("membervo",membervo);
+			LikeVO like = new LikeVO();
+			like.setEdit_num(notice_num);
+			like.setMb_nick(membervo.getMb_nick());
+
+			int like_check = 0;
+
+			int check=boardService.editorlikecount(like);
+			if(check ==0){
+				boardService.editorlikeinsert(like);
+			} else if (check==1) {
+				like_check=boardService.editorlikegetinfo(like);
+			}
+			model.addAttribute("like_check",like_check);
+		}*/
+		return "/notice/notice_view";
+	}
 
 
 }

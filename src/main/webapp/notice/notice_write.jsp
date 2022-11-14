@@ -29,10 +29,64 @@
 
             });
         });
+
+        function confirm() {
+            var title = $("#notice_title").val().trim();
+            var content =  $("#notice_content").val().trim();
+
+            if(title == "" || title ==null) {
+                alert("제목을 입력해주세요.");
+                return false;
+            } else if(content == ""|| content ==null) {
+                alert("내용을 입력해주세요.");
+                return false;
+            }
+
+            if(title != "" && title != "") {
+                location.href="/noticeWrite";
+                return true;
+            }
+        }
     </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<div class="col-12 board_wrap">
+    <form action='<c:url value='/noticeWrite'/>' method="post" onsubmit="return confirm()" enctype="multipart/form-data">
+        <div class="col-12 col-lg-10 board_con">
+            <div class="col-12 board_title">공지사항 작성</div>
+            <div class="col-12 board_list">
+                <div class="col-12 write_title">
+                    <dl>
+                        <dt class="col-12 col-sm-2">제목</dt>
+                        <dd class="col-12 col-sm-10"><input type="text" placeholder="제목 입력" id="notice_title" name="notice_title" class="box_eft_01"></dd>
+                    </dl>
+                </div>
+                <div class="col-12 write_content">
+                    <form method="post">
+                        <textarea placeholder="공지사항을 작성해주세요!" name="notice_content" id="notice_content"></textarea>
+                    </form>
+                </div>
+            </div>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <input type="hidden" name="stateCode" value="${stateCode}"/>
+            <%--<input type="hidden" name="category" value="${category}"/>--%>
+            <input type="hidden" name="mb_nick" value="${modifyNick}">
+            <div class="col-12 btn_wrap" style="margin-top: 20px;">
+                <button type="submit" class="on box_eft_02">글 등록</button>
+                <a onclick="location.href='/notice/notice?stateCode=${stateCode}';" class="box_eft_02">목록</a>
+
+            </div>
+        </div>
+    </form>
+</div>
+<jsp:include page="../fixed/footer.jsp"></jsp:include>
+</body>
+</html>
+
+
+<%--
 <div class="col-12 board_wrap">
     <div class="col-12 col-lg-10 board_con">
         <div class="col-12 board_title">글 작성</div>
@@ -80,7 +134,4 @@
             <a onclick="location.href='/advice/advice.jsp';" class="box_eft_02">취소</a>
         </div>
     </div>
-</div>
-<jsp:include page="../fixed/footer.jsp"></jsp:include>
-</body>
-</html>
+</div>--%>

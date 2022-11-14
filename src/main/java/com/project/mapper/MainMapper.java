@@ -229,4 +229,14 @@ public interface MainMapper {
 	public int editorupdatelike(int edit_num) throws Exception;
 
 	/** 공지사항 페이지 **/
+	public List<Map<String, Object>> noticeList(Criteria cri, Integer category) throws Exception;
+	//에디터 글 카운트
+	public int noticeListCnt(Integer category) throws Exception;
+
+	//에디터 글 작성
+	public void noticeWrite(NoticeVO noticeVO) throws Exception;
+
+	//에디터 글 읽기
+	public NoticeVO noticeRead(int notice_num) throws Exception;
+
 }

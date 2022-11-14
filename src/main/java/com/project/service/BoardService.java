@@ -340,4 +340,21 @@ public class BoardService  {
 		return boardmapper.editorupdatelike(edit_num);
 	}
 
+
+	//공지사항 페이지
+	public List<Map<String, Object>> noticeList(Criteria cri, Integer category) throws Exception{
+		return boardmapper.noticeList(cri,category);
+	}
+	public int noticeListCnt(Integer category) throws Exception{
+		return boardmapper.noticeListCnt(category);
+	}
+
+	public void noticeWrite(NoticeVO noticeVO) throws Exception{
+		boardmapper.noticeWrite(noticeVO);
+	}
+
+	public NoticeVO noticeRead(int notice_num) throws Exception{
+		return boardmapper.noticeRead(notice_num);
+	}
+
 }

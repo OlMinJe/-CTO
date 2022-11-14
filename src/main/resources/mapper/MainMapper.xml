@@ -497,4 +497,41 @@
 		set b.edit_like = (select count(edit_num) from tb_like where edit_num = #{edit_num} and like_check=1)
 		where b.edit_num = #{edit_num}
 	</update>
+
+
+
+
+	<!-- 공지사항 리스트-->
+	<select id="noticeList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM tb_notice
+		where notice_category = #{category}
+		ORDER BY notice_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+
+	<select id="noticeListCnt" resultType="int">
+		SELECT count(*)
+		FROM tb_notice
+		where notice_category = #{category}
+	</select>
+
+	<!-- 공지사항 글 작성 -->
+	<insert id="noticeWrite">
+		INSERT INTO tb_notice (notice_title, notice_content, mb_seq, mb_nick)
+		VALUES (#{notice_title}, #{notice_content}, #{mb_seq}, #{mb_nick})
+	</insert>
+
+	<!-- 공지사항 글 읽기 -->
+	<select id="noticeRead" resultType="EditorVO">
+		SELECT notice_num, notice_title, notice_content, mb_seq, notice_date, mb_nick
+		FROM tb_notice
+		WHERE notice_num = #{notice_num}
+	</select>
+
+
+
+
 </mapper>

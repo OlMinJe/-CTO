@@ -115,7 +115,7 @@
         <div class="col-12 mainvisual_wrap">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide slide01" onclick="location.href='/notice/notice.jsp'">
+                        <div class="swiper-slide slide01" onclick="location.href='/notice/notice?stateCode=${stateCode}&category=0'">
                             <span>공지사항(ver.22/12/31)</span>
                         </div>
                         <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
