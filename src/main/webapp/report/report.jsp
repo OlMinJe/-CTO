@@ -82,6 +82,7 @@
                 </tbody>-->
             </table>
             <!-- TODO: 부트스트랩 템플릿 이용 -->
+            <!--
             <ul class="pagination">
                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -90,8 +91,25 @@
                 <li class="page-item"><a class="page-link" href="#">4</a>
                 <li class="page-item"><a class="page-link" href="#">5</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>-->
+            <ul class="pagination" style="margin-bottom: 20px;">
+                <c:if test="${paging.prev}">
+                    <li class="page-item"><a class="page-link" href="/report/report?stateCode=${stateCode}&category=${category}&page=${paging.startPage-1}">Previous</a></li>
+                </c:if>
+                <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                    <c:choose>
+                        <c:when test="${paging.cri.page == num}">
+                            <li class="page-item active"><a class="page-link" href="/report/report?stateCode=${stateCode}&category=${category}&page=${num}">${num}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="/report/report?stateCode=${stateCode}&category=${category}&page=${num}">${num}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <c:if test="${paging.next && paging.endPage>0}">
+                    <li class="page-item"><a class="page-link" href="/report/report?stateCode=${stateCode}&category=${category}&page=${paging.endPage+1}">Next</a></li>
+                </c:if>
             </ul>
-
         </div>
     </div>
     <input type="hidden" name="category" value="${category}"/>
