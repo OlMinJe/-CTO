@@ -812,6 +812,7 @@ public class BoardController {
 								, Model model, HttpServletRequest req) throws Exception {
 
 		HttpSession session = req.getSession();
+		boardService.editorupdatelike(edit_num);
 		EditorVO data = boardService.editorRead(edit_num);
 		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
@@ -914,7 +915,7 @@ public class BoardController {
 		try {
 			int edit_num = like.getEdit_num();
 			boardService.editorlikeupdate(like);
-			boardService.editorupdatecomlike(edit_num); //좋아요 변화에 따라서 바로 커뮤니티 테이블에서 com_like 값 변경
+			boardService.editorupdatelike(edit_num); //좋아요 변화에 따라서 바로 커뮤니티 테이블에서 com_like 값 변경
 			map.put("result", "success");
 
 		}catch(Exception e) {

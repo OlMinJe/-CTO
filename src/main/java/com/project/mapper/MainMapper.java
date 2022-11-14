@@ -226,7 +226,7 @@ public interface MainMapper {
 	public void editorlikeupdate(LikeVO like) throws Exception;
 
 	//게시글 별 좋아요 카운트 후 수정
-	public int editorupdatecomlike(int edit_num) throws Exception;
+	public int editorupdatelike(int edit_num) throws Exception;
 
 	/** 공지사항 페이지 **/
 }

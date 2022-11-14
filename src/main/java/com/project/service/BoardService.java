@@ -336,8 +336,8 @@ public class BoardService  {
 		boardmapper.editorlikeupdate(like);
 	}
 
-	public int editorupdatecomlike(int edit_num) throws Exception {
-		return boardmapper.editorupdatecomlike(edit_num);
+	public int editorupdatelike(int edit_num) throws Exception {
+		return boardmapper.editorupdatelike(edit_num);
 	}
 
 }

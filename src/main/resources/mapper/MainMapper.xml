@@ -491,4 +491,10 @@
 		where mb_nick=#{mb_nick} and edit_num=#{edit_num}
 	</update>
 
+	<!-- 에디터 좋아요 수 출력-->
+	<update id="editorupdatelike" parameterType="int">
+		update tb_editor b
+		set b.edit_like = (select count(edit_num) from tb_like where edit_num = #{edit_num} and like_check=1)
+		where b.edit_num = #{edit_num}
+	</update>
 </mapper>
