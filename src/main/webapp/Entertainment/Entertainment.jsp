@@ -13,15 +13,17 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/Entertainment/Entertainment.css">
     <script>
-        function Click() {
+        function confirm() {
+            var mb_point = $("#mb_point").val();
             location.href="/pointModify";
+            return true;
         }
     </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12 Enter-container">
-    <%--<form action='<c:url value='/pointModify'/>' method="post" &lt;%&ndash;onsubmit="return confirm()"&ndash;%&gt; enctype="multipart/form-data">--%>
+    <form action='<c:url value='/pointModify'/>' method="post" onsubmit="return confirm()" enctype="multipart/form-data">
         <div class="col-12 col-md-10 Ent_main">
             <input type="radio" id="Ent_tab-1" name="show" checked/>
             <input type="radio" id="Ent_tab-2" name="show"/>
@@ -44,7 +46,8 @@
                                             <strong>테트리스</strong>
                                             <p>간단하게 무료 퍼즐 게임을 즐겨보세요!</p>
                                             <%--<a href="Enter_tetris.jsp">바로가기</a>--%>
-                                            <button type="button" class="box_eft_02" onclick="Click()">click</button>
+                                            <%--<button type="button" class="box_eft_02" onclick="Click()">click</button>--%>
+                                            <button type="submit" class="box_eft_02">click</button>
                                         </div>
                                     </div>
                                 </li>
@@ -147,9 +150,12 @@
 
             </div>
         </div>
-    <%--</form>--%>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <input type="hidden" name="stateCode" value="${stateCode}"/>
+    <input type="hidden" name="mb_nick" id="mb_nick" value="${data.mb_nick}">
+    </form>
 </div>
-<input type="hidden" name="stateCode" value="${stateCode}"/>
+
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 <script type="text/javascript" src="/js/Entertainment.js"></script>
 </body>

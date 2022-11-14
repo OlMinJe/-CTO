@@ -1,6 +1,7 @@
 package com.project.controller;
 
 import com.project.service.BoardService;
+import com.project.service.MemberService;
 import com.project.vo.*;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +30,9 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
+
+	@Autowired
+	MemberService memberService;
 
 	/*	*//** board CRUD - 커뮤니티 **///*
 	// 게시판 리스트 및 메인페이지 + kakao user/session
@@ -1020,21 +1024,48 @@ public class BoardController {
 
 
 	// 버튼 클릭시 사용자DB에 포인트 +100P 추가
-	@RequestMapping(value="/pointModify", method= RequestMethod.GET)
-	public String pointModify(MemberVO memberVO, HttpServletRequest req) throws Exception {
+	@RequestMapping(value="/pointModify", method = {RequestMethod.GET, RequestMethod.POST})
+	public String pointModify(MemberVO memberVO, HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
 
 		HttpSession session = req.getSession();
 
-		if(session.getAttribute("userId") != null) {
+		/*if(session.getAttribute("userId") != null) {
 			String userId = (String) session.getAttribute("userId");
 			memberVO.setMb_nick(userId);
 		} else if(session.getAttribute("member") != null) {
 			MemberVO vo = (MemberVO) session.getAttribute("member");
-			//boardVO.setMb_nick(vo.getMb_nick());
-		}
+			memberVO.setMb_nick(vo.getMb_nick());
+		}*/
+
+
+
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		memberVO.setMb_seq(seq);
 		boardService.pointModify(memberVO);
 
-		return "redirect:/Entertainment/Entertainment.jsp";
+		return "redirect:/Entertainment/Entertainment?stateCode="+stateCode;
+	}
+
+	@RequestMapping(value = "/Entertainment/Entertainment")
+	public String EntertainmentForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
+			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인 시 있던 세션
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			boardService.pointModify(modifyMember);
+
+		} else if(session.getAttribute("userId") != null) {
+			model.addAttribute("modifyId", session.getAttribute("userId"));
+			model.addAttribute("stateCode", 2);
+		}
+		return "/Entertainment/Entertainment";
 	}
 
 }

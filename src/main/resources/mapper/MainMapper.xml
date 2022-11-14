@@ -532,10 +532,10 @@
 	</select>
 
 
-	<update id="pointModify" parameterType="com.project.vo.MemberVO">
+	<update id="pointModify" parameterType="com.project.vo.MemberVO" >
 		UPDATE tb_member
-		SET mb_point = mb_point + 100
-		WHERE mb_nick = #{mb_nick}
+		SET mb_point = #{mb_point}+100
+		WHERE mb_id = #{mb_id}
 	</update>
 
 
