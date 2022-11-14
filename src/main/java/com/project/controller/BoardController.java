@@ -821,6 +821,19 @@ public class BoardController {
 			MemberVO vo = (MemberVO) session.getAttribute("member");
 			MemberVO membervo = boardService.membermodifyGET(vo.getMb_id());
 			model.addAttribute("membervo",membervo);
+			LikeVO like = new LikeVO();
+			like.setEdit_num(edit_num);
+			like.setMb_nick(membervo.getMb_nick());
+
+			int like_check = 0;
+
+			int check=boardService.editorlikecount(like);
+			if(check ==0){
+				boardService.editorlikeinsert(like);
+			} else if (check==1) {
+				like_check=boardService.editorlikegetinfo(like);
+			}
+			model.addAttribute("like_check",like_check);
 		}
 		return "/editor/editor_view";
 	}
