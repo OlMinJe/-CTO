@@ -242,9 +242,6 @@ public class MemberService implements UserDetailsService {
         mapper.profileModifyPOST(memberVO);
     }
 
-    //메인에 포인트 띄우기
-    public void point(MemberVO memberVO) throws Exception {
-        mapper.point(memberVO);
-    }
+
 
 }

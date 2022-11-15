@@ -538,9 +538,4 @@
 		WHERE mb_id = #{mb_id}
 	</update>
 
-	<select id="point" resultType="int">
-		SELECT mb_point
-		FROM tb_member
-		where mb_id = #{mb_id}
-	</select>
 </mapper>
