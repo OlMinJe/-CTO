@@ -81,7 +81,7 @@
                             </li>
                             <li class="col-5 user_home_02">
                                 <%--<span>300P</span>--%>
-                                <span>${data.mb_point}</span> <!--안됨-->
+                                <span>${mb_point}</span> <!--안됨-->
                                     <span>${sessionScope.member.mb_point}</span><!--0으로 출력됨-->
                                 <a class="logout" onclick="location.href='/login/logout.jsp'"
                                    title="Logout icons created by Pixel perfect - Flaticon"></a>
