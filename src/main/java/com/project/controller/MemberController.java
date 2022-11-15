@@ -1,5 +1,6 @@
 package com.project.controller;
 
+import com.project.service.BoardService;
 import com.project.service.MemberService;
 import com.project.vo.MemberVO;
 import lombok.AllArgsConstructor;
@@ -34,14 +35,25 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
+    @Autowired
+    BoardService boardService;
+
     @GetMapping(value = "/")
     public String main()throws Exception {
         return "/main/main";
     }
 
     @GetMapping("/main")
-    public String main(@RequestParam("stateCode") int stateCode, Model model){
+    public String main(@RequestParam("stateCode") int stateCode, Model model, HttpServletRequest req) throws Exception {
         model.addAttribute("stateCode", stateCode);
+
+        HttpSession session = req.getSession();
+        MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인 시 있던 세션
+        MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+        model.addAttribute("modifyId", modifyMember.getMb_id());
+        model.addAttribute("modifySeq",modifyMember.getMb_seq());
+        model.addAttribute("mb_point",modifyMember.getMb_point());
+
         return "/main/main";
     }
 

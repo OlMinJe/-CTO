@@ -34,7 +34,6 @@ public class MemberService implements UserDetailsService {
     @Autowired
     MainMapper mapper;
 
-
     /** 회원가입 **/
     // 유저체크
     public MemberVO userCheck(MemberVO memberVO) throws Exception {
@@ -237,8 +236,15 @@ public class MemberService implements UserDetailsService {
     public MemberVO profileModifyGET(String mb_id) throws Exception {
         return mapper.profileModifyGET(mb_id);
     }
-    public void profileModifyPOST(MemberVO memberVO) throws Exception {
+
+    //게임&테스트 종료 시 포인트 지급
+   public void profileModifyPOST(MemberVO memberVO) throws Exception {
         mapper.profileModifyPOST(memberVO);
+    }
+
+    //메인에 포인트 띄우기
+    public void point(MemberVO memberVO) throws Exception {
+        mapper.point(memberVO);
     }
 
 }

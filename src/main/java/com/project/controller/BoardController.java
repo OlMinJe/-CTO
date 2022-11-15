@@ -1005,10 +1005,11 @@ public class BoardController {
 
 
 	/** ENT 참여 시 포인트 지급 **/
+	//문제 발생 : 폼을 통째로 전달하기 때문에 각각의 페이지로 넘어가는 것이 불가능함. 이벤트 각각의 페이지마다 포인트 지금 페이지를 만들고 누르면 포인트 지급해야 될 듯함...
 
 	// 버튼 클릭시 사용자 DB에 포인트 +100P 추가
 	@RequestMapping(value="/pointModify", method = {RequestMethod.GET, RequestMethod.POST})
-	public String pointModify(MemberVO memberVO, HttpServletRequest req, Model model, @RequestParam("stateCode") int stateCode) throws Exception {
+	public String pointModify(MemberVO memberVO, HttpServletRequest req, Model model) throws Exception {
 
 		HttpSession session = req.getSession();
 
@@ -1023,7 +1024,7 @@ public class BoardController {
 		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 
-	@RequestMapping(value = "/Entertainment/Entertainment")
+	@RequestMapping(value = "/Entertainment/Enter_point")
 	public String EntertainmentForm(HttpServletRequest req, Model model) throws Exception{
 		HttpSession session = req.getSession();
 
@@ -1035,7 +1036,7 @@ public class BoardController {
 			model.addAttribute("modifyNick",modifyMember.getMb_nick());
 			boardService.pointModify(modifyMember);
 		}
-		return "/Entertainment/Entertainment";
+		return "/Entertainment/Enter_point";
 		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 

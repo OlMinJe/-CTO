@@ -241,4 +241,6 @@ public interface MainMapper {
 
 	/** 포인트 관리 **/
 	public void pointModify(MemberVO memberVO) throws Exception;
+
+	public void point(MemberVO memberVO) throws Exception;
 }

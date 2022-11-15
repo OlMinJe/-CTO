@@ -28,7 +28,7 @@
             <ul class="col-12 col-sm-9 col-md-4"></ul>
         </div>
         <div class="col-12" style="text-align: center;">
-            <button onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}'">포기하기</button>
+            <button onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">포기하기</button>
         </div>
     </div>
 </div>

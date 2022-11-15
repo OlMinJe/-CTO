@@ -78,11 +78,11 @@
                                     <a class="box_eft_02"
                                        onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
                                 </c:if>
-                                <!--삭제 예정-->
-                                <%--<a class="box_eft_02" onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>--%>
                             </li>
                             <li class="col-5 user_home_02">
-                                <span>300P</span>
+                                <%--<span>300P</span>--%>
+                                <span>${data.mb_point}</span> <!--안됨-->
+                                    <span>${sessionScope.member.mb_point}</span><!--0으로 출력됨-->
                                 <a class="logout" onclick="location.href='/login/logout.jsp'"
                                    title="Logout icons created by Pixel perfect - Flaticon"></a>
                                 <c:if test="${sessionScope.stateCode == 0}">
@@ -90,6 +90,9 @@
                                             onclick="location.href='/admin/securityAdmin'">관리자 페이지로 넘어가기
                                     </button>
                                 </c:if>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <input type="hidden" name="stateCode" value="${stateCode}"/>
+                                    <input type="hidden" name="mb_point" id="mb_point" value="${data.mb_point}">
                             </li>
                         </ul>
                     </div>

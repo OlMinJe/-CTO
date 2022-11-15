@@ -44,9 +44,9 @@
                                         <div class="Enter_content">
                                             <strong>테트리스</strong>
                                             <p>간단하게 무료 퍼즐 게임을 즐겨보세요!</p>
-                                            <%--<a href="Enter_tetris.jsp">바로가기</a>--%>
+                                            <a href="Enter_tetris.jsp">바로가기</a>
                                             <%--<button type="button" class="box_eft_02" onclick="Click()">click</button>--%>
-                                            <button type="submit" class="box_eft_02">click</button>
+                                            <%--<button type="submit" class="box_eft_02">click</button>--%>
                                         </div>
                                     </div>
                                 </li>
