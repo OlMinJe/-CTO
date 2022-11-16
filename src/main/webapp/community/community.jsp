@@ -70,19 +70,19 @@
             <%-- 커뮤니티 - 일반 --%>
             <table class="table table-hover table-bordered" id="community-table">
                 <tr>
-                    <th>글번호</th>
-                    <th>카테고리</th>
-                    <th>작성자</th>
+                    <th class="displayNo">글번호</th>
+                    <th class="displayNo">카테고리</th>
+                    <th class="displayNo">작성자</th>
                     <th>제목</th>
-                    <th>작성시간</th>
+                    <th class="displayNo">작성시간</th>
                     <th>조회수</th>
                     <th>좋아요</th>
                 </tr>
                 <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
                 <c:forEach items="${list}" var="data">
                     <tr>
-                        <td>${data.com_num}</td>
-                        <div>
+                        <td class="displayNo">${data.com_num}</td>
+                        <div class="displayNo">
                             <c:choose>
                                 <c:when test="${data.com_category == 0}">
                                     <td>일상</td>
@@ -107,7 +107,7 @@
                                 </c:when>
                             </c:choose>
                         </div>
-                        <td>${data.mb_nick}</td>
+                        <td class="displayNo">${data.mb_nick}</td>
                         <td>
                             <c:if test="${sessionScope.stateCode ne 1}">
                                 <a href="/com/com_view?com_num=${data.com_num}&category=${data.com_category}">${data.com_title}</a>
@@ -119,7 +119,7 @@
                                 <small>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</small>
                             </c:if>
                         </td>
-                        <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>
+                        <td class="displayNo"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.com_date}"/></td>
                         <td>${data.com_hit}</td>
                         <td>${data.com_like}</td>
                     </tr>

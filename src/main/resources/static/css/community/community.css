@@ -45,6 +45,7 @@ div.col-12.editor_wrap { text-align: center; }
 .content-table table td.title { text-align: initial; }
 .pagination { justify-content: center; }
 
+.content-table .displayNo { display: none; }
 
 /* pagination */
 .page-item .page-link { border: 1px solid #dcc5df; color: #dcc5df; border-radius: 0; }
@@ -120,6 +121,8 @@ button#likebtn { height: 100%; background-size: 45px; background-repeat: no-repe
     .menu .menu-box-01 li:first-child { border-radius: 10px 0 0 10px; }
     .menu .menu-box-01 li:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }
     .menu #sub-menu { display: block; }
+
+    .content-table .displayNo { display: block; }
 
     .board_list .write_info dl dd select { width: 50%; }
     .board_list .write_title dl dd input, .board_list .write_info dl dd select { width: 90%; }
