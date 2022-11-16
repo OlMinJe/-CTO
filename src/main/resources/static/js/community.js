@@ -34,33 +34,8 @@ function sub_menu() {
     } else { normal.style.display = "block"; }
 }
 sub_menu();
+
 function menuClick() {
-    var sch = location.search;
-    var params = new URLSearchParams(sch);
-
-    for (var i = 0; i < div2.length; i++) {
-        if(div3[i].classList[1] == "active"){
-            div3[i].classList.remove("active");
-        }
-    }
-
-    if(params.get('sort')=='viewCount' || params.get('sort')=='replyCount' || params.get('sort')=='bno') {
-        for(var a = 0; a < div3.length; a++) {
-            if (params.get('sort') == 'viewCount') {
-                div3[a].classList.add("active");
-            } else if(params.get('sort')=='replyCount') {
-                div3[a].classList.add("active");
-            } else if(params.get('sort')=='bno') {
-                div3[a].classList.add("active");
-            } else {
-                console.log('오류');
-            }
-        }
-    }
-}
-menuClick();
-
-function filterClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
@@ -76,6 +51,32 @@ function filterClick() {
         for(var i = 1; i < div2.length; i++) {
             if(params.get('category') == i-1){
                 div2[i].classList.add("active");
+            }
+        }
+    }
+}
+menuClick();
+
+function filterClick() {
+    var sch = location.search;
+    var params = new URLSearchParams(sch);
+
+    for (var i = 0; i < div3.length; i++) {
+        if(div3[i].classList[i] == "active"){
+            div3[i].classList.remove("active");
+        }
+    }
+
+    if(params.get('sort')=='viewCount' || params.get('sort')=='replyCount' || params.get('sort')=='bno') {
+        for(var a = 0; a < div3.length; a++) {
+            if (params.get('sort') == 'viewCount') {
+                div3[a].classList.add("active");
+            } else if(params.get('sort')=='replyCount') {
+                div3[a].classList.add("active");
+            } else if(params.get('sort')=='bno') {
+                div3[a].classList.add("active");
+            } else {
+                console.log('오류');
             }
         }
     }
