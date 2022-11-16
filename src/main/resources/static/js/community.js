@@ -20,6 +20,7 @@ let table = document.getElementById('community-table');
 
 /* 커뮤니티 하위 메뉴를 클릭했을 때의 css 이벤트 */
 let div2 = document.getElementsByClassName("div2");
+let div3 = document.getElementsByClassName("div3");
 
 // 모바일 버전
 function sub_menu() {
@@ -34,6 +35,32 @@ function sub_menu() {
 }
 sub_menu();
 function menuClick() {
+    var sch = location.search;
+    var params = new URLSearchParams(sch);
+
+    for (var i = 0; i < div2.length; i++) {
+        if(div3[i].classList[1] == "active"){
+            div3[i].classList.remove("active");
+        }
+    }
+
+    if(params.get('sort')=='viewCount' || params.get('sort')=='replyCount' || params.get('sort')=='bno') {
+        for(var a = 0; a < div3.length; a++) {
+            if (params.get('sort') == 'viewCount') {
+                div3[a].classList.add("active");
+            } else if(params.get('sort')=='replyCount') {
+                div3[a].classList.add("active");
+            } else if(params.get('sort')=='bno') {
+                div3[a].classList.add("active");
+            } else {
+                console.log('오류');
+            }
+        }
+    }
+}
+menuClick();
+
+function filterClick() {
     var sch = location.search;
     var params = new URLSearchParams(sch);
 
@@ -53,7 +80,7 @@ function menuClick() {
         }
     }
 }
-menuClick();
+filterClick();
 
 
 /* community 탭을 클릭한 경우 */
