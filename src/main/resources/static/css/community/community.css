@@ -122,7 +122,7 @@ button#likebtn { height: 100%; background-size: 45px; background-repeat: no-repe
     .menu .menu-box-01 li:last-child { border-right: 1px solid #dcc5df; border-radius: 0 10px 10px 0; }
     .menu #sub-menu { display: block; }
 
-    .content-table .displayNo { display: block; }
+    .content-table .displayNo { display: table-cell; }
 
     .board_list .write_info dl dd select { width: 50%; }
     .board_list .write_title dl dd input, .board_list .write_info dl dd select { width: 90%; }

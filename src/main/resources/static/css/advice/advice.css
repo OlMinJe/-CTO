@@ -107,7 +107,7 @@ body > div.col-12.advice, body > div.col-12.view_wrap, body > div.col-12.board_w
     .menu .menu-con ul li:first-child { border-radius: 10px 0 0 10px; }
     .menu .menu-con ul li:last-child { border-radius: 0 10px 10px 0; }
 
-    .content.displayNo { display: block; }
+    .content.displayNo { display: table-cell; }
 
     .board_list .write_info dl dd select { width: 50%; }
 }
