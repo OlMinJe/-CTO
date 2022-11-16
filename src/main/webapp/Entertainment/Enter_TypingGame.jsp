@@ -37,7 +37,8 @@
             획득 점수 : <span class="score">0</span>점
         </div>
     </div>
-    <button class="md-5 button loading" onclick="run()">게임을 불러오는 중</button>
+    <button class="md-5 button loading" onclick="run()">게임을 불러오는 중</button><br>
+    <button class="md-5 button loading" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
 </div>
 <script src="/js/TypingGame.js" ></script>
 </body>
