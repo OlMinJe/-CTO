@@ -20,7 +20,13 @@
             GAME OVER
             <div>
                 <button class="restart" style="margin-right: 5px;">다시시작</button>
-                <button class="stop" style="margin-left: 5px;" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">나가기</button>
+                <c:if test="${sessionScope.stateCode ne null}">
+                    <button class="stop" style="margin-left: 5px;" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">그만하기</button>
+                </c:if>
+                <c:if test="${sessionScope.stateCode eq null}">
+                    <button class="stop" style="margin-left: 5px;" onclick="location.href='/Entertainment/Entertainment.jsp'">그만하기</button>
+                </c:if>
+
             </div>
         </div>
         <div class="col-12 score">0</div>
@@ -28,7 +34,12 @@
             <ul class="col-12 col-sm-9 col-md-4"></ul>
         </div>
         <div class="col-12" style="text-align: center;">
-            <button onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">포기하기</button>
+            <c:if test="${sessionScope.stateCode ne null}">
+                <button onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">포기하기</button>
+            </c:if>
+            <c:if test="${sessionScope.stateCode eq null}">
+                <button onclick="location.href='/Entertainment/Entertainment.jsp'">포기하기</button>
+            </c:if>
         </div>
     </div>
 </div>

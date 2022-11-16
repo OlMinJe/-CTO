@@ -60,7 +60,12 @@
         가장 높은 숫자 2048을 만들어보세요!
     </p>
     <div class="game_2048b">
-        <button class="game2048_btn" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+        <c:if test="${sessionScope.stateCode ne null}">
+            <button class="game2048_btn" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+        </c:if>
+        <c:if test="${sessionScope.stateCode eq null}">
+            <button class="game2048_btn" onclick="location.href='/Entertainment/Entertainment.jsp'">종료하기</button>
+        </c:if>
     </div>
 </div>
 

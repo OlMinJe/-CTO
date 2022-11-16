@@ -38,7 +38,13 @@
         </div>
     </div>
     <button class="md-5 button loading" onclick="run()">게임을 불러오는 중</button><br>
-    <button class="md-5 button loading" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+    <c:if test="${sessionScope.stateCode ne null}">
+        <button class="md-5 button loading" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+    </c:if>
+    <c:if test="${sessionScope.stateCode eq null}">
+        <button class="md-5 button loading" onclick="location.href='/Entertainment/Entertainment.jsp'">종료하기</button>
+    </c:if>
+
 </div>
 <script src="/js/TypingGame.js" ></script>
 </body>

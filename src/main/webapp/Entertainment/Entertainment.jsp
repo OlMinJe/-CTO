@@ -45,8 +45,6 @@
                                             <strong>테트리스</strong>
                                             <p>간단하게 무료 퍼즐 게임을 즐겨보세요!</p>
                                             <a href="Enter_tetris.jsp">바로가기</a>
-                                            <%--<button type="button" class="box_eft_02" onclick="Click()">click</button>--%>
-                                            <%--<button type="submit" class="box_eft_02">click</button>--%>
                                         </div>
                                     </div>
                                 </li>
@@ -72,7 +70,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="col-12 col-sm-6 col-md-4 Enter_item item4">
+                                <%--<li class="col-12 col-sm-6 col-md-4 Enter_item item4">
                                     <div class="col-12 Enter_item_border">
                                         <div><img class="Enter_image"
                                                   src="/img/Enter_Game/Enter_game_image.jpeg"></div>
@@ -82,7 +80,7 @@
                                             <a href="#">바로가기</a>
                                         </div>
                                     </div>
-                                </li>
+                                </li>--%>
                             </ul>
                         </div>
                     </div>
