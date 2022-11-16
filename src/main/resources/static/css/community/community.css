@@ -32,6 +32,11 @@ div.col-12.editor_wrap { text-align: center; }
 .btn-outline-success { border-color: #fff; }
 /*.btn-outline-success:hover*/
 
+/* 필터링 */
+.filter { display: inline-block; text-align: right; margin-bottom: 0.5rem; }
+.filter > button { padding: 7px 10px; margin-right: 7px; }
+.filter > button:last-child { margin-right: 0; }
+
 /* 컨텐츠 */
 .content form { margin-left: auto; margin-right: auto; margin-bottom: 20px; }
 .content-table table { margin-bottom: 2rem; }

@@ -50,16 +50,17 @@
             </ul>
         </div>
     </div>
-    <div class="col-12 col-lg-10 content">
+    <%-- 필터링--%>
+    <div class="col-12 col-lg-10 filter">
         <c:if test="${sessionScope.stateCode eq 1}">
-        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=viewCount'" class="btn btn-outline-dark float-right " >조회순</button>
-        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=replyCount'" class="btn btn-outline-dark float-right" data-bs-toggle="button" >댓글순</button>
-        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=bno'" class="btn btn-outline-dark float-right ">최신순</button>
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=viewCount'" class="box_eft_02">조회순</button>
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=replyCount'" class="box_eft_02" data-bs-toggle="button" >댓글순</button>
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=bno'" class="box_eft_02">최신순</button>
         </c:if>
         <c:if test="${sessionScope.stateCode ne 1}">
-            <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="btn btn-outline-dark float-right " >조회순</button>
-            <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="btn btn-outline-dark float-right" data-bs-toggle="button" >댓글순</button>
-            <button type="button" onclick="location.href='/com?category=${category}&sort=bno'" class="btn btn-outline-dark float-right ">최신순</button>
+            <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="box_eft_02" >조회순</button>
+            <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="box_eft_02" data-bs-toggle="button" >댓글순</button>
+            <button type="button" onclick="location.href='/com?category=${category}&sort=bno'" class="box_eft_02">최신순</button><%--class="btn btn-outline-dark float-right "--%>
         </c:if>
     </div>
     <%-- 글 구조 바꾸지마 --%>
