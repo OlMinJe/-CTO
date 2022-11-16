@@ -61,5 +61,6 @@
     </p>
 </div>
 </body>
+<button onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
 <script type="text/javascript" src="/js/Game2048.js"></script>
 </html>
