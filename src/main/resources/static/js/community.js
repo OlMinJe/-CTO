@@ -67,18 +67,14 @@ function filterClick() {
         }
     }
 
-    if(params.get('sort')=='viewCount' || params.get('sort')=='replyCount' || params.get('sort')=='bno') {
-        for(var a = 0; a < div3.length; a++) {
-            if (params.get('sort') == 'viewCount') {
-                div3[a].classList.add("active");
-            } else if(params.get('sort')=='replyCount') {
-                div3[a].classList.add("active");
-            } else if(params.get('sort')=='bno') {
-                div3[a].classList.add("active");
-            } else {
-                console.log('오류');
-            }
-        }
+    if (params.get('sort') == 'viewCount') {
+        div3[0].classList.add("active");
+    } else if(params.get('sort')=='replyCount') {
+        div3[1].classList.add("active");
+    } else if(params.get('sort')=='bno') {
+        div3[2].classList.add("active");
+    } else {
+        console.log('오류');
     }
 }
 filterClick();
