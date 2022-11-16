@@ -173,6 +173,7 @@
                 >키워드4</span
                 >
             </div>
+
         </div>
     </div>
     <!--<img id="Enter_ani_result_keyword"src="" class="mt-5" style="margin: 20px 350px 0px 350px;" alt="결과 키워드">-->
@@ -180,15 +181,28 @@
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="mt-5 share addthis_inline_share_toolbox"></div>
-    <button
-            id="Enter_page"
-            type="button"
-            class="btn btn-light mt-5"
-            style="height: 60px; margin-bottom: 30px"
-            onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'";
-    >
-        포인트 적립하기!
-    </button>
+    <c:if test="${sessionScope.stateCode ne null}">
+        <button
+                id="Enter_page"
+                type="button"
+                class="btn btn-light mt-5"
+                style="height: 60px; margin-bottom: 30px"
+                onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'";
+        >
+            포인트 적립하기!
+        </button>
+    </c:if>
+    <c:if test="${sessionScope.stateCode eq null}">
+        <button
+                id="Enter_page"
+                type="button"
+                class="btn btn-light mt-5"
+                style="height: 60px; margin-bottom: 30px"
+                onclick="location.href='/Entertainment/Entertainment.jsp'";
+        >
+            다른 테스트 하기!
+        </button>
+    </c:if>
 </article>
 
 <!-- 타입별로 데이터 저장 -->

@@ -155,15 +155,28 @@
             class="mt-20 share addthis_inline_share_toolbox"
             style="margin-top: 20px"
     ></div>
-    <button
-            id="Enter_page"
-            type="button"
-            class="btn btn-light mt-5"
-            style="height: 60px; margin-bottom: 30px"
-            onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'" />
-    >
-        포인트 적립하기!
-    </button>
+    <c:if test="${sessionScope.stateCode ne null}">
+        <button
+                id="Enter_page"
+                type="button"
+                class="btn btn-light mt-5"
+                style="height: 60px; margin-bottom: 30px"
+                onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'"
+        >
+            포인트 적립하기!
+        </button>
+    </c:if>
+    <c:if test="${sessionScope.stateCode eq null}">
+        <button
+                id="Enter_page"
+                type="button"
+                class="btn btn-light mt-5"
+                style="height: 60px; margin-bottom: 30px"
+                onclick="location.href='/Entertainment/Entertainment.jsp'"
+        >
+        다른 테스트 하기!
+        </button>
+    </c:if>
 </article>
 
 <!-- input에 점수를 저장, 화면에는 보이지 않도록 hidden , 값(둘 중 앞에 있는 정보)을 저장할 공간이 총 4개가 필요 -> 1. E/I  2. S/N  3. T/F  4. J/P -->
