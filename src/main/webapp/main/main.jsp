@@ -77,6 +77,8 @@
                                 <c:if test="${sessionScope.stateCode == 1}">
                                     <a class="box_eft_02"
                                        onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">마이페이지</a>
+                                    <a class="box_eft_02"
+                                       onclick="location.href='/mypage/mypage.jsp?stateCode=${stateCode}'">출석체크</a>
                                 </c:if>
                             </li>
                             <li class="col-5 user_home_02">
