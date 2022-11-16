@@ -20,7 +20,7 @@
 
 /* second_row_wrap (location/ user) */
 .second_row_wrap { display: flex; flex-direction: column-reverse; }
-.location_wrap { min-height: 315px;overflow: hidden;}
+.location_wrap { min-height: 315px;overflow: hidden; border-radius: 15px; }
 .user_wrap { padding-bottom: 30px;/* border: 1px solid #ccc;*/ }
 
 .user_wrap .login { padding-top: 30px; padding-bottom: 30px; }
@@ -60,7 +60,7 @@
 
 /* mainvisual_wrap */
 .mainvisual_wrap { height: 500px; }
-.mainvisual_wrap .swiper { width: 100%; height: 100%; }
+.mainvisual_wrap .swiper { width: 100%; height: 100%; border-radius: 15px; }
 .mainvisual_wrap .swiper-slide { text-align: center; font-size: 18px; border: 1px solid #ccc;
     /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
 .mainvisual_wrap .swiper-slide img { display: block; width: 100%;/* height: 100%;*/ object-fit: contain; }
@@ -102,15 +102,15 @@
 .sub_swiper_list .swiper-slide.slide03 * { padding-left: 10px; padding-right: 10px; font-family: cursive !important; font-size: 17px; line-height: 23px; font-weight: 500; }
 .sub_swiper_list .swiper-slide.slide03 .swiper_title span { padding-left: 0; padding-right: 0; font-family: cursive; border-bottom: 3px solid #fff; color: #fff; }
 
-.sub_swiper_list .swiper-slide.slide04 { background-color: #FFCE5E; }
+.sub_swiper_list .swiper-slide.slide04 { background-color: #FFCE5E; padding: 20px 30px; }
 .sub_swiper_list .swiper-slide.slide04::before { content: '04'; }
 .sub_swiper_list .swiper-slide.slide04 .swiper_title { font-size: 40px; line-height: 46px; }
 
 
 /* wiseSaying_wrap */
-.wiseSaying_wrap { display: flex; text-align: center; }
-.wiseSaying_wrap .title { padding: 15px 5px; border: 1px solid #dcc5df; border-radius: 10px 0 0 10px;  background-color: #dcc5df; font-weight: 600; color: #fff; }
-.wiseSaying_wrap .wiseSaying_con { padding: 10px 5px; border-bottom: 1px solid /*#f8bbd0*/#dcc5df; font-size: 13px; line-height: 20px; font-weight: 400; }
+.wiseSaying_wrap { display: flex; text-align: center; margin-bottom: 12rem; }
+.wiseSaying_wrap .title { padding: 15px 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: #eab81c; font-weight: 600; color: #fff; }
+.wiseSaying_wrap .wiseSaying_con { z-index: -1; position: absolute; top: 38px; left: 0; right: 0; padding: 40px 5px; border: 1px solid #ccc; border-radius: 15px; background-color: slategrey; font-size: 20px; line-height: 26px; font-weight: 400; color: #fff; }
 
 
 /* community_wrap */
@@ -134,9 +134,7 @@ div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0
 .fixed div.comment { position: absolute; display:none; z-index: 1000; bottom: 105px; right: 35px; width: 220px; padding: 20px 20px; border-radius: 25px; background-color: #f7cc6d;}
 .fixed div.comment::after { border: 20px solid transparent; border-top-color: #f7cc6d; border-bottom: 0; border-right: 0; content: ""; position: absolute; top: 60px; right: 44px; }
 .fixed div.comment a { display: block; position: relative; }
-.fixed div.comment a::after { position: absolute; content: ''; top: 8px; right: 0; width: 7px; height: 7px; border-radius: 50%; background-color: #212121; }
 .fixed div.comment a:hover { color: #fff; }
-.fixed div.comment a:hover::after { background-color: #fff; }
 
 
 
@@ -170,7 +168,7 @@ div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0
 
 
     .wiseSaying_wrap .title { padding-left: 0; padding-right: 0; font-size: 20px; line-height: 26px; }
-    .wiseSaying_wrap .wiseSaying_con { padding: 16px 0; font-size: 15px; line-height: 21px; }
+    /*.wiseSaying_wrap .wiseSaying_con { padding: 16px 0; font-size: 15px; line-height: 21px; }*/
 
     .community_normal .main_community_menu { justify-content: space-around; }
     .community_normal .main_community_menu li { width: 13%;  margin-right: 0; font-size: 15px; line-height: 21px; }

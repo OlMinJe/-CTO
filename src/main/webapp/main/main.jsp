@@ -32,7 +32,7 @@
             <c:if test="${sessionScope.stateCode eq null}">
                 <!--회원 정보 및 로그인-->
                 <div class="col-12 login">
-                        <div class="title" style="text-align: center; margin-bottom: 15px;">로그인</div>
+                        <div class="title" style="text-align: center; margin-bottom: 15px;font-size: 25px; line-height: 31px;">로그인</div>
                         <form action='<c:url value='/userCheck'/>' method="get" class="col-12 col-lg-10">
                             <input type="text" class="box_eft_01" id="mb_id" name="mb_id" placeholder="아이디를 입력해주세요.">
                             <input type="password" class="box_eft_01" id="mb_pw" name="mb_pw" placeholder="비밀번호를 입력해주세요.">
@@ -127,7 +127,7 @@
                 </div>
             </div>
     </div>
-    <section class="col-12 sub_swiper_wrap mb">
+    <section class="col-12 sub_swiper_wrap">
         <canvas id="nigthSky"></canvas>
         <div class="col-12 col-md-8 sub_swiper_con"><!-- https://lpla.tistory.com/149 -->
             <div class="col-6 sub_swiper_list">
@@ -163,9 +163,9 @@
         </div>
     </section>
     <div class="col-12 main">
-        <div class="col-12 wiseSaying_wrap mb">
-            <div class="col-3 title">오늘의 명언</div>
-            <div class="col-9 wiseSaying_con">명언 연결</div>
+        <div class="col-12 wiseSaying_wrap">
+            <div class="col-12 title">오늘의 명언</div>
+            <div class="col-12 wiseSaying_con">명언 연결</div>
         </div>
         <%--<jsp:include page="/community/community.jsp"></jsp:include>--%><!--페이지 전체를 가져와서 불가능!-->
         <div class="col-12 community_wrap mb">
@@ -295,7 +295,7 @@
         </div>
         <div class="col-12 fixed" id="fixed">
             <div class="comment" id="fixed_comment">
-                <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러 가기(클릭)</a>
+                <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러 가기 =></a>
             </div>
         </div>
     </div>
