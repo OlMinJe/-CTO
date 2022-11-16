@@ -82,28 +82,28 @@
                 <c:forEach items="${list}" var="data">
                     <tr>
                         <td class="displayNo">${data.com_num}</td>
-                        <div class="displayNo">
+                        <div>
                             <c:choose>
                                 <c:when test="${data.com_category == 0}">
-                                    <td>일상</td>
+                                    <td class="displayNo">일상</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 1}">
-                                    <td>취미</td>
+                                    <td class="displayNo">취미</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 2}">
-                                    <td>유머</td>
+                                    <td class="displayNo">유머</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 3}">
-                                    <td>음식</td>
+                                    <td class="displayNo">음식</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 4}">
-                                    <td>정보</td>
+                                    <td class="displayNo">정보</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 5}">
-                                    <td>취업/진로</td>
+                                    <td class="displayNo">취업/진로</td>
                                 </c:when>
                                 <c:when test="${data.com_category == 6}">
-                                    <td>기타</td>
+                                    <td class="displayNo">기타</td>
                                 </c:when>
                             </c:choose>
                         </div>

@@ -51,11 +51,11 @@
         <table class="table table-hover table-bordered">
             <tr>
                 <%--<th>자동순번</th>--%>
-                <th>글번호</th>
-                <th>카테고리</th>
-                <th>작성자</th>
+                <th class="displayNo">글번호</th>
+                <th class="displayNo">카테고리</th>
+                <th class="displayNo">작성자</th>
                 <th>제목</th>
-                <th>작성시간</th>
+                <th class="displayNo">작성시간</th>
                 <th>조회수</th>
                 <th>좋아요</th>
             </tr>
@@ -63,45 +63,45 @@
             <c:forEach items="${list}" var="data">
                 <tr>
                     <%--<td>${no}</td>--%>
-                    <td>${data.talk_num}</td>
+                    <td class="displayNo">${data.talk_num}</td>
                     <div>
                         <c:choose>
                             <c:when test="${data.talk_category == 0}">
-                                <td>일반고민</td>
+                                <td class="displayNo">일반고민</td>
                             </c:when>
                             <c:when test="${data.talk_category == 1}">
-                                <td>대인관계/가족</td>
+                                <td class="displayNo">대인관계/가족</td>
                             </c:when>
                             <c:when test="${data.talk_category == 2}">
-                                <td>정신건강</td>
+                                <td class="displayNo">정신건강</td>
                             </c:when>
                             <c:when test="${data.talk_category == 3}">
-                                <td>직장</td>
+                                <td class="displayNo">직장</td>
                             </c:when>
                             <c:when test="${data.talk_category == 4}">
-                                <td>성소수자</td>
+                                <td class="displayNo">성소수자</td>
                             </c:when>
                             <c:when test="${data.talk_category == 5}">
-                                <td>성추행</td>
+                                <td class="displayNo">성추행</td>
                             </c:when>
                             <c:when test="${data.talk_category == 6}">
-                                <td>출산/육아</td>
+                                <td class="displayNo">출산/육아</td>
                             </c:when>
                             <c:when test="${data.talk_category == 7}">
-                                <td>섭식장애</td>
+                                <td class="displayNo">섭식장애</td>
                             </c:when>
                             <c:when test="${data.talk_category == 8}">
-                                <td>외모</td>
+                                <td class="displayNo">외모</td>
                             </c:when>
                         </c:choose>
                     </div>
-                    <td>${data.mb_nick}</td>
+                    <td class="displayNo">${data.mb_nick}</td>
                     <td><a href="/advice/advice_view?talk_num=${data.talk_num}&stateCode=${stateCode}&category=${data.talk_category}">${data.talk_title}</a>
                         <c:if test="${data.talk_comment ne 0}">
                             <small>[&nbsp;<c:out value="${data.talk_comment}"/>&nbsp;]</small>
                         </c:if>
                     </td>
-                    <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.talk_date}"/></td>
+                    <td class="displayNo"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.talk_date}"/></td>
                     <td>${data.talk_hit}</td>
                     <td>${data.talk_like}</td>
                 </tr>
