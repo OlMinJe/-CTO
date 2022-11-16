@@ -103,7 +103,7 @@
 		select *
         from tb_com_talk
 	</select>
-
+<!--
 	<select id="boardList" resultType="hashmap" parameterType="hashmap">
 		<![CDATA[
 			SELECT *
@@ -122,7 +122,66 @@
 			LIMIT #{cri.pageStart}, #{cri.perPageNum}
 		]]>
 	</select>
-
+-->
+	<select id="boardList" resultType="hashmap" parameterType="hashmap">
+		<choose>
+			<when test="sort == 'replyCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					order by com_comment desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</when>
+			<when test="sort == 'viewCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					order by com_hit desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					order by com_num desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</otherwise>
+		</choose>
+	</select>
+	<select id="boardListDetail" resultType="hashmap" parameterType="hashmap">
+		<choose>
+			<when test="cri.sort == 'replyCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					order by com_comment desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</when>
+			<when test="cri.sort == 'viewCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					order by com_hit desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					order by com_num desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</otherwise>
+		</choose>
+	</select>
 	<select id="boardListCnt" resultType="int">
 		SELECT count(*)
 		FROM tb_com_talk

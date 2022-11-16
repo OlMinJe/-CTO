@@ -38,7 +38,7 @@ public class BoardController {
 	// 게시판 리스트 및 메인페이지 + kakao user/session
 	@RequestMapping(value="/community/community")
 	public String boardList(@RequestParam("stateCode") int stateCode,@RequestParam("category")
-	Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception {
+	Integer category,@RequestParam("sort") String sort,Criteria cri, Model model, MemberVO memberVO) throws Exception {
 
 		// 페이징 객체
 		Paging paging = new Paging();
@@ -46,20 +46,24 @@ public class BoardController {
 		if(category==10){
 			// 전체 글 개수 - 모든 페이지 포함
 			int boardListCnt = boardService.boardListCnt();
+			cri.setSort(sort); // 정렬을 위한 추가코드
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCnt);
 			List<Map<String, Object>> list = boardService.boardList(cri);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
+			model.addAttribute("cri",cri); // 정렬을 위한 추가코드
 		}
 		else{
 			//전체 글 개수 - 카테고리가 있는 경우
 			int boardListCntDetail = boardService.boardListCntDetail(category);
+			cri.setSort(sort); // 정렬을 위한 추가코드
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCntDetail);
 			List<Map<String, Object>> list = boardService.boardListDetail(cri,category);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
+			model.addAttribute("cri",cri); // 정렬을 위한 추가코드
 		}
 		model.addAttribute("stateCode", stateCode);
 		model.addAttribute("category",category);
@@ -70,26 +74,30 @@ public class BoardController {
 
 	//커뮤니티 리스트 - 로그인 안했을 때
 	@RequestMapping(value="/com")
-	public String comList(@RequestParam("category") Integer category,Criteria cri, Model model, MemberVO memberVO) throws Exception{
+	public String comList(@RequestParam("category") Integer category,@RequestParam("sort") String sort,Criteria cri, Model model, MemberVO memberVO) throws Exception{
 		// 페이징 객체
 		Paging paging = new Paging();
 		if(category==10){
 			// 전체 글 개수 - 모든 페이지 포함
 			int boardListCnt = boardService.boardListCnt();
+			cri.setSort(sort);
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCnt);
 			List<Map<String, Object>> list = boardService.boardList(cri);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
+			model.addAttribute("cri",cri); // 정렬을 위한 추가코드
 		}
 		else{
 			//전체 글 개수 - 카테고리가 있는 경우
 			int boardListCntDetail = boardService.boardListCntDetail(category);
+			cri.setSort(sort);
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCntDetail);
 			List<Map<String, Object>> list = boardService.boardListDetail(cri,category);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
+			model.addAttribute("cri",cri); // 정렬을 위한 추가코드
 		}
 		model.addAttribute("category",category);
 		return "/community/community";

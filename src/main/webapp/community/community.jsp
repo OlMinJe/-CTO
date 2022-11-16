@@ -28,27 +28,39 @@
         <div class="col-12 menu-con" id="sub-menu">
             <ul class="col-12 menu-box-01"><!--id="sub-menu"-->
                 <c:if test="${sessionScope.stateCode ne 1}">
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=10';">전체</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=0';">일상</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=1';">취미</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=2';">유머</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=3';">음식</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=4';">정보</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=5';">취업/진로</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/com?category=6';">기타</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=10&sort=bno';">전체</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=0&sort=bno';">일상</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=1&sort=bno';">취미</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=2&sort=bno';">유머</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=3&sort=bno';">음식</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=4&sort=bno';">정보</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=5&sort=bno';">취업/진로</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/com?category=6&sort=bno';">기타</li>
                 </c:if>
                 <c:if test="${sessionScope.stateCode eq 1}"> <!--https://liufeier.tistory.com/22-->
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=10';">전체</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0';">일상</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=1';">취미</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=2';">유머</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=3';">음식</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=4';">정보</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=5';">취업/진로</li>
-                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=6';">기타</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=10&sort=bno';">전체</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=0&sort=bno';">일상</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=1&sort=bno';">취미</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=2&sort=bno';">유머</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=3&sort=bno';">음식</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=4&sort=bno';">정보</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=5&sort=bno';">취업/진로</li>
+                    <li class="box_eft_01 div2" onclick="location.href='/community/community?stateCode=${stateCode}&category=6&sort=bno';">기타</li>
                 </c:if>
             </ul>
         </div>
+    </div>
+    <div class="col-12 col-lg-10 content">
+        <c:if test="${sessionScope.stateCode eq 1}">
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=viewCount'" class="btn btn-outline-dark float-right " >조회순</button>
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=replyCount'" class="btn btn-outline-dark float-right" data-bs-toggle="button" >댓글순</button>
+        <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=bno'" class="btn btn-outline-dark float-right ">최신순</button>
+        </c:if>
+        <c:if test="${sessionScope.stateCode ne 1}">
+            <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="btn btn-outline-dark float-right " >조회순</button>
+            <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="btn btn-outline-dark float-right" data-bs-toggle="button" >댓글순</button>
+            <button type="button" onclick="location.href='/com?category=${category}&sort=bno'" class="btn btn-outline-dark float-right ">최신순</button>
+        </c:if>
     </div>
     <%-- 글 구조 바꾸지마 --%>
     <div class="col-12 col-lg-10 content">
@@ -133,23 +145,23 @@
         <c:if test="${sessionScope.stateCode eq 1}">
             <ul class="pagination" style="margin-bottom: 20px;">
                 <c:if test="${paging.prev}">
-                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.startPage-1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.startPage-1}">Previous</a></li>
                     <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.startPage-1}"/>'>이전</a></span>-->
                 </c:if>
                 <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
                     <c:choose>
                         <c:when test="${paging.cri.page == num}">
-                            <li class="page-item active"><a class="page-link" href="/community/community?stateCode=${stateCode}&category=${category}&page=${num}">${num}</a></li>
+                            <li class="page-item active"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
                             <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${num}"/>'>${num}</a></span>-->
                         </c:when>
                         <c:otherwise>
-                            <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&category=${category}&page=${num}">${num}</a></li>
+                            <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
                             <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${num}"/>'>${num}</a></span>-->
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${paging.next && paging.endPage>0}">
-                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.endPage+1}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.endPage+1}">Next</a></li>
                     <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.endPage+1}"/>'>다음</a></span>-->
                 </c:if>
             </ul>
@@ -157,20 +169,20 @@
         <c:if test="${sessionScope.stateCode ne 1}">
             <ul class="pagination" style="margin-bottom: 20px;">
                 <c:if test="${paging.prev}">
-                    <li class="page-item"><a class="page-link" href="/com?category=${category}&page=${paging.startPage-1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.startPage-1}">Previous</a></li>
                 </c:if>
                 <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
                     <c:choose>
                         <c:when test="${paging.cri.page == num}">
-                            <li class="page-item active"><a class="page-link" href="/com?category=${category}&page=${num}">${num}</a></li>
+                            <li class="page-item active"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${num}">${num}</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li class="page-item"><a class="page-link" href="/com?category=${category}&page=${num}">${num}</a></li>
+                            <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${num}">${num}</a></li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${paging.next && paging.endPage>0}">
-                    <li class="page-item"><a class="page-link" href="/com?category=${category}&page=${paging.endPage+1}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.endPage+1}">Next</a></li>
                 </c:if>
             </ul>
         </c:if>
