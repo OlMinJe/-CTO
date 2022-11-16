@@ -109,8 +109,8 @@
 
 /* wiseSaying_wrap */
 .wiseSaying_wrap { display: flex; text-align: center; margin-bottom: 12rem; }
-.wiseSaying_wrap .title { padding: 15px 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: #eab81c; font-weight: 600; color: #fff; }
-.wiseSaying_wrap .wiseSaying_con { z-index: -1; position: absolute; top: 38px; left: 0; right: 0; padding: 40px 5px; border: 1px solid #ccc; border-radius: 15px; background-color: slategrey; font-size: 20px; line-height: 26px; font-weight: 400; color: #fff; }
+.wiseSaying_wrap .title { padding: 15px 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: #DEBACE; font-weight: 600; color: #fff; }
+.wiseSaying_wrap .wiseSaying_con { z-index: -1; position: absolute; top: 38px; left: 0; right: 0; padding: 40px 5px; border-radius: 15px; background-color: #BA94D1; font-size: 20px; line-height: 26px; font-weight: 400; color: #fff; }
 
 
 /* community_wrap */
