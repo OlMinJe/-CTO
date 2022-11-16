@@ -597,4 +597,8 @@
 		WHERE mb_id = #{mb_id}
 	</update>
 
+	<select id="addCalendar" parameterType="String" resultType="String">
+		select mb_id from tb_member
+	</select>
+
 </mapper>

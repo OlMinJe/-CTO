@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1048,4 +1050,33 @@ public class BoardController {
 		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 
+
+
+	/*@RequestMapping(value = "/users/calendar", method = RequestMethod.GET)
+	public ModelAndView calendar(HttpServletRequest request) {
+		//...
+		Calendar cal = pointMapper.getCalendarByDate(userId);
+		boolean isCheck = cal.getCreateAt() != Timestamp.valueOf(LocalDateTime.now()) ? true : false;
+		mv.addObject("isCheck", isCheck);
+		return mv;
+	}
+
+	@RequestMapping(value = "/users/attendances", method = RequestMethod.GET)
+	@ResponseBody
+	public List<EventVo> getCalendarList(HttpServletRequest request) {
+		//...
+		List<Calendar> calList = pointMapper.getCalendarList(userId);
+		List<EventVo> events = new ArrayList<>();
+		//...
+		return events;
+	}
+
+	@RequestMapping(value = "/users/attendances")
+	@ResponseBody
+	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) {
+		// Point 객체 생성해서 필드에 값 넣기
+		boardService.insertCalendar(userId); 		// Date에 저장 & point 적립
+		return new SimpleDateFormat("yyyy-MM-dd")
+				.format(Timestamp.valueOf(LocalDate.now().atStartOfDay()));
+	}*/
 }

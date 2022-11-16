@@ -242,4 +242,6 @@ public interface MainMapper {
 	/** 포인트 관리 **/
 	public void pointModify(MemberVO memberVO) throws Exception;
 
+	//addCalendar
+	public void addCalendar(String userId) throws Exception;
 }

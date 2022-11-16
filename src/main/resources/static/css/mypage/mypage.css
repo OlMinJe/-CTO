@@ -48,6 +48,8 @@
 .mypage_con .content_box .content_left .calender .sub_title, .mypage_con .content_box .content_right .sub_title
 { margin-bottom: 30px; text-align: center; font-size: 20px; line-height: 26px; font-weight: 600; }
 
+.content_box#tab_0_content .container.calendar-container { display: block; padding-left: 0;}
+
 .content_box#tab_0_content { display: flex; flex-direction: column; height: 100%; }
 .content_box#tab_0_content .content_left { float: left; margin-bottom: 40px; }
 .content_box#tab_0_content .content_left .top { display: flex; justify-content: space-around; margin-bottom: 30px; }
@@ -57,7 +59,7 @@
 .content_box#tab_0_content .content_left .top ul li:first-child { font-size: 30px; line-height: 36px; font-weight: 600; }
 .content_box#tab_0_content .content_left .top ul li:last-child { margin-bottom: 0; text-align: right; font-size: 20px; line-height: 26px; font-weight: 500; }
 .content_box#tab_0_content .content_left .top ul li:last-child span { font-size: 20px; line-height: 26px; font-weight: 500; }
-.content_box#tab_0_content .content_left .calender { padding-top: 20px; border-radius: 10px; border: 1px solid #ccc; box-shadow: 0 0 5px rgb(0 0 0 / 20%); }
+/*.content_box#tab_0_content .content_left .calender { padding-top: 20px; border-radius: 10px; border: 1px solid #ccc; box-shadow: 0 0 5px rgb(0 0 0 / 20%); }
 .content_box#tab_0_content .content_left .calender .calender_top { display: flex; align-items: center; margin-bottom: 30px; }
 .content_box#tab_0_content .content_left .calender .calender_top .nav { align-items: center; }
 .content_box#tab_0_content .content_left .calender .calender_top .nav button.nav-btn { font-size: 15px; line-height:21px; background-color: transparent; border-radius: 50%; cursor: pointer; }
@@ -76,15 +78,15 @@
 .content_box#tab_0_content .content_left .calender .calender_bottom .date:nth-child(7n +1) { color: #D13E3E;}
 .content_box#tab_0_content .content_left .calender .calender_bottom .day:nth-child(7n),
 .content_box#tab_0_content .content_left .calender .calender_bottom .date:nth-child(7n) { color: #396EE2;}
-.content_box#tab_0_content .content_left .calender .calender_bottom .date .other { opacity: .3; }
+.content_box#tab_0_content .content_left .calender .calender_bottom .date .other { opacity: .3; }*/
 
-.content_box#tab_0_content .content_right { float: right; text-align: center; padding: 0 20px;}
-/*.content_box#tab_0_content .content_right .weather_wrap { background-color: #ccc; border-radius: 7%; }*/
+/*.content_box#tab_0_content .content_right { float: right; text-align: center; padding: 0 20px;}
+!*.content_box#tab_0_content .content_right .weather_wrap { background-color: #ccc; border-radius: 7%; }*!
 .content_box#tab_0_content .content_right .weather_wrap .weather_api { padding: 40px 0; }
 .content_box#tab_0_content .content_right .weather_wrap .weather_con { display: flex; justify-content: space-evenly; }
 .content_box#tab_0_content .content_right .weather_wrap .weather_con .weather_list { display: inline-block; }
 .content_box#tab_0_content .content_right .weather_wrap .weather_con .weather_list li { padding: 40px 0; }
-.content_box#tab_0_content .content_right .weather_wrap .weather_con .weather_list li span { padding: 0 10px; }
+.content_box#tab_0_content .content_right .weather_wrap .weather_con .weather_list li span { padding: 0 10px; }*/
 
 
 /* ----------- content 박스 [1. 이벤트 참여냐역] ----------- */

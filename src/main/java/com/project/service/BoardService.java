@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -357,6 +358,12 @@ public class BoardService  {
 
 	public void pointModify(MemberVO memberVO) throws Exception {
 		boardmapper.pointModify(memberVO);
+	}
+
+	@Transactional
+	public void insertCalendar(String userId) throws Exception {
+		boardmapper.addCalendar(userId);
+		//pointMapper.addPoint(point);
 	}
 
 }
