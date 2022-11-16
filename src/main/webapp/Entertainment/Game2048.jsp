@@ -59,8 +59,12 @@
     <p id="info" style="text-align: center">
         가장 높은 숫자 2048을 만들어보세요!
     </p>
+    <div class="game_2048b">
+        <button class="game2048_btn" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+    </div>
 </div>
+
 </body>
-<button onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+
 <script type="text/javascript" src="/js/Game2048.js"></script>
 </html>

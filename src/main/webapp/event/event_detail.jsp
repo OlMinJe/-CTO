@@ -12,6 +12,19 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/event/event_detail.css">
     <script type="text/javascript" src="/js/event.js"></script>
+<%--    <script>--%>
+<%--        window.onload = function btn() {--%>
+<%--            document.getElementById('detail_input1').onsubmit = function () {--%>
+<%--                var user = document.createElement("p")--%>
+<%--                user.textContent = this.event_detail_label.value()--%>
+<%--                document.getElementsByTagName('detail_output')[0].appendChild(user)--%>
+
+<%--                // 내용 처리 후 input 지우는 코드--%>
+<%--                this.event_detail_label.value = ""--%>
+
+<%--                return false;--%>
+<%--            }--%>
+<%--        }--%>
     <script>
         function btn() {
             alert('제출이 완료되었습니다.');
@@ -67,10 +80,20 @@
                             <div class="event_detail_box">응모중</div>
                             <p style="text-align: left;">기간 : 2022.07.27 ~ 2022.12.31</p>
                         </div>
-                        <i style="text-align:left;">※ 삼행시 단어를 꼭 포함해서 제출해주세요! ※ </i>
-                        <label class="event_detail_label">다<input type="text"> </label>
-                        <label class="event_detail_label">온<input type="text"> </label>
-                        <label class="event_detail_label">이<input type="text"> </label>
+                    <br/>
+                        <i class="sam_detail_i">※ 삼행시 단어를 꼭 포함해서 제출해주세요! ※ </i>
+<%--                        <label class="event_detail_label">다<input type="text"> </label>--%>
+<%--                        <label class="event_detail_label">온<input type="text"> </label>--%>
+<%--                        <label class="event_detail_label">이<input type="text"> </label>--%>
+                        <div class="col-12 sam_detail_write">
+                            <form class="detail_input1">
+                                <label for ="event_detail_label" class="event_detail_label">다 온 이</label>
+                                <input type="text"  class="box_eft_01" style="width: 80%; height: 20vh; margin : 20px 0 0 40px; " id="event_detail_label" name="event_detail_label" autocomplete="off" placeholder="입력" />
+<%--                                detail_input--%>
+                            </form>
+
+<%--                            <input class="detail_input" type="text">--%>
+                        </div>
                         <div class="btn_wrap">
                             <a class="box_eft_02" onclick="javascript:btn()">제출하기</a>
                         </div>
@@ -88,11 +111,10 @@
                     <hr/>
                     <div class="event_sub_content text">
                         <div style="text-align: left;">
-                            <ul class="col-12">
+                            <ul class="col-12 detail_output">
                                 <ul class="col-12">
                                     <li>다온이</li>
                                     <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
-                                    <!-- 하트 이모지 변경하여 리액트 구현 예정 -->
                                     <!-- 데이터 가져오기 ( 수정 예정 )  -->
                                     <li>다양한</li>
                                     <li>온라인 서비스를</li>
@@ -120,6 +142,8 @@
         </div>
     </div>
 </div>
+</script>
+
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
 </body>
 </html>

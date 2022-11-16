@@ -58,9 +58,15 @@
                     </div>
                     <hr/>
                     <div class="col-12" style="padding: 20px;">
-                        <input class="col-12 box_eft_01"
-                               style="margin-bottom: 20px; padding: 10px 10px;"
-                               type=“text” placeholder=제목(보류)>
+<%--                        <input class="col-12 box_eft_01"--%>
+<%--                               style="margin-bottom: 20px; padding: 10px 10px;"--%>
+<%--                               type=“text” placeholder=제목(보류)>--%>
+                        <select name="event_book1" class="col-12"
+                                style="margin-bottom: 20px; padding: 10px 10px; border-radius: 5px; border: 1px solid #dcc5df;">
+                            <option value="book0">선택하세요.</option>
+                            <option value="book1">꽃말의 틴생 : 서양 문화로 읽는 매혹적인 꽃 이야기</option>
+                        </select>
+
 
                         <input class="col-12 box_eft_01"
                                style="padding: 10px 10px; min-height: 300px;" type=“text”
@@ -76,40 +82,42 @@
                         <ul>
                             <li class="book_title">
                                 <div class="col-12 col-sm-5" style="display:inline-block; vertical-align:top;">
-                                    <img src="/img/event_book1.jpeg" width="auto;" height="300px;"
+                                    <img src="/img/Event_book/event_book.jpeg" width="auto;" height="300px;"
                                          alt="event_book1"/>
                                 </div>
                                 <div class="col-12 col-sm-7">
                                     <p style="font-size: 20px; line-height: 26px; text-align: left;"><b
-                                            style="font-size: 20px; line-height: 26px;">책 제목</b> : 코스모스 </p>
+                                            style="font-size: 20px; line-height: 26px;">책 제목</b> : 꽃말의 틴생 : 서양 문화로 읽는 매혹적인 꽃 이야기 </p>
                                     <p style="font-size: 20px; line-height: 26px; text-align: left;"><b
-                                            style="font-size: 20px; line-height: 26px;">저자/출판사</b> : 칼 세이건 지음 홍승수 옮김 /
-                                        사이언스북스</p>
+                                            style="font-size: 20px; line-height: 26px;">저자/출판사</b> :샐리 쿨타드 저/박민정 역 | 동양북스(동양books)</p>
                                 </div>
                             </li>
                         </ul>
-                        <div class="content-table">
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                <tr>
-                                    <th style="width: 10%;">No.</th>
-                                    <th style="width: 10%;">작성자</th>
-                                    <th style="width: auto;">제목</th>
-                                    <th style="width: 10%;">댓글수</th>
-                                </tr>
-                                </thead>
-                                <tbody id="event-table"></tbody>
-                            </table>
-                            <ul class="pagination">
-                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
-                        </div>
+                        <p style="border: 1px solid #dcc5df;"></p>
+
+
+<%--                        <div class="content-table">--%>
+<%--                            <table class="table table-hover table-bordered">--%>
+<%--                                <thead>--%>
+<%--                                <tr>--%>
+<%--                                    <th style="width: 10%;">No.</th>--%>
+<%--                                    <th style="width: 10%;">작성자</th>--%>
+<%--                                    <th style="width: auto;">제목</th>--%>
+<%--                                    <th style="width: 10%;">댓글수</th>--%>
+<%--                                </tr>--%>
+<%--                                </thead>--%>
+<%--                                <tbody id="event-table"></tbody>--%>
+<%--                            </table>--%>
+<%--                            <ul class="pagination">--%>
+<%--                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>--%>
+<%--                                <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
+<%--                                <li class="page-item"><a class="page-link" href="#">2</a></li>--%>
+<%--                                <li class="page-item active"><a class="page-link" href="#">3</a></li>--%>
+<%--                                <li class="page-item"><a class="page-link" href="#">4</a>--%>
+<%--                                <li class="page-item"><a class="page-link" href="#">5</a></li>--%>
+<%--                                <li class="page-item"><a class="page-link" href="#">Next</a></li>--%>
+<%--                            </ul>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
             </div>
