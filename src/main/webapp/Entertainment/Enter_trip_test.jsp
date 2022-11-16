@@ -136,9 +136,9 @@
             type="button"
             class="btn btn-light mt-5"
             style="height: 60px; margin-bottom: 30px"
-            onclick="location.href='Entertainment.html'"
+            onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'"
     >
-        다른 테스트 하러 가기!
+        포인트 적립하기!
     </button>
 </article>
 
