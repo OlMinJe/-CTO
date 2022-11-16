@@ -320,7 +320,7 @@
 					<input type="radio" name="mb_sex" class="box_eft_01" id="select02" value="여성"><label for="select02">여성</label>
 				</li>
 				<li class="doctor">
-					<div class="col-4 col-md-6 sub_title">의사 혹은 상담가 등의 전문가 인가요?</div>
+					<div class="col-12 col-md-6 sub_title">의사 혹은 상담가 등의 전문가 인가요?</div>
 					<div>
 						<input type="radio" name="mb_doctor" class="box_eft_01" id="select03" value="0"
 							   checked="checked"><label for="select03">아니오</label>

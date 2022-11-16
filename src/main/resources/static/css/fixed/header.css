@@ -36,7 +36,7 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 .container {position: relative;display: none; justify-content: flex-start; overflow: hidden; padding-left: 30px; }
 .container * {color: #212121;}
 .container h1 {font-size: 1.8rem;}
-.weatherInfo { font-size: 0.8rem; }
+.weatherInfo { font-size: 0.8rem; margin: 0; }
 .weatherIcon { width: 50px; position: absolute; top: -6px; left: calc(50% - 50px); white-space: nowrap; overflow: hidden; }
 
 @media all and (min-width: 768px){

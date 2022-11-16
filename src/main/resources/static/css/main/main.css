@@ -20,7 +20,7 @@
 
 /* second_row_wrap (location/ user) */
 .second_row_wrap { display: flex; flex-direction: column-reverse; }
-.location_wrap { min-height: 315px;overflow: hidden; border-radius: 15px; }
+.location_wrap { min-height: 315px;overflow: hidden; border-radius: 15px; cursor: pointer; }
 .user_wrap { padding-bottom: 30px;/* border: 1px solid #ccc;*/ }
 
 .user_wrap .login { padding-top: 30px; padding-bottom: 30px; }
@@ -61,7 +61,7 @@
 /* mainvisual_wrap */
 .mainvisual_wrap { height: 500px; }
 .mainvisual_wrap .swiper { width: 100%; height: 100%; border-radius: 15px; }
-.mainvisual_wrap .swiper-slide { text-align: center; font-size: 18px; border: 1px solid #ccc;
+.mainvisual_wrap .swiper-slide { text-align: center; font-size: 18px; border: 1px solid #ccc; cursor: pointer;
     /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
 .mainvisual_wrap .swiper-slide img { display: block; width: 100%;/* height: 100%;*/ object-fit: contain; }
 .mainvisual_wrap .swiper-slide.slide01 { background-color: #b5c7ed; }
@@ -74,7 +74,7 @@
 
     /* advice_wrap */
 .advice_wrap ul { display: flex; justify-content: space-around; text-align: center; }
-.advice_wrap ul li { padding: 15px 0; width: 30%; white-space: nowrap; font-size: 12px; line-height: 18px; font-weight: 600; }
+.advice_wrap ul li { padding: 15px 0; width: 30%; white-space: nowrap; font-size: 12px; line-height: 18px; font-weight: 600; cursor: pointer; }
 
 
 /* sub_swiper_wrap */
@@ -130,7 +130,7 @@
 
 
 /* fixed_icon */
-div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0; padding: 20px; bottom: 55px; right: 20px; width: 105px; height: 105px; background-image: url("/img/fixed_icon_02.png"); background-size: 105px; background-repeat: no-repeat; }
+div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0; padding: 20px; bottom: 55px; right: 20px; width: 105px; height: 105px; background-image: url("/img/fixed_icon_02.png"); background-size: 105px; background-repeat: no-repeat; cursor: pointer; }
 .fixed div.comment { position: absolute; display:none; z-index: 1000; bottom: 105px; right: 35px; width: 220px; padding: 20px 20px; border-radius: 25px; background-color: #f7cc6d;}
 .fixed div.comment::after { border: 20px solid transparent; border-top-color: #f7cc6d; border-bottom: 0; border-right: 0; content: ""; position: absolute; top: 60px; right: 44px; }
 .fixed div.comment a { display: block; position: relative; text-align: center; font-width: 500; }
