@@ -127,7 +127,7 @@ button#likebtn { height: 100%; background-size: 45px; background-repeat: no-repe
 
     .board_list .write_info dl dd select { width: 50%; }
     .board_list .write_title dl dd input, .board_list .write_info dl dd select { width: 90%; }
-    .view_list .board_view_content img { width: calc(100% - 300px); }
+    .view_list .board_view_content img { width: calc(100% - 300px); display: block; margin-left: auto; margin-right: auto;}
 
     /* editor */
     .content_card .img { padding-top: 23%; margin-bottom: 0; margin-right: 20px; }
