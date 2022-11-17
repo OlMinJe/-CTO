@@ -26,7 +26,7 @@
         <div class="col-12 col-md-10 Ent_main">
             <div class="col-12 btn_wrap">
                 <div class="col-12 Ent_content">
-                    <p>100P가 지급되었습니다!</p><Br>
+                    <p style="font-size: 30px;line-height: 36px;font-weight: 700;">100P가 지급되었습니다!</p><Br>
                 <a onclick="location.href='/Entertainment/Entertainment.jsp?stateCode=${stateCode}';" class="on box_eft_02">다른 게임 및 테스트하기</a>
                 </div>
             </div>

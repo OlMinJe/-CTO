@@ -23,7 +23,7 @@
         <div class="mb-5 title">너나들이</div>
         <%--Enter_trip_test_title--%>
         <div class="mb-5 col-12 col-lg-10" style="margin-left: auto; margin-right: auto;">
-            <img class="mb-5 Enter_image" src="/img/Enter_HarryPotter_test/Enter_HarryPotter.jpeg">
+            <img class="mb-5 Enter_image" src="/img/Enter_HarryPotter_test/wall.jpg">
             <h1 class="mb-4 text-center">헤리포터 테스트</h1>
             <h5 class="mb-5 text-center">"Sorting hat"가 선택해주는 당신의 기숙사를 알아보러 가보자고</h5>
             <%-- TODO: 이 테스트는 전문적인 그런거 아니라고 설명 필요--%>

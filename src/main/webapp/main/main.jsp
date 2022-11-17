@@ -156,7 +156,7 @@
                         <div class="swiper-slide slide04">
                             <div class="col-12 swiper_title"
                                  onclick="location.href='https://post.naver.com/viewer/postView.naver?volumeNo=34003121&memberNo=856655&vType=VERTICAL';">
-                                오늘의 추천도서<br><span>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</span>
+                                오늘의 추천도서<br><div>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</div>
                             </div>
                         </div>
                     </div>
