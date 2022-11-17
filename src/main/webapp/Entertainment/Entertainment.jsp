@@ -73,10 +73,10 @@
                                 <%--<li class="col-12 col-sm-6 col-md-4 Enter_item item4">
                                     <div class="col-12 Enter_item_border">
                                         <div><img class="Enter_image"
-                                                  src="/img/Enter_Game/Enter_game_image.jpeg"></div>
+                                                  src="/img/Enter_Game/Ent_RPSGame.png"></div>
                                         <div class="Enter_content">
-                                            <strong>게임 제목1</strong>
-                                            <p>게임 내용 소개</p>
+                                            <strong>가위바위보 게임</strong>
+                                            <p>컴퓨터와 가위바위보 해보세요!</p>
                                             <a href="#">바로가기</a>
                                         </div>
                                     </div>

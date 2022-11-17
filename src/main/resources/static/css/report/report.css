@@ -12,7 +12,8 @@
 .menu label { cursor: pointer; float: left; padding: 10px 0; border-radius: 0; border-bottom: 0; text-align: center; text-transform: uppercase; white-space: nowrap; font-size: 16px; line-height: 22px; font-weight: 600; letter-spacing: 2px; user-select: none; -webkit-user-select: none; }
 .menu label:first-child { border-radius: 10px 10px 0 0; }
 .menu label:last-child { border-bottom: 1px solid #dcc5df; border-radius: 0 0 10px 10px; }
-#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }
+#tab-1:checked ~ .tab a:nth-child(1), #tab-2:checked ~ .tab a:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }
+/*#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }*/
 /* TODO: 스크립트로 수정 필요
 #tab-1:checked ~ .report_content div:nth-child(1), #tab-2:checked ~ .report_content div:nth-child(2), #tab-3:checked ~ .report_content div:nth-child(3), #tab-4:checked ~ .report_content div:nth-child(4), #tab-5:checked ~ .report_content div:nth-child(5)  { display: block; }*/
 
