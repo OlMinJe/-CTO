@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <%--<li class="col-12 col-sm-6 col-md-4 Enter_item item4">
+                               <li class="col-12 col-sm-6 col-md-4 Enter_item item4">
                                     <div class="col-12 Enter_item_border">
                                         <div><img class="Enter_image"
                                                   src="/img/Enter_Game/Ent_RPSGame.png"></div>
@@ -80,7 +80,7 @@
                                             <a href="#">바로가기</a>
                                         </div>
                                     </div>
-                                </li>--%>
+                                </li>
                             </ul>
                         </div>
                     </div>
