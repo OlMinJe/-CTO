@@ -17,6 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -1055,28 +1059,53 @@ public class BoardController {
 	/*@RequestMapping(value = "/users/calendar", method = RequestMethod.GET)
 	public ModelAndView calendar(HttpServletRequest request) {
 		//...
+		ModelAndView mv = new ModelAndView();
 		Calendar cal = pointMapper.getCalendarByDate(userId);
 		boolean isCheck = cal.getCreateAt() != Timestamp.valueOf(LocalDateTime.now()) ? true : false;
 		mv.addObject("isCheck", isCheck);
 		return mv;
-	}
+	}*/
 
-	@RequestMapping(value = "/users/attendances", method = RequestMethod.GET)
+	/*HttpSession session = req.getSession();
+		ModelAndView mav = new ModelAndView();
+
+		if (session.getAttribute("member") != null) {
+			logger.info("***session이 유지되는 경우");
+			MemberVO member = (MemberVO) session.getAttribute("member");
+			MemberVO membervo = boardService.membermodifyGET(member.getMb_id());
+			String memeberNick = membervo.getMb_nick();
+
+			if (writer.equals(memeberNick)) {
+				boardService.talkDelete(talk_num);
+				mav.addObject("msg", "success");
+			} else {
+				mav.addObject("msg", "fail");
+			}
+			mav.setViewName("forward:/advice/advice?stateCode="+stateCode);
+		} else {
+			logger.info("***session이 끝난 경우");
+			mav.addObject("msg", "sessionFin");
+			mav.setViewName("index");
+		}
+		return mav;*/
+
+	/*@RequestMapping(value = "/users/attendances", method = RequestMethod.GET)
 	@ResponseBody
-	public List<EventVo> getCalendarList(HttpServletRequest request) {
+	public List<EventVo> getCalendarList(HttpServletRequest request) throws Exception {
 		//...
 		List<Calendar> calList = pointMapper.getCalendarList(userId);
 		List<EventVo> events = new ArrayList<>();
 		//...
 		return events;
-	}
+	}*/
+	//EventVo에는 대체 뭐가 들어가는지???
 
 	@RequestMapping(value = "/users/attendances")
 	@ResponseBody
-	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) {
+	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) throws Exception {
 		// Point 객체 생성해서 필드에 값 넣기
-		boardService.insertCalendar(userId); 		// Date에 저장 & point 적립
+		boardService.insertCalendar(userId);		// Date에 저장 & point 적립
 		return new SimpleDateFormat("yyyy-MM-dd")
 				.format(Timestamp.valueOf(LocalDate.now().atStartOfDay()));
-	}*/
+	}
 }

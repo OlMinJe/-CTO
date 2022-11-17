@@ -23,8 +23,6 @@ $(document).ready(function(){
                             $(".fc-custom2-button").html('출석완료');
                         }
                     });
-
-
                 }
             }
         },
@@ -34,13 +32,13 @@ $(document).ready(function(){
                 // ajax 통신으로 달력 정보 가져오기
                 // GET "/users/attendances" -> {dateList:[ date: "2016-03-21", ... ]}
 
-                /*url: '/users/attendances',
+                url: '/users/attendances',
                 type: 'GET',
                 dataType: "JSON",
                 success: function (data) { },
                 error: function() {
                     alert('there was an error while fetching events!');
-                },*/
+                },
                 color: 'purple',
                 textColor: 'white'
             }
