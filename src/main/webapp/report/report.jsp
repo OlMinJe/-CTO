@@ -24,11 +24,11 @@
         <input type="radio" id="tab-4" name="show"/>
         <input type="radio" id="tab-5" name="show"/>
         <div class="tab">
-            <label class="box_eft_01" for="tab-1"><a href="/report/report?stateCode=${stateCode}&category=0">유저신고</a></label>
-            <label class="box_eft_01" for="tab-2"><a href="/report/report?stateCode=${stateCode}&category=1">댓글/게시판신고</a></label>
-            <label class="box_eft_01" for="tab-3"><a href="/report/report?stateCode=${stateCode}&category=2">페이지오류신고</a></label>
-            <label class="box_eft_01" for="tab-4"><a href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
-            <label class="box_eft_01" for="tab-5"><a href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
+            <label class="box_eft_01" for="tab-1"><a class="box_eft_01" href="/report/report?stateCode=${stateCode}&category=0">유저신고</a></label>
+            <label class="box_eft_01" for="tab-2"><a class="box_eft_01" href="/report/report?stateCode=${stateCode}&category=1">댓글/게시판신고</a></label>
+            <label class="box_eft_01" for="tab-3"><a class="box_eft_01" href="/report/report?stateCode=${stateCode}&category=2">페이지오류신고</a></label>
+            <label class="box_eft_01" for="tab-4"><a class="box_eft_01" href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
+            <label class="box_eft_01" for="tab-5"><a class="box_eft_01" href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
         </div>
     </div>
     <!--
