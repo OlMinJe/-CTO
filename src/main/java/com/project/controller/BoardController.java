@@ -144,7 +144,7 @@ public class BoardController {
 		}
 		boardService.boardWrite(boardVO);
 		int category = boardVO.getCom_category();
-		return "redirect:/community/community?stateCode="+stateCode+"&category="+category;
+		return "redirect:/community/community?stateCode="+stateCode+"&category="+category+"&sort=bno";
 	}
 
 	// 게시글 내용 읽기(커뮤니티)
