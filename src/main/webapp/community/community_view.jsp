@@ -63,6 +63,9 @@
                 </dl>
             </div>
             <div class="col-12 board_view_content">
+                <c:if test="${data.com_photo != null}">
+                    <img src="/static${data.com_photo}" style="max-width: 100%;max-height: 100%;">
+                </c:if>
                 <pre>${data.com_content}</pre>
                 <%--${data.com_photo}--%>
             </div>
