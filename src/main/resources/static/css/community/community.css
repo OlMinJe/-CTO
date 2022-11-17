@@ -69,6 +69,7 @@ div.col-12.editor_wrap { text-align: center; }
 .view_list .board_view_info dl dt { display: inline-block; margin-right: 10px; font-weight: 400; color: #dcc5df; }
 .view_list .board_view_info dl dd { float: right; }
 .view_list .board_view_content { padding: 30px 15px; border-bottom: 2px solid #dcc5df; min-height: 300px; }
+.view_list .board_view_content img { width: 100%; }
 .view_wrap .btn_wrap { margin-bottom: 40px; display: flex; justify-content: center; }
 button#likebtn { height: 100%; background-size: 45px; background-repeat: no-repeat; background-position-x: center; }
 .comment_num { padding-bottom: 10px; margin-bottom: 20px; border-bottom: 2px solid #dcc5df; text-align: left; font-weight: 400; }
@@ -126,6 +127,7 @@ button#likebtn { height: 100%; background-size: 45px; background-repeat: no-repe
 
     .board_list .write_info dl dd select { width: 50%; }
     .board_list .write_title dl dd input, .board_list .write_info dl dd select { width: 90%; }
+    .view_list .board_view_content img { width: calc(100% - 300px); }
 
     /* editor */
     .content_card .img { padding-top: 23%; margin-bottom: 0; margin-right: 20px; }
