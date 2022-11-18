@@ -56,7 +56,7 @@
                 <article class="col-12 content_left"><!--col-lg-7 -->
                     <section class="col-12 calender">
                         <div class="container calendar-container">
-                            <div id="calendar"></div><!--달력 안 나와,,,-->
+                            <div id="calendar"></div>
                         </div>
                     </section>
                     <%--<section class="col-12 calender">

@@ -243,5 +243,5 @@ public interface MainMapper {
 	public void pointModify(MemberVO memberVO) throws Exception;
 
 	//addCalendar
-	public void addCalendar(String userId) throws Exception;
+	public void insertCalendar(MemberVO memberVO) throws Exception;
 }

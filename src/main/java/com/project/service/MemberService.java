@@ -55,26 +55,14 @@ public class MemberService implements UserDetailsService {
         //저장 경로 삭제 -> DB Table에만 저장됨
         String imgPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\profile";
         UUID uuid = UUID.randomUUID();
-        String profile = uuid + "_" + file.getOriginalFilename();
-        File saveimgFile = new File(imgPath, profile);
+        String profileName = uuid + "_" + file.getOriginalFilename();
+        File saveimgFile = new File(imgPath, profileName);
         file.transferTo(saveimgFile);
-        memberVO.setMb_img(profile);
-        mapper.memberRegister(memberVO);
+        memberVO.setMb_img(profileName);
         String mb_img = memberVO.getMb_img();
+        mapper.memberRegister(memberVO);
         return mb_img;
     }
-    /*
-        String projectPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\files";
-		//파일 이름에 붙일 이름 랜덤 생성
-		UUID uuid=UUID.randomUUID();
-		//저장될 파일이름 생성
-		String fileName=uuid+"_"+file.getOriginalFilename();
-		File saveFile = new File(projectPath,fileName);
-		file.transferTo(saveFile);
-		boardVO.setCom_photo("/files/"+fileName);
-		String com_photo = boardVO.getCom_photo();
-		return com_photo;
-		*/
 
     //관리자 페이지 진입(implements UserDetailsService 사용 시 필수 메소드)
     //@Override

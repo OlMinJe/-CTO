@@ -948,7 +948,6 @@ public class BoardController {
 
 
 	/** 공지사항 페이지 CRUD () **/
-	//글 작성이랑 리스트만 해도 될까 고민 중, DB 설계도 없음
 
 	//공지사항 리스트
 	@RequestMapping(value = "/notice/notice")
@@ -1019,7 +1018,6 @@ public class BoardController {
 
 
 	/** ENT 참여 시 포인트 지급 **/
-	//문제 발생 : 폼을 통째로 전달하기 때문에 각각의 페이지로 넘어가는 것이 불가능함. 이벤트 각각의 페이지마다 포인트 지금 페이지를 만들고 누르면 포인트 지급해야 될 듯함...
 
 	// 버튼 클릭시 사용자 DB에 포인트 +100P 추가
 	@RequestMapping(value="/pointModify", method = {RequestMethod.GET, RequestMethod.POST})
@@ -1051,61 +1049,37 @@ public class BoardController {
 			boardService.pointModify(modifyMember);
 		}
 		return "/Entertainment/Enter_point";
-		//return "redirect:/Entertainment/Enter_tetris.jsp";
 	}
 
+	//출석체크 버튼 클릭 시 +10P 지급
+	@RequestMapping(value = "/users/attendances", method = {RequestMethod.GET, RequestMethod.POST})
+	//@ResponseBody
+	public String insertCalendar(MemberVO memberVO, HttpServletRequest req) throws Exception {
 
+		HttpSession session = req.getSession();
 
-	/*@RequestMapping(value = "/users/calendar", method = RequestMethod.GET)
-	public ModelAndView calendar(HttpServletRequest request) {
-		//...
-		ModelAndView mv = new ModelAndView();
-		Calendar cal = pointMapper.getCalendarByDate(userId);
-		boolean isCheck = cal.getCreateAt() != Timestamp.valueOf(LocalDateTime.now()) ? true : false;
-		mv.addObject("isCheck", isCheck);
-		return mv;
-	}*/
+		MemberVO member = (MemberVO) session.getAttribute("member");
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+		int seq = modifyMember.getMb_seq();
+		memberVO.setMb_seq(seq);
+		boardService.insertCalendar(memberVO);	// point 적립 성공
 
-	/*HttpSession session = req.getSession();
-		ModelAndView mav = new ModelAndView();
+		return "redirect:/mypage/mypage?stateCode=1";
+	}
 
-		if (session.getAttribute("member") != null) {
-			logger.info("***session이 유지되는 경우");
+	//마이페이지 메인화면 : 출석버튼 클릭 시 +10P 지급
+	@RequestMapping(value = "/mypage/mypage")
+	public String mypageForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
 			MemberVO member = (MemberVO) session.getAttribute("member");
-			MemberVO membervo = boardService.membermodifyGET(member.getMb_id());
-			String memeberNick = membervo.getMb_nick();
-
-			if (writer.equals(memeberNick)) {
-				boardService.talkDelete(talk_num);
-				mav.addObject("msg", "success");
-			} else {
-				mav.addObject("msg", "fail");
-			}
-			mav.setViewName("forward:/advice/advice?stateCode="+stateCode);
-		} else {
-			logger.info("***session이 끝난 경우");
-			mav.addObject("msg", "sessionFin");
-			mav.setViewName("index");
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			boardService.insertCalendar(modifyMember);
 		}
-		return mav;*/
-
-	/*@RequestMapping(value = "/users/attendances", method = RequestMethod.GET)
-	@ResponseBody
-	public List<EventVo> getCalendarList(HttpServletRequest request) throws Exception {
-		//...
-		List<Calendar> calList = pointMapper.getCalendarList(userId);
-		List<EventVo> events = new ArrayList<>();
-		//...
-		return events;
-	}*/
-	//EventVo에는 대체 뭐가 들어가는지???
-
-	@RequestMapping(value = "/users/attendances")
-	@ResponseBody
-	public String clickCalendar(@RequestParam(value="userId" , required = false) String userId) throws Exception {
-		// Point 객체 생성해서 필드에 값 넣기
-		boardService.insertCalendar(userId);		// Date에 저장 & point 적립
-		return new SimpleDateFormat("yyyy-MM-dd")
-				.format(Timestamp.valueOf(LocalDate.now().atStartOfDay()));
+		return "/mypage/mypage";
 	}
 }

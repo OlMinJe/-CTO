@@ -9,11 +9,28 @@ $(document).ready(function(){
                 text: '출석체크하기',
                 id: 'check',
                 click: function() {
+                    if(this.id != null){
+                        location.href="/users/attendances";
+                        alert("출석 체크 완료!\n50포인트가 적립되었습니다!")
+                        return true;
+                    } else {
+                        alert("출석 체크 실패")
+                        return false;
+                    }
+                    /*if(this.id != null){
+                        location.href="/users/attendances";
+                        alert("출석 체크 완료!\n50포인트가 적립되었습니다!")
+                        return true;
+                    } else {
+                        alert("출석 체크 실패")
+                        return false;
+                    }*/
+
                     // ajax 통신으로 출석 정보 저장하기
                     // POST "/users/attendances" -> { status: "success", date:"2018-07-01"}
                     // 통신 성공시 버튼 바꾸고, property disabled 만들기
 
-                    $.ajax({
+                    /*$.ajax({
                         url: '/users/attendances',
                         type: 'POST',
                         data : {userId: userId},
@@ -22,12 +39,12 @@ $(document).ready(function(){
                             $(".fc-custom2-button").prop('disabled', true);
                             $(".fc-custom2-button").html('출석완료');
                         }
-                    });
+                    });*/
                 }
             }
         },
         // 달력 정보 가져오기
-        eventSources: [
+        /*eventSources: [
             {
                 // ajax 통신으로 달력 정보 가져오기
                 // GET "/users/attendances" -> {dateList:[ date: "2016-03-21", ... ]}
@@ -42,7 +59,7 @@ $(document).ready(function(){
                 color: 'purple',
                 textColor: 'white'
             }
-        ]
+        ]*/
     });
 });
 

@@ -597,8 +597,10 @@
 		WHERE mb_id = #{mb_id}
 	</update>
 
-	<select id="addCalendar" parameterType="String" resultType="String">
-		select mb_id from tb_member
+	<select id="insertCalendar" parameterType="com.project.vo.MemberVO" >
+		UPDATE tb_member
+		SET mb_point = #{mb_point}+10
+		WHERE mb_id = #{mb_id}
 	</select>
 
 </mapper>

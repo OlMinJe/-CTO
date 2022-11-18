@@ -361,8 +361,8 @@ public class BoardService  {
 	}
 
 	@Transactional
-	public void insertCalendar(String userId) throws Exception {
-		boardmapper.addCalendar(userId);
+	public void insertCalendar(MemberVO memberVO) throws Exception {
+		boardmapper.insertCalendar(memberVO);
 		//pointMapper.addPoint(point);
 	}
 
