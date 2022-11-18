@@ -58,7 +58,11 @@
                     <div class="col-12 user_login_top">
                         <ul class="col-12 user_information">
                             <li class="col-3 user_profile">
-                                <img src="/img/chatbox_img.jpeg" style="width: 100%;">
+                                <%--<img src="/img/chatbox_img.jpeg" style="width: 100%;">--%>
+                                <c:if test="${mb_img != null}">
+                                    <img src="/profile${mb_img}" style="max-width: 100%;max-height: 100%;">
+                                </c:if>
+                                <!--프로필 사진 안 나옴-->
                             </li>
                             <li class="col-4 user_home_01">
                                 <span>

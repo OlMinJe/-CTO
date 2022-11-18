@@ -51,16 +51,30 @@ public class MemberService implements UserDetailsService {
     }
 
     // 회원가입
-    public void memberRegister(MemberVO memberVO, MultipartFile file) throws Exception {
+    public String memberRegister(MemberVO memberVO, MultipartFile file) throws Exception {
         //저장 경로 삭제 -> DB Table에만 저장됨
-        //String imgPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\profile";
+        String imgPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\profile";
         UUID uuid = UUID.randomUUID();
-        String mb_img = uuid + "_" + file.getOriginalFilename();
-        File saveimgFile = new File(mb_img);
+        String profile = uuid + "_" + file.getOriginalFilename();
+        File saveimgFile = new File(imgPath, profile);
         file.transferTo(saveimgFile);
-        memberVO.setMb_img(mb_img);
+        memberVO.setMb_img(profile);
         mapper.memberRegister(memberVO);
+        String mb_img = memberVO.getMb_img();
+        return mb_img;
     }
+    /*
+        String projectPath=System.getProperty("user.dir")+"\\src\\main\\resources\\static\\files";
+		//파일 이름에 붙일 이름 랜덤 생성
+		UUID uuid=UUID.randomUUID();
+		//저장될 파일이름 생성
+		String fileName=uuid+"_"+file.getOriginalFilename();
+		File saveFile = new File(projectPath,fileName);
+		file.transferTo(saveFile);
+		boardVO.setCom_photo("/files/"+fileName);
+		String com_photo = boardVO.getCom_photo();
+		return com_photo;
+		*/
 
     //관리자 페이지 진입(implements UserDetailsService 사용 시 필수 메소드)
     //@Override

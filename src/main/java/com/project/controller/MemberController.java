@@ -53,6 +53,7 @@ public class MemberController {
         model.addAttribute("modifyId", modifyMember.getMb_id());
         model.addAttribute("modifySeq",modifyMember.getMb_seq());
         model.addAttribute("mb_point",modifyMember.getMb_point());
+        model.addAttribute("mb_img", modifyMember.getMb_img());
 
         return "/main/main";
     }
