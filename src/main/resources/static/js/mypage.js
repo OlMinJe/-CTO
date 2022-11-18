@@ -1,3 +1,38 @@
+/*
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        header: {
+            right: 'custom2 prevYear,prev,next,nextYear'
+        },
+        customButtons: {
+            custom2: {
+                text: '출석 체크',
+                click: function() {
+                    var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                    var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+                    if (!isNaN(date.valueOf())) { // valid?
+                        calendar.addEvent({
+                            title: 'New event',
+                            start: date,
+                            allDay: true
+                        });
+                        alert('Great!!!');
+                    } else {
+                        alert('Invalid date.');
+                    }
+                }
+            }
+        },
+    });
+
+    calendar.render();
+});
+*/
+
 $(document).ready(function(){
     $('#calendar').fullCalendar({
         header: {
@@ -6,25 +41,23 @@ $(document).ready(function(){
         // 출석체크를 위한 버튼 생성
         customButtons: {
             custom2: {
-                text: '출석체크하기',
+                text: '출석 체크',
                 id: 'check',
                 click: function() {
                     if(this.id != null){
                         location.href="/users/attendances";
-                        alert("출석 체크 완료!\n50포인트가 적립되었습니다!")
+                        alert("출석 체크 완료!\n10포인트가 적립되었습니다!");
+                        //ajax 통신 실패로 순식간에 넘어감
+                        $(".fc-custom2-button").prop('disabled', true);
+                        $(".fc-custom2-button").html('출석 완료');
+                        console.log("CheckDate Success");
                         return true;
                     } else {
-                        alert("출석 체크 실패")
+                        alert("출석 체크 실패");
+                        console.log("CheckDate Fail");
                         return false;
                     }
-                    /*if(this.id != null){
-                        location.href="/users/attendances";
-                        alert("출석 체크 완료!\n50포인트가 적립되었습니다!")
-                        return true;
-                    } else {
-                        alert("출석 체크 실패")
-                        return false;
-                    }*/
+
 
                     // ajax 통신으로 출석 정보 저장하기
                     // POST "/users/attendances" -> { status: "success", date:"2018-07-01"}
@@ -43,46 +76,29 @@ $(document).ready(function(){
                 }
             }
         },
-        // 달력 정보 가져오기
-        /*eventSources: [
-            {
-                // ajax 통신으로 달력 정보 가져오기
-                // GET "/users/attendances" -> {dateList:[ date: "2016-03-21", ... ]}
-
-                url: '/users/attendances',
-                type: 'GET',
-                dataType: "JSON",
-                success: function (data) { },
-                error: function() {
-                    alert('there was an error while fetching events!');
-                },
-                color: 'purple',
-                textColor: 'white'
-            }
-        ]*/
     });
 });
 
+
 /* 모바일 메뉴 */
-if(matchMedia("screen and (max-width: 991px)").matches){
+if (matchMedia("screen and (max-width: 991px)").matches) {
     function mobile_menu() {
         var menu = $('#menu_list_01').css('display');
-        if( menu == 'none') {
-            $('#menu_list_01').css('display','block');
-            $('#menu_list_02').css('display','block');
+        if (menu == 'none') {
+            $('#menu_list_01').css('display', 'block');
+            $('#menu_list_02').css('display', 'block');
         } else {
-            $('#menu_list_01').css('display','none');
-            $('#menu_list_02').css('display','none');
+            $('#menu_list_01').css('display', 'none');
+            $('#menu_list_02').css('display', 'none');
         }
     }
 } else {
     function mobile_menu() {
-        $('#menu_list_01').css('display','block');
-        $('#menu_list_02').css('display','block');
+        $('#menu_list_01').css('display', 'block');
+        $('#menu_list_02').css('display', 'block');
     }
 
 }
-
 
 
 //새고할 때 고정 (작업 필요) https://snupi.tistory.com/195 */
