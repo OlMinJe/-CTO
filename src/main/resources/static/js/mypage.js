@@ -47,7 +47,7 @@ $(document).ready(function(){
                     if(this.id != null){
                         location.href="/users/attendances";
                         alert("출석 체크 완료!\n10포인트가 적립되었습니다!");
-                        //ajax 통신 실패로 순식간에 넘어감
+                        //ajax 통신 실패로 순식간에 넘어감(수정)
                         $(".fc-custom2-button").prop('disabled', true);
                         $(".fc-custom2-button").html('출석 완료');
                         console.log("CheckDate Success");
