@@ -12,18 +12,50 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/location/location.css">
+    <script>
+        function performance() {
+            const Element = document.getElementById('keyword');
+            Element.value = "공연";
+            $('#sbtn').trigger('click');
+        }
+        function food() {
+            const Element = document.getElementById('keyword');
+            Element.value = "음식점";
+            $('#sbtn').trigger('click');
+        }
+        function cafe() {
+            const Element = document.getElementById('keyword');
+            Element.value = "카페";
+            $('#sbtn').trigger('click');
+        }
+        function show_show() {
+            const Element = document.getElementById('keyword');
+            Element.value = "행사";
+            $('#sbtn').trigger('click');
+        }
+        function experience() {
+            const Element = document.getElementById('keyword');
+            Element.value = "체험";
+            $('#sbtn').trigger('click');
+        }
+        function exercise() {
+            const Element = document.getElementById('keyword');
+            Element.value = "운동";
+            $('#sbtn').trigger('click');
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
 <div class="col-12">
     <div class="col-12 menu">
         <ul>
-            <li class="box_eft_02">공연</li>
-            <li class="box_eft_02">음식</li>
-            <li class="box_eft_02">카페</li>
-            <li class="box_eft_02">행사</li>
-            <li class="box_eft_02">체험</li>
-            <li class="box_eft_02">운동</li>
+            <li class="box_eft_02" id="performance" onclick="performance()">공연</li>
+            <li class="box_eft_02" id="food" onclick="food()">음식</li>
+            <li class="box_eft_02" id="cafe" onclick="cafe()">카페</li>
+            <li class="box_eft_02" id="show_show" onclick="show_show()">행사</li>
+            <li class="box_eft_02" id="experience" onclick="experience()">체험</li>
+            <li class="box_eft_02" id="exercise" onclick="exercise()">운동</li>
         </ul>
     </div>
     <div class="map_wrap">
@@ -34,7 +66,7 @@
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
                         <input type="text" value="종로 맛집" id="keyword" class="box_eft_01" size="15">
-                        <button class="box_eft_02" type="submit">검색하기</button><!--작동 안함-->
+                        <button class="box_eft_02" type="submit" id="sbtn">검색하기</button>
                     </form>
                 </div>
             </div>
@@ -51,9 +83,6 @@
             <span onclick="zoomIn();"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
             <span onclick="zoomOut();"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
         </div>
-        <%--<div class="col-12" style=" text-align: center;">
-            <button class="box_eft_02" style="padding: 5px 25px;">선택하기</button>
-        </div>--%>
     </div>
 </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
