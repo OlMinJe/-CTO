@@ -339,7 +339,7 @@ public class BoardService  {
 		return boardmapper.editorupdatelike(edit_num);
 	}
 
-
+	/** 공지사항 페이지 **/
 	//공지사항 페이지
 	public List<Map<String, Object>> noticeList(Criteria cri, Integer category) throws Exception{
 		return boardmapper.noticeList(cri,category);
@@ -356,14 +356,24 @@ public class BoardService  {
 		return boardmapper.noticeRead(notice_num);
 	}
 
+	/** 게임 및 테스트 진행 시 포인트 지급 **/
 	public void pointModify(MemberVO memberVO) throws Exception {
 		boardmapper.pointModify(memberVO);
 	}
 
+	/** 마이페이지 - 출석체크 시 포인트 지급 **/
 	@Transactional
 	public void insertCalendar(MemberVO memberVO) throws Exception {
 		boardmapper.insertCalendar(memberVO);
 		//pointMapper.addPoint(point);
+	}
+
+	/** 마이페이지 - 위치기반 페이지 **/
+	public List<Map<String, Object>> locationList(Criteria cri, Integer category) throws Exception{
+		return boardmapper.locationList(cri, category);
+	}
+	public int locationListCnt(Integer category) throws Exception{
+		return boardmapper.locationListCnt(category);
 	}
 
 }

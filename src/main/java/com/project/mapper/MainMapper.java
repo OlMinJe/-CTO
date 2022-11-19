@@ -244,4 +244,11 @@ public interface MainMapper {
 
 	//addCalendar
 	public void insertCalendar(MemberVO memberVO) throws Exception;
+
+	/** 마이페이지 - 위치기반 페이지 **/
+
+	public List<Map<String, Object>> locationList(Criteria cri, Integer category) throws Exception;
+	//상담 카테고리별 글 카운트
+	public int locationListCnt(Integer category) throws Exception;
+
 }

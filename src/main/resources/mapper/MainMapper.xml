@@ -603,4 +603,21 @@
 		WHERE mb_id = #{mb_id}
 	</select>
 
+	<!--위치기반 페이지 리스트 출력용-->
+	<select id="locationList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM tb_location
+		where location_category = #{category}
+		ORDER BY loc_num DESC
+			LIMIT #{cri.pageStart}, #{cri.perPageNum}
+		]]>
+	</select>
+
+	<select id="locationListCnt" resultType="int">
+		SELECT count(*)
+		FROM tb_location
+		where location_category = #{category}
+	</select>
+
 </mapper>

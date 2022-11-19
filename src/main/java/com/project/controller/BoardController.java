@@ -1082,4 +1082,19 @@ public class BoardController {
 		}
 		return "/mypage/mypage";
 	}
+
+	//마이페이지 - 위치기반 사용내역 페이지
+	@RequestMapping(value = "/mvpage/mvpage_03")
+	public String LocationList(@RequestParam("stateCode") int stateCode, @RequestParam("category") Integer category, Criteria cri,Model model, LocationVO locationVO) throws Exception{
+		Paging paging = new Paging();
+		int locationListCnt = boardService.locationListCnt(category);
+		paging.setCri(cri);
+		paging.setTotalCount(locationListCnt);
+		List<Map<String, Object>> list = boardService.locationList(cri, category);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		model.addAttribute("stateCode", stateCode);
+		model.addAttribute("category", category);
+		return "/mvpage/mvpage_03";
+	}
 }
