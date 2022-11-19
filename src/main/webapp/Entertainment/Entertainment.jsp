@@ -77,7 +77,7 @@
                                         <div class="Enter_content">
                                             <strong>가위바위보 게임</strong>
                                             <p>컴퓨터와 가위바위보 해보세요!</p>
-                                            <a href="#">바로가기</a>
+                                            <a href="RSPGame.jsp">바로가기</a>
                                         </div>
                                     </div>
                                 </li>

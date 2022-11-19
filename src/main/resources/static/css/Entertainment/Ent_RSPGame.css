@@ -1,0 +1,6 @@
+body { justify-items: center; }
+img { max-width: 300px; background-color: #ddd; margin: 30px 0 30px 0; border-radius: 10px;}
+#rps_page { justify-items: center; display: grid;}
+.rsp_btn { justify-items: center; display: grid; align-items: center;}
+.rsp { justify-items: center; font-size: 20px; width: 300px; height: 60px; margin-bottom: 10px; border-radius: 5px;}
+#result { margin-top: 30px; font-size: 40px; text-align: center; justify-items: center;}

@@ -15,32 +15,19 @@
     <script type="text/javascript" src="/js/event.js"></script>
     <script>
         function btn(str) {
-            alert('이벤트 참여가 완료되었습니다.');
+            alert('참여 기간이 지난 이벤트입니다.');
         }
-        function bookQ1(Q1) {
-            alert(' 내가 선택한 값 : ' + Q1 + '\n 정답 : 아몬드');
+        function bookQH1(QH1) {
+            alert('내가 선택한 값 : ' + QH1 + '\n 정답 : 죽음의 성물');
         }
-        function bookQ2(Q2) {
-            alert('내가 선택한 값 : ' + Q2 + '\n 정답 : 이수창 ');
+        function bookQH2(QH2) {
+            alert('내가 선택한 값 : ' + QH2 + '\n 정답 : 문학수첩 ');
         }
-        function bookQ3(Q3) {
-            alert('내가 선택한 값 : ' + Q3 + '\n 정답 : 어떤책');
+        function bookQH3(QH3) {
+            alert('내가 선택한 값 : ' + QH3 + '\n 정답 : 조앤k.롤링');
         }
 
     </script>
-<%--    <script>--%>
-<%--        function btn() {--%>
-<%--            var bookQ1 = document.getElementById("bookQ1");--%>
-<%--            var bookQ2 = document.getElementById("bookQ2");--%>
-<%--            var bookQ3 = document.getElementById("bookQ3");--%>
-<%--            var value1 = (bookQ1.options[bookQ1.selectedIndex].value);--%>
-<%--            var value2 = (bookQ2.options[bookQ2.selectedIndex].value);--%>
-<%--            var value3 = (bookQ3.options[bookQ3.selectedIndex].value);--%>
-<%--            alert('이벤트 참여가 완료되었습니다. <br/> 정답 : 아몬드 선택한 값 ' + value1 );--%>
-
-<%--        }--%>
-<%--    </script>--%>
-
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -75,39 +62,39 @@
                         <h1 style="padding : 20px 0 30px 0">너나들이 독서 퀴즈</h1>
                         <div class="event_book_Q_div">
                             <p style="padding-top: 10px;">다음 책의 표지를 보고 책 제목을 맞춰주세요 !</p>
-                            <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_1.jpeg">
-<%--                            <select name="event_bookQ1" onchange="btn(this.value)">--%>
-                                <select name="event_bookQ1" class="event_bookQ1" onchange="bookQ1(this.value)">
+                            <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_Harry_1.jpeg">
+                            <%--                            <select name="event_bookQ1" onchange="btn(this.value)">--%>
+                            <select name="event_bookQ1" class="event_bookQ1" onchange="bookQH1(this.value)">
                                 <option value="bookQ_1">&nbsp; 선택하세요 &nbsp; </option>
-                                <option value="아버지">아버지</option>
-                                <option value="아몬드">아몬드</option>
-                                <option value="아수라">아수라</option>
+                                <option value="죽음의 보물">죽음의 보물</option>
+                                <option value="죽음의 성물">죽음의 성물</option>
+                                <option value="죽음의 진실">죽음의 진실</option>
                             </select>
                         </div>
                         <div class="event_book_Q_div">
-                        <p style="padding-top: 10px;">다음 책의 표지를 보고 책의 저자를 맞춰주세요 !</p>
-                        <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_2.png">
-                        <select name="event_bookQ2" class="event_bookQ1" onchange="bookQ2(this.value)">
-                            <option value="bookQ_2">&nbsp; 선택하세요 &nbsp;</option>
-                            <option value="이수창">이수창</option>
-                            <option value="이수정">이수정</option>
-                            <option value="이수찬">이수찬</option>
-                        </select>
+                            <p style="padding-top: 10px;">다음 책의 표지를 보고 책의 출판사를 맞춰주세요 !</p>
+                            <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_Harry_2.jpeg">
+                            <select name="event_bookQ2" class="event_bookQ1" onchange="bookQH2(this.value)">
+                                <option value="bookQ_2">&nbsp; 선택하세요 &nbsp;</option>
+                                <option value="수첩문학">수첩문학</option>
+                                <option value="문학소설">문학소설</option>
+                                <option value="문학수첩">문학수첩</option>
+                            </select>
                         </div>
                         <div class="event_book_Q_div">
-                            <p style="padding-top: 10px;">다음 책의 표지를 보고 책의 출판사를 맞춰주세요 !</p>
-                            <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_3.png">
-                            <select name="event_bookQ3" class="event_bookQ1" onchange="bookQ3(this.value)">
+                            <p style="padding-top: 10px;">다음 책의 표지를 보고 책의 저자를 맞춰주세요 !</p>
+                            <img style="width: 200px; height: 200px; padding : 20px 0 20px 0;" src="/img/Enter_list_bookQ/event_bookQ_Harry_3.jpeg">
+                            <select name="event_bookQ3" class="event_bookQ1" onchange="bookQH3(this.value)">
                                 <option value="bookQ_3">&nbsp; 선택하세요 &nbsp;</option>
-                                <option value="이런책">이런책</option>
-                                <option value="저런책">저런책</option>
-                                <option value="어떤책">어떤책</option>
+                                <option value="조앤k.롤링">조앤k.롤링</option>
+                                <option value="조앤j.롤링">조앤j.롤링</option>
+                                <option value="조앤l.롤링">조앤l.롤링</option>
                             </select>
                         </div>
                     </div>
                     <!-- 참여하기 버튼 -->
                     <div class="btn_wrap">
-<%--                        <a href="/event/event_detail_bookQ.jsp" class="box_eft_02">이벤트 참여하기</a>--%>
+                        <%--                        <a href="/event/event_detail_bookQ.jsp" class="box_eft_02">이벤트 참여하기</a>--%>
                         <a class="box_eft_02" onclick="javascript:btn()">이벤트 참여하기</a>
                     </div>
                 </div>
