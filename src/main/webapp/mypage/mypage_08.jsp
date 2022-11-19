@@ -53,6 +53,11 @@
                 alert("비밀번호를 입력해주세요.");
             }
         }
+
+        function done() {
+            alert("설문에 응해주셔서 감사합니다.");
+            return true;
+        }
     </script>
 </head>
 <body>
@@ -96,22 +101,27 @@
 <!-- mypage_08.jsp와 mypage_08_01.jsp 합치기 -->
         <div class="col-12 col-lg-9">
             <div class="col-12 no_user">
-                <div class="col-10 no_user_title">설문조사</div>
+                <div class="col-10 no_user_title">&lt;서비스 사용 인식 정보 수집용 설문조사 &gt;<br>
+                    <span class="col-12 col-md-3">이 설문조사의 결과는 더 나은 서비스 '너나들이'를 제공하기 위한 목적으로 사용될 예정입니다.</span>
+                </div>
+
                 <form class="col-10">
                     <ul>
-                        <li><input type="checkbox" checked>선택 1</li>
-                        <li><input type="checkbox">불만 가득함</li>
-                        <li><input type="checkbox">서비스 부족</li>
-                        <li><input type="checkbox">컨텐츠 부족</li>
-                        <li><input type="checkbox">다른 서비스l 이용하기 위해서</li>
+                        <li>- '너나들이'에서 회원탈퇴하는 이유는 무엇입니까?</li>
+                        <li><input type="checkbox" checked>특별한 이유 없음</li>
+                        <li><input type="checkbox">사이트에 대한 불만</li>
+                        <li><input type="checkbox">제공하는 서비스 부족</li>
+                        <li><input type="checkbox">제공하는 컨텐츠 부족</li>
+                        <li><input type="checkbox">타 서비스 이용을 위해서</li>
                         <li class="flex__"><span>기타</span><input type="text" checked></li>
-                        <li class="float__"><input type="submit" class="no_user_btn box_eft_02"></input></li>
+                        <li class="float__"><button type="button" class="no_user_btn box_eft_02" onclick="done()">설문 완료</button></li>
                     </ul>
                 </form>
             </div>
             <div class="col-12 col-lg-9 content">
                 <div class="col-12 content_box" id="tab_8_content">
-                    <div class="col-12" id="sub_title">회원 탈퇴</div>
+                    <div class="col-12" id="sub_title">회원 탈퇴 진행창</div>
+                    <span class="col-12 col-md-3">가입 당시 작성한 비밀번호를 정확하게 입력해주세요.</span>
                     <div class="col-12 col-md-8 col-lg-6" style="text-align: center;margin-left: auto; margin-right: auto;padding-top: 70px;">
                         <form action='<c:url value='/login/register'/>' method="post">
                             <ul>
