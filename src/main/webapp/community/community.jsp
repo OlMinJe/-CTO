@@ -52,11 +52,25 @@
     </div>
     <%-- 필터링--%>
     <div class="col-12 col-lg-10 filter">
-        <c:if test="${sessionScope.stateCode eq 1}">
+        <!--<c:if test="${sessionScope.stateCode eq 1}">
         <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=viewCount'" class="box_eft_01 div3">조회순</button>
         <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
         <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=bno'" class="box_eft_01 div3 active">최신순</button>
+        </c:if>-->
+        <c:if test="${sessionScope.stateCode eq 1}">
+        <c:if test="${paging.cri.type != null}"> <!-- 검색을 하지 않은 경우-->
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=bno'" class="box_eft_01 div3 active">최신순</button>
+
         </c:if>
+        <c:if test="${paging.cri.type == null}">
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button">댓글순</button>
+            <button type="button" onclick="location.href='/community/community?stateCode=${stateCode}&category=${category}&sort=bno'"class="box_eft_01 div3 active">최신순</button>
+        </c:if>
+        </c:if>
+
         <c:if test="${sessionScope.stateCode ne 1}">
             <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
             <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
@@ -143,30 +157,70 @@
                 <span><a href='<c:url value="/community/community?stateCode=${stateCode}&page=${paging.endPage+1}"/>'>다음</a></span>
             </c:if>
         </ul>--%>
+        <!--
         <c:if test="${sessionScope.stateCode eq 1}">
             <ul class="pagination" style="margin-bottom: 20px;">
                 <c:if test="${paging.prev}">
                     <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.startPage-1}">Previous</a></li>
-                    <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.startPage-1}"/>'>이전</a></span>-->
-                </c:if>
+                     </c:if>
                 <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
                     <c:choose>
                         <c:when test="${paging.cri.page == num}">
                             <li class="page-item active"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
-                            <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${num}"/>'>${num}</a></span>-->
-                        </c:when>
+                            </c:when>
                         <c:otherwise>
                             <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
-                            <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${num}"/>'>${num}</a></span>-->
-                        </c:otherwise>
+                            </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 <c:if test="${paging.next && paging.endPage>0}">
                     <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.endPage+1}">Next</a></li>
-                    <!--<span><a href='<c:url value="/community/community?stateCode=${stateCode}&category=${category}&page=${paging.endPage+1}"/>'>다음</a></span>-->
+                    </c:if>
+            </ul>
+        </c:if>-->
+        <c:if test="${sessionScope.stateCode eq 1}">
+            <c:if test="${paging.cri.type != null}"> <!-- 검색을 하지 않은 경우-->
+            <ul class="pagination" style="margin-bottom: 20px;">
+                <c:if test="${paging.prev}">
+                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.startPage-1}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">Previous</a></li>
+                </c:if>
+                <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                    <c:choose>
+                        <c:when test="${paging.cri.page == num}">
+                            <li class="page-item active"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">${num}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">${num}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <c:if test="${paging.next && paging.endPage>0}">
+                    <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.endPage+1}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">Next</a></li>
                 </c:if>
             </ul>
+            </c:if>
+            <c:if test="${paging.cri.type == null}">
+                <ul class="pagination" style="margin-bottom: 20px;">
+                    <c:if test="${paging.prev}">
+                        <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.startPage-1}">Previous</a></li>
+                    </c:if>
+                    <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                        <c:choose>
+                            <c:when test="${paging.cri.page == num}">
+                                <li class="page-item active"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${num}">${num}</a></li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                    <c:if test="${paging.next && paging.endPage>0}">
+                        <li class="page-item"><a class="page-link" href="/community/community?stateCode=${stateCode}&sort=${cri.sort}&category=${category}&page=${paging.endPage+1}">Next</a></li>
+                    </c:if>
+                </ul>
+            </c:if>
         </c:if>
+
         <c:if test="${sessionScope.stateCode ne 1}">
             <ul class="pagination" style="margin-bottom: 20px;">
                 <c:if test="${paging.prev}">
