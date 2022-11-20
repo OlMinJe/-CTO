@@ -733,7 +733,7 @@
 		<![CDATA[
 		SELECT *
 		FROM tb_location
-		where location_category = #{category}
+		where loc_category = #{category}
 		ORDER BY loc_num DESC
 			LIMIT #{cri.pageStart}, #{cri.perPageNum}
 		]]>
@@ -742,7 +742,7 @@
 	<select id="locationListCnt" resultType="int">
 		SELECT count(*)
 		FROM tb_location
-		where location_category = #{category}
+		where loc_category = #{category}
 	</select>
 
 </mapper>
