@@ -72,10 +72,19 @@
         </c:if>
 
         <c:if test="${sessionScope.stateCode ne 1}">
-            <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
-            <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
-            <button type="button" onclick="location.href='/com?category=${category}&sort=bno'" class="box_eft_01 div3 active">최신순</button><%--class="btn btn-outline-dark float-right "--%>
-        </c:if>
+            <c:if test="${paging.cri.type != null}"> <!-- 검색을 하지 않은 경우-->
+                <button type="button" onclick="location.href='/com?category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
+                <button type="button" onclick="location.href='/com?category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
+                <button type="button" onclick="location.href='/com?category=${category}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&sort=bno'" class="box_eft_01 div3 active">최신순</button><%--class="btn btn-outline-dark float-right "--%>
+
+            </c:if>
+            <c:if test="${paging.cri.type == null}">
+                <button type="button" onclick="location.href='/com?category=${category}&sort=viewCount'" class="box_eft_01 div3" >조회순</button>
+                <button type="button" onclick="location.href='/com?category=${category}&sort=replyCount'" class="box_eft_01 div3" data-bs-toggle="button" >댓글순</button>
+                <button type="button" onclick="location.href='/com?category=${category}&sort=bno'" class="box_eft_01 div3 active">최신순</button><%--class="btn btn-outline-dark float-right "--%>
+
+            </c:if>
+            </c:if>
     </div>
     <%-- 글 구조 바꾸지마 --%>
     <div class="col-12 col-lg-10 content">
@@ -222,6 +231,27 @@
         </c:if>
 
         <c:if test="${sessionScope.stateCode ne 1}">
+            <c:if test="${paging.cri.type != null}">
+                <ul class="pagination" style="margin-bottom: 20px;">
+                    <c:if test="${paging.prev}">
+                        <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.startPage-1}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">Previous</a></li>
+                    </c:if>
+                    <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                        <c:choose>
+                            <c:when test="${paging.cri.page == num}">
+                                <li class="page-item active"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${num}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">${num}</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${num}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">${num}</a></li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                    <c:if test="${paging.next && paging.endPage>0}">
+                        <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.endPage+1}&type=${paging.cri.type}&keyword=${paging.cri.keyword}">Next</a></li>
+                    </c:if>
+                </ul>
+            </c:if>
+            <c:if test="${paging.cri.type == null}">
             <ul class="pagination" style="margin-bottom: 20px;">
                 <c:if test="${paging.prev}">
                     <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.startPage-1}">Previous</a></li>
@@ -240,6 +270,7 @@
                     <li class="page-item"><a class="page-link" href="/com?category=${category}&sort=${cri.sort}&page=${paging.endPage+1}">Next</a></li>
                 </c:if>
             </ul>
+            </c:if>
         </c:if>
         <!--프론트 페이징 디자인
         <ul class="pagination" style="margin-bottom: 20px;">
@@ -256,6 +287,7 @@
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
         </form>-->
+        <c:if test="${sessionScope.stateCode eq 1}">
         <form id="searchForm" action="/community/community" method="get" class="d-flex">
             <select name="type">
                 <option value=""
@@ -277,6 +309,29 @@
             <input type="hidden" name="sort" value="<c:out value='${paging.cri.sort}'/>">
             <button class="btn btn-outline-success box_eft_02">검색</button>
         </form>
+        </c:if>
+        <c:if test="${sessionScope.stateCode ne 1}">
+            <form id="searchForm" action="/com" method="get" class="d-flex">
+                <select name="type">
+                    <option value=""
+                            <c:out value='${paging.cri.type == null? "selected": ""}'/>>--</option>
+                    <option value="T"
+                            <c:out value='${paging.cri.type eq "T"?"selected": "" }'/>>제목</option>
+                    <option value="C"
+                            <c:out value='${paging.cri.type eq "C"?"selected": "" }'/>>내용</option>
+                    <option value="W"
+                            <c:out value='${paging.cri.type eq "W"?"selected": "" }'/>>작성자</option>
+                </select>
+
+                <input type="text" name="keyword" class="form-control me-2 box_eft_01" value="<c:out value='${paging.cri.keyword}'/>">
+
+                <input type="hidden"  name="page" value="<c:out value='${paging.cri.page}'/>">
+                <!--<input type="hidden" name="perPageNum"value="<c:out value='${paging.cri.perPageNum}' />">-->
+                <input type="hidden" name="category" value="${category}">
+                <input type="hidden" name="sort" value="<c:out value='${paging.cri.sort}'/>">
+                <button class="btn btn-outline-success box_eft_02">검색</button>
+            </form>
+        </c:if>
         <script>
             var searchForm = $('#searchForm');
             $('#searchForm button').on('click', function(e) {
