@@ -51,7 +51,7 @@ public class BoardController {
 
 		if(category==10){
 			// 전체 글 개수 - 모든 페이지 포함
-			int boardListCnt = boardService.boardListCnt();
+			int boardListCnt = boardService.boardListCnt(cri);
 			cri.setSort(sort); // 정렬을 위한 추가코드
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCnt);
@@ -62,7 +62,7 @@ public class BoardController {
 		}
 		else{
 			//전체 글 개수 - 카테고리가 있는 경우
-			int boardListCntDetail = boardService.boardListCntDetail(category);
+			int boardListCntDetail = boardService.boardListCntDetail(category,cri);
 			cri.setSort(sort); // 정렬을 위한 추가코드
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCntDetail);
@@ -85,7 +85,7 @@ public class BoardController {
 		Paging paging = new Paging();
 		if(category==10){
 			// 전체 글 개수 - 모든 페이지 포함
-			int boardListCnt = boardService.boardListCnt();
+			int boardListCnt = boardService.boardListCnt(cri);
 			cri.setSort(sort);
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCnt);
@@ -96,7 +96,7 @@ public class BoardController {
 		}
 		else{
 			//전체 글 개수 - 카테고리가 있는 경우
-			int boardListCntDetail = boardService.boardListCntDetail(category);
+			int boardListCntDetail = boardService.boardListCntDetail(category,cri);
 			cri.setSort(sort);
 			paging.setCri(cri);
 			paging.setTotalCount(boardListCntDetail);

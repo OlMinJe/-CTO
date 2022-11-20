@@ -123,6 +123,7 @@
 		]]>
 	</select>
 -->
+	<!--
 	<select id="boardList" resultType="hashmap" parameterType="hashmap">
 		<choose>
 			<when test="sort == 'replyCount'">
@@ -191,6 +192,130 @@
 		SELECT count(*)
 		FROM tb_com_talk
 		where com_category = #{category}
+	</select>-->
+	<select id="boardList" resultType="hashmap" parameterType="hashmap">
+		<choose>
+			<when test="sort == 'replyCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_num > 0
+					]]>
+				<include refid="criteria"></include>
+				<![CDATA[
+					order by com_comment desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</when>
+			<when test="sort == 'viewCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_num > 0
+					]]>
+				<include refid="criteria"></include>
+				<![CDATA[
+					order by com_hit desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_num > 0
+					]]>
+				<include refid="criteria"></include>
+				<![CDATA[
+					order by com_num desc
+					LIMIT #{pageStart}, #{perPageNum}
+				]]>
+			</otherwise>
+		</choose>
+	</select>
+	<sql id="criteria">
+		<if test="type != null">
+			<if test="type == 'T'.toString()">
+				and com_title like concat('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'C'.toString()">
+				and com_content like concat('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'W'.toString()">
+				and mb_nick like concat('%', #{keyword}, '%')
+			</if>
+		</if>
+	</sql>
+
+	<sql id="criteria2">
+		<if test="cri.type != null">
+			<if test="cri.type == 'T'.toString()">
+				and com_title like concat('%', #{cri.keyword}, '%')
+			</if>
+			<if test="cri.type == 'C'.toString()">
+				and com_content like concat('%', #{cri.keyword}, '%')
+			</if>
+			<if test="cri.type == 'W'.toString()">
+				and mb_nick like concat('%', #{cri.keyword}, '%')
+			</if>
+		</if>
+	</sql>
+
+	<select id="boardListDetail" resultType="hashmap" parameterType="hashmap">
+		<choose>
+			<when test="cri.sort == 'replyCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					and com_num>0
+				]]>
+				<include refid="criteria2"></include>
+				<![CDATA[
+					order by com_comment desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</when>
+			<when test="cri.sort == 'viewCount'">
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					and com_num>0
+				]]>
+				<include refid="criteria2"></include>
+				<![CDATA[
+					order by com_hit desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+		        	SELECT *
+					FROM tb_com_talk
+					where com_category = #{category}
+					and com_num>0
+				]]>
+				<include refid="criteria2"></include>
+				<![CDATA[
+					order by com_num desc
+					LIMIT #{cri.pageStart}, #{cri.perPageNum}
+				]]>
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="boardListCnt" resultType="int">
+		select count(*) from tb_com_talk
+		where com_num > 0
+		<include refid="criteria"></include>
+	</select>
+
+	<select id="boardListCntDetail" resultType="int">
+		SELECT count(*)
+		FROM tb_com_talk
+		where com_category = #{category} and com_num > 0
+		<include refid="criteria2"></include>
 	</select>
 
 	<select id="boardRead" resultType="BoardVO">

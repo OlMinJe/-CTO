@@ -197,11 +197,48 @@
             <li class="page-item"><a class="page-link" href="#">5</a></li>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>-->
-        <!--검색-->
+        <!--검색
         <form class="d-flex">
             <input class="form-control me-2 box_eft_01" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success box_eft_02" type="submit">Search</button>
+        </form>-->
+        <form id="searchForm" action="/community/community" method="get" class="d-flex">
+            <select name="type">
+                <option value=""
+                        <c:out value='${paging.cri.type == null? "selected": ""}'/>>--</option>
+                <option value="T"
+                        <c:out value='${paging.cri.type eq "T"?"selected": "" }'/>>제목</option>
+                <option value="C"
+                        <c:out value='${paging.cri.type eq "C"?"selected": "" }'/>>내용</option>
+                <option value="W"
+                        <c:out value='${paging.cri.type eq "W"?"selected": "" }'/>>작성자</option>
+            </select>
+
+            <input type="text" name="keyword" class="form-control me-2 box_eft_01" value="<c:out value='${paging.cri.keyword}'/>">
+
+            <input type="hidden"  name="page" value="<c:out value='${paging.cri.page}'/>">
+            <!--<input type="hidden" name="perPageNum"value="<c:out value='${paging.cri.perPageNum}' />">-->
+            <input type="hidden" name="stateCode" value="${stateCode}">
+            <input type="hidden" name="category" value="${category}">
+            <input type="hidden" name="sort" value="<c:out value='${paging.cri.sort}'/>">
+            <button class="btn btn-outline-success box_eft_02">검색</button>
         </form>
+        <script>
+            var searchForm = $('#searchForm');
+            $('#searchForm button').on('click', function(e) {
+                if (!searchForm.find('option:selected').val()) {
+                    alert('검색종류를 선택하세요');
+                    return false;
+                }
+                if (!searchForm.find('input[name="keyword"]').val()) {
+                    alert('키워드를 입력하세요');
+                    return false;
+                }
+                e.preventDefault();
+                searchForm.find('input[name="page"]').val('1');
+                searchForm.submit();
+            });
+        </script>
     </div>
     <div class="btn_wrap">
         <c:if test="${stateCode == 1}">

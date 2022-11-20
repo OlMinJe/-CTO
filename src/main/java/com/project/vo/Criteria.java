@@ -7,6 +7,11 @@ public class Criteria {
 	private int perPageNum; // 페이지당 보여줄 게시글의 개수
 
 	private String sort; // 글 정렬을 위해 추가
+
+	private String type; // 검색을 위한 추가
+
+	private String keyword; //검색을 위한 추가2
+
 	public int getPageStart() {
 		// 특정 페이지의 범위를 정하는 구간, 현재 페이지의 게시글 시작 번호
 		// 0 ~ 10 , 10 ~ 20 이런식으로
@@ -39,6 +44,22 @@ public class Criteria {
 
 	public void setSort(String sort) {
 		this.sort = sort;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
 
 	// 페이지당 보여줄 게시글의 개수 perPageNum : getter, setter

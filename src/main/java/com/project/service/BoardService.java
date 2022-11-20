@@ -80,13 +80,13 @@ public class BoardService  {
 	}
 
 	//페이징(?)작업을 위한 게시글 카운트
-	public int boardListCnt() throws Exception {
-		return boardmapper.boardListCnt();
+	public int boardListCnt(Criteria cri) throws Exception {
+		return boardmapper.boardListCnt(cri);
 	}
 
 	//카테고리별 게시글 카운트
-	public int boardListCntDetail(Integer category) throws Exception {
-		return boardmapper.boardListCntDetail(category);
+	public int boardListCntDetail(Integer category,Criteria cri) throws Exception {
+		return boardmapper.boardListCntDetail(category,cri);
 	}
 
 

@@ -84,8 +84,8 @@ public interface MainMapper {
 	public List<Map<String, Object>> boardList(Criteria cri) throws Exception;
 	public List<Map<String, Object>> boardListDetail( Criteria cri, Integer category) throws Exception;
 	public List<BoardVO> boardList2() throws Exception;
-	public int boardListCnt() throws Exception;
-	public int boardListCntDetail(Integer category) throws Exception;
+	public int boardListCnt(Criteria cri) throws Exception;
+	public int boardListCntDetail(Integer category,Criteria cri) throws Exception;
 	public void increaseComhit(int com_num) throws Exception;
 
 	public BoardVO boardRead(int num) throws Exception;
