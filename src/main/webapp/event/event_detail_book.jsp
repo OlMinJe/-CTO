@@ -18,6 +18,7 @@
             alert('제출이 완료되었습니다.');
         }
     </script>
+
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -93,7 +94,147 @@
                                 </div>
                             </li>
                         </ul>
-                        <p style="border: 1px solid #dcc5df;"></p>
+
+                        <p style="border: 1px solid #dcc5df; margin-bottom: 30px;"></p>
+
+                              <div class="w3-responsive">
+                                <table class="w3-table-all">
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>책 제목</th>
+                                        <th>작성일</th>
+                                        <th>작성자</th>
+                                        <th>조회수</th>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.20</td>
+                                        <td>강생이</td>
+                                        <td>39</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.15</td>
+                                        <td>째짜니</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.14</td>
+                                        <td>녕서</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.11</td>
+                                        <td>쥬냥이</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.11</td>
+                                        <td>빵훈</td>
+                                        <td>88</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.08</td>
+                                        <td>짝재</td>
+                                        <td>13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.08</td>
+                                        <td>상그이</td>
+                                        <td>14</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.08</td>
+                                        <td>서누</td>
+                                        <td>41</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.05</td>
+                                        <td>지창큐</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.05</td>
+                                        <td>불량콥</td>
+                                        <td>53</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.05</td>
+                                        <td>김너네나잘해라</td>
+                                        <td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.04</td>
+                                        <td>밸런타인 보이</td>
+                                        <td>14</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.02</td>
+                                        <td>제우스</td>
+                                        <td>19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.01</td>
+                                        <td>김대성</td>
+                                        <td>50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.01</td>
+                                        <td>애옹이</td>
+                                        <td>82</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>꽃말의 탄생 : 서양 문화로 읽는 매혹적인 꽃 이야기</td>
+                                        <td>2022.11.01</td>
+                                        <td>풀썬</td>
+                                        <td>66</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <br>
+
+                            <div class="w3-center">
+                                <ul class="w3-pagination">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li><a class="w3-pale-red" href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
 
 
 <%--                        <div class="content-table">--%>

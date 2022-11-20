@@ -32,6 +32,34 @@
             ///event/event_detail.jsp?stateCode=1
         }
     </script>
+<%--    <script>--%>
+<%--        $(".w3-pagination a").click(function() {--%>
+
+<%--            var selector = $(this);--%>
+
+<%--            var current_index = $(".w3-pagination a").index(this);--%>
+<%--            var current_class = selector.attr("class");--%>
+
+<%--            if (current_index != 0 || current_index != 6) {--%>
+
+<%--                $(".w3-pagination a").each(function(index) {--%>
+
+<%--                    if (index == 0 || index == 6) {--%>
+<%--                        return true;--%>
+<%--                    } else {--%>
+<%--                        if (index == current_index) {--%>
+<%--                            $(this).addClass("w3-pale-red");--%>
+<%--                        } else {--%>
+<%--                            $(this).removeClass("w3-pale-red");--%>
+<%--                        }--%>
+<%--                    }--%>
+
+<%--                });--%>
+
+<%--            }--%>
+
+<%--        });--%>
+<%--    </script>--%>
 
 </head>
 <body>
@@ -112,7 +140,7 @@
                     <div class="event_sub_content text">
                         <div style="text-align: left;">
                             <ul class="col-12 detail_output">
-                                <ul class="col-12">
+                                <ul class="col-12" style="border-bottom: 1px solid #dcc5df; margin-bottom: 10px;">
                                     <li>다온이</li>
                                     <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
                                     <!-- 데이터 가져오기 ( 수정 예정 )  -->
@@ -120,21 +148,36 @@
                                     <li>온라인 서비스를</li>
                                     <li>이용하고 싶어</li>
                                 </ul>
-                                <ul class="col-12">
+
+                                <ul class="col-12" style="border-bottom: 1px solid #dcc5df; margin-bottom: 10px;">
                                     <li>다온이</li>
                                     <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
                                     <li>다시 없는 이 기회가</li>
                                     <li>온 바로 지금</li>
                                     <li>이제 시작하자</li>
                                 </ul>
-                                <ul class="col-12">
+                                <ul class="col-12" style="border-bottom: 1px solid #dcc5df; margin-bottom: 10px;">
                                     <li>다온이</li>
                                     <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
                                     <li>다같이</li>
                                     <li>온기를 나누는</li>
                                     <li>이 겨울밤</li>
                                 </ul>
-                            <hr/>
+                                <ul class="col-12" style="border-bottom: 1px solid #dcc5df; margin-bottom: 10px;">
+                                    <li>다온이</li>
+                                    <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
+                                    <li>다름이 아니라</li>
+                                    <li>온전히</li>
+                                    <li>이 마음을 전하고 싶어</li>
+                                </ul>
+                                <ul class="col-12" style="border-bottom: 1px solid #dcc5df; margin-bottom: 10px;">
+                                    <li>다온이</li>
+                                    <%--<img src="/img/heart.png" style="float: right; margin-right: 35px;" alt="좋아요">--%>
+                                    <li>다같이</li>
+                                    <li>온정을 나누는</li>
+                                    <li>이 마음</li>
+                                </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -145,5 +188,6 @@
 </script>
 
 <jsp:include page="../fixed/footer.jsp"></jsp:include>
+<script type="text/javascript" src="/js/event.js"></script>
 </body>
 </html>

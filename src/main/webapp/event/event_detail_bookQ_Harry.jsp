@@ -18,13 +18,13 @@
             alert('참여 기간이 지난 이벤트입니다.');
         }
         function bookQH1(QH1) {
-            alert('내가 선택한 값 : ' + QH1 + '\n 정답 : 죽음의 성물');
+            alert('내가 선택한 값 : ' + QH1 + '\n정답 : 죽음의 성물');
         }
         function bookQH2(QH2) {
-            alert('내가 선택한 값 : ' + QH2 + '\n 정답 : 문학수첩 ');
+            alert('내가 선택한 값 : ' + QH2 + '\n정답 : 문학수첩 ');
         }
         function bookQH3(QH3) {
-            alert('내가 선택한 값 : ' + QH3 + '\n 정답 : 조앤k.롤링');
+            alert('내가 선택한 값 : ' + QH3 + '\n정답 : 조앤k.롤링');
         }
 
     </script>

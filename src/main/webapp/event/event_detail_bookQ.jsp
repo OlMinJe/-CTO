@@ -18,13 +18,13 @@
             alert('이벤트 참여가 완료되었습니다.');
         }
         function bookQ1(Q1) {
-            alert(' 내가 선택한 값 : ' + Q1 + '\n 정답 : 아몬드');
+            alert(' 내가 선택한 값 : ' + Q1 + '\n정답 : 아몬드');
         }
         function bookQ2(Q2) {
-            alert('내가 선택한 값 : ' + Q2 + '\n 정답 : 이수창 ');
+            alert('내가 선택한 값 : ' + Q2 + '\n정답 : 이수창 ');
         }
         function bookQ3(Q3) {
-            alert('내가 선택한 값 : ' + Q3 + '\n 정답 : 어떤책');
+            alert('내가 선택한 값 : ' + Q3 + '\n정답 : 어떤책');
         }
 
     </script>

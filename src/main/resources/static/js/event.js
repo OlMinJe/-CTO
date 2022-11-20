@@ -27,3 +27,31 @@
 //     //input 에서 submit 되어 있을때,submitHandler함수가 실행되도록 이벤트 추가
 // }
 // init();
+
+
+$(".w3-pagination a").click(function() {
+
+    var selector = $(this);
+
+    var current_index = $(".w3-pagination a").index(this);
+    var current_class = selector.attr("class");
+
+    if (current_index != 0 || current_index != 6) {
+
+        $(".w3-pagination a").each(function(index) {
+
+            if (index == 0 || index == 6) {
+                return true;
+            } else {
+                if (index == current_index) {
+                    $(this).addClass("w3-pale-red");
+                } else {
+                    $(this).removeClass("w3-pale-red");
+                }
+            }
+
+        });
+
+    }
+
+});
