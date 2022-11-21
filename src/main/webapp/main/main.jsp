@@ -195,7 +195,14 @@
                                 <th style="width: 10%;">댓글수</th>
                             </tr>
                             </thead>
-                            <tbody id="main_community_table"></tbody>
+                            <tbody id="main_community_table">
+                            <c:forEach items="${list}" var="data">
+                                <tr>
+                                    <td>${data.com_title}</td>
+                                    <td>${data.com_comment}</td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>

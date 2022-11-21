@@ -2,6 +2,7 @@ package com.project.controller;
 
 import com.project.service.BoardService;
 import com.project.service.MemberService;
+import com.project.vo.BoardVO;
 import com.project.vo.MemberVO;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +40,9 @@ public class MemberController {
     BoardService boardService;
 
     @GetMapping(value = "/")
-    public String main()throws Exception {
+    public String main(Model model)throws Exception {
+        List<BoardVO> list = boardService.boardList2();
+        model.addAttribute("list",list);
         return "/main/main";
     }
 

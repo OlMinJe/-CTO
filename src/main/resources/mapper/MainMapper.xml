@@ -102,6 +102,7 @@
 	<select id="boardList2" resultType="BoardVO">
 		select *
         from tb_com_talk
+		order by com_num desc limit 10
 	</select>
 <!--
 	<select id="boardList" resultType="hashmap" parameterType="hashmap">

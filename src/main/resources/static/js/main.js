@@ -308,11 +308,11 @@ function initMap(){
 // 커뮤니티+editor 이벤트
 function mainTableActive() {
     let mainCommunity_li = document.querySelectorAll('.main_community_menu li');
-    let mainCommunity_content = document.getElementById('main_community_table');
+    //let mainCommunity_content = document.getElementById('main_community_table');
     let mainEditor_content = document.getElementById('main_editor_table');
 
     function mainCommunityLiActive() {
-        mainCommunityTable();
+        //mainCommunityTable();
         for (let i = 0; i < mainCommunity_li.length; i++) {
             mainCommunity_li[i].addEventListener("click", function () {
                 while (mainCommunity_content.hasChildNodes()) {
@@ -324,12 +324,12 @@ function mainTableActive() {
                     }
                 }
                 mainCommunity_li[i].classList.add('active');
-                mainCommunityTable();
+                //mainCommunityTable();
             })
         }
     }
 
-    function mainCommunityTable() {
+    /*function mainCommunityTable() {
         for (let i = 0; i < 10; i++) { // 해당 카테고리 seq 값 만큼 돌리는걸로 바꾸기
             mainCommunity_content.innerHTML +=
                 '<tr class="community-table">' +
@@ -337,7 +337,7 @@ function mainTableActive() {
                 '<td class="comment_count"><span>' + '100' + '</span></td>' +
                 '</tr>';
         }
-    }
+    }*/
 
     function mainEditorTable() {
         // 얘는 최신 게시물 1개만 출력이라 for문 사용 노논
