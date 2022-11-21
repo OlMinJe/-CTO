@@ -57,7 +57,8 @@ public class MemberController {
         model.addAttribute("modifySeq",modifyMember.getMb_seq());
         model.addAttribute("mb_point",modifyMember.getMb_point());
         model.addAttribute("mb_img", modifyMember.getMb_img());
-
+        List<BoardVO> list = boardService.boardList2(); //추가
+        model.addAttribute("list",list); //추가
         return "/main/main";
     }
 
