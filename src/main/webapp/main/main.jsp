@@ -196,12 +196,12 @@
                             </tr>
                             </thead>
                             <tbody id="main_community_table">
-                            <c:forEach items="${list}" var="data">
+                            <%--<c:forEach items="${list}" var="data">
                                 <tr>
                                     <td>${data.com_title}</td>
                                     <td>${data.com_comment}</td>
                                 </tr>
-                            </c:forEach>
+                            </c:forEach>--%>
                             </tbody>
                         </table>
                     </div>

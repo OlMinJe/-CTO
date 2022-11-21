@@ -39,13 +39,17 @@ public class MemberController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping(value = "/")
+ /*   @GetMapping(value = "/")
     public String main(Model model)throws Exception {
         List<BoardVO> list = boardService.boardList2();
         model.addAttribute("list",list);
         return "/main/main";
-    }
+    }*/
 
+    @GetMapping(value = "/")
+    public String main()throws Exception {
+        return "/main/main";
+    }
     @GetMapping("/main")
     public String main(@RequestParam("stateCode") int stateCode, Model model, HttpServletRequest req) throws Exception {
         model.addAttribute("stateCode", stateCode);
