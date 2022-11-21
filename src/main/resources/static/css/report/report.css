@@ -16,6 +16,7 @@
 /*#tab-1:checked ~ .tab label:nth-child(1), #tab-2:checked ~ .tab label:nth-child(2), #tab-3:checked ~ .tab label:nth-child(3), #tab-4:checked ~ .tab label:nth-child(4), #tab-5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }*/
 /* TODO: 스크립트로 수정 필요
 #tab-1:checked ~ .report_content div:nth-child(1), #tab-2:checked ~ .report_content div:nth-child(2), #tab-3:checked ~ .report_content div:nth-child(3), #tab-4:checked ~ .report_content div:nth-child(4), #tab-5:checked ~ .report_content div:nth-child(5)  { display: block; }*/
+#reporttab1:checked ~ .tab label:nth-child(1), #reporttab2:checked ~ .tab label:nth-child(2), #reporttab3:checked ~ .tab label:nth-child(3), #reporttab4:checked ~ .tab label:nth-child(4), #reporttab5:checked ~ .tab label:nth-child(5) { border: none; background-color: #dcc5df; color: #fff; }
 
 
 /* ----------- report list - 검색바 -----------*/

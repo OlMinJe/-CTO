@@ -33,18 +33,14 @@
 
     rocks.addEventListener("click", function () {
         if (randompush == 0) {
-            // 결과 화면 고민 중 (html text OR alert)
-            // result.innerText = "무승부입니다.";
-            alert("무승부입니다. 다시 한 번 도전해보세요!");
+            result.innerText = "무승부입니다.";
             alert;
             document.getElementById("what").src = "/img/Enter_RSPGame/Rock.png";
         } else if (randompush == 1) {
-            // result.innerText = "이겼습니다! 축하드려요!";
-            alert("이겼습니다! 축하드려요!");
+            result.innerText = "이겼습니다! 축하드려요!";
             document.getElementById("what").src = "/img/Enter_RSPGame/Paper.png";
         } else {
-            // result.innerText = "아쉽게 졌네요";
-            alert("아쉽게 졌네요. 다시 한 번 도전해보세요!");
+            result.innerText = "아쉽게 졌네요";
             document.getElementById("what").src = "/img/Enter_RSPGame/Scissors.png";
         }
     });

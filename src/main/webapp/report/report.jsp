@@ -12,6 +12,7 @@
     <meta name="viewport" report_content="width=device-width, initial-scale=14">
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/report/report.css">
+    <script type="text/javascript" src="/js/report.js"></script>
 
 </head>
 <body>
@@ -24,18 +25,18 @@
         <input type="radio" id="tab-4" name="show"/>
         <input type="radio" id="tab-5" name="show"/>
         <div class="tab">
-            <label class="box_eft_01" for="tab-1"><a id="reporttab1" href="/report/report?stateCode=${stateCode}&category=0">유저신고</a></label>
-            <label class="box_eft_01" for="tab-2"><a id="reporttab" href="/report/report?stateCode=${stateCode}&category=1">댓글/게시판신고</a></label>
-            <label class="box_eft_01" for="tab-3"><a id="reporttab2" href="/report/report?stateCode=${stateCode}&category=2">페이지오류신고</a></label>
-            <label class="box_eft_01" for="tab-4"><a id="reporttab3" href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
-            <label class="box_eft_01" for="tab-5"><a id="reporttab4" href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
+            <label class="box_eft_01" for="tab-1"><a for="reporttab1" href="/report/report?stateCode=${stateCode}&category=0">유저신고</a></label>
+            <label class="box_eft_01" for="tab-2"><a for="reporttab2" href="/report/report?stateCode=${stateCode}&category=1">댓글/게시판신고</a></label>
+            <label class="box_eft_01" for="tab-3"><a id="reporttab" href="/report/report?stateCode=${stateCode}&category=2">페이지오류신고</a></label>
+            <label class="box_eft_01" for="tab-4"><a for="reporttab4" href="/report/report?stateCode=${stateCode}&category=3">저작권/명예회손</a></label>
+            <label class="box_eft_01" for="tab-5"><a for="reporttab5" href="/report/report?stateCode=${stateCode}&category=4">기타</a></label>
         </div>
-        <script>
-            const reporttab = document.querySelector("#reporttab");
-            reporttab.onclick = function() {
-                reporttab.style.background = "#dcc5df";
-            }
-        </script>
+<%--        <script>--%>
+<%--            const reporttab = document.querySelector("#reporttab");--%>
+<%--            reporttab.onclick = function() {--%>
+<%--                reporttab.style.background = "#dcc5df";--%>
+<%--            }--%>
+<%--        </script>--%>
 
 
     </div>
