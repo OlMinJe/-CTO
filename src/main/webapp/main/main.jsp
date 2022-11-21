@@ -206,61 +206,6 @@
                         </table>
                     </div>
                 </div>
-                <!--실패 : 아마 서비스 컨트롤러 매퍼 생성 필요할듯, 맨위에 지도 안 나옴-->
-                <%--<div class="col-12 community_normal box_eft_00">
-                <table class="table table-hover table-bordered" id="community-table">
-                    <tr>
-                        <th>제목</th>
-                        <th>조회수</th>
-                        <th>좋아요</th>
-                    </tr>
-                    <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
-                    <c:forEach items="${list}" var="data">
-                        <tr>
-                            &lt;%&ndash;<div>
-                                <c:choose>
-                                    <c:when test="${data.com_category == 0}">
-                                        <td>일상</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 1}">
-                                        <td>취미</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 2}">
-                                        <td>유머</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 3}">
-                                        <td>음식</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 4}">
-                                        <td>정보</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 5}">
-                                        <td>취업/진로</td>
-                                    </c:when>
-                                    <c:when test="${data.com_category == 6}">
-                                        <td>기타</td>
-                                    </c:when>
-                                </c:choose>
-                            </div>&ndash;%&gt;
-                            <td>
-                                <c:if test="${sessionScope.stateCode ne 1}">
-                                    <a href="/com/com_view?com_num=${data.com_num}&category=${data.com_category}">${data.com_title}</a>
-                                </c:if>
-                                <c:if test="${sessionScope.stateCode ==1}">
-                                    <a href="/community/community_view?com_num=${data.com_num}&stateCode=${stateCode}&category=${data.com_category}">${data.com_title}</a>
-                                </c:if>
-                                <c:if test="${data.com_comment ne 0}">
-                                    <small>[&nbsp;<c:out value="${data.com_comment}"/>&nbsp;]</small>
-                                </c:if>
-                            </td>
-                            <td>${data.com_hit}</td>
-                            <td>${data.com_like}</td>
-                        </tr>
-                        <c:set var="no" value="${no-1}"></c:set>
-                    </c:forEach>
-                </table>
-                <input type="hidden" name="category" value="${category}"/>
-                </div>--%>
             </div>
             <div class="col-12 col-lg-5 pl">
                 <div class="col-12 community_editor box_eft_00">
@@ -295,16 +240,6 @@
                     <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/login/login.jsp';">여성</li>
                 </ul>
             </c:if>
-            <%--<ul style="margin-bottom: 15px;">
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">일반고민</li>
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">대인관계/가족</li>
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">정신건강</li>
-            </ul>
-            <ul>
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">직장</li>
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">성소수자</li>
-                <li class="col-0 col-md-3 box_eft_02" onclick="location.href='/advice/advice.jsp';">여성</li>
-            </ul>--%>
         </div>
         <div class="col-12 fixed" id="fixed">
             <div class="comment" id="fixed_comment">

@@ -341,12 +341,17 @@ function mainTableActive() {
 
     function mainEditorTable() {
         // 얘는 최신 게시물 1개만 출력이라 for문 사용 노논
+        //이미지 크기 조절
         for (let i = 0; i < 1; i++) {
             mainEditor_content.innerHTML +=
-                '<span class="title"><a href="/community/community_view.jsp">제목</a></span>' +
-                '<span class="content_img"><img src=""></span>' +
-                '<span class="content_text">내용</span>';
-
+                '<span class="title"><a href="/community/community_view.jsp">[에디터 칼럼] 너나들이 기능 소개</a></span>' +
+                '<span class="content_img"><img src="/img/main_news.png" style="height:100px;"></span>' +
+                '<span class="content_text">안녕하세요.&nbsp;' + '너나들이 운영진입니다.' +'<br>' +
+                '<br>' +
+                '지난달 새로운 기능이 추가되었다는 안내를 드렸었는데요,' + '<br>' +
+                '사연을 올릴 때 꼭 제목을 작성해야 하는 것이 불편하다는 피드백을 반영하여 기능을 수정하였습니다.' + '<br>' +
+                '<br>' +
+                '앞으로 너나들이를 이용하실 때 보다 자유롭게 제목 기능을 활용하실 수 있는 점 참고 부탁드립니다!' + '</span>';
         }
     }
 
