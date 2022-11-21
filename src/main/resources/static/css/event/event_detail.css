@@ -123,10 +123,11 @@ img{ /*float:left; */margin: 0px auto; }
 
 .sam_detail_i {text-align: left;}
 .sam_detail_write {justify-content: space-around; width:80vh; height:28vh; line-height:28vh; margin-bottom: -30px;}
-.event_detail_label { vertical-align:middle; margin-left:-45px; flex-basis: 100%; color: rgba(0, 0, 0, 0.35); font-size: xxx-large; font-weight: 500; writing-mode: vertical-rl; }
-/*.event_detail_label:last-child { margin-bottom: 0; }*/
-.detail_input { margin-left:46px; width: 80%; height: 20vh; margin-top: 20px; justify-content: center; border-radius: 5px;}
-
+/*.event_detail_label { vertical-align:middle; margin-left:-45px; flex-basis: 100%; color: rgba(0, 0, 0, 0.35); font-size: xxx-large; font-weight: 500; writing-mode: vertical-rl; }*/
+.event_detail_label { display: flex; flex-basis: 100%; justify-content: center; align-items: center; margin-left: 10px; margin-right: 20px; margin-bottom: 30px; color: rgba(0,0,0,0.35); font-size: xx-large; font-weight: 400; }
+.event_detail_label:last-child { margin-bottom: 0; }
+.detail_input { width: 80%; margin-left: 10px; }
+/*height: 20vh; margin-top: 20px; justify-content: center; border-radius: 5px;*/
 
 .event_bookQ1 { width: 200px; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 10px; padding: 12px 13px; font-family: 'Roboto'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 16px; margin-top: 10px;}
 

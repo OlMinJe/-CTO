@@ -109,18 +109,18 @@
                             <p style="text-align: left;">기간 : 2022.07.27 ~ 2022.12.31</p>
                         </div>
                     <br/>
-                        <i class="sam_detail_i">※ 삼행시 단어를 꼭 포함해서 제출해주세요! ※ </i>
-<%--                        <label class="event_detail_label">다<input type="text"> </label>--%>
-<%--                        <label class="event_detail_label">온<input type="text"> </label>--%>
-<%--                        <label class="event_detail_label">이<input type="text"> </label>--%>
-                        <div class="col-12 sam_detail_write">
-                            <form class="detail_input1">
-                                <label for ="event_detail_label" class="event_detail_label">다 온 이</label>
-                                <input type="text"  class="box_eft_01" style="width: 80%; height: 20vh; margin : 20px 0 0 40px; " id="event_detail_label" name="event_detail_label" autocomplete="off" placeholder="입력" />
-<%--                                detail_input--%>
-                            </form>
+                        <i  class="sam_detail_i">※ 삼행시 단어를 꼭 포함해서 제출해주세요! ※ </i>
 
-<%--                            <input class="detail_input" type="text">--%>
+                        <div class="sam_input" style="margin-top: 20px;">
+                        <label class="event_detail_label">다<input style="margin-left: 20px;" type="text"> </label>
+                        <label class="event_detail_label">온<input style="margin-left: 20px;" type="text"> </label>
+                        <label class="event_detail_label">이<input style="margin-left: 20px;" type="text"> </label>
+<%--                        <div class="col-12 sam_detail_write">--%>
+<%--                            <form class="detail_input1">--%>
+<%--                                <label for ="event_detail_label" class="event_detail_label">다 온 이</label>--%>
+<%--                                <input type="text"  class="box_eft_01" style="width: 80%; height: 20vh; margin : 20px 0 0 40px; " id="event_detail_label" name="event_detail_label" autocomplete="off" placeholder="입력" />--%>
+<%--&lt;%&ndash;                                detail_input&ndash;%&gt;--%>
+<%--                            </form>--%>
                         </div>
                         <div class="btn_wrap">
                             <a class="box_eft_02" onclick="javascript:btn()">제출하기</a>
