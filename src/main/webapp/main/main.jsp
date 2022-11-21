@@ -310,6 +310,7 @@
             <div class="comment" id="fixed_comment">
                 <a href="https://frogue.danbee.ai/?chatbot_id=6e82d227-24d2-4b8d-b68c-9d7b995d48cc&force_welcome=Y">챗봇 상담하러 가기</a>
             </div>
+            <a href="#" class="scrollTop"></a>
         </div>
     </div>
 <jsp:include page="../fixed/footer.jsp"></jsp:include>

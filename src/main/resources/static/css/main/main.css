@@ -135,6 +135,7 @@ div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0
 .fixed div.comment::after { border: 20px solid transparent; border-top-color: #f7cc6d; border-bottom: 0; border-right: 0; content: ""; position: absolute; top: 60px; right: 44px; }
 .fixed div.comment a { display: block; position: relative; text-align: center; font-width: 500; }
 .fixed div.comment a:hover { color: #fff; }
+.fixed .scrollTop { position: absolute; bottom: -40px; right: 32px; width: 0px; height: 0px; border-bottom: 20px solid lawngreen; border-right: 15px solid transparent; border-left: 15px solid transparent;}
 
 
 
