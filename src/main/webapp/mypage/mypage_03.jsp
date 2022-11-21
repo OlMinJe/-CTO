@@ -16,6 +16,32 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css"> <!-- 공통 css -->
     <link rel="stylesheet" type="text/css" href="/css/mypage/mypage.css">
     <script type="text/javascript" src="/js/mypage.js"></script>
+    <%--<script>
+        if(localStorage.getItem('performance')){
+            const performance = window.localStorage.getItem('performance');
+            document.write(performance);
+        }
+        if(localStorage.getItem('food')){
+            const food = window.localStorage.getItem('food');
+            document.write(food);
+        }
+        if(localStorage.getItem('cafe')){
+            const cafe = window.localStorage.getItem('cafe');
+            document.write(cafe);
+        }
+        if(localStorage.getItem('show_show')){
+            const show_show = window.localStorage.getItem('show_show');
+            document.write(show_show);
+        }
+        if(localStorage.getItem('experience')){
+            const experience = window.localStorage.getItem('experience');
+            document.write(experience);
+        }
+        if(localStorage.getItem('exercise')){
+            const exercise = window.localStorage.getItem('exercise');
+            document.write(exercise);
+        }
+    </script>--%>
 </head>
 <body>
 <jsp:include page="../fixed/header.jsp"></jsp:include>
@@ -52,22 +78,19 @@
             <div class="col-12 content_box" id="tab_3_content">
                 <!------------------------------------------>
                 <div class="col-12" id="sub_title">위치기반 사용내역</div>
+                <div class="col-12 location_table" id="sub_table">
                     <table class="table table-hover table-bordered">
+                        <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>선택한 카테고리</th>
-                            <th>검색 시간</th>
+                            <th style="width: 10%;">No.</th>
+                            <th style="width: 20%;">선택한 카테고리</th>
+                            <th style="width: auto;">선택한 장소</th>
                         </tr>
-                        <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
-                        <c:forEach items="${list}" var="data">
-                            <tr>
-                                <td>${data.loc_num}</td>
-                                <td>${data.loc_content}</td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.loc_date}"/></td>
-                            </tr>
-                            <c:set var="no" value="${no-1}"></c:set>
-                        </c:forEach>
+                        </thead>
+                        <tbody id="location_table">
+                        </tbody>
                     </table>
+                </div>
                 <!------------------------------------------>
             </div>
         </div>
@@ -86,7 +109,32 @@
             e.innerHTML += '<tr>' +
                 '<td class="diplay_no">' + (i + 1) + '</td>' +
                 '<td class="select_01">' + '공연' + '</td>' +
-                '<td class="select_02"><a href="https://weblin.tistory.com/5">' + '고척스카이돔' + '</a></td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '고척스카이돔' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no">' + (i + 2) + '</td>' +
+                '<td class="select_01">' + '음식' + '</td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '삼청동 수제비' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no">' + (i + 3) + '</td>' +
+                '<td class="select_01">' + '카페' + '</td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '어니언 안국점' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no">' + (i + 4) + '</td>' +
+                '<td class="select_01">' + '행사' + '</td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '월등복숭아체험행사' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no">' + (i + 5) + '</td>' +
+                '<td class="select_01">' + '체험' + '</td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '부산영화체험박물관' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no">' + (i + 6) + '</td>' +
+                '<td class="select_01">' + '운동' + '</td>' +
+                '<td class="select_02"><a href="/location/location.jsp?stateCode=1">' + '스포짐 종로점' + '</a></td>' +
                 '</tr>';
             /* document.querySelector('.location_table .diplay_no').innerHTML = '<span>' + (i+1) + '</span>';
              document.querySelector('.location_table .select_01').innerHTML = '<span>' + '공연' + '</span>';
@@ -98,7 +146,50 @@
 </html>
 
 
-
+<%--<table class="table table-hover table-bordered">
+    <tr>
+        <th>No.</th>
+        <th>선택한 카테고리</th>
+        <th>검색 시간</th>
+    </tr>
+    <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
+    <c:forEach items="${list}" var="data">
+        <tr>
+                &lt;%&ndash;<td>${data.loc_num}</td>&ndash;%&gt;
+            <td>
+                <script>
+                    if(localStorage.getItem('performance')){
+                        const performance = window.localStorage.getItem('performance');
+                        document.write(performance);
+                    }
+                    if(localStorage.getItem('food')){
+                        const food = window.localStorage.getItem('food');
+                        document.write(food);
+                    }
+                    if(localStorage.getItem('cafe')){
+                        const cafe = window.localStorage.getItem('cafe');
+                        document.write(cafe);
+                    }
+                    if(localStorage.getItem('show_show')){
+                        const show_show = window.localStorage.getItem('show_show');
+                        document.write(show_show);
+                    }
+                    if(localStorage.getItem('experience')){
+                        const experience = window.localStorage.getItem('experience');
+                        document.write(experience);
+                    }
+                    if(localStorage.getItem('exercise')){
+                        const exercise = window.localStorage.getItem('exercise');
+                        document.write(exercise);
+                    }
+                </script>
+            </td>
+                &lt;%&ndash;<td>${data.loc_content}</td>
+                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.loc_date}"/></td>&ndash;%&gt;
+        </tr>
+        <c:set var="no" value="${no-1}"></c:set>
+    </c:forEach>
+</table>--%>
 
 <%--
 <%@ page language="java" contentType="text/html; charset=UTF-8"

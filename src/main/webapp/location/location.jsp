@@ -15,33 +15,39 @@
     <script>
         function performance() {
             const Element = document.getElementById('keyword');
-            Element.value = "공연";
+            Element.value = "혜화 공연";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('performance', '혜화 공연');
         }
         function food() {
             const Element = document.getElementById('keyword');
-            Element.value = "음식점";
+            Element.value = "종로 음식점";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('food', '종로 음식점');
         }
         function cafe() {
             const Element = document.getElementById('keyword');
-            Element.value = "카페";
+            Element.value = "종로 카페";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('cafe', '종로 카페');
         }
         function show_show() {
             const Element = document.getElementById('keyword');
             Element.value = "행사";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('show_show', '행사');
         }
         function experience() {
             const Element = document.getElementById('keyword');
             Element.value = "체험";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('experience', '체험');
         }
         function exercise() {
             const Element = document.getElementById('keyword');
-            Element.value = "운동";
+            Element.value = "종로 헬스장";
             $('#sbtn').trigger('click');
+            window.localStorage.setItem('exercise', '종로 헬스장');
         }
     </script>
 </head>

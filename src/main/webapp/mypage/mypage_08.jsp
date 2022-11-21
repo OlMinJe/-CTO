@@ -38,7 +38,7 @@
                     success: function (data) {
                         if (data == "success") {
                             alert("탈퇴가 처리되었습니다.");
-                            location.href = "/main?stateCode=${stateCode}";
+                            location.href = "/main";
                         } else {
                             alert("비밀번호가 맞지 않습니다.");
                         }
@@ -48,7 +48,6 @@
                             "message:" + request.responseText + "\n" + "error:" + error);
                     }
                 })
-                //location.href='/mypage/mypage_08_1';
             } else {
                 alert("비밀번호를 입력해주세요.");
             }
