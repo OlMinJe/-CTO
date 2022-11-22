@@ -22,7 +22,13 @@
     >
         다시하기
     </button>
-    <button class="rsp">게임 종료</button>
+    <%--<button class="rsp">게임 종료</button>--%>
+        <c:if test="${sessionScope.stateCode ne null}">
+            <button class="rsp" onclick="location.href='/Entertainment/Enter_point?stateCode=${stateCode}'">종료하기</button>
+        </c:if>
+        <c:if test="${sessionScope.stateCode eq null}">
+            <button class="rsp" onclick="location.href='/Entertainment/Entertainment.jsp'">종료하기</button>
+        </c:if>
 </div>
 <script>
     var rock = document.getElementById("rocks"); //0
