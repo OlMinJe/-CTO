@@ -25,9 +25,6 @@
     <div class="col-12 main">
         <div class="col-12 second_row_wrap mb">
             <div class="col-12 col-md-6 location_wrap">
-                <div class="col-12 title">
-                    오늘은 가을경치 구경하며 경복궁 산책 어떤가요?
-                </div>
                 <div id="map" style="width:100%;height:346px;" onclick="location.href='/location/location.jsp'"></div>
             </div>
             <div class="col-12 col-md-6 user_wrap">
