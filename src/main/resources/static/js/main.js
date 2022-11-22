@@ -161,6 +161,7 @@ function swiperEvent() {
         },
         pagination: {
             el: ".swiper-pagination",
+            clickable: true
         },
     });
 
@@ -173,6 +174,7 @@ function swiperEvent() {
             disableOnInteraction: false,
         },
         centeredSlides: true,
+        clickable: true,
         slidesPerView: 1,
         slideToClickedSlide: true,
         effect: 'coverflow'
