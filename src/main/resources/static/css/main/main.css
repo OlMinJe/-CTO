@@ -21,8 +21,12 @@
 /* second_row_wrap (location/ user) */
 .second_row_wrap { display: flex; flex-direction: column-reverse; }
 .location_wrap { min-height: 315px;overflow: hidden; border-radius: 15px; cursor: pointer; }
-.user_wrap { padding-bottom: 30px;/* border: 1px solid #ccc;*/ }
+.location_wrap .map_comment { position: absolute; z-index: 10; top: 0; left: 10px; animation: motion 0.7s linear 0s infinite alternate; padding: 8px 10px; background-color: #fff; border-radius: 10px; font-weight: 500; }
+@keyframes motion { 0% {margin-top: 10px;} 100% {margin-top: 20px;} }
+.location_wrap .map_see { position: absolute; z-index: 10; bottom: 10px; right: 0; padding: 8px 10px; cursor: pointer; font-weight: 700;color: cadetblue; background-color: beige; text-align: center; }
+.location_wrap .map_see:hover { color: beige; background-color: #f7cc6d }
 
+.user_wrap { padding-bottom: 30px;/* border: 1px solid #ccc;*/ }
 .user_wrap .login { padding-top: 30px; padding-bottom: 30px; }
 .user_wrap .login > form { display: flex; flex-direction: column; margin-left: auto; margin-right: auto; }
 .user_wrap .login input[name="mb_id"], .login input[name="mb_pw"] { border: 1px solid #ccc; padding: 20px 10px; color: #212121; }
@@ -74,7 +78,7 @@
 
     /* advice_wrap */
 .advice_wrap ul { display: flex; justify-content: space-around; text-align: center; }
-.advice_wrap ul li { padding: 15px 0; width: 30%; white-space: nowrap; font-size: 12px; line-height: 18px; font-weight: 600; cursor: pointer; }
+.advice_wrap ul li { padding: 15px 0; width: 30%; white-space: nowrap; font-size: 12px; line-height: 18px; font-weight: 600; cursor: pointer; background-color: #DEBACE; }
 
 
 /* sub_swiper_wrap */
@@ -133,7 +137,7 @@
 div.col-12.fixed { position: fixed; z-index: 1000; max-width: initial; margin: 0; padding: 20px; bottom: 55px; right: 20px; width: 105px; height: 105px; background-image: url("/img/fixed_icon_02.png"); background-size: 105px; background-repeat: no-repeat; cursor: pointer; }
 .fixed div.comment { position: absolute; display:none; z-index: 1000; bottom: 105px; right: 35px; width: 220px; padding: 20px 20px; border-radius: 25px; background-color: #f7cc6d;}
 .fixed div.comment::after { border: 20px solid transparent; border-top-color: #f7cc6d; border-bottom: 0; border-right: 0; content: ""; position: absolute; top: 60px; right: 44px; }
-.fixed div.comment a { display: block; position: relative; text-align: center; font-width: 500; }
+.fixed div.comment a { display: block; position: relative; text-align: center; font-weight: 500; }
 .fixed div.comment a:hover { color: #fff; }
 .fixed .scrollTop { position: absolute; bottom: -40px; right: 32px; width: 0px; height: 0px; border-bottom: 20px solid lawngreen; border-right: 15px solid transparent; border-left: 15px solid transparent;}
 
