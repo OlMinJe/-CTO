@@ -358,7 +358,7 @@ function mainTableActive() {
     mainEditorTable();
     mainCommunityLiActive();
 }
-
+//test
 // 명언
 function saying(){
     const words = ['인생은 가까이서 보면 비극이지만 멀리서 보면 희극이다.<br>-찰리채플린-',
