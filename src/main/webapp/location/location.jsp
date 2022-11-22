@@ -71,7 +71,7 @@
             <div class="option">
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
-                        <input type="text" value="종로 맛집" id="keyword" class="box_eft_01" size="15">
+                        <input type="text" value="경복궁 맛집" id="keyword" class="box_eft_01" size="15">
                         <button class="box_eft_02" type="submit" id="sbtn">검색하기</button>
                     </form>
                 </div>
