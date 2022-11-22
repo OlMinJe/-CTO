@@ -55,7 +55,7 @@
                         <tr>
                             <th style="width: 10%;">No.</th>
                             <th style="width: auto;">참여 테스트</th>
-                            <th style="width: 20%;">결과</th>
+                            <th style="width: 20%;">테스트 바로가기</th>
                         </tr>
                         </thead>
                         <tbody id="webTest_table">
@@ -79,8 +79,23 @@
         for (var i = 0; i < 1; i++) { /* 저장된 seq의 값만큼 돌아가도록 변경하기*/
             e.innerHTML += '<tr>' +
                 '<td class="diplay_no"><span>' + (i + 1) + '</span></td>' +
-                '<td class="webTest"><span>' + '테스트 이름' + '</span></td>' +
-                '<td class="webTest_result"><a href="https://m.blog.naver.com/dasol825/220672901113" >' + '결과(클릭하면 상세)' + '</a></td>' +
+                '<td class="webTest"><span>' + '안녕 자두야 MBTI' + '</span></td>' +
+                '<td class="webTest_result"><a href="/Entertainment/Enter_mbti_jadoo.jsp" >' + '바로가기' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no"><span>' + (i + 2) + '</span></td>' +
+                '<td class="webTest"><span>' + '여행지 테스트' + '</span></td>' +
+                '<td class="webTest_result"><a href="/Entertainment/Enter_trip_test.jsp" >' + '바로가기' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no"><span>' + (i + 3) + '</span></td>' +
+                '<td class="webTest"><span>' + '반려견 테스트' + '</span></td>' +
+                '<td class="webTest_result"><a href="/Entertainment/Enter_animal_test.jsp" >' + '바로가기' + '</a></td>' +
+                '</tr>';
+            e.innerHTML += '<tr>' +
+                '<td class="diplay_no"><span>' + (i + 4) + '</span></td>' +
+                '<td class="webTest"><span>' + '해리포터 속으로 들어간다면?' + '</span></td>' +
+                '<td class="webTest_result"><a href="/Entertainment/Enter_test_potter.jsp" >' + '바로가기' + '</a></td>' +
                 '</tr>';
             /*document.querySelector('.webTest_table .diplay_no').innerHTML = '<span>' + (i+1) + '</span>';
             document.querySelector('.webTest_table .webTest').innerHTML = '<span>' + '테스트 이름' + '</span>';

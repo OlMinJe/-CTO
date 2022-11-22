@@ -344,7 +344,7 @@ function mainTableActive() {
         //이미지 크기 조절
         for (let i = 0; i < 1; i++) {
             mainEditor_content.innerHTML +=
-                '<span class="title"><a href="/community/community_view.jsp">[에디터 칼럼] 너나들이 기능 소개</a></span>' +
+                '<span class="title"><a href="/editor/editor.jsp">[에디터 칼럼] 너나들이 기능 소개</a></span>' +
                 '<span class="content_img"><img src="/img/main_news.png" style="height:100px;"></span>' +
                 '<span class="content_text">안녕하세요.&nbsp;' + '너나들이 운영진입니다.' +'<br>' +
                 '<br>' +
