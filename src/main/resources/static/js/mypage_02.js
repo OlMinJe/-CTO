@@ -8,12 +8,44 @@ function mypage_02(){
     for(var i = 0; i < 1; i++){ /* 저장된 seq의 값만큼 돌아가도록 변경하기*/
         e.innerHTML += '<tr>'+
                          '<td class="diplay_no">' + (i+1) + '</td>'+
-                         '<td class="category">' + i + '</td>'+
-                         '<td class="table_title">' + i + '</td>'+
-                         '<td class="comment">' + i + '</td>'+
+                         '<td class="category">' + '일상' + '</td>'+
+                         '<td class="table_title">' + '플레이리스트 추천' + '</td>'+
+                         '<td class="comment">' + 3 + '</td>'+
                          '<td class="writer">' + 'Y' + '</td>'+
                          '<td class="comment_use">' + 'N' + '</td>'+
                      '</tr>';
+        e.innerHTML += '<tr>'+
+            '<td class="diplay_no">' + (i+2) + '</td>'+
+            '<td class="category">' + '취미' + '</td>'+
+            '<td class="table_title">' + '다들 취미가 뭐야' + '</td>'+
+            '<td class="comment">' + 5 + '</td>'+
+            '<td class="writer">' + 'Y' + '</td>'+
+            '<td class="comment_use">' + 'Y' + '</td>'+
+            '</tr>';
+        e.innerHTML += '<tr>'+
+            '<td class="diplay_no">' + (i+3) + '</td>'+
+            '<td class="category">' + '일상' + '</td>'+
+            '<td class="table_title">' + '친해지고 싶어요!' + '</td>'+
+            '<td class="comment">' + 2 + '</td>'+
+            '<td class="writer">' + 'Y' + '</td>'+
+            '<td class="comment_use">' + 'Y' + '</td>'+
+            '</tr>';
+        e.innerHTML += '<tr>'+
+            '<td class="diplay_no">' + (i+4) + '</td>'+
+            '<td class="category">' + '취업/진로' + '</td>'+
+            '<td class="table_title">' + '취준생인데 사회에 나가기 두려워' + '</td>'+
+            '<td class="comment">' + 7 + '</td>'+
+            '<td class="writer">' + 'Y' + '</td>'+
+            '<td class="comment_use">' + 'N' + '</td>'+
+            '</tr>';
+        e.innerHTML += '<tr>'+
+            '<td class="diplay_no">' + (i+5) + '</td>'+
+            '<td class="category">' + '음식' + '</td>'+
+            '<td class="table_title">' + '야식 골라줘' + '</td>'+
+            '<td class="comment">' + 1 + '</td>'+
+            '<td class="writer">' + 'Y' + '</td>'+
+            '<td class="comment_use">' + 'N' + '</td>'+
+            '</tr>';
         /*document.querySelector('.community_table .diplay_no').innerHTML = '<span>' + (i+1) + '</span>';
         document.querySelector('.community_table .category').innerHTML = '<span>' + i + '</span>';
         document.querySelector('.community_table .table_title').innerHTML = '<span>' + i + '</span>';
