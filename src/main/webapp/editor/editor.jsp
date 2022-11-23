@@ -37,7 +37,7 @@
                     <th>작성자</th>
                     <th>제목</th>
                     <th>작성시간</th>
-                    <th>조회수</th>
+                    <%--<th>조회수</th>--%>
                     <th>좋아요</th>
                 </tr>
                 <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
@@ -53,7 +53,7 @@
                             </c:if>
                         </td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.edit_date}"/></td>
-                        <td>${data.edit_hit}</td>
+                        <%--<td>${data.edit_hit}</td>--%>
                         <td>${data.edit_like}</td>
                     </tr>
                     <c:set var="no" value="${no-1}"></c:set>

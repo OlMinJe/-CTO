@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/js/event.js"></script>
     <script>
         function btn(str) {
-            alert('이벤트 참여가 완료되었습니다.');
+            alert('이벤트 참여가 완료되었습니다.\n 50포인트가 적립되었습니다.');
         }
         function bookQ1(Q1) {
             alert(' 내가 선택한 값 : ' + Q1 + '\n정답 : 아몬드');
@@ -106,9 +106,16 @@
                         </div>
                     </div>
                     <!-- 참여하기 버튼 -->
-                    <div class="btn_wrap">
-<%--                        <a href="/event/event_detail_bookQ.jsp" class="box_eft_02">이벤트 참여하기</a>--%>
+                    <%--<div class="btn_wrap">
+&lt;%&ndash;                        <a href="/event/event_detail_bookQ.jsp" class="box_eft_02">이벤트 참여하기</a>&ndash;%&gt;
                         <a class="box_eft_02" onclick="javascript:btn()">이벤트 참여하기</a>
+                    </div>--%>
+
+                    <div class="btn_wrap">
+                        <%--<a class="box_eft_02" onclick="javascript:btn()">이벤트 참여하기</a>--%>
+                        <c:if test="${sessionScope.stateCode ne null}">
+                            <a class="box_eft_02" style="margin-left: 5px;"onclick="location.href='/event/event_point?stateCode=${stateCode}'">제출하기</a>
+                        </c:if>
                     </div>
                 </div>
                 <!-- 참여내역 -->

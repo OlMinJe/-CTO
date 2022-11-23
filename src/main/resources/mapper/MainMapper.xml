@@ -751,4 +751,10 @@
 		where talk_num=#{talk_num}
 	</update>
 
+	<update id="EpointModify" parameterType="com.project.vo.MemberVO" >
+		UPDATE tb_member
+		SET mb_point = #{mb_point}+50
+		WHERE mb_id = #{mb_id}
+	</update>
+
 </mapper>

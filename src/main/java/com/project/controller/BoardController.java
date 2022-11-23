@@ -1050,6 +1050,37 @@ public class BoardController {
 		return "/Entertainment/Enter_point";
 	}
 
+	@RequestMapping(value="/EpointModify", method = {RequestMethod.GET, RequestMethod.POST})
+	public String EpointModify(MemberVO memberVO, HttpServletRequest req, Model model) throws Exception {
+
+		HttpSession session = req.getSession();
+
+		MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인시 있던 세션
+		MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+
+		int seq = modifyMember.getMb_seq();
+		memberVO.setMb_seq(seq);
+		boardService.pointModify(memberVO);
+
+		return "redirect:/event/event";
+		//return "redirect:/Entertainment/Enter_tetris.jsp";
+	}
+
+	@RequestMapping(value = "/event/event_point")
+	public String eventForm(HttpServletRequest req, Model model) throws Exception{
+		HttpSession session = req.getSession();
+
+		if(session.getAttribute("member") != null) {
+			MemberVO member = (MemberVO) session.getAttribute("member"); // 로그인 시 있던 세션
+			MemberVO modifyMember = boardService.membermodifyGET(member.getMb_id());
+			model.addAttribute("modifyId", modifyMember.getMb_id());
+			model.addAttribute("modifySeq",modifyMember.getMb_seq());
+			model.addAttribute("modifyNick",modifyMember.getMb_nick());
+			boardService.EpointModify(modifyMember);
+		}
+		return "/event/event_point";
+	}
+
 	//출석체크 버튼 클릭 시 +10P 지급
 	@RequestMapping(value = "/users/attendances", method = {RequestMethod.GET, RequestMethod.POST})
 	//@ResponseBody
