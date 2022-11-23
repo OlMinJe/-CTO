@@ -375,6 +375,10 @@ public class BoardService  {
 		boardmapper.pointModify(memberVO);
 	}
 
+	public void EpointModify(MemberVO memberVO) throws Exception {
+		boardmapper.EpointModify(memberVO);
+	}
+
 	/** 마이페이지 - 출석체크 시 포인트 지급 **/
 	@Transactional
 	public void insertCalendar(MemberVO memberVO) throws Exception {

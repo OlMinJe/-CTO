@@ -73,8 +73,14 @@
                                style="padding: 10px 10px; min-height: 300px;" type=“text”
                                placeholder=내용>
                     </div>
-                    <div class="btn_wrap">
+                    <%--<div class="btn_wrap">
                         <a class="box_eft_02" onclick="javascript:btn()">제출하기</a>
+                    </div>--%>
+                    <div class="btn_wrap">
+                        <%--<a class="box_eft_02" onclick="javascript:btn()">제출하기</a>--%>
+                        <c:if test="${sessionScope.stateCode ne null}">
+                            <a class="box_eft_02" style="margin-left: 5px;" onclick="location.href='/event/event_point?stateCode=${stateCode}'">제출하기</a>
+                        </c:if>
                     </div>
                 </div>
                 <!-- 참여내역 -->
