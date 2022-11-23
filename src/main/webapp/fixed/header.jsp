@@ -9,10 +9,10 @@
     <div class="col-12 fixed_header" style="position:fixed; display: none; justify-content: space-between; align-items: center;">
         <div class="col-1 header_logo">
             <c:if test="${sessionScope.stateCode == 1}">
-                <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                <a href="/main?stateCode=1" class="logo"><img src="/img/logo_04.png" alt="Logo"></a>
             </c:if>
             <c:if test="${sessionScope.stateCode ne 1}">
-                <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                <a href="/" class="logo"><img src="/img/logo_04.png" alt="Logo"></a>
             </c:if>
         </div>
         <c:if test="${sessionScope.stateCode ne 1}">
@@ -86,13 +86,13 @@
     <div class="col-12 header_wrap" id="header">
         <div class="col-1 col-md-2 header_logo">
                 <c:if test="${sessionScope.stateCode == 0}">
-                    <a href="/main?stateCode=0" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                    <a href="/main?stateCode=0" class="logo"><img src="/img/logo_04.png" alt="Logo"></a>
                 </c:if>
                 <c:if test="${sessionScope.stateCode == 1}">
-                    <a href="/main?stateCode=1" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                    <a href="/main?stateCode=1" class="logo"><img src="/img/logo_04.png" alt="Logo"></a>
                 </c:if>
                 <c:if test="${sessionScope.stateCode ne 1}">
-                    <a href="/" class="logo"><img src="/img/CTO_Logo_02.png" alt="Logo"></a>
+                    <a href="/" class="logo"><img src="/img/logo_04.png" alt="Logo"></a>
                 </c:if>
 
         </div>
