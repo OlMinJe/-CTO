@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/js/event.js"></script>
     <script>
         function btn(str) {
-            alert('이벤트 참여가 완료되었습니다.');
+            alert('이벤트 참여가 완료되었습니다.\n 50포인트가 적립되었습니다.');
         }
         function bookQ1(Q1) {
             alert(' 내가 선택한 값 : ' + Q1 + '\n정답 : 아몬드');

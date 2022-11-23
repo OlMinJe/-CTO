@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/js/event.js"></script>
     <script>
         function btn() {
-            alert('제출이 완료되었습니다.');
+            alert('제출이 완료되었습니다.\n 50포인트가 적립되었습니다.');
         }
     </script>
 

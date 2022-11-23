@@ -27,7 +27,7 @@
 <%--        }--%>
     <script>
         function btn() {
-            alert('제출이 완료되었습니다.');
+            alert('제출이 완료되었습니다.\n 50포인트가 적립되었습니다.');
             location.href='/event/event_detail.jsp?stateCode=${stateCode}';
             ///event/event_detail.jsp?stateCode=1
         }
