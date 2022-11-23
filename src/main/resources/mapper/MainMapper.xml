@@ -746,4 +746,9 @@
 		where loc_category = #{category}
 	</select>
 
+	<update id="increaseTalkhit">
+		update tb_talk set talk_hit = talk_hit+1
+		where talk_num=#{talk_num}
+	</update>
+
 </mapper>

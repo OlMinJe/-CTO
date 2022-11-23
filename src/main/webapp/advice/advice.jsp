@@ -57,7 +57,7 @@
                 <th>제목</th>
                 <th class="displayNo">작성시간</th>
                 <th>조회수</th>
-                <th>좋아요</th>
+                <%--<th>좋아요</th>--%>
             </tr>
             <c:set var="no" value="${paging.totalCount - cri.getPageStart()}"/>
             <c:forEach items="${list}" var="data">
@@ -103,7 +103,7 @@
                     </td>
                     <td class="displayNo"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.talk_date}"/></td>
                     <td>${data.talk_hit}</td>
-                    <td>${data.talk_like}</td>
+                    <%--<td>${data.talk_like}</td>--%>
                 </tr>
                 <c:set var="no" value="${no-1}"></c:set>
             </c:forEach>

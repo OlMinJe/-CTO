@@ -239,6 +239,20 @@ public class BoardService  {
 		return boardmapper.talkupdateReplyCount(talk_num);
 	}
 
+	//상담 조회수 (세션을 이용해서)
+	public void increaseTalkhit(int talk_num, HttpSession session) throws Exception{
+		long update_time = 0;
+		if(session.getAttribute("update_time_"+talk_num) != null) {
+			update_time = (long) session.getAttribute("update_time_" + talk_num);
+		}
+		long current_time = System.currentTimeMillis();
+		// 24시간은 24*60*60*1000 (나중에 변경 가능)
+		if(current_time - update_time > 5*1000){
+			boardmapper.increaseTalkhit(talk_num);
+			session.setAttribute("update_time_"+talk_num, current_time);
+		}
+	}
+
 	/** 신고 페이지 **/
 	//신고페이지
 	public List<Map<String, Object>> reportList( Criteria cri, Integer category) throws Exception{

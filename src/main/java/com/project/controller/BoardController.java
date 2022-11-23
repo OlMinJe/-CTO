@@ -461,8 +461,7 @@ public class BoardController {
 						   HttpServletRequest req) throws Exception {
 
 		HttpSession session = req.getSession();
-		//boardService.increaseComhit(com_num,session);
-		//boardService.updatecomlike(com_num); //여기서 수정이 될까...
+		boardService.increaseTalkhit(talk_num,session);
 		TalkVO data = boardService.talkRead(talk_num);
 		model.addAttribute("data", data);
 		model.addAttribute("stateCode", stateCode);
