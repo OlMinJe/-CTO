@@ -2,7 +2,7 @@
 .report_main, .view_wrap, .board_wrap { text-align: center; }
 .report_main .menu, .report_main .content, .view_con, .board_con { display: inline-block; margin-bottom: 50px; text-align: initial; }
 .btn_wrap { text-align: center; }
-.btn_wrap a { display: inline-block; min-width: 80px; padding: 10px 30px; font-size: 1.0rem; line-height: 1.6rem; }
+.btn_wrap a { display: inline-block; min-width: 80px; padding: 10px 30px; font-size: 1.0rem; line-height: 1.6rem; background-color: #DEBACE;}
 
 
 /* ----------- tab menu css(메뉴 속성) -----------*/

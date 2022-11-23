@@ -55,7 +55,7 @@
                     <li class="col-12 col-md-4"><a href="/event/event_detail_book.jsp"
                                                    class="col-12 event_btn purple rounded">독서감상대회</a></li>
                     <li class="col-12 col-md-4"><a href="/event/event_detail_bookQ.jsp"
-                                                   class="col-12 event_btn blue rounded">?</a></li>
+                                                   class="col-12 event_btn blue rounded" style="background-color: #cb99c5;">?</a></li>
                 </ul>
             </div>
         </div>

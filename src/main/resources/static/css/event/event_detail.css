@@ -111,12 +111,12 @@ img{ /*float:left; */margin: 0px auto; }
 
 /* button */
 
-.event_btn.blue     {background-color: #7fb1bf;}
+/*.event_btn.blue     {background-color: #7fb1bf;}
 .event_btn.green   {background-color: #9abf7f;}
 .event_btn.red       {background-color: #fa5a5a;}
 .event_btn.purple {background-color: #cb99c5;}
 .event_btn.yellow {background-color: #f0d264;}
-.event_btn.pink {background-color: #fbe9e7;}
+.event_btn.pink {background-color: #fbe9e7;}*/
 
 .event_btn { float: left; color: black; padding: 15px 25px; display: inline-block; margin-right: 15px; border: 1px solid rgba(0,0,0,0.21); border-bottom-color: rgba(0,0,0,0.34); text-align: center; font-weight: 500; box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset,  0 2px 0 -1px rgba(0,0,0,0.13),  0 3px 0 -1px rgba(0,0,0,0.08),  0 3px 13px -1px rgba(0,0,0,0.21);}
 .event_btn:active { top: 1px; border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21); box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset; position: relative; }

@@ -99,8 +99,8 @@
 
         <div>
             <c:if test="${membervo.mb_nick == data.mb_nick}">
-                <button class="box_eft_02" id="modify" onclick="location.href='/community/community_modify?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">수정</button>
-                <button class="box_eft_01" id="delete" onclick="location.href='/boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'">삭제</button>
+                <button class="box_eft_02" id="modify" onclick="location.href='/community/community_modify?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'" style="padding: 8px 15px;">수정</button>
+                <button class="box_eft_01" id="delete" onclick="location.href='/boardDelete?com_num=${data.com_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_nick}'" style="padding: 8px 15px;">삭제</button>
             </c:if>
         </div>
         <script>

@@ -81,7 +81,7 @@
             <div class="col-12 event_wrap">
                 <ul>
                     <li class="col-12 col-md-4"><a href="/event/event_detail.jsp"
-                                                   class="col-12 event_btn pink rounded">삼행시</a></li>
+                                                   class="col-12 event_btn pink rounded" style="background-color: #cb99c5;">삼행시</a></li>
                     <li class="col-12 col-md-4"><a href="/event/event_detail_book.jsp"
                                                    class="col-12 event_btn purple rounded">독서감상대회</a></li>
                     <li class="col-12 col-md-4"><a href="/event/event_detail_bookQ.jsp"

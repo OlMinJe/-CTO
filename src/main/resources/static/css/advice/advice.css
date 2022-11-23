@@ -9,7 +9,7 @@ body > div.col-12.advice, body > div.col-12.view_wrap, body > div.col-12.board_w
 .menu .menu-con ul li:last-child { border-radius: 0 0 10px 10px; }
 
 .btn_wrap { text-align: center; }
-.btn_wrap a, .btn_wrap button { display: inline-block; min-width: 80px; padding: 10px 0; font-size: 1.0rem; line-height: 1.6rem; text-align: center; }
+.btn_wrap a, .btn_wrap button { display: inline-block; min-width: 80px; padding: 10px 0; font-size: 1.0rem; line-height: 1.6rem; text-align: center; background-color: #DEBACE; }
 
 
 /* advice 상위 메뉴 */

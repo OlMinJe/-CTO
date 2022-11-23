@@ -66,11 +66,15 @@
             <a onclick="location.href='/report/report.jsp';" class="on box_eft_02">목록</a>
             <a href="edit.html" class="box_eft_01">수정</a>
         </div> -->
+        <%-- 임의로 추가함--%>
+        <div class="col-12 btn_wrap">
+            <a onclick="location.href='/report/report.jsp';" class="on box_eft_02">목록</a>
+        </div>
 
-        <div>
+        <div class="col-12 btn_wrap">
             <c:if test="${membervo.mb_seq == data.mb_seq}">
-                <button class="box_eft_02" id="modify" onclick="location.href='/report/report_modify?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'">수정</button>
-                <button class="box_eft_01" id="delete" onclick="location.href='/reportDelete?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'">삭제</button>
+                <button class="box_eft_02" id="modify" onclick="location.href='/report/report_modify?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'" style="padding: 8px 15px;">수정</button>
+                <button class="box_eft_01" id="delete" onclick="location.href='/reportDelete?re_num=${data.re_num}&stateCode=${stateCode}&category=${category}&writer=${data.mb_seq}'" style="padding: 8px 15px;">삭제</button>
             </c:if>
         </div>
         <!-- 여기 댓글 -->
