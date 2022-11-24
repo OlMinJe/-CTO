@@ -73,7 +73,7 @@
                 <c:forEach items="${list}" var="data">
                 <tbody id="report-table">
                 <tr>
-                    <td>${no}</td>
+                    <td style="text-align: center;">${no}</td>
                     <td><a href="/report/report_view?re_num=${data.re_num}&stateCode=${stateCode}&category=${data.report_category}">${data.re_title}</a></td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${data.re_date}"/></td>
                 </tr>

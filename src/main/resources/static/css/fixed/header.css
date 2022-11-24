@@ -56,7 +56,9 @@ li.m_nav_title.m_right { margin-bottom: 40px; }
 }
 @media all and (min-width: 1200px){
     .weatherIcon { left: 43%; }
+    .fixed_header .header_logo .logo img { width: 80%; }
 }
 @media all and (min-width: 1600px){
     .weatherIcon { left: 57%; }
+    .fixed_header .header_logo .logo img { width: 65%; }
 }

@@ -128,8 +128,8 @@
                             <span>공지사항(ver.22/12/31)</span>
                         </div>
                         <div class="swiper-slide slide02"><img src="/img/notice_img_ex.jpeg"></div>
-                        <div class="swiper-slide slide03">Slide 3</div>
-                        <div class="swiper-slide slide04">Slide 4</div>
+                        <div class="swiper-slide slide03">준비 중</div>
+                        <div class="swiper-slide slide04">준비 중</div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
