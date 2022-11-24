@@ -12,6 +12,12 @@ div.col-12.editor_wrap { text-align: center; }
 .btn_wrap { text-align: center; }
 .btn_wrap a, .btn_wrap button { display: inline-block; min-width: 80px; padding: 10px 0; font-size: 1.0rem; line-height: 1.6rem; text-align: center; background-color: #DEBACE; }
 .btn_wrap button.heartBtn { background-color: #fff; }
+.btn_wrap button#likebtn.heartBtn:active { background-color: #fff; }
+.btn_wrap button#likebtn.heartBtn:focus-visible { background-color: #fff; }
+.btn_wrap button#likebtn.heartBtn:hover { background-color: #fff; }
+.btn_wrap button#likebtn.heartBtn.active { background-color: #fff; }
+
+
 
 /* 상위 메뉴 */
 .menu-wrap { margin-bottom: 10px; }
